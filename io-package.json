@@ -68,8 +68,8 @@
 		]
 	},
 	"native": {
-		"option1": true,
-		"option2": "42"
+		"App_Name": "SRG-SSR APP-Name",
+		"Base64_ConsumerKey_ConsumerSecret": "set Base64 ConsumerKey:ConsumerSecret"
 	},
 	"objects": [],
 	"instanceObjects": []
