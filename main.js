@@ -38,6 +38,62 @@ class SwissWeatherApi extends utils.Adapter {
 		// this.config:
 		this.log.info("config option1: " + this.config.App_Name);
 		this.log.info("config option2: " + this.config.Base64_ConsumerKey_ConsumerSecret);
+		this.log.info("config option3 " + this.config.Latitude);
+		this.log.info("config option4: " + this.config.Longitude);
+
+		var logit = this.log;
+
+		/*Read SRG-SSR Weather API
+		 https://developer.srgssr.ch/content/quickstart-guide
+
+			 Encode Consumer Key & Consumer Secret :
+			 $ echo -n foo:foo | base64
+
+		 Use Encoded Consumer Key & Consumer Secret in curl-request
+		 	curl -X POST \
+  			'https://api.srgssr.ch/oauth/v1/accesstoken?grant_type=client_credentials' \
+  			-H 'Authorization: Basic  <Consumer Key & Consumer Secret>' \
+  			-H 'Cache-Control: no-cache' \
+  			-H 'Content-Length: 0' \
+  			-H 'Postman-Token: 24264e32-2de0-f1e3-f3f8-eab014bb6d76'
+
+		curl-Code um die Daten abzuholen. Das Access_Token wird als "bearer" mitgegeben. Diesen bearer habe ich auf dem
+		 Developer Protal SRG erstellt. Wenn man den Bearer hat, geht die Abfrage so:
+
+		curl -X GET \
+    	'https://api.srgssr.ch/forecasts/v1.0/weather/24hour?latitude=47.037219&longitude=7.376170' \
+    	-H 'Authorization: Bearer foo'
+
+		 */
+
+
+		//Get current Forecast
+		var http = require("https");
+
+		var options = {
+			"method": "GET",
+			"hostname": "api.srgssr.ch",
+			"port": null,
+			"path": "/forecasts/v1.0/weather/current/?latitude=47.037219&longitude=7.376170",
+			"headers": {
+				"authorization": "Basic dmFyaWFAaW50ZWxsaS5jaDpNWiFQTEdGS11vdnQ="
+			}
+		};
+
+		var req = http.request(options, function (res) {
+			var chunks = [];
+
+			res.on("data", function (chunk) {
+				chunks.push(chunk);
+			});
+
+			res.on("end", function () {
+				var body = Buffer.concat(chunks);
+				self.log.info(body.toString());
+			});
+		});
+
+		req.end();
 
 		/*
 		For every state in the system there has to be also an object of type state

@@ -21,5 +21,13 @@ systemDictionary = {
 	"Base64_ConsumerKey_ConsumerSecret": {
 		"en": "ConsumerKey and ConsumerSecret in Base64",
 		"de": "ConsumerKey and ConsumerSecret in Base64"
+	},
+	"Latitude": {
+		"en": "Latitude",
+		"de": "Latitude"
+	},
+	"Longitude": {
+		"en": "Longitude",
+		"de": "Longitude"
 	}
 };
