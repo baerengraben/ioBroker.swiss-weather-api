@@ -106,7 +106,7 @@ class SwissWeatherApi extends utils.Adapter {
 			}
 		};
 
-		req = http.request(options, function (res) {
+		var req = http.request(options, function (res) {
 			var chunks = [];
 
 			res.on("data", function (chunk) {
