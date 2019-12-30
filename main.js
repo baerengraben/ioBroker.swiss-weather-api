@@ -32,6 +32,7 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		var self = this;
 		// Initialize your adapter here
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
@@ -40,8 +41,6 @@ class SwissWeatherApi extends utils.Adapter {
 		this.log.info("config option2: " + this.config.Base64_ConsumerKey_ConsumerSecret);
 		this.log.info("config option3 " + this.config.Latitude);
 		this.log.info("config option4: " + this.config.Longitude);
-
-		var logit = this.log;
 
 		/*Read SRG-SSR Weather API
 		 https://developer.srgssr.ch/content/quickstart-guide
