@@ -79,6 +79,8 @@ class SwissWeatherApi extends utils.Adapter {
 
 		result = await this.checkGroupAsync("admin", "admin");
 		this.log.info("check group user admin group admin: " + result);
+
+		setTimeout(this.stop.bind(this), 10000);
 	}
 
 	/**
