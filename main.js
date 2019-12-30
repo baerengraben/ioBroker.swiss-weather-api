@@ -33,6 +33,8 @@ class SwissWeatherApi extends utils.Adapter {
 	 */
 	async onReady() {
 		var self = this;
+		var http = require("https");
+
 		// Initialize your adapter here
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
@@ -65,17 +67,26 @@ class SwissWeatherApi extends utils.Adapter {
 
 		 */
 
+		//Get Access-Token
+		/*var options1 = {
+			"method": "POST",
+			"hostname": "api.srgssr.ch",
+			"port": null,
+			"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
+			"headers": {
+				"authorization": "Basic dmFyaWFAaW50ZWxsaS5jaDpNWiFQTEdGS11vdnQ="
+			}
+		};*/
 
-		//Get current Forecast
-		var http = require("https");
+		//Get current Forecast using Authorization Bearer
 
 		var options = {
 			"method": "GET",
 			"hostname": "api.srgssr.ch",
 			"port": null,
-			"path": "/forecasts/v1.0/weather/current/?latitude=47.037219&longitude=7.376170",
+			"path": "/forecasts/v1.0/weather/current?latitude=47.037219&longitude=7.376170",
 			"headers": {
-				"authorization": "Basic dmFyaWFAaW50ZWxsaS5jaDpNWiFQTEdGS11vdnQ="
+				"authorization": "Bearer sT0O38muXvqxDprZrOYPRWS3Qp5l"
 			}
 		};
 
