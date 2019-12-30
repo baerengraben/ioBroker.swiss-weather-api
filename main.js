@@ -49,28 +49,12 @@ class SwissWeatherApi extends utils.Adapter {
 		let data = this.config.ConsumerKey + ":" + this.config.ConsumerSecret;
 		let buff = new Buffer(data);
 		let base64data = buff.toString('base64');
-
 		this.log.info('"' + data + '" converted to Base64 is "' + base64data + '"');
 
-/*		 Use Encoded Consumer Key & Consumer Secret in curl-request
-		 	curl -X POST \
-  			'https://api.srgssr.ch/oauth/v1/accesstoken?grant_type=client_credentials' \
-  			-H 'Authorization: Basic  <Consumer Key & Consumer Secret>' \
-  			-H 'Cache-Control: no-cache' \
-  			-H 'Content-Length: 0' \
-  			-H 'Postman-Token: 24264e32-2de0-f1e3-f3f8-eab014bb6d76'
-
-		curl-Code um die Daten abzuholen. Das Access_Token wird als "bearer" mitgegeben. Diesen bearer habe ich auf dem
-		 Developer Protal SRG erstellt. Wenn man den Bearer hat, geht die Abfrage so:
-
-		curl -X GET \
-    	'https://api.srgssr.ch/forecasts/v1.0/weather/24hour?latitude=47.037219&longitude=7.376170' \
-    	-H 'Authorization: Bearer foo'
-
-		 */
-
+		var body;
 		//Get Access-Token
 		var options_Access_Token = {
+			"json": true,
 			"method": "POST",
 			"hostname": "api.srgssr.ch",
 			"port": null,
@@ -87,22 +71,31 @@ class SwissWeatherApi extends utils.Adapter {
 
 			res.on("data", function (chunk) {
 				chunks.push(chunk);
+				self.log.info("Chunk: " + chunks.access_token);
 			});
 
 			res.on("end", function () {
-				var body = Buffer.concat(chunks);
-				self.log.info("Access_Token: " + body.toString());
+				// var body = Buffer.concat(chunks);
+				body = JSON.parse(Buffer.concat(chunks).toString());
+				self.log.info("Access_Token : " + body.access_token.toString());
 			});
+
+			res.on("error", function(error) {
+				self.log.error(error)
+			});
+
 		});
+		req.end();
 
 		//Get current Forecast using Authorization Bearer
+
 		var options = {
 			"method": "GET",
 			"hostname": "api.srgssr.ch",
 			"port": null,
 			"path": "/forecasts/v1.0/weather/current?latitude=47.037219&longitude=7.376170",
 			"headers": {
-				"authorization": "Bearer sT0O38muXvqxDprZrOYPRWS3Qp5l"
+				"authorization": "Bearer " + body.access_token.toString()
 			}
 		};
 
@@ -118,7 +111,6 @@ class SwissWeatherApi extends utils.Adapter {
 				self.log.info("Current Forecast: " + body.toString());
 			});
 		});
-
 		req.end();
 
 		/*
