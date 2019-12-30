@@ -80,9 +80,10 @@ class SwissWeatherApi extends utils.Adapter {
 		result = await this.checkGroupAsync("admin", "admin");
 		this.log.info("check group user admin group admin: " + result);
 
-		// Gefühlt ein ziemlicher Hack, damit der Prozess gestoppt wird. Wenn man den Timeout hier nicht setzt,
-		// wird der Prozess nicht  wieder gestartet obschon das Ding als Scheduled im io-package.json definiert wurde...
-		// ioBroker würde dann melden "Process already runnung"
+		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
+		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
+		// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
+		// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
 		setTimeout(this.stop.bind(this), 10000);
 	}
 
