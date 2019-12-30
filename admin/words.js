@@ -18,9 +18,13 @@ systemDictionary = {
 		"en": "Name of SRGSSR App",
 		"de": "Name of SRGSSR App"
 	},
-	"Base64_ConsumerKey_ConsumerSecret": {
-		"en": "ConsumerKey and ConsumerSecret in Base64",
-		"de": "ConsumerKey and ConsumerSecret in Base64"
+	"ConsumerKey": {
+		"en": "ConsumerKey of App",
+		"de": "ConsumerKey der App"
+	},
+	"ConsumerSecret": {
+		"en": "ConsumerSecret of App",
+		"de": "ConsumerSecret der App"
 	},
 	"Latitude": {
 		"en": "Latitude",

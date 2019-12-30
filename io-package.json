@@ -69,8 +69,11 @@
 		]
 	},
 	"native": {
-		"App_Name": "SRG-SSR APP-Name",
-		"Base64_ConsumerKey_ConsumerSecret": "set Base64 ConsumerKey:ConsumerSecret"
+		"App_Name": "test",
+		"ConsumerKey": "JKSanGbzMfsn7St3O0KwrJxf996b8SkH",
+		"ConsumerSecret": "wlIv5fR5WAGLmThC",
+		"Latitude": "47.037219",
+		"Longitude": "7.376170"
 	},
 	"objects": [],
 	"instanceObjects": []

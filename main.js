@@ -7,6 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
+var http = require("https");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
@@ -33,24 +34,25 @@ class SwissWeatherApi extends utils.Adapter {
 	 */
 	async onReady() {
 		var self = this;
-		var http = require("https");
 
 		// Initialize your adapter here
 
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
-		this.log.info("config option1: " + this.config.App_Name);
-		this.log.info("config option2: " + this.config.Base64_ConsumerKey_ConsumerSecret);
-		this.log.info("config option3 " + this.config.Latitude);
-		this.log.info("config option4: " + this.config.Longitude);
+		this.log.info("App Name: " + this.config.App_Name);
+		this.log.info("Consumer Key: " + this.config.ConsumerKey);
+		this.log.info("Consumer Secret: " + this.config.ConsumerSecret);
+		this.log.info("Latitude " + this.config.Latitude);
+		this.log.info("Longitude: " + this.config.Longitude);
 
-		/*Read SRG-SSR Weather API
-		 https://developer.srgssr.ch/content/quickstart-guide
+		//Convert ConsumerKey and ConsumerSecret to base64
+		let data = this.config.ConsumerKey + ":" + this.config.ConsumerSecret;
+		let buff = new Buffer(data);
+		let base64data = buff.toString('base64');
 
-			 Encode Consumer Key & Consumer Secret :
-			 $ echo -n foo:foo | base64
+		this.log.info('"' + data + '" converted to Base64 is "' + base64data + '"');
 
-		 Use Encoded Consumer Key & Consumer Secret in curl-request
+/*		 Use Encoded Consumer Key & Consumer Secret in curl-request
 		 	curl -X POST \
   			'https://api.srgssr.ch/oauth/v1/accesstoken?grant_type=client_credentials' \
   			-H 'Authorization: Basic  <Consumer Key & Consumer Secret>' \
@@ -68,18 +70,32 @@ class SwissWeatherApi extends utils.Adapter {
 		 */
 
 		//Get Access-Token
-		/*var options1 = {
+		var options_Access_Token = {
 			"method": "POST",
 			"hostname": "api.srgssr.ch",
 			"port": null,
 			"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
 			"headers": {
-				"authorization": "Basic dmFyaWFAaW50ZWxsaS5jaDpNWiFQTEdGS11vdnQ="
+				"Authorization": "Basic " + base64data,
+				"Cache-Control": "no-cache",
+				"Content-Length": 0,
+				"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
 			}
-		};*/
+		};
+		var req = http.request(options_Access_Token, function (res) {
+			var chunks = [];
+
+			res.on("data", function (chunk) {
+				chunks.push(chunk);
+			});
+
+			res.on("end", function () {
+				var body = Buffer.concat(chunks);
+				self.log.info("Access_Token: " + body.toString());
+			});
+		});
 
 		//Get current Forecast using Authorization Bearer
-
 		var options = {
 			"method": "GET",
 			"hostname": "api.srgssr.ch",
@@ -90,7 +106,7 @@ class SwissWeatherApi extends utils.Adapter {
 			}
 		};
 
-		var req = http.request(options, function (res) {
+		req = http.request(options, function (res) {
 			var chunks = [];
 
 			res.on("data", function (chunk) {
@@ -99,7 +115,7 @@ class SwissWeatherApi extends utils.Adapter {
 
 			res.on("end", function () {
 				var body = Buffer.concat(chunks);
-				self.log.info(body.toString());
+				self.log.info("Current Forecast: " + body.toString());
 			});
 		});
 
