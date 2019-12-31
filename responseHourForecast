@@ -1,0 +1,102 @@
+{
+  "formatted_date": "31.12.2019",
+  "date": "2019-12-31",
+  "nexthour": [
+    {
+      "date": "2019-12-31T01:00:00+0100",
+      "values": [
+        {
+          "smb3": "-2"
+        },
+        {
+          "ttt": "-0.7"
+        },
+        {
+          "fff": "4"
+        },
+        {
+          "ffx3": "9"
+        },
+        {
+          "ddd": "201"
+        },
+        {
+          "rr3": "0.0"
+        },
+        {
+          "pr3": "1"
+        }
+      ]
+    }
+  ],
+  "info": {
+    "id": 3054,
+    "name": {
+      "de": "Schüpfen"
+    },
+    "plz": 3054
+  },
+  "type": "forecasts",
+  "units": {
+    "dd3": {
+      "name": "winddirection_10m_mean_3h",
+      "unit": "°"
+    },
+    "ddd": {
+      "name": "winddirection_10m_mean_1d",
+      "unit": "°"
+    },
+    "ff3": {
+      "name": "windspeed_10m_mean_3h",
+      "unit": "km/h"
+    },
+    "ffd": {
+      "name": "windspeed_10m_mean_1d",
+      "unit": "km/h"
+    },
+    "fx3": {
+      "name": "windspeed_10m_max_3h",
+      "unit": "km/h"
+    },
+    "fxd": {
+      "name": "windspeed_10m_max_1d",
+      "unit": "km/h"
+    },
+    "pr3": {
+      "name": "probrain_3h",
+      "unit": "%"
+    },
+    "prd": {
+      "name": "probrain_1d",
+      "unit": "%"
+    },
+    "rr3": {
+      "name": "precipitation_1.5m_sum_3h",
+      "unit": "mm"
+    },
+    "rsd": {
+      "name": "precipitation_1.5m_sum_1d",
+      "unit": "mm"
+    },
+    "smb3": {
+      "name": "symbol",
+      "unit": "code"
+    },
+    "smbd": {
+      "name": "symbol",
+      "unit": "code"
+    },
+    "ttn": {
+      "name": "temperature_2m_min",
+      "unit": "°C"
+    },
+    "ttt": {
+      "name": "temperature_2m_act",
+      "unit": "°C"
+    },
+    "ttx": {
+      "name": "temperature_2m_max",
+      "unit": "°C"
+    }
+  }
+}

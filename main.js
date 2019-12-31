@@ -25,7 +25,6 @@ class SwissWeatherApi extends utils.Adapter {
 		this.on("ready", this.onReady.bind(this));
 		this.on("objectChange", this.onObjectChange.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
-		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
 
@@ -84,7 +83,7 @@ class SwissWeatherApi extends utils.Adapter {
 				self.log.debug("Access_Token : " + access_token);
 
 				//Options for getting current Forecast using Authorization Bearer
-				var options_forecast = {
+				var options_current_forecast = {
 					"method": "GET",
 					"hostname": "api.srgssr.ch",
 					"port": null,
@@ -93,7 +92,7 @@ class SwissWeatherApi extends utils.Adapter {
 						"authorization": "Bearer " + access_token
 					}
 				};
-				var reqForecast = http.request(options_forecast, function (res) {
+				var reqCurrentForecast = http.request(options_current_forecast, function (res) {
 					var chunks = [];
 					res.on("data", function (chunk) {
 						chunks.push(chunk);
@@ -101,9 +100,103 @@ class SwissWeatherApi extends utils.Adapter {
 					res.on("end", function () {
 						var body = Buffer.concat(chunks);
 						self.log.info("Current Forecast: " + body.toString());
+
+						//todo: Set Forecast Values
+
+
+					});
+					res.on("error", function (error) {
+						self.log.error(error)
 					});
 				});
-				reqForecast.end();
+				reqCurrentForecast.end();
+
+				//Options for getting week forecast using Authorization Bearer
+				var options_weeks_forecast = {
+					"method": "GET",
+					"hostname": "api.srgssr.ch",
+					"port": null,
+					"path": "/forecasts/v1.0/weather/7day?latitude=" + latitude + "&longitude=" + longitude,
+					"headers": {
+						"authorization": "Bearer " + access_token
+					}
+				};
+				var reqWeekForecast = http.request(options_weeks_forecast, function (res) {
+					var chunks = [];
+					res.on("data", function (chunk) {
+						chunks.push(chunk);
+					});
+					res.on("end", function () {
+						var body = Buffer.concat(chunks);
+						self.log.info("Week Forecast: " + body.toString());
+
+						//todo: Set Forecast Values
+
+
+					});
+					res.on("error", function (error) {
+						self.log.error(error)
+					});
+				});
+				reqWeekForecast.end();
+
+				//Options for getting hour forecast using Authorization Bearer
+				var options_hour_forecast = {
+					"method": "GET",
+					"hostname": "api.srgssr.ch",
+					"port": null,
+					"path": "/forecasts/v1.0/weather/nexthour?latitude=" + latitude + "&longitude=" + longitude,
+					"headers": {
+						"authorization": "Bearer " + access_token
+					}
+				};
+				var reqHourForecast = http.request(options_hour_forecast, function (res) {
+					var chunks = [];
+					res.on("data", function (chunk) {
+						chunks.push(chunk);
+					});
+					res.on("end", function () {
+						var body = Buffer.concat(chunks);
+						self.log.info("Hour Forecast: " + body.toString());
+
+						//todo: Set Forecast Values
+
+
+					});
+					res.on("error", function (error) {
+						self.log.error(error)
+					});
+				});
+				reqHourForecast.end();
+
+				//Options for getting 24hour forecast using Authorization Bearer
+				var options_24hour_forecast = {
+					"method": "GET",
+					"hostname": "api.srgssr.ch",
+					"port": null,
+					"path": "/forecasts/v1.0/weather/24hour?latitude=" + latitude + "&longitude=" + longitude,
+					"headers": {
+						"authorization": "Bearer " + access_token
+					}
+				};
+				var req24HourForecast = http.request(options_24hour_forecast, function (res) {
+					var chunks = [];
+					res.on("data", function (chunk) {
+						chunks.push(chunk);
+					});
+					res.on("end", function () {
+						var body = Buffer.concat(chunks);
+						self.log.info("24Hour Forecast: " + body.toString());
+
+						//todo: Set Forecast Values
+
+
+					});
+					res.on("error", function (error) {
+						self.log.error(error)
+					});
+				});
+				req24HourForecast.end();
 			});
 			res.on("error", function (error) {
 				self.log.error(error)
@@ -112,10 +205,10 @@ class SwissWeatherApi extends utils.Adapter {
 		req.end();
 
 		/*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
+        For every state in the system there has to be also an object of type state
+        Here a simple template for a boolean variable named "testVariable"
+        Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
+        */
 		await this.setObjectAsync("testVariable", {
 			type: "state",
 			common: {
@@ -128,34 +221,27 @@ class SwissWeatherApi extends utils.Adapter {
 			native: {},
 		});
 
-		// in this template all states changes inside the adapters namespace are subscribed
+// in this template all states changes inside the adapters namespace are subscribed
 		this.subscribeStates("*");
 
 		/*
-		setState examples
-		you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-		// the variable testVariable is set to true as command (ack=false)
+        setState examples
+        you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
+        */
+// the variable testVariable is set to true as command (ack=false)
 		await this.setStateAsync("testVariable", true);
 
-		// same thing, but the value is flagged "ack"
-		// ack should be always set to true if the value is received from or acknowledged from the target system
+// same thing, but the value is flagged "ack"
+// ack should be always set to true if the value is received from or acknowledged from the target system
 		await this.setStateAsync("testVariable", { val: true, ack: true });
 
-		// same thing, but the state is deleted after 30s (getState will return null afterwards)
+// same thing, but the state is deleted after 30s (getState will return null afterwards)
 		await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
 
-		// examples for the checkPassword/checkGroup functions
-		let result = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info("check user admin pw ioboker: " + result);
-
-		result = await this.checkGroupAsync("admin", "admin");
-		this.log.info("check group user admin group admin: " + result);
-
-		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
-		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
-		// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
-		// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
+// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
+// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
+// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
+// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
 		setTimeout(this.stop.bind(this), 10000);
 	}
 
@@ -201,24 +287,6 @@ class SwissWeatherApi extends utils.Adapter {
 			this.log.info(`state ${id} deleted`);
 		}
 	}
-
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.message" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	// onMessage(obj) {
-	// 	if (typeof obj === "object" && obj.message) {
-	// 		if (obj.command === "send") {
-	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
-
-	// 			// Send response in callback if required
-	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-	// 		}
-	// 	}
-	// }
-
 }
 
 // @ts-ignore parent is a valid property on module
