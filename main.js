@@ -94,11 +94,65 @@ class SwissWeatherApi extends utils.Adapter {
 						chunks.push(chunk);
 					});
 					res.on("end", function () {
-						var body = Buffer.concat(chunks);
-						self.log.info("Current Forecast: " + body.toString());
+						var body = JSON.parse(Buffer.concat(chunks).toString());
+						self.log.info("Current Forecast: " + JSON.stringify(body));
 
-						//todo: Set Current Forecast Values
+						//Set Current Forecast Values
+						self.setObjectNotExists("CurrentForecast." + "formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 
+						self.setObjectNotExists("CurrentForecast.current_day.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.current_day.date", { val: body.current_day.date.toString(), ack: true });
+
+						self.log.info("Units: " + JSON.stringify(body.units.ttn));
+						self.setObjectNotExists("CurrentForecast.current_day.values.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn, ack: true });
+
+						self.setObjectNotExists("CurrentForecast.current_day.values.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.current_day.values.smbd", { val: body.current_day.values[1].smbd, ack: true });
+
+						self.setObjectNotExists("CurrentForecast.current_day.values.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
 
 					});
 					res.on("error", function (error) {
@@ -199,40 +253,6 @@ class SwissWeatherApi extends utils.Adapter {
 			});
 		});
 		req.end();
-
-		/*
-        For every state in the system there has to be also an object of type state
-        Here a simple template for a boolean variable named "testVariable"
-        Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-        */
-		await this.setObjectAsync("testVariable", {
-			type: "state",
-			common: {
-				name: "testVariable",
-				type: "boolean",
-				role: "indicator",
-				read: true,
-				write: true,
-			},
-			native: {},
-		});
-
-// in this template all states changes inside the adapters namespace are subscribed
-		this.subscribeStates("*");
-
-		/*
-        setState examples
-        you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-        */
-// the variable testVariable is set to true as command (ack=false)
-		await this.setStateAsync("testVariable", true);
-
-// same thing, but the value is flagged "ack"
-// ack should be always set to true if the value is received from or acknowledged from the target system
-		await this.setStateAsync("testVariable", { val: true, ack: true });
-
-// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
 
 // Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
 // Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
