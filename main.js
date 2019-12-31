@@ -3,14 +3,8 @@
 /*
  * Created with @iobroker/create-adapter v1.18.0
  */
-
-// The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 var http = require("https");
-
-// Load your modules here, e.g.:
-// const fs = require("fs");
 
 class SwissWeatherApi extends utils.Adapter {
 
@@ -32,8 +26,6 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
 		var self = this;
 		var appName = this.config.App_Name;
 		var latitude = this.config.Latitude;
@@ -70,7 +62,11 @@ class SwissWeatherApi extends utils.Adapter {
 		};
 
 		/**
-		 * First get Access_Token, after that get forcast-informations
+		 * First get Access_Token, after that get forcast-informations for
+		 * - current forecast
+		 * - week forecast
+		 * - next hour forecast
+		 * - 24 hour forecast
 		 */
 		var req = http.request(options_Access_Token, function (res) {
 			var chunks = [];
@@ -101,7 +97,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = Buffer.concat(chunks);
 						self.log.info("Current Forecast: " + body.toString());
 
-						//todo: Set Forecast Values
+						//todo: Set Current Forecast Values
 
 
 					});
@@ -130,7 +126,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = Buffer.concat(chunks);
 						self.log.info("Week Forecast: " + body.toString());
 
-						//todo: Set Forecast Values
+						//todo: Set Weekly Forecast Values
 
 
 					});
@@ -159,7 +155,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = Buffer.concat(chunks);
 						self.log.info("Hour Forecast: " + body.toString());
 
-						//todo: Set Forecast Values
+						//todo: Set Hour Forecast Values
 
 
 					});
@@ -188,7 +184,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = Buffer.concat(chunks);
 						self.log.info("24Hour Forecast: " + body.toString());
 
-						//todo: Set Forecast Values
+						//todo: Set 24Hour Forecast Values
 
 
 					});
