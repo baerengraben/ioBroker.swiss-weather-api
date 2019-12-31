@@ -33,26 +33,29 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		var self = this;
-
-		// Initialize your adapter here
-
 		// The adapters config (in the instance object everything under the attribute "native") is accessible via
 		// this.config:
-		this.log.info("App Name: " + this.config.App_Name);
-		this.log.info("Consumer Key: " + this.config.ConsumerKey);
-		this.log.info("Consumer Secret: " + this.config.ConsumerSecret);
-		this.log.info("Latitude " + this.config.Latitude);
-		this.log.info("Longitude: " + this.config.Longitude);
+		var self = this;
+		var appName = this.config.App_Name;
+		var latitude = this.config.Latitude;
+		var longitude = this.config.Longitude;
+		var consumerKey = this.config.ConsumerKey;
+		var consumerSecret = this.config.ConsumerSecret;
+		var access_token;
+
+		this.log.info("App Name: " + appName);
+		this.log.info("Consumer Key: " + consumerKey);
+		this.log.info("Consumer Secret: " + consumerSecret);
+		this.log.info("Latitude " + latitude);
+		this.log.info("Longitude: " + longitude);
 
 		//Convert ConsumerKey and ConsumerSecret to base64
-		let data = this.config.ConsumerKey + ":" + this.config.ConsumerSecret;
+		let data = consumerKey + ":" + consumerSecret;
 		let buff = new Buffer(data);
 		let base64data = buff.toString('base64');
 		this.log.info('"' + data + '" converted to Base64 is "' + base64data + '"');
 
-		var body;
-		//Get Access-Token
+		//Options for getting Access-Token
 		var options_Access_Token = {
 			"json": true,
 			"method": "POST",
@@ -66,49 +69,42 @@ class SwissWeatherApi extends utils.Adapter {
 				"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
 			}
 		};
+
 		var req = http.request(options_Access_Token, function (res) {
 			var chunks = [];
-
 			res.on("data", function (chunk) {
 				chunks.push(chunk);
-				self.log.info("Chunk: " + chunks.access_token);
 			});
-
 			res.on("end", function () {
-				// var body = Buffer.concat(chunks);
-				body = JSON.parse(Buffer.concat(chunks).toString());
-				self.log.info("Access_Token : " + body.access_token.toString());
-			});
+				var body = JSON.parse(Buffer.concat(chunks).toString());
+				access_token = body.access_token.toString();
+				self.log.info("Body: " + chunks.toString());
+				self.log.info("Access_Token : " + access_token);
 
-			res.on("error", function(error) {
+				//Options for getting current Forecast using Authorization Bearer
+				var options_forecast = {
+					"method": "GET",
+					"hostname": "api.srgssr.ch",
+					"port": null,
+					"path": "/forecasts/v1.0/weather/current?latitude=" + latitude + "&longitude=" + longitude,
+					"headers": {
+						"authorization": "Bearer " + access_token
+					}
+				};
+				var req2 = http.request(options_forecast, function (res) {
+					var chunks = [];
+					res.on("data", function (chunk) {
+						chunks.push(chunk);
+					});
+					res.on("end", function () {
+						var body = Buffer.concat(chunks);
+						self.log.info("Current Forecast: " + body.toString());
+					});
+				});
+				req2.end();
+			});
+			res.on("error", function (error) {
 				self.log.error(error)
-			});
-
-		});
-		req.end();
-
-		//Get current Forecast using Authorization Bearer
-
-		var options = {
-			"method": "GET",
-			"hostname": "api.srgssr.ch",
-			"port": null,
-			"path": "/forecasts/v1.0/weather/current?latitude=47.037219&longitude=7.376170",
-			"headers": {
-				"authorization": "Bearer " + body.access_token.toString()
-			}
-		};
-
-		var req = http.request(options, function (res) {
-			var chunks = [];
-
-			res.on("data", function (chunk) {
-				chunks.push(chunk);
-			});
-
-			res.on("end", function () {
-				var body = Buffer.concat(chunks);
-				self.log.info("Current Forecast: " + body.toString());
 			});
 		});
 		req.end();
