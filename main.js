@@ -43,17 +43,17 @@ class SwissWeatherApi extends utils.Adapter {
 		var consumerSecret = this.config.ConsumerSecret;
 		var access_token;
 
-		this.log.info("App Name: " + appName);
-		this.log.info("Consumer Key: " + consumerKey);
-		this.log.info("Consumer Secret: " + consumerSecret);
-		this.log.info("Latitude " + latitude);
-		this.log.info("Longitude: " + longitude);
+		this.log.debug("App Name: " + appName);
+		this.log.debug("Consumer Key: " + consumerKey);
+		this.log.debug("Consumer Secret: " + consumerSecret);
+		this.log.debug("Latitude " + latitude);
+		this.log.debug("Longitude: " + longitude);
 
 		//Convert ConsumerKey and ConsumerSecret to base64
 		let data = consumerKey + ":" + consumerSecret;
 		let buff = new Buffer(data);
 		let base64data = buff.toString('base64');
-		this.log.info('"' + data + '" converted to Base64 is "' + base64data + '"');
+		this.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
 
 		//Options for getting Access-Token
 		var options_Access_Token = {
@@ -70,6 +70,9 @@ class SwissWeatherApi extends utils.Adapter {
 			}
 		};
 
+		/**
+		 * First get Access_Token, after that get forcast-informations
+		 */
 		var req = http.request(options_Access_Token, function (res) {
 			var chunks = [];
 			res.on("data", function (chunk) {
@@ -78,8 +81,7 @@ class SwissWeatherApi extends utils.Adapter {
 			res.on("end", function () {
 				var body = JSON.parse(Buffer.concat(chunks).toString());
 				access_token = body.access_token.toString();
-				self.log.info("Body: " + chunks.toString());
-				self.log.info("Access_Token : " + access_token);
+				self.log.debug("Access_Token : " + access_token);
 
 				//Options for getting current Forecast using Authorization Bearer
 				var options_forecast = {
@@ -91,7 +93,7 @@ class SwissWeatherApi extends utils.Adapter {
 						"authorization": "Bearer " + access_token
 					}
 				};
-				var req2 = http.request(options_forecast, function (res) {
+				var reqForecast = http.request(options_forecast, function (res) {
 					var chunks = [];
 					res.on("data", function (chunk) {
 						chunks.push(chunk);
@@ -101,7 +103,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.info("Current Forecast: " + body.toString());
 					});
 				});
-				req2.end();
+				reqForecast.end();
 			});
 			res.on("error", function (error) {
 				self.log.error(error)
