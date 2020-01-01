@@ -6,6 +6,9 @@
 const utils = require("@iobroker/adapter-core");
 var http = require("https");
 var libxmljs = require('libxmljs2');
+const fs = require('fs');
+let xml;
+let xmlDoc;
 
 class SwissWeatherApi extends utils.Adapter {
 
@@ -35,35 +38,16 @@ class SwissWeatherApi extends utils.Adapter {
 		var consumerSecret = this.config.ConsumerSecret;
 		var access_token;
 
-		//-------------start
-		var xml =
-			'<?xml version="1.0" encoding="UTF-8"?>' +
-			'<root>' +
-			'<child foo="bar">' +
-				'<grandchild baz="fizbuzz">grandchild content</grandchild>' +
-			'</child>' +
-			'<sibling>with content!</sibling>' +
-			'</root>';
-
-		var xmlDoc = libxmljs.parseXml(xml);
-
-		// xpath queries
-		var gchild = xmlDoc.get('//grandchild');
-
-		self.log.info(gchild.text()); // prints "grandchild content"
-
-		var children = xmlDoc.root().childNodes();
-		var child = children[0];
-
-		self.log.info(child.attr('foo').value()); // prints "bar"
-		//-------------stop
-
-
 		this.log.debug("App Name: " + appName);
 		this.log.debug("Consumer Key: " + consumerKey);
 		this.log.debug("Consumer Secret: " + consumerSecret);
 		this.log.debug("Latitude " + latitude);
 		this.log.debug("Longitude: " + longitude);
+
+		//Prepare XML File in order to get the weather-icon
+		self.log.debug("Read XML File:...");
+		xml = fs.readFileSync(__dirname + "/img/weather-icons/SRG-SSR-WeatherAPITranslations.xml");
+		xmlDoc = libxmljs.parseXmlString(xml);
 
 		//Convert ConsumerKey and ConsumerSecret to base64
 		let data = consumerKey + ":" + consumerSecret;
@@ -179,6 +163,22 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
 
+						//read icon-name for current_day
+						self.log.debug("get Values by xpath");
+						var gchild = xmlDoc.get("/root/row[Code=" + body.current_day.values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.log.info("Anzuzeigendes Wetter-Icon: " + gchild.text());
+
+						self.setObjectNotExists("CurrentForecast.current_day.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.current_day.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 					});
 					res.on("error", function (error) {
 						self.log.error(error)
