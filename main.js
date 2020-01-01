@@ -5,6 +5,7 @@
  */
 const utils = require("@iobroker/adapter-core");
 var http = require("https");
+var libxmljs = require('libxmljs2');
 
 class SwissWeatherApi extends utils.Adapter {
 
@@ -33,6 +34,30 @@ class SwissWeatherApi extends utils.Adapter {
 		var consumerKey = this.config.ConsumerKey;
 		var consumerSecret = this.config.ConsumerSecret;
 		var access_token;
+
+		//-------------start
+		var xml =
+			'<?xml version="1.0" encoding="UTF-8"?>' +
+			'<root>' +
+			'<child foo="bar">' +
+				'<grandchild baz="fizbuzz">grandchild content</grandchild>' +
+			'</child>' +
+			'<sibling>with content!</sibling>' +
+			'</root>';
+
+		var xmlDoc = libxmljs.parseXml(xml);
+
+		// xpath queries
+		var gchild = xmlDoc.get('//grandchild');
+
+		self.log.info(gchild.text()); // prints "grandchild content"
+
+		var children = xmlDoc.root().childNodes();
+		var child = children[0];
+
+		self.log.info(child.attr('foo').value()); // prints "bar"
+		//-------------stop
+
 
 		this.log.debug("App Name: " + appName);
 		this.log.debug("Consumer Key: " + consumerKey);
