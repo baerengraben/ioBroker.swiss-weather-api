@@ -1,0 +1,1001 @@
+overhead_code,daycondition,NightCondition,trans_text_day,trans_text_night,lang_iso,lang_name
+113,Sunny,Clear,مشمس,صافي,ar,Arabic
+113,Sunny,Clear,Слънчево,Ясно,bg,Bulgarian
+113,Sunny,Clear,সূর্যোজ্জ্বল,পরিষ্কার,bn,Bengali
+113,Sunny,Clear,Slunečno,Jasno,cs,Czech
+113,Sunny,Clear,klart,Skyfrit,da,Danish
+113,Sunny,Clear,Sonnig,Klar,de,German
+113,Sunny,Clear,Ηλιόλουστη/ο,Αίθριος,el,Greek
+113,Sunny,Clear,Soleado,Despejado,es,Spanish
+113,Sunny,Clear,Aurinkoinen,Pilvetön,fi,Finnish
+113,Sunny,Clear,Ensoleillé,Clair,fr,French
+113,Sunny,Clear,"धूप वाला",साफ,hi,Hindi
+113,Sunny,Clear,"Napos idő",Felhőtlen,hu,Hungarian
+113,Sunny,Clear,Soleggiato,Sereno,it,Italian
+113,Sunny,Clear,晴れ,快晴,ja,Japanese
+113,Sunny,Clear,"Srengenge Sumunar",Resik,jv,Javanese
+113,Sunny,Clear,맑음,화창함,ko,Korean
+113,Sunny,Clear,लख्ख,स्वच्छ,mr,Marathi
+113,Sunny,Clear,Zonnig,Helder,nl,Dutch
+113,Sunny,Clear,ਧੁੱਪਦਾਰ,ਸਾਫ,pa,Punjabi
+113,Sunny,Clear,Słonecznie,Bezchmurnie,pl,Polish
+113,Sunny,Clear,Sol,"Céu limpo",pt,Portuguese
+113,Sunny,Clear,Soare,Senin,ro,Romanian
+113,Sunny,Clear,Солнечно,Ясно,ru,Russian
+113,Sunny,Clear,"හිරු එළිය සහිත",පැහැදිලි,si,Sinhalese
+113,Sunny,Clear,Slnečno,Jasno,sk,Slovak
+113,Sunny,Clear,Sunčano,Vedro,sr,Serbian
+113,Sunny,Clear,Soligt,Klart,sv,Swedish
+113,Sunny,Clear,வெயில்,தெளிவு,ta,Tamil
+113,Sunny,Clear,ఎండకాయడం,"స్పష్టంగా ఉండటం",te,Telugu
+113,Sunny,Clear,Güneşli,Açık,tr,Turkish
+113,Sunny,Clear,Сонячно,Ясно,uk,Ukrainian
+113,Sunny,Clear,"دھوپ والا",شفاف,ur,Urdu
+113,Sunny,Clear,"Nhiều nắng","Trời quang",vi,Vietnamese
+113,Sunny,Clear,晴天,晴朗,zh,"Chinese Simplified"
+113,Sunny,Clear,晴天,晴朗,zh_cmn,Mandarin
+113,Sunny,Clear,有阳光,晴朗,zh_hsn,Xiang
+113,Sunny,Clear,晴天,晴朗,zh_tw,"Chinese Traditional"
+113,Sunny,Clear,贴金,贴起好,zh_wuu,"Wu (Shanghainese)"
+113,Sunny,Clear,晴天,晴朗,zh_yue,"Yue (Cantonese)"
+113,Sunny,Clear,Kuyashisa,Licwathile,zu,Zulu
+116,"Partly cloudy","Partly cloudy","غائم جزئياً","غائم جزئياً",ar,Arabic
+116,"Partly cloudy","Partly cloudy","Частична облачност","Частична облачност",bg,Bulgarian
+116,"Partly cloudy","Partly cloudy","অংশত মেঘলা","অংশত মেঘলা",bn,Bengali
+116,"Partly cloudy","Partly cloudy","Částečně oblačno","Částečně oblačno",cs,Czech
+116,"Partly cloudy","Partly cloudy",Letskyet,Letskyet,da,Danish
+116,"Partly cloudy","Partly cloudy","leicht bewölkt","leicht bewölkt",de,German
+116,"Partly cloudy","Partly cloudy","Κατά τόπους συννεφιά","Κατά τόπους συννεφιά",el,Greek
+116,"Partly cloudy","Partly cloudy","Parcialmente nublado","Parcialmente nublado",es,Spanish
+116,"Partly cloudy","Partly cloudy",Puolipilvinen,Puolipilvinen,fi,Finnish
+116,"Partly cloudy","Partly cloudy","Partiellement nuageux","Partiellement nuageux",fr,French
+116,"Partly cloudy","Partly cloudy","हल्के बादल","हल्के बादल",hi,Hindi
+116,"Partly cloudy","Partly cloudy","Részben felhős","Részben felhős",hu,Hungarian
+116,"Partly cloudy","Partly cloudy","Parzialmente nuvoloso","Parzialmente nuvoloso",it,Italian
+116,"Partly cloudy","Partly cloudy",所により曇り,所により曇り,ja,Japanese
+116,"Partly cloudy","Partly cloudy","Mendhung sebagian","Mendhung sebagian",jv,Javanese
+116,"Partly cloudy","Partly cloudy","대체로 맑음","대체로 맑음",ko,Korean
+116,"Partly cloudy","Partly cloudy","अंशत: ढगाळ","अंशत: ढगाळ",mr,Marathi
+116,"Partly cloudy","Partly cloudy","Gedeeltelijk bewolkt","Gedeeltelijk bewolkt",nl,Dutch
+116,"Partly cloudy","Partly cloudy","ਥੋੜ੍ਹਾਂ ਬੱਦਲਵਾਈ","ਥੋੜ੍ਹਾਂ ਬੱਦਲਵਾਈ",pa,Punjabi
+116,"Partly cloudy","Partly cloudy","Częściowe zachmurzenie","Częściowe zachmurzenie",pl,Polish
+116,"Partly cloudy","Partly cloudy","Parcialmente nublado","Parcialmente nublado",pt,Portuguese
+116,"Partly cloudy","Partly cloudy","Parțial noros","Parțial noros",ro,Romanian
+116,"Partly cloudy","Partly cloudy","Переменная облачность","Переменная облачность",ru,Russian
+116,"Partly cloudy","Partly cloudy","අඩ වශයෙන් වළාකුළු සහිත","අඩ වශයෙන් වළාකුළු සහිත",si,Sinhalese
+116,"Partly cloudy","Partly cloudy","Čiastočne oblačno","Čiastočne oblačno",sk,Slovak
+116,"Partly cloudy","Partly cloudy","Delimično oblačno","Delimično oblačno",sr,Serbian
+116,"Partly cloudy","Partly cloudy","Växlande molnighet","Växlande molnighet",sv,Swedish
+116,"Partly cloudy","Partly cloudy","கொஞ்சம் மேகமூட்டம்","கொஞ்சம் மேகமூட்டம்",ta,Tamil
+116,"Partly cloudy","Partly cloudy","పాక్షికంగా మేఘావృతం","పాక్షికంగా మేఘావృతం",te,Telugu
+116,"Partly cloudy","Partly cloudy","Parçalı Bulutlu","Parçalı Bulutlu",tr,Turkish
+116,"Partly cloudy","Partly cloudy","Невелика хмарність","Невелика хмарність",uk,Ukrainian
+116,"Partly cloudy","Partly cloudy","تھوڑے بادلوں والا","تھوڑے بادلوں والا",ur,Urdu
+116,"Partly cloudy","Partly cloudy","Có Mây","Có Mây",vi,Vietnamese
+116,"Partly cloudy","Partly cloudy",局部多云,局部多云,zh,"Chinese Simplified"
+116,"Partly cloudy","Partly cloudy",局部多云,局部多云,zh_cmn,Mandarin
+116,"Partly cloudy","Partly cloudy",局部多云,局部多云,zh_hsn,Xiang
+116,"Partly cloudy","Partly cloudy",局部多雲,局部多雲,zh_tw,"Chinese Traditional"
+116,"Partly cloudy","Partly cloudy",撅部兜云,撅部兜云,zh_wuu,"Wu (Shanghainese)"
+116,"Partly cloudy","Partly cloudy",局部多雲,局部多雲,zh_yue,"Yue (Cantonese)"
+116,"Partly cloudy","Partly cloudy","Lithe gqwa gqwa ngamafu","Lithe gqwa gqwa ngamafu",zu,Zulu
+119,Cloudy,Cloudy,غائم,غائم,ar,Arabic
+119,Cloudy,Cloudy,Облачно,Облачно,bg,Bulgarian
+119,Cloudy,Cloudy,মেঘলা,মেঘলা,bn,Bengali
+119,Cloudy,Cloudy,Oblačno,Oblačno,cs,Czech
+119,Cloudy,Cloudy,Skyet,Skyet,da,Danish
+119,Cloudy,Cloudy,bewölkt,bewölkt,de,German
+119,Cloudy,Cloudy,Συννεφιά,Συννεφιά,el,Greek
+119,Cloudy,Cloudy,Nublado,Nublado,es,Spanish
+119,Cloudy,Cloudy,Pilvinen,Pilvinen,fi,Finnish
+119,Cloudy,Cloudy,Nuageux,Nuageux,fr,French
+119,Cloudy,Cloudy,"बादलों से भरा","बादलों से भरा",hi,Hindi
+119,Cloudy,Cloudy,Felhős,Felhős,hu,Hungarian
+119,Cloudy,Cloudy,Nuvoloso,Nuvoloso,it,Italian
+119,Cloudy,Cloudy,曇り,曇り,ja,Japanese
+119,Cloudy,Cloudy,Mendhung,Mendhung,jv,Javanese
+119,Cloudy,Cloudy,"구름 낀","구름 낀",ko,Korean
+119,Cloudy,Cloudy,ढगाळ,ढगाळ,mr,Marathi
+119,Cloudy,Cloudy,Bewolkt,Bewolkt,nl,Dutch
+119,Cloudy,Cloudy,ਬੱਦਲਵਾਈ,ਬੱਦਲਵਾਈ,pa,Punjabi
+119,Cloudy,Cloudy,Zachmurzenie,Zachmurzenie,pl,Polish
+119,Cloudy,Cloudy,Nublado,Nublado,pt,Portuguese
+119,Cloudy,Cloudy,Noros,Noros,ro,Romanian
+119,Cloudy,Cloudy,Облачно,Облачно,ru,Russian
+119,Cloudy,Cloudy,"වළාකුළු සහිත","වළාකුළු සහිත",si,Sinhalese
+119,Cloudy,Cloudy,Oblačno,Oblačno,sk,Slovak
+119,Cloudy,Cloudy,Oblačno,Oblačno,sr,Serbian
+119,Cloudy,Cloudy,Molnigt,Molnigt,sv,Swedish
+119,Cloudy,Cloudy,மேகமூட்டம்,மேகமூட்டம்,ta,Tamil
+119,Cloudy,Cloudy,మేఘావృతం,మేఘావృతం,te,Telugu
+119,Cloudy,Cloudy,Bulutlu,Bulutlu,tr,Turkish
+119,Cloudy,Cloudy,Хмарно,Хмарно,uk,Ukrainian
+119,Cloudy,Cloudy,"بادلوں والا","بادلوں والا",ur,Urdu
+119,Cloudy,Cloudy,"Nhiều mây","Nhiều mây",vi,Vietnamese
+119,Cloudy,Cloudy,多云,多云,zh,"Chinese Simplified"
+119,Cloudy,Cloudy,多云,多云,zh_cmn,Mandarin
+119,Cloudy,Cloudy,多云,多云,zh_hsn,Xiang
+119,Cloudy,Cloudy,多雲,多雲,zh_tw,"Chinese Traditional"
+119,Cloudy,Cloudy,兜云,兜云,zh_wuu,"Wu (Shanghainese)"
+119,Cloudy,Cloudy,多雲,多雲,zh_yue,"Yue (Cantonese)"
+119,Cloudy,Cloudy,Linamafu,Linamafu,zu,Zulu
+122,Overcast,Overcast,"ملبَد بالغيوم","ملبَد بالغيوم",ar,Arabic
+122,Overcast,Overcast,"Плътна облачност","Плътна облачност",bg,Bulgarian
+122,Overcast,Overcast,মেঘাচ্ছন্ন,মেঘাচ্ছন্ন,bn,Bengali
+122,Overcast,Overcast,Zataženo,Zataženo,cs,Czech
+122,Overcast,Overcast,Overskyet,Overskyet,da,Danish
+122,Overcast,Overcast,bedeckt,bedeckt,de,German
+122,Overcast,Overcast,Νεφελώδης,Νεφελώδης,el,Greek
+122,Overcast,Overcast,"Cielo cubierto","Cielo cubierto",es,Spanish
+122,Overcast,Overcast,"Täysin pilvinen","Täysin pilvinen",fi,Finnish
+122,Overcast,Overcast,Couvert,Couvert,fr,French
+122,Overcast,Overcast,"बादलों से घिरा","बादलों से घिरा",hi,Hindi
+122,Overcast,Overcast,Borús,Borús,hu,Hungarian
+122,Overcast,Overcast,Coperto,Coperto,it,Italian
+122,Overcast,Overcast,本曇り,本曇り,ja,Japanese
+122,Overcast,Overcast,"Mendhung peteng","Mendhung peteng",jv,Javanese
+122,Overcast,Overcast,흐린,흐린,ko,Korean
+122,Overcast,Overcast,मेघाच्छादित,मेघाच्छादित,mr,Marathi
+122,Overcast,Overcast,"Geheel bewolkt","Geheel bewolkt",nl,Dutch
+122,Overcast,Overcast,"ਘਿਰਿਆ ਹੋਇਆ","ਘਿਰਿਆ ਹੋਇਆ",pa,Punjabi
+122,Overcast,Overcast,Pochmurno,Pochmurno,pl,Polish
+122,Overcast,Overcast,Encoberto,Encoberto,pt,Portuguese
+122,Overcast,Overcast,"Cer acoperit","Cer acoperit",ro,Romanian
+122,Overcast,Overcast,Пасмурно,Пасмурно,ru,Russian
+122,Overcast,Overcast,"වළාකුලින් අඳුරු වූ","වළාකුලින් අඳුරු වූ",si,Sinhalese
+122,Overcast,Overcast,Zamračené,Zamračené,sk,Slovak
+122,Overcast,Overcast,Naoblačenje,Naoblačenje,sr,Serbian
+122,Overcast,Overcast,Mulet,Mulet,sv,Swedish
+122,Overcast,Overcast,மேகம்சூழ்ந்தது,மேகம்சூழ்ந்தது,ta,Tamil
+122,Overcast,Overcast,మబ్బుకమ్ము,మబ్బుకమ్ము,te,Telugu
+122,Overcast,Overcast,"Çok bulutlu","Çok bulutlu",tr,Turkish
+122,Overcast,Overcast,"Суцільна хмарність","Суцільна хмарність",uk,Ukrainian
+122,Overcast,Overcast,"بدلی چھا جانا","بدلی چھا جانا",ur,Urdu
+122,Overcast,Overcast,"U ám","U ám",vi,Vietnamese
+122,Overcast,Overcast,阴天,阴天,zh,"Chinese Simplified"
+122,Overcast,Overcast,阴天,阴天,zh_cmn,Mandarin
+122,Overcast,Overcast,阴天,阴天,zh_hsn,Xiang
+122,Overcast,Overcast,陰天,陰天,zh_tw,"Chinese Traditional"
+122,Overcast,Overcast,兜云,兜云,zh_wuu,"Wu (Shanghainese)"
+122,Overcast,Overcast,陰天,陰天,zh_yue,"Yue (Cantonese)"
+122,Overcast,Overcast,Liguqubele,Liguqubele,zu,Zulu
+143,Mist,Mist,سديم,سديم,ar,Arabic
+143,Mist,Mist,"Лека мъгла","Лека мъгла",bg,Bulgarian
+143,Mist,Mist,"হাল্কা কুয়াশা","হাল্কা কুয়াশা",bn,Bengali
+143,Mist,Mist,Opar,Opar,cs,Czech
+143,Mist,Mist,TÅ’gedis,TÅ’gedis,da,Danish
+143,Mist,Mist,"leichter Nebel","leichter Nebel",de,German
+143,Mist,Mist,Ομίχλη,Ομίχλη,el,Greek
+143,Mist,Mist,Neblina,Neblina,es,Spanish
+143,Mist,Mist,Sumuinen,Sumuinen,fi,Finnish
+143,Mist,Mist,Brume,Brume,fr,French
+143,Mist,Mist,कोहरा,कोहरा,hi,Hindi
+143,Mist,Mist,"Gyenge köd","Gyenge köd",hu,Hungarian
+143,Mist,Mist,Foschia,Foschia,it,Italian
+143,Mist,Mist,もや,もや,ja,Japanese
+143,Mist,Mist,Pedhut,Pedhut,jv,Javanese
+143,Mist,Mist,안개,안개,ko,Korean
+143,Mist,Mist,धुके,धुके,mr,Marathi
+143,Mist,Mist,Mist,Mist,nl,Dutch
+143,Mist,Mist,ਕੋਹਰਾ,ਕੋਹਰਾ,pa,Punjabi
+143,Mist,Mist,Zamglenie,Zamglenie,pl,Polish
+143,Mist,Mist,Neblina,Neblina,pt,Portuguese
+143,Mist,Mist,Ceață,Ceață,ro,Romanian
+143,Mist,Mist,Дымка,Дымка,ru,Russian
+143,Mist,Mist,මීදුම,මීදුම,si,Sinhalese
+143,Mist,Mist,Opar,Opar,sk,Slovak
+143,Mist,Mist,Sumaglica,Sumaglica,sr,Serbian
+143,Mist,Mist,Fuktdis,Fuktdis,sv,Swedish
+143,Mist,Mist,பனிமூட்டம்,பனிமூட்டம்,ta,Tamil
+143,Mist,Mist,పొగమంచు,పొగమంచు,te,Telugu
+143,Mist,Mist,Sisli,Sisli,tr,Turkish
+143,Mist,Mist,Туман,Туман,uk,Ukrainian
+143,Mist,Mist,کہر,کہر,ur,Urdu
+143,Mist,Mist,"Sương mù","Sương mù",vi,Vietnamese
+143,Mist,Mist,薄雾,薄雾,zh,"Chinese Simplified"
+143,Mist,Mist,薄雾,薄雾,zh_cmn,Mandarin
+143,Mist,Mist,有薄雾,有薄雾,zh_hsn,Xiang
+143,Mist,Mist,薄霧,薄霧,zh_tw,"Chinese Traditional"
+143,Mist,Mist,悠波吴,悠波吴,zh_wuu,"Wu (Shanghainese)"
+143,Mist,Mist,薄霧,薄霧,zh_yue,"Yue (Cantonese)"
+143,Mist,Mist,Kunenkungu,Kunenkungu,zu,Zulu
+176,"Patchy rain possible","Patchy rain possible","أمطار متفاوتة قريبة","أمطار متفاوتة قريبة",ar,Arabic
+176,"Patchy rain possible","Patchy rain possible","Дъждове на отделни места в околността","Дъждове на отделни места в околността",bg,Bulgarian
+176,"Patchy rain possible","Patchy rain possible","পার্শ্ববর্তী এলাকায় অনিয়মিত বৃষ্টিপাত","পার্শ্ববর্তী এলাকায় অনিয়মিত বৃষ্টিপাত",bn,Bengali
+176,"Patchy rain possible","Patchy rain possible","Místy blízký déšť","Místy blízký déšť",cs,Czech
+176,"Patchy rain possible","Patchy rain possible","Stedvis regn","Stedvis regn",da,Danish
+176,"Patchy rain possible","Patchy rain possible","stellenweise Regenfall","stellenweise Regenfall",de,German
+176,"Patchy rain possible","Patchy rain possible","Κατά τόπους βροχή σε κοντινή απόσταση","Κατά τόπους βροχή σε κοντινή απόσταση",el,Greek
+176,"Patchy rain possible","Patchy rain possible","Lluvia  moderada a intervalos","Lluvia  moderada a intervalos",es,Spanish
+176,"Patchy rain possible","Patchy rain possible","Hajanaista sadetta lähellä","Hajanaista sadetta lähellä",fi,Finnish
+176,"Patchy rain possible","Patchy rain possible","Pluie éparse à proximité","Pluie éparse à proximité",fr,French
+176,"Patchy rain possible","Patchy rain possible","आसपास अलग-अलग इलाकों में वारिश","आसपास अलग-अलग इलाकों में वारिश",hi,Hindi
+176,"Patchy rain possible","Patchy rain possible","A közelben eső","A közelben eső",hu,Hungarian
+176,"Patchy rain possible","Patchy rain possible","Pioggia a tratti nelle vicinanze","Pioggia a tratti nelle vicinanze",it,Italian
+176,"Patchy rain possible","Patchy rain possible",近くで所により雨,近くで所により雨,ja,Japanese
+176,"Patchy rain possible","Patchy rain possible","Udan ora rata ing sacedhake","Udan ora rata ing sacedhake",jv,Javanese
+176,"Patchy rain possible","Patchy rain possible","근처 곳곳에 비","근처 곳곳에 비",ko,Korean
+176,"Patchy rain possible","Patchy rain possible","आजूबाजूला अनियमित पाऊस","आजूबाजूला अनियमित पाऊस",mr,Marathi
+176,"Patchy rain possible","Patchy rain possible","Plaatselijke regen in de omgeving","Plaatselijke regen in de omgeving",nl,Dutch
+176,"Patchy rain possible","Patchy rain possible","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਮੀਂਹ","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਮੀਂਹ",pa,Punjabi
+176,"Patchy rain possible","Patchy rain possible","Miejscowe opady deszczu w pobliżu","Miejscowe opady deszczu w pobliżu",pl,Polish
+176,"Patchy rain possible","Patchy rain possible","Possibilidade de chuva irregular","Possibilidade de chuva irregular",pt,Portuguese
+176,"Patchy rain possible","Patchy rain possible","Ploi pe porţiuni în apropiere","Ploi pe porţiuni în apropiere",ro,Romanian
+176,"Patchy rain possible","Patchy rain possible","Местами дождь","Местами дождь",ru,Russian
+176,"Patchy rain possible","Patchy rain possible","ආසන්නයේ තැනින් තැන වැසි","ආසන්නයේ තැනින් තැන වැසි",si,Sinhalese
+176,"Patchy rain possible","Patchy rain possible","Miestami blízky dážď","Miestami blízky dážď",sk,Slovak
+176,"Patchy rain possible","Patchy rain possible","Mestimična kiša","Mestimična kiša",sr,Serbian
+176,"Patchy rain possible","Patchy rain possible","Områden med regn i närheten","Områden med regn i närheten",sv,Swedish
+176,"Patchy rain possible","Patchy rain possible","அருகில் சீரில்லாத மழை","அருகில் சீரில்லாத மழை",ta,Tamil
+176,"Patchy rain possible","Patchy rain possible","చెదురుమదురుగా దగ్గరల్లో వర్షం","చెదురుమదురుగా దగ్గరల్లో వర్షం",te,Telugu
+176,"Patchy rain possible","Patchy rain possible","Bölgesel düzensiz yağmur yağışlı","Bölgesel düzensiz yağmur yağışlı",tr,Turkish
+176,"Patchy rain possible","Patchy rain possible","Місцями дощ","Місцями дощ",uk,Ukrainian
+176,"Patchy rain possible","Patchy rain possible","قریب میں جہاں تہاں بارش","قریب میں جہاں تہاں بارش",ur,Urdu
+176,"Patchy rain possible","Patchy rain possible","Mưa lả tả gần đó","Mưa lả tả gần đó",vi,Vietnamese
+176,"Patchy rain possible","Patchy rain possible",周边有零星小雨,周边有零星小雨,zh,"Chinese Simplified"
+176,"Patchy rain possible","Patchy rain possible",周边有零星小雨,周边有零星小雨,zh_cmn,Mandarin
+176,"Patchy rain possible","Patchy rain possible",附近有零星雨,附近有零星雨,zh_hsn,Xiang
+176,"Patchy rain possible","Patchy rain possible",週边有零星小雨,週边有零星小雨,zh_tw,"Chinese Traditional"
+176,"Patchy rain possible","Patchy rain possible",无尽撅部落鱼,无尽撅部落鱼,zh_wuu,"Wu (Shanghainese)"
+176,"Patchy rain possible","Patchy rain possible",週边有零星小雨,週边有零星小雨,zh_yue,"Yue (Cantonese)"
+176,"Patchy rain possible","Patchy rain possible","Kunezihlamvana zemvula lapha nalapha eduze","Kunezihlamvana zemvula lapha nalapha eduze",zu,Zulu
+179,"Patchy snow possible","Patchy snow possible","ثلوج متفاوتة قريبة","ثلوج متفاوتة قريبة",ar,Arabic
+179,"Patchy snow possible","Patchy snow possible","Снеговалежи на отделни места в околността","Снеговалежи на отделни места в околността",bg,Bulgarian
+179,"Patchy snow possible","Patchy snow possible","পার্শ্ববর্তী এলাকায় অনিয়মিত তুষারপাত","পার্শ্ববর্তী এলাকায় অনিয়মিত তুষারপাত",bn,Bengali
+179,"Patchy snow possible","Patchy snow possible","Místy blízké sněžení","Místy blízké sněžení",cs,Czech
+179,"Patchy snow possible","Patchy snow possible","Stedvis sne","Stedvis sne",da,Danish
+179,"Patchy snow possible","Patchy snow possible","stellenweise Schneefall","stellenweise Schneefall",de,German
+179,"Patchy snow possible","Patchy snow possible","Κατά τόπους χιονόπτωση σε κοντινή απόσταση","Κατά τόπους χιονόπτωση σε κοντινή απόσταση",el,Greek
+179,"Patchy snow possible","Patchy snow possible","Nieve moderada a intervalos en las aproximaciones","Nieve moderada a intervalos en las aproximaciones",es,Spanish
+179,"Patchy snow possible","Patchy snow possible","Hajanaista lumisadetta lähellä","Hajanaista lumisadetta lähellä",fi,Finnish
+179,"Patchy snow possible","Patchy snow possible","Neige éparse à proximité","Neige éparse à proximité",fr,French
+179,"Patchy snow possible","Patchy snow possible","आसपास अलग-अलग इलाकों में हिमपात","आसपास अलग-अलग इलाकों में हिमपात",hi,Hindi
+179,"Patchy snow possible","Patchy snow possible","A közelben foltokban havazás","A közelben foltokban havazás",hu,Hungarian
+179,"Patchy snow possible","Patchy snow possible","Neve a tratti nelle vicinanze","Neve a tratti nelle vicinanze",it,Italian
+179,"Patchy snow possible","Patchy snow possible",近くで所により雪,近くで所により雪,ja,Japanese
+179,"Patchy snow possible","Patchy snow possible","Udan salju ora rata ing sacedhake","Udan salju ora rata ing sacedhake",jv,Javanese
+179,"Patchy snow possible","Patchy snow possible","근처 곳곳에 눈","근처 곳곳에 눈",ko,Korean
+179,"Patchy snow possible","Patchy snow possible","आजूबाजूला अनियमित बर्फ","आजूबाजूला अनियमित बर्फ",mr,Marathi
+179,"Patchy snow possible","Patchy snow possible","Plaatselijke sneeuw in de omgeving","Plaatselijke sneeuw in de omgeving",nl,Dutch
+179,"Patchy snow possible","Patchy snow possible","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ",pa,Punjabi
+179,"Patchy snow possible","Patchy snow possible","Miejscowe opady śniegu w pobliżu","Miejscowe opady śniegu w pobliżu",pl,Polish
+179,"Patchy snow possible","Patchy snow possible","Possibilidade de neve irregular","Possibilidade de neve irregular",pt,Portuguese
+179,"Patchy snow possible","Patchy snow possible","Ninsori pe porţiuni în apropiere","Ninsori pe porţiuni în apropiere",ro,Romanian
+179,"Patchy snow possible","Patchy snow possible","Местами снег","Местами снег",ru,Russian
+179,"Patchy snow possible","Patchy snow possible","ආසන්නයේ තැනින් තැන හිම","ආසන්නයේ තැනින් තැන හිම",si,Sinhalese
+179,"Patchy snow possible","Patchy snow possible","Miestami blízke sneženie","Miestami blízke sneženie",sk,Slovak
+179,"Patchy snow possible","Patchy snow possible","Mestimične snežne padavine","Mestimične snežne padavine",sr,Serbian
+179,"Patchy snow possible","Patchy snow possible","Områden med snö i närheten","Områden med snö i närheten",sv,Swedish
+179,"Patchy snow possible","Patchy snow possible","அருகில் சீரில்லாத பனிமழை","அருகில் சீரில்லாத பனிமழை",ta,Tamil
+179,"Patchy snow possible","Patchy snow possible","చెదురుమదురుగా దగ్గరల్లో మంచు","చెదురుమదురుగా దగ్గరల్లో మంచు",te,Telugu
+179,"Patchy snow possible","Patchy snow possible","Bölgesel düzensiz kar yağışlı","Bölgesel düzensiz kar yağışlı",tr,Turkish
+179,"Patchy snow possible","Patchy snow possible","Місцями сніг","Місцями сніг",uk,Ukrainian
+179,"Patchy snow possible","Patchy snow possible","قریب میں جہاں تہاں برفباری","قریب میں جہاں تہاں برفباری",ur,Urdu
+179,"Patchy snow possible","Patchy snow possible","Tuyết rơi lả tả gần đó","Tuyết rơi lả tả gần đó",vi,Vietnamese
+179,"Patchy snow possible","Patchy snow possible",周边有零星小雪,周边有零星小雪,zh,"Chinese Simplified"
+179,"Patchy snow possible","Patchy snow possible",周边有零星小雪,周边有零星小雪,zh_cmn,Mandarin
+179,"Patchy snow possible","Patchy snow possible",附近有零星雪,附近有零星雪,zh_hsn,Xiang
+179,"Patchy snow possible","Patchy snow possible",週边有零星小雪,週边有零星小雪,zh_tw,"Chinese Traditional"
+179,"Patchy snow possible","Patchy snow possible",无尽撅部落削,无尽撅部落削,zh_wuu,"Wu (Shanghainese)"
+179,"Patchy snow possible","Patchy snow possible",週边有零星小雪,週边有零星小雪,zh_yue,"Yue (Cantonese)"
+179,"Patchy snow possible","Patchy snow possible","Liyakhithika lapha nalapha eduze","Liyakhithika lapha nalapha eduze",zu,Zulu
+182,"Patchy sleet possible","Patchy sleet possible","صقيع متفاوت قريب","صقيع متفاوت قريب",ar,Arabic
+182,"Patchy sleet possible","Patchy sleet possible","Суграшици на отделни места в околността","Суграшици на отделни места в околността",bg,Bulgarian
+182,"Patchy sleet possible","Patchy sleet possible","পার্শ্ববর্তী এলাকায় অনিয়মিত বৃষ্টি সহ তুষারপাত","পার্শ্ববর্তী এলাকায় অনিয়মিত বৃষ্টি সহ তুষারপাত",bn,Bengali
+182,"Patchy sleet possible","Patchy sleet possible","Místy blízký déšť se sněhem","Místy blízký déšť se sněhem",cs,Czech
+182,"Patchy sleet possible","Patchy sleet possible","Stedvis slud og tÂ¿sne","Stedvis slud og tÂ¿sne",da,Danish
+182,"Patchy sleet possible","Patchy sleet possible","stellenweise Eisregen","stellenweise Eisregen",de,German
+182,"Patchy sleet possible","Patchy sleet possible","Κατά τόπους χιονόνερο σε κοντινή απόσταση","Κατά τόπους χιονόνερο σε κοντινή απόσταση",el,Greek
+182,"Patchy sleet possible","Patchy sleet possible","Aguanieve moderada a intervalos en las aproximaciones","Aguanieve moderada a intervalos en las aproximaciones",es,Spanish
+182,"Patchy sleet possible","Patchy sleet possible","Hajanaista räntäsadetta lähellä","Hajanaista räntäsadetta lähellä",fi,Finnish
+182,"Patchy sleet possible","Patchy sleet possible","Grésil épars à proximité","Grésil épars à proximité",fr,French
+182,"Patchy sleet possible","Patchy sleet possible","आसपास ओलों के साथ मामूली बारिश","आसपास ओलों के साथ मामूली बारिश",hi,Hindi
+182,"Patchy sleet possible","Patchy sleet possible","A közelben foltokban dara","A közelben foltokban dara",hu,Hungarian
+182,"Patchy sleet possible","Patchy sleet possible","Nevischio a tratti nelle vicinanze","Nevischio a tratti nelle vicinanze",it,Italian
+182,"Patchy sleet possible","Patchy sleet possible",近くで所によりみぞれ,近くで所によりみぞれ,ja,Japanese
+182,"Patchy sleet possible","Patchy sleet possible","Udan es lan salju ing sacedhake","Udan es lan salju ing sacedhake",jv,Javanese
+182,"Patchy sleet possible","Patchy sleet possible","근처 곳곳에 진눈깨비","근처 곳곳에 진눈깨비",ko,Korean
+182,"Patchy sleet possible","Patchy sleet possible","आजूबाजूला अनियमित गारांचा पाऊस","आजूबाजूला अनियमित गारांचा पाऊस",mr,Marathi
+182,"Patchy sleet possible","Patchy sleet possible","Plaatselijke natte sneeuw in de omgeving","Plaatselijke natte sneeuw in de omgeving",nl,Dutch
+182,"Patchy sleet possible","Patchy sleet possible","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ ਵਾਲਾ ਮੀਂਹ","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ ਵਾਲਾ ਮੀਂਹ",pa,Punjabi
+182,"Patchy sleet possible","Patchy sleet possible","Miejscowe opady śniegu z deszczem w pobliżu","Miejscowe opady śniegu z deszczem w pobliżu",pl,Polish
+182,"Patchy sleet possible","Patchy sleet possible","Possibilidade de neve molhada irregular","Possibilidade de neve molhada irregular",pt,Portuguese
+182,"Patchy sleet possible","Patchy sleet possible","Lapoviță pe porţiuni în apropiere","Lapoviță pe porţiuni în apropiere",ro,Romanian
+182,"Patchy sleet possible","Patchy sleet possible","Местами дождь со снегом","Местами дождь со снегом",ru,Russian
+182,"Patchy sleet possible","Patchy sleet possible","ආසන්නයේ තැනින් තැන හිම වැස්ස","ආසන්නයේ තැනින් තැන හිම වැස්ස",si,Sinhalese
+182,"Patchy sleet possible","Patchy sleet possible","Miestami blízky dážď so snehom","Miestami blízky dážď so snehom",sk,Slovak
+182,"Patchy sleet possible","Patchy sleet possible","Mestimična susnežica","Mestimična susnežica",sr,Serbian
+182,"Patchy sleet possible","Patchy sleet possible","Områden med snöblandat regn i närheten","Områden med snöblandat regn i närheten",sv,Swedish
+182,"Patchy sleet possible","Patchy sleet possible","அருகில் சீரில்லாத ஆலங்கட்டி மழை","அருகில் சீரில்லாத ஆலங்கட்டி மழை",ta,Tamil
+182,"Patchy sleet possible","Patchy sleet possible","చెదురుమదురుగా దగ్గరల్లో వడగండ్ల వాన","చెదురుమదురుగా దగ్గరల్లో వడగండ్ల వాన",te,Telugu
+182,"Patchy sleet possible","Patchy sleet possible","Bölgesel düzensiz karla karışık yağmurlu","Bölgesel düzensiz karla karışık yağmurlu",tr,Turkish
+182,"Patchy sleet possible","Patchy sleet possible","Місцями мокрий сніг","Місцями мокрий сніг",uk,Ukrainian
+182,"Patchy sleet possible","Patchy sleet possible","قریب میں جہاں تہاں ژالہ باری","قریب میں جہاں تہاں ژالہ باری",ur,Urdu
+182,"Patchy sleet possible","Patchy sleet possible","Mưa tuyết lả tả gần đó","Mưa tuyết lả tả gần đó",vi,Vietnamese
+182,"Patchy sleet possible","Patchy sleet possible",周边有零星小雨夹雪,周边有零星小雨夹雪,zh,"Chinese Simplified"
+182,"Patchy sleet possible","Patchy sleet possible",周边有零星小雨夹雪,周边有零星小雨夹雪,zh_cmn,Mandarin
+182,"Patchy sleet possible","Patchy sleet possible",附近有零星雨夹雪,附近有零星雨夹雪,zh_hsn,Xiang
+182,"Patchy sleet possible","Patchy sleet possible",週边有零星小雨夾雪,週边有零星小雨夾雪,zh_tw,"Chinese Traditional"
+182,"Patchy sleet possible","Patchy sleet possible",无尽撅部鱼假削,无尽撅部鱼假削,zh_wuu,"Wu (Shanghainese)"
+182,"Patchy sleet possible","Patchy sleet possible",週边有零星小雨夾雪,週边有零星小雨夾雪,zh_yue,"Yue (Cantonese)"
+182,"Patchy sleet possible","Patchy sleet possible","Kunesichotho esihambisana nomoya lapha nalapha","Kunesichotho esihambisana nomoya lapha nalapha",zu,Zulu
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","رذاذ متجمِد متفاوت قريب","رذاذ متجمِد متفاوت قريب",ar,Arabic
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Преохладени ръмежи на отделни места в околността","Преохладени ръмежи на отделни места в околността",bg,Bulgarian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","পার্শ্ববর্তী এলাকায় অনিয়মিত গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত","পার্শ্ববর্তী এলাকায় অনিয়মিত গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত",bn,Bengali
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Místy blízké mrznoucí mrholení","Místy blízké mrznoucí mrholení",cs,Czech
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Spredt finregn og risiko for isslag","Spredt finregn og risiko for isslag",da,Danish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","stellenweise gefrierender Nieselregen","stellenweise gefrierender Nieselregen",de,German
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Κατά τόπους παγωμένο ψιλόβροχο σε κοντινή απόσταση","Κατά τόπους παγωμένο ψιλόβροχο σε κοντινή απόσταση",el,Greek
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Llovizna helada a intervalos en las aproximaciones","Llovizna helada a intervalos en las aproximaciones",es,Spanish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Hajanaista jäätävää sadetta lähellä","Hajanaista jäätävää sadetta lähellä",fi,Finnish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Bruine verglaçante éparse à proximité","Bruine verglaçante éparse à proximité",fr,French
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","आसपास अलग-अलग इलाकों में जमा देने वाली बौछार","आसपास अलग-अलग इलाकों में जमा देने वाली बौछार",hi,Hindi
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","A közelben foltokban szemerkélő fagyos eső","A közelben foltokban szemerkélő fagyos eső",hu,Hungarian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Pioviggine congelantesi a tratti nelle vicinanze","Pioviggine congelantesi a tratti nelle vicinanze",it,Italian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",近くで所により着氷性の霧雨,近くで所により着氷性の霧雨,ja,Japanese
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Grimis atis ora rata ing sacedhake","Grimis atis ora rata ing sacedhake",jv,Javanese
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","근처 곳곳에 동결 이슬비","근처 곳곳에 동결 이슬비",ko,Korean
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","आजूबाजूला अनियमित गारठवणारी रिपरिप","आजूबाजूला अनियमित गारठवणारी रिपरिप",mr,Marathi
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Plaatselijke onderkoelde motregen in de omgeving","Plaatselijke onderkoelde motregen in de omgeving",nl,Dutch
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ ਵਾਲੀ ਥੋੜ੍ਹੀ ਕਿਣ-ਮਿਣ","ਨੇੜੇ ਕਿਤੇ-ਕਿਤੇ ਬਰਫ ਵਾਲੀ ਥੋੜ੍ਹੀ ਕਿਣ-ਮਿਣ",pa,Punjabi
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Miejscowe wystąpienie mroźnej mżawki w pobliżu","Miejscowe wystąpienie mroźnej mżawki w pobliżu",pl,Polish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Possibilidade de chuvisco gelado irregular","Possibilidade de chuvisco gelado irregular",pt,Portuguese
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Burniță şi polei pe porţiuni în apropiere","Burniță şi polei pe porţiuni în apropiere",ro,Romanian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Местами замерзающая морось","Местами замерзающая морось",ru,Russian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","ආසන්නයේ තැනින් තැන ඉතා ශීතල මිදෙන තරමේ සිහින් පොද","ආසන්නයේ තැනින් තැන ඉතා ශීතල මිදෙන තරමේ සිහින් පොද",si,Sinhalese
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Miestami blízke mrznúce mrholenie","Miestami blízke mrznúce mrholenie",sk,Slovak
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Mestimično kiša koja se ledi pri zemlji","Mestimično kiša koja se ledi pri zemlji",sr,Serbian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Områden med underkylt duggregn i närheten","Områden med underkylt duggregn i närheten",sv,Swedish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","அருகில் சீரில்லாத உறையவைக்கும் மழைத்தூறல்","அருகில் சீரில்லாத உறையவைக்கும் மழைத்தூறல்",ta,Tamil
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","చెదురుమదురుగా దగ్గరల్లో ఘనీభవన చినుకులు","చెదురుమదురుగా దగ్గరల్లో ఘనీభవన చినుకులు",te,Telugu
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Bölgesel düzensiz donmuş çisenti","Bölgesel düzensiz donmuş çisenti",tr,Turkish
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Місцями паморозь","Місцями паморозь",uk,Ukrainian
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","قریب میں جہاں تہاں یخ بستہ پھوہار","قریب میں جہاں تہاں یخ بستہ پھوہار",ur,Urdu
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Mưa phùn băng giá lả tả gần đó","Mưa phùn băng giá lả tả gần đó",vi,Vietnamese
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",周边有有零星小冻雾雨,周边有有零星小冻雾雨,zh,"Chinese Simplified"
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",周边有有零星小冻雾雨,周边有有零星小冻雾雨,zh_cmn,Mandarin
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",附近有冰冻零星小雨,附近有冰冻零星小雨,zh_hsn,Xiang
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",週边有零星小凍霧雨,週边有零星小凍霧雨,zh_tw,"Chinese Traditional"
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",无尽撅部董鱼,无尽撅部董鱼,zh_wuu,"Wu (Shanghainese)"
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible",週边有零星小凍霧雨,週边有零星小凍霧雨,zh_yue,"Yue (Cantonese)"
+185,"Patchy freezing drizzle possible","Patchy freezing drizzle possible","Kunokukhiza okubandayo eduze lapha nalapha","Kunokukhiza okubandayo eduze lapha nalapha",zu,Zulu
+200,"Thundery outbreaks possible","Thundery outbreaks possible","عواصف رعديَة في المناطق المجاورة","عواصف رعديَة في المناطق المجاورة",ar,Arabic
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Прояви на гръмотевици в околността","Прояви на гръмотевици в околността",bg,Bulgarian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","পার্শ্ববর্তী এলাকায় বজ্রবিদ্যুতপূর্ণ ঝড়বৃষ্টি","পার্শ্ববর্তী এলাকায় বজ্রবিদ্যুতপূর্ণ ঝড়বৃষ্টি",bn,Bengali
+200,"Thundery outbreaks possible","Thundery outbreaks possible","V okolí možnosti vzniku bouřek","V okolí možnosti vzniku bouřek",cs,Czech
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Stedvise tordenbyger","Stedvise tordenbyger",da,Danish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","gewittrige Niederschläge","gewittrige Niederschläge",de,German
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Ξέσπασματα καταιγίδας σε κοντινή","Ξέσπασματα καταιγίδας σε κοντινή",el,Greek
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Cielos tormentosos en las aproximaciones","Cielos tormentosos en las aproximaciones",es,Spanish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Ukkospuuskia lähellä","Ukkospuuskia lähellä",fi,Finnish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Foyers orageux à proximité","Foyers orageux à proximité",fr,French
+200,"Thundery outbreaks possible","Thundery outbreaks possible","आसपास गरज के साथ बारिश","आसपास गरज के साथ बारिश",hi,Hindi
+200,"Thundery outbreaks possible","Thundery outbreaks possible","A közelben hirtelen vihar","A közelben hirtelen vihar",hu,Hungarian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Precipitazioni temporalesche nelle vicinanze","Precipitazioni temporalesche nelle vicinanze",it,Italian
+200,"Thundery outbreaks possible","Thundery outbreaks possible",近くで雷の発生,近くで雷の発生,ja,Japanese
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Udan angin nganggo thathit ing sacedhake","Udan angin nganggo thathit ing sacedhake",jv,Javanese
+200,"Thundery outbreaks possible","Thundery outbreaks possible","근처에 천둥 발생","근처에 천둥 발생",ko,Korean
+200,"Thundery outbreaks possible","Thundery outbreaks possible","आजूबाजूला मेघगर्जनेसह उद्रेक","आजूबाजूला मेघगर्जनेसह उद्रेक",mr,Marathi
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Onweersbuien in de omgeving","Onweersbuien in de omgeving",nl,Dutch
+200,"Thundery outbreaks possible","Thundery outbreaks possible","ਨੇੜੇ ਗਰਜ ਵਾਲੇ ਭਾਂਬੜ","ਨੇੜੇ ਗਰਜ ਵਾਲੇ ਭਾਂਬੜ",pa,Punjabi
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Gwałtowne grzmienia w pobliżu","Gwałtowne grzmienia w pobliżu",pl,Polish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Possibilidade de trovoada","Possibilidade de trovoada",pt,Portuguese
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Tunete în apropiere","Tunete în apropiere",ro,Romanian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Местами грозы","Местами грозы",ru,Russian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","ආසන්නයේ ගිගුරුම් සහිත වැසි","ආසන්නයේ ගිගුරුම් සහිත වැසි",si,Sinhalese
+200,"Thundery outbreaks possible","Thundery outbreaks possible","V okolí možnosti vzniku búrok","V okolí možnosti vzniku búrok",sk,Slovak
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Mestimično lokalno nevreme s grmljavinom","Mestimično lokalno nevreme s grmljavinom",sr,Serbian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Åska i närheten","Åska i närheten",sv,Swedish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","அருகில் இடி மின்னல்கள்","அருகில் இடி மின்னல்கள்",ta,Tamil
+200,"Thundery outbreaks possible","Thundery outbreaks possible","దగ్గరల్లో పిడుగు పడటం","దగ్గరల్లో పిడుగు పడటం",te,Telugu
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Bölgesel düzensiz gök gürültülü yağmurlu","Bölgesel düzensiz gök gürültülü yağmurlu",tr,Turkish
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Місцями грози","Місцями грози",uk,Ukrainian
+200,"Thundery outbreaks possible","Thundery outbreaks possible","قریب میں طوفان برق و باراں","قریب میں طوفان برق و باراں",ur,Urdu
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Các cơn giông tố nổi lên gần đó","Các cơn giông tố nổi lên gần đó",vi,Vietnamese
+200,"Thundery outbreaks possible","Thundery outbreaks possible",周边有雷雨,周边有雷雨,zh,"Chinese Simplified"
+200,"Thundery outbreaks possible","Thundery outbreaks possible",周边有雷雨,周边有雷雨,zh_cmn,Mandarin
+200,"Thundery outbreaks possible","Thundery outbreaks possible",附近有雷暴,附近有雷暴,zh_hsn,Xiang
+200,"Thundery outbreaks possible","Thundery outbreaks possible",週边有雷雨,週边有雷雨,zh_tw,"Chinese Traditional"
+200,"Thundery outbreaks possible","Thundery outbreaks possible",礼八四无尽贴气无好,礼八四无尽贴气无好,zh_wuu,"Wu (Shanghainese)"
+200,"Thundery outbreaks possible","Thundery outbreaks possible",週边有雷雨,週边有雷雨,zh_yue,"Yue (Cantonese)"
+200,"Thundery outbreaks possible","Thundery outbreaks possible","Kunokuduma kwezulu eduze","Kunokuduma kwezulu eduze",zu,Zulu
+227,"Blowing snow","Blowing snow","هبَات من الثلوج","هبَات من الثلوج",ar,Arabic
+227,"Blowing snow","Blowing snow","Навяващ сняг","Навяващ сняг",bg,Bulgarian
+227,"Blowing snow","Blowing snow",তুষারঝড়,তুষারঝড়,bn,Bengali
+227,"Blowing snow","Blowing snow","Vítr se sněžením","Vítr se sněžením",cs,Czech
+227,"Blowing snow","Blowing snow","HÂ¿j snefygning","HÂ¿j snefygning",da,Danish
+227,"Blowing snow","Blowing snow",Schneeverwehungen,Schneeverwehungen,de,German
+227,"Blowing snow","Blowing snow","Φυσάει χιόνι","Φυσάει χιόνι",el,Greek
+227,"Blowing snow","Blowing snow","Chubascos de nieve","Chubascos de nieve",es,Spanish
+227,"Blowing snow","Blowing snow",Lumipuuska,Lumipuuska,fi,Finnish
+227,"Blowing snow","Blowing snow","Rafales de neige","Rafales de neige",fr,French
+227,"Blowing snow","Blowing snow","ब्लोइंग स्नो","ब्लोइंग स्नो",hi,Hindi
+227,"Blowing snow","Blowing snow",Hófúvás,Hófúvás,hu,Hungarian
+227,"Blowing snow","Blowing snow","Turbinio di neve","Turbinio di neve",it,Italian
+227,"Blowing snow","Blowing snow",吹雪,吹雪,ja,Japanese
+227,"Blowing snow","Blowing snow","Angin salju","Angin salju",jv,Javanese
+227,"Blowing snow","Blowing snow","날리는 눈","날리는 눈",ko,Korean
+227,"Blowing snow","Blowing snow","उधळणारा 	बर्फ","उधळणारा 	बर्फ",mr,Marathi
+227,"Blowing snow","Blowing snow",Driftsneeuw,Driftsneeuw,nl,Dutch
+227,"Blowing snow","Blowing snow","ਉੱਡ ਰਹੀ ਬਰਫ","ਉੱਡ ਰਹੀ ਬਰਫ",pa,Punjabi
+227,"Blowing snow","Blowing snow","Wiatr ze śniegiem","Wiatr ze śniegiem",pl,Polish
+227,"Blowing snow","Blowing snow","Rajadas de vento com neve","Rajadas de vento com neve",pt,Portuguese
+227,"Blowing snow","Blowing snow","Ninsoare viscolită","Ninsoare viscolită",ro,Romanian
+227,"Blowing snow","Blowing snow",Поземок,Поземок,ru,Russian
+227,"Blowing snow","Blowing snow","සුළඟට ගසා ගෙන යන හිම","සුළඟට ගසා ගෙන යන හිම",si,Sinhalese
+227,"Blowing snow","Blowing snow","Vietor so snežením","Vietor so snežením",sk,Slovak
+227,"Blowing snow","Blowing snow","Sneg nošen vetrom","Sneg nošen vetrom",sr,Serbian
+227,"Blowing snow","Blowing snow","Högt snödrev","Högt snödrev",sv,Swedish
+227,"Blowing snow","Blowing snow","பலத்த பனிமழை","பலத்த பனிமழை",ta,Tamil
+227,"Blowing snow","Blowing snow","మంచు వెదజల్లడం","మంచు వెదజల్లడం",te,Telugu
+227,"Blowing snow","Blowing snow",Tipi,Tipi,tr,Turkish
+227,"Blowing snow","Blowing snow","Низова хуртовина","Низова хуртовина",uk,Ukrainian
+227,"Blowing snow","Blowing snow","جھکڑ کے ساتھ برف باری","جھکڑ کے ساتھ برف باری",ur,Urdu
+227,"Blowing snow","Blowing snow","Tuyết thổi mạnh","Tuyết thổi mạnh",vi,Vietnamese
+227,"Blowing snow","Blowing snow",飞雪,飞雪,zh,"Chinese Simplified"
+227,"Blowing snow","Blowing snow",飞雪,飞雪,zh_cmn,Mandarin
+227,"Blowing snow","Blowing snow",飞雪,飞雪,zh_hsn,Xiang
+227,"Blowing snow","Blowing snow",飛雪,飛雪,zh_tw,"Chinese Traditional"
+227,"Blowing snow","Blowing snow",次削,次削,zh_wuu,"Wu (Shanghainese)"
+227,"Blowing snow","Blowing snow",飛雪,飛雪,zh_yue,"Yue (Cantonese)"
+227,"Blowing snow","Blowing snow","Ukukhithika okunomoya","Ukukhithika okunomoya",zu,Zulu
+230,Blizzard,Blizzard,"عاصفة ثلجيَة","عاصفة ثلجيَة",ar,Arabic
+230,Blizzard,Blizzard,"Снежна буря","Снежна буря",bg,Bulgarian
+230,Blizzard,Blizzard,"ভয়ঙ্কর ও প্রবল তুষারঝড়","ভয়ঙ্কর ও প্রবল তুষারঝড়",bn,Bengali
+230,Blizzard,Blizzard,"Sněhová bouře","Sněhová bouře",cs,Czech
+230,Blizzard,Blizzard,Snestorm,Snestorm,da,Danish
+230,Blizzard,Blizzard,Schneesturm,Schneesturm,de,German
+230,Blizzard,Blizzard,Χιονοθύελλα,Χιονοθύελλα,el,Greek
+230,Blizzard,Blizzard,Ventisca,Ventisca,es,Spanish
+230,Blizzard,Blizzard,Lumimyrsky,Lumimyrsky,fi,Finnish
+230,Blizzard,Blizzard,Blizzard,Blizzard,fr,French
+230,Blizzard,Blizzard,"बर्फानी तूफान","बर्फानी तूफान",hi,Hindi
+230,Blizzard,Blizzard,Hóvihar,Hóvihar,hu,Hungarian
+230,Blizzard,Blizzard,Blizzard,Blizzard,it,Italian
+230,Blizzard,Blizzard,猛吹雪,猛吹雪,ja,Japanese
+230,Blizzard,Blizzard,"Udan angin salju","Udan angin salju",jv,Javanese
+230,Blizzard,Blizzard,눈보라,눈보라,ko,Korean
+230,Blizzard,Blizzard,हिमवादळ,हिमवादळ,mr,Marathi
+230,Blizzard,Blizzard,Sneeuwstorm,Sneeuwstorm,nl,Dutch
+230,Blizzard,Blizzard,"ਬਰਫੀਲਾ ਤੂਫਾਨ","ਬਰਫੀਲਾ ਤੂਫਾਨ",pa,Punjabi
+230,Blizzard,Blizzard,Śnieżyca,Śnieżyca,pl,Polish
+230,Blizzard,Blizzard,Nevasca,Nevasca,pt,Portuguese
+230,Blizzard,Blizzard,Viscol,Viscol,ro,Romanian
+230,Blizzard,Blizzard,Метель,Метель,ru,Russian
+230,Blizzard,Blizzard,"හිම කුණාටුව","හිම කුණාටුව",si,Sinhalese
+230,Blizzard,Blizzard,"Snehová búrka","Snehová búrka",sk,Slovak
+230,Blizzard,Blizzard,"Snežna mećava","Snežna mećava",sr,Serbian
+230,Blizzard,Blizzard,"Häftig snöstorm","Häftig snöstorm",sv,Swedish
+230,Blizzard,Blizzard,"பனிச் சூறாவளி","பனிச் சூறாவளி",ta,Tamil
+230,Blizzard,Blizzard,"మంచు తుఫాను","మంచు తుఫాను",te,Telugu
+230,Blizzard,Blizzard,"Kar fırtınası","Kar fırtınası",tr,Turkish
+230,Blizzard,Blizzard,Заметіль,Заметіль,uk,Ukrainian
+230,Blizzard,Blizzard,"برف باری کا طوفان","برف باری کا طوفان",ur,Urdu
+230,Blizzard,Blizzard,"Trận bão tuyết","Trận bão tuyết",vi,Vietnamese
+230,Blizzard,Blizzard,暴风雪,暴风雪,zh,"Chinese Simplified"
+230,Blizzard,Blizzard,暴风雪,暴风雪,zh_cmn,Mandarin
+230,Blizzard,Blizzard,暴风雪,暴风雪,zh_hsn,Xiang
+230,Blizzard,Blizzard,暴風雪,暴風雪,zh_tw,"Chinese Traditional"
+230,Blizzard,Blizzard,保风削,保风削,zh_wuu,"Wu (Shanghainese)"
+230,Blizzard,Blizzard,暴風雪,暴風雪,zh_yue,"Yue (Cantonese)"
+230,Blizzard,Blizzard,"Isichotho esinamandla","Isichotho esinamandla",zu,Zulu
+248,Fog,Fog,ضباب,ضباب,ar,Arabic
+248,Fog,Fog,"Тежка мъгла","Тежка мъгла",bg,Bulgarian
+248,Fog,Fog,কুয়াশা,কুয়াশা,bn,Bengali
+248,Fog,Fog,Mlha,Mlha,cs,Czech
+248,Fog,Fog,TÅ’ge,TÅ’ge,da,Danish
+248,Fog,Fog,Nebel,Nebel,de,German
+248,Fog,Fog,Ομίχλη,Ομίχλη,el,Greek
+248,Fog,Fog,"Niebla moderada","Niebla moderada",es,Spanish
+248,Fog,Fog,Sumu,Sumu,fi,Finnish
+248,Fog,Fog,Brouillard,Brouillard,fr,French
+248,Fog,Fog,धुंध,धुंध,hi,Hindi
+248,Fog,Fog,Köd,Köd,hu,Hungarian
+248,Fog,Fog,Nebbia,Nebbia,it,Italian
+248,Fog,Fog,霧,霧,ja,Japanese
+248,Fog,Fog,"Pedhut Lelimengan","Pedhut Lelimengan",jv,Javanese
+248,Fog,Fog,안개,안개,ko,Korean
+248,Fog,Fog,धुके,धुके,mr,Marathi
+248,Fog,Fog,Mist,Mist,nl,Dutch
+248,Fog,Fog,ਧੁੰਦ,ਧੁੰਦ,pa,Punjabi
+248,Fog,Fog,Mgła,Mgła,pl,Polish
+248,Fog,Fog,Nevoeiro,Nevoeiro,pt,Portuguese
+248,Fog,Fog,"Ceață densă","Ceață densă",ro,Romanian
+248,Fog,Fog,Туман,Туман,ru,Russian
+248,Fog,Fog,"ඝන මීදුම","ඝන මීදුම",si,Sinhalese
+248,Fog,Fog,Hmla,Hmla,sk,Slovak
+248,Fog,Fog,Magla,Magla,sr,Serbian
+248,Fog,Fog,Dimma,Dimma,sv,Swedish
+248,Fog,Fog,மூடுபனி,மூடுபனி,ta,Tamil
+248,Fog,Fog,పొగమంచు,పొగమంచు,te,Telugu
+248,Fog,Fog,Puslu,Puslu,tr,Turkish
+248,Fog,Fog,Туман,Туман,uk,Ukrainian
+248,Fog,Fog,دھند,دھند,ur,Urdu
+248,Fog,Fog,"Sương mù","Sương mù",vi,Vietnamese
+248,Fog,Fog,雾,雾,zh,"Chinese Simplified"
+248,Fog,Fog,雾,雾,zh_cmn,Mandarin
+248,Fog,Fog,有雾,有雾,zh_hsn,Xiang
+248,Fog,Fog,霧,霧,zh_tw,"Chinese Traditional"
+248,Fog,Fog,悠吴,悠吴,zh_wuu,"Wu (Shanghainese)"
+248,Fog,Fog,霧,霧,zh_yue,"Yue (Cantonese)"
+248,Fog,Fog,Inkungu,Inkungu,zu,Zulu
+260,"Freezing fog","Freezing fog","ضباب متجمِد","ضباب متجمِد",ar,Arabic
+260,"Freezing fog","Freezing fog","Преохладена мъгла","Преохладена мъгла",bg,Bulgarian
+260,"Freezing fog","Freezing fog","হিম শীতল কুয়াশা","হিম শীতল কুয়াশা",bn,Bengali
+260,"Freezing fog","Freezing fog","Mrznoucí mlha","Mrznoucí mlha",cs,Czech
+260,"Freezing fog","Freezing fog",RimtÅ’ge,RimtÅ’ge,da,Danish
+260,"Freezing fog","Freezing fog",Eisnebel,Eisnebel,de,German
+260,"Freezing fog","Freezing fog","Παγωμένη ομίχλη","Παγωμένη ομίχλη",el,Greek
+260,"Freezing fog","Freezing fog","Niebla helada","Niebla helada",es,Spanish
+260,"Freezing fog","Freezing fog","Jäätävä sumu","Jäätävä sumu",fi,Finnish
+260,"Freezing fog","Freezing fog","Brouillard givrant","Brouillard givrant",fr,French
+260,"Freezing fog","Freezing fog","जमा देने वाली धुंध","जमा देने वाली धुंध",hi,Hindi
+260,"Freezing fog","Freezing fog","Jeges köd","Jeges köd",hu,Hungarian
+260,"Freezing fog","Freezing fog","Nebbia congelantesi","Nebbia congelantesi",it,Italian
+260,"Freezing fog","Freezing fog",着氷性の霧,着氷性の霧,ja,Japanese
+260,"Freezing fog","Freezing fog","Pedhut Atis Lelimengan","Pedhut Atis Lelimengan",jv,Javanese
+260,"Freezing fog","Freezing fog","동결 안개","동결 안개",ko,Korean
+260,"Freezing fog","Freezing fog","गारठवणारे धुके","गारठवणारे धुके",mr,Marathi
+260,"Freezing fog","Freezing fog","Aanvriezende mist","Aanvriezende mist",nl,Dutch
+260,"Freezing fog","Freezing fog","ਬਰਫ ਵਾਲੀ ਧੁੰਦ","ਬਰਫ ਵਾਲੀ ਧੁੰਦ",pa,Punjabi
+260,"Freezing fog","Freezing fog","Mroźna mgła","Mroźna mgła",pl,Polish
+260,"Freezing fog","Freezing fog","Nevoeiro gelado","Nevoeiro gelado",pt,Portuguese
+260,"Freezing fog","Freezing fog",Chiciură,Chiciură,ro,Romanian
+260,"Freezing fog","Freezing fog","Переохлажденный туман","Переохлажденный туман",ru,Russian
+260,"Freezing fog","Freezing fog","අධික ශීතල මිදෙන තරමේ ඝන මීදුම","අධික ශීතල මිදෙන තරමේ ඝන මීදුම",si,Sinhalese
+260,"Freezing fog","Freezing fog","Mrznúca hmla","Mrznúca hmla",sk,Slovak
+260,"Freezing fog","Freezing fog","Magla koja se ledi","Magla koja se ledi",sr,Serbian
+260,"Freezing fog","Freezing fog",Dimfrost,Dimfrost,sv,Swedish
+260,"Freezing fog","Freezing fog","உறையவைக்கும் மூடுபனி","உறையவைக்கும் மூடுபனி",ta,Tamil
+260,"Freezing fog","Freezing fog","ఘనీభవన పొగమంచు","ఘనీభవన పొగమంచు",te,Telugu
+260,"Freezing fog","Freezing fog","Dondurucu sis","Dondurucu sis",tr,Turkish
+260,"Freezing fog","Freezing fog","Туман з памороззю","Туман з памороззю",uk,Ukrainian
+260,"Freezing fog","Freezing fog","جمادینے والی دھند","جمادینے والی دھند",ur,Urdu
+260,"Freezing fog","Freezing fog","Sương mù băng giá","Sương mù băng giá",vi,Vietnamese
+260,"Freezing fog","Freezing fog",冻雾,冻雾,zh,"Chinese Simplified"
+260,"Freezing fog","Freezing fog",冻雾,冻雾,zh_cmn,Mandarin
+260,"Freezing fog","Freezing fog",冰冻雾,冰冻雾,zh_hsn,Xiang
+260,"Freezing fog","Freezing fog",凍霧,凍霧,zh_tw,"Chinese Traditional"
+260,"Freezing fog","Freezing fog",悠东吴,悠东吴,zh_wuu,"Wu (Shanghainese)"
+260,"Freezing fog","Freezing fog",凍霧,凍霧,zh_yue,"Yue (Cantonese)"
+260,"Freezing fog","Freezing fog","Inkungu enamakhaza","Inkungu enamakhaza",zu,Zulu
+263,"Patchy light drizzle","Patchy light drizzle","رذاذ خفيف متفاوت","رذاذ خفيف متفاوت",ar,Arabic
+263,"Patchy light drizzle","Patchy light drizzle","Леки превалявания на отделни места","Леки превалявания на отделни места",bg,Bulgarian
+263,"Patchy light drizzle","Patchy light drizzle","এক পশলা হাল্কা গুড়ি গুড়ি বৃষ্টিপাত","এক পশলা হাল্কা গুড়ি গুড়ি বৃষ্টিপাত",bn,Bengali
+263,"Patchy light drizzle","Patchy light drizzle","Místy slabé mrholení","Místy slabé mrholení",cs,Czech
+263,"Patchy light drizzle","Patchy light drizzle",""Stedvis, let finregn"",""Stedvis, let finregn"",da,Danish
+263,"Patchy light drizzle","Patchy light drizzle","stellenweise Nieselregen","stellenweise Nieselregen",de,German
+263,"Patchy light drizzle","Patchy light drizzle","Κατά τόπους ελαφρό ψιλόβροχο","Κατά τόπους ελαφρό ψιλόβροχο",el,Greek
+263,"Patchy light drizzle","Patchy light drizzle","Llovizna a intervalos","Llovizna a intervalos",es,Spanish
+263,"Patchy light drizzle","Patchy light drizzle","Hajanainen kevyt tihkusade","Hajanainen kevyt tihkusade",fi,Finnish
+263,"Patchy light drizzle","Patchy light drizzle","Bruine légère éparse","Bruine légère éparse",fr,French
+263,"Patchy light drizzle","Patchy light drizzle","अलग-अलग इलाकों में मामूली सी बौछार","अलग-अलग इलाकों में मामूली सी बौछार",hi,Hindi
+263,"Patchy light drizzle","Patchy light drizzle","Foltokban enyhe szemerkélő eső","Foltokban enyhe szemerkélő eső",hu,Hungarian
+263,"Patchy light drizzle","Patchy light drizzle","Pioviggine debole a tratti","Pioviggine debole a tratti",it,Italian
+263,"Patchy light drizzle","Patchy light drizzle",所により霧雨,所により霧雨,ja,Japanese
+263,"Patchy light drizzle","Patchy light drizzle","Grimis ora rata","Grimis ora rata",jv,Javanese
+263,"Patchy light drizzle","Patchy light drizzle","곳곳에 가벼운 이슬비","곳곳에 가벼운 이슬비",ko,Korean
+263,"Patchy light drizzle","Patchy light drizzle","अनियमित हलकीशी रिपरिप","अनियमित हलकीशी रिपरिप",mr,Marathi
+263,"Patchy light drizzle","Patchy light drizzle","Plaatselijke lichte motregen","Plaatselijke lichte motregen",nl,Dutch
+263,"Patchy light drizzle","Patchy light drizzle","ਕਿਤੇ-ਕਿਤੇ ਹਲਕੀ ਕਿਣ-ਮਿਣ","ਕਿਤੇ-ਕਿਤੇ ਹਲਕੀ ਕਿਣ-ਮਿਣ",pa,Punjabi
+263,"Patchy light drizzle","Patchy light drizzle","Miejscowe wystąpienie lekkiej mżawki","Miejscowe wystąpienie lekkiej mżawki",pl,Polish
+263,"Patchy light drizzle","Patchy light drizzle","Chuvisco irregular","Chuvisco irregular",pt,Portuguese
+263,"Patchy light drizzle","Patchy light drizzle","Burniță uşoară pe porțiuni","Burniță uşoară pe porțiuni",ro,Romanian
+263,"Patchy light drizzle","Patchy light drizzle","Местами слабая морось","Местами слабая морось",ru,Russian
+263,"Patchy light drizzle","Patchy light drizzle","තැනින් තැන සැහැල්ලු ‍සිරි පොද","තැනින් තැන සැහැල්ලු ‍සිරි පොද",si,Sinhalese
+263,"Patchy light drizzle","Patchy light drizzle","Miestami slabé mrholenie","Miestami slabé mrholenie",sk,Slovak
+263,"Patchy light drizzle","Patchy light drizzle","Mestimično slaba sitna kiša","Mestimično slaba sitna kiša",sr,Serbian
+263,"Patchy light drizzle","Patchy light drizzle","Områden med lätt duggregn","Områden med lätt duggregn",sv,Swedish
+263,"Patchy light drizzle","Patchy light drizzle","சீரில்லாத இலேசான மழைத்தூறல்","சீரில்லாத இலேசான மழைத்தூறல்",ta,Tamil
+263,"Patchy light drizzle","Patchy light drizzle","చెదురుమదురుగా తేలికపాటి జల్లు","చెదురుమదురుగా తేలికపాటి జల్లు",te,Telugu
+263,"Patchy light drizzle","Patchy light drizzle","Bölgesel düzensiz hafif çisenti","Bölgesel düzensiz hafif çisenti",tr,Turkish
+263,"Patchy light drizzle","Patchy light drizzle","Місцями невеликий дощ","Місцями невеликий дощ",uk,Ukrainian
+263,"Patchy light drizzle","Patchy light drizzle","جہاں تہاں ہلکی بوندا باندی","جہاں تہاں ہلکی بوندا باندی",ur,Urdu
+263,"Patchy light drizzle","Patchy light drizzle","Mưa phùn nhẹ lả tả","Mưa phùn nhẹ lả tả",vi,Vietnamese
+263,"Patchy light drizzle","Patchy light drizzle",零星细雨,零星细雨,zh,"Chinese Simplified"
+263,"Patchy light drizzle","Patchy light drizzle",零星细雨,零星细雨,zh_cmn,Mandarin
+263,"Patchy light drizzle","Patchy light drizzle",零星小雨,零星小雨,zh_hsn,Xiang
+263,"Patchy light drizzle","Patchy light drizzle",片狀細雨,片狀細雨,zh_tw,"Chinese Traditional"
+263,"Patchy light drizzle","Patchy light drizzle",撅部悠肖鱼,撅部悠肖鱼,zh_wuu,"Wu (Shanghainese)"
+263,"Patchy light drizzle","Patchy light drizzle",零星細雨,零星細雨,zh_yue,"Yue (Cantonese)"
+263,"Patchy light drizzle","Patchy light drizzle","Ukukhiza okuncane lapha nalapha","Ukukhiza okuncane lapha nalapha",zu,Zulu
+266,"Light drizzle","Light drizzle","رذاذ خفيف متفاوت","رذاذ خفيف متفاوت",ar,Arabic
+266,"Light drizzle","Light drizzle","Леки превалявания","Леки превалявания",bg,Bulgarian
+266,"Light drizzle","Light drizzle","হাল্কা গুড়ি গুড়ি বৃষ্টিপাত","হাল্কা গুড়ি গুড়ি বৃষ্টিপাত",bn,Bengali
+266,"Light drizzle","Light drizzle","Slabé mrholení","Slabé mrholení",cs,Czech
+266,"Light drizzle","Light drizzle",Finregn,Finregn,da,Danish
+266,"Light drizzle","Light drizzle",Nieselregen,Nieselregen,de,German
+266,"Light drizzle","Light drizzle","Ελαφρό ψιλόβροχο","Ελαφρό ψιλόβροχο",el,Greek
+266,"Light drizzle","Light drizzle",Llovizna,Llovizna,es,Spanish
+266,"Light drizzle","Light drizzle","Kevyt tihkusade","Kevyt tihkusade",fi,Finnish
+266,"Light drizzle","Light drizzle","Bruine légère","Bruine légère",fr,French
+266,"Light drizzle","Light drizzle","हल्की बौछार","हल्की बौछार",hi,Hindi
+266,"Light drizzle","Light drizzle","Enyhe szemerkélő eső","Enyhe szemerkélő eső",hu,Hungarian
+266,"Light drizzle","Light drizzle","Pioviggine debole","Pioviggine debole",it,Italian
+266,"Light drizzle","Light drizzle",霧雨,霧雨,ja,Japanese
+266,"Light drizzle","Light drizzle","Grimis ora deres","Grimis ora deres",jv,Javanese
+266,"Light drizzle","Light drizzle","가벼운 이슬비","가벼운 이슬비",ko,Korean
+266,"Light drizzle","Light drizzle","हलकीशी रिपरिप","हलकीशी रिपरिप",mr,Marathi
+266,"Light drizzle","Light drizzle","Lichte motregen","Lichte motregen",nl,Dutch
+266,"Light drizzle","Light drizzle","ਹਲਕੀ ਕਿਣ-ਮਿਣ","ਹਲਕੀ ਕਿਣ-ਮਿਣ",pa,Punjabi
+266,"Light drizzle","Light drizzle","Lekka mżawka","Lekka mżawka",pl,Polish
+266,"Light drizzle","Light drizzle",Chuvisco,Chuvisco,pt,Portuguese
+266,"Light drizzle","Light drizzle","Burniță uşoară","Burniță uşoară",ro,Romanian
+266,"Light drizzle","Light drizzle","Слабая морось","Слабая морось",ru,Russian
+266,"Light drizzle","Light drizzle","සැහැල්ලු සිරි පොද","සැහැල්ලු සිරි පොද",si,Sinhalese
+266,"Light drizzle","Light drizzle","Slabé mrholenie","Slabé mrholenie",sk,Slovak
+266,"Light drizzle","Light drizzle","Sitna kiša","Sitna kiša",sr,Serbian
+266,"Light drizzle","Light drizzle","Lätt duggregn","Lätt duggregn",sv,Swedish
+266,"Light drizzle","Light drizzle","இலேசான மழைத்தூறல்","இலேசான மழைத்தூறல்",ta,Tamil
+266,"Light drizzle","Light drizzle","తేలికపాటి జల్లు","తేలికపాటి జల్లు",te,Telugu
+266,"Light drizzle","Light drizzle","Hafif çisenti","Hafif çisenti",tr,Turkish
+266,"Light drizzle","Light drizzle","Невеликий дощ","Невеликий дощ",uk,Ukrainian
+266,"Light drizzle","Light drizzle","ہلکی بوندا باندی","ہلکی بوندا باندی",ur,Urdu
+266,"Light drizzle","Light drizzle","Mưa phùn nhẹ","Mưa phùn nhẹ",vi,Vietnamese
+266,"Light drizzle","Light drizzle",细雨,细雨,zh,"Chinese Simplified"
+266,"Light drizzle","Light drizzle",细雨,细雨,zh_cmn,Mandarin
+266,"Light drizzle","Light drizzle",小雨,小雨,zh_hsn,Xiang
+266,"Light drizzle","Light drizzle",細雨,細雨,zh_tw,"Chinese Traditional"
+266,"Light drizzle","Light drizzle",卯猫鱼,卯猫鱼,zh_wuu,"Wu (Shanghainese)"
+266,"Light drizzle","Light drizzle",細雨,細雨,zh_yue,"Yue (Cantonese)"
+266,"Light drizzle","Light drizzle","Ukukhiza okuncane","Ukukhiza okuncane",zu,Zulu
+281,"Freezing drizzle","Freezing drizzle","رذاذ متجمِد","رذاذ متجمِد",ar,Arabic
+281,"Freezing drizzle","Freezing drizzle","Преохладени ръмежи","Преохладени ръмежи",bg,Bulgarian
+281,"Freezing drizzle","Freezing drizzle","হাল্কা গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত","হাল্কা গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত",bn,Bengali
+281,"Freezing drizzle","Freezing drizzle","Mrznoucí mrholení","Mrznoucí mrholení",cs,Czech
+281,"Freezing drizzle","Freezing drizzle","Finregn og risiko for isslag","Finregn og risiko for isslag",da,Danish
+281,"Freezing drizzle","Freezing drizzle","gefrierender Nieselregen","gefrierender Nieselregen",de,German
+281,"Freezing drizzle","Freezing drizzle","Παγωμένο ψιλόβροχο","Παγωμένο ψιλόβροχο",el,Greek
+281,"Freezing drizzle","Freezing drizzle","Llovizna helada","Llovizna helada",es,Spanish
+281,"Freezing drizzle","Freezing drizzle","Jäätävä tihkusade","Jäätävä tihkusade",fi,Finnish
+281,"Freezing drizzle","Freezing drizzle","Bruine verglaçante","Bruine verglaçante",fr,French
+281,"Freezing drizzle","Freezing drizzle","जमा देने वाली बौछार","जमा देने वाली बौछार",hi,Hindi
+281,"Freezing drizzle","Freezing drizzle","Fagyos szemerkélő eső","Fagyos szemerkélő eső",hu,Hungarian
+281,"Freezing drizzle","Freezing drizzle","Pioviggine congelantesi","Pioviggine congelantesi",it,Italian
+281,"Freezing drizzle","Freezing drizzle",着氷性の霧雨,着氷性の霧雨,ja,Japanese
+281,"Freezing drizzle","Freezing drizzle","Grimis atis","Grimis atis",jv,Javanese
+281,"Freezing drizzle","Freezing drizzle","동결 이슬비","동결 이슬비",ko,Korean
+281,"Freezing drizzle","Freezing drizzle","गारठवणारी रिपरिप","गारठवणारी रिपरिप",mr,Marathi
+281,"Freezing drizzle","Freezing drizzle","Onderkoelde motregen","Onderkoelde motregen",nl,Dutch
+281,"Freezing drizzle","Freezing drizzle","ਬਰਫ ਵਾਲੀ ਕਿਣ-ਮਿਣ","ਬਰਫ ਵਾਲੀ ਕਿਣ-ਮਿਣ",pa,Punjabi
+281,"Freezing drizzle","Freezing drizzle","Mroźna mżawka","Mroźna mżawka",pl,Polish
+281,"Freezing drizzle","Freezing drizzle","Chuvisco gelado","Chuvisco gelado",pt,Portuguese
+281,"Freezing drizzle","Freezing drizzle","Burniță înghețată","Burniță înghețată",ro,Romanian
+281,"Freezing drizzle","Freezing drizzle","Замерзающая морось","Замерзающая морось",ru,Russian
+281,"Freezing drizzle","Freezing drizzle","මිදෙන තරමට ශීතල සිරි පොද","මිදෙන තරමට ශීතල සිරි පොද",si,Sinhalese
+281,"Freezing drizzle","Freezing drizzle","Mrznúce mrholenie","Mrznúce mrholenie",sk,Slovak
+281,"Freezing drizzle","Freezing drizzle","Sitna kiša koja se ledi","Sitna kiša koja se ledi",sr,Serbian
+281,"Freezing drizzle","Freezing drizzle","Underkylt duggregn","Underkylt duggregn",sv,Swedish
+281,"Freezing drizzle","Freezing drizzle","உறையவைக்கும் மழைத்தூறல்","உறையவைக்கும் மழைத்தூறல்",ta,Tamil
+281,"Freezing drizzle","Freezing drizzle","ఘనీభవన జల్లు","ఘనీభవన జల్లు",te,Telugu
+281,"Freezing drizzle","Freezing drizzle","Dondurucu çisenti","Dondurucu çisenti",tr,Turkish
+281,"Freezing drizzle","Freezing drizzle",Ожеледиця,Ожеледиця,uk,Ukrainian
+281,"Freezing drizzle","Freezing drizzle","جمادینے والی پھوار","جمادینے والی پھوار",ur,Urdu
+281,"Freezing drizzle","Freezing drizzle","Mưa phùn băng giá","Mưa phùn băng giá",vi,Vietnamese
+281,"Freezing drizzle","Freezing drizzle",冻雾雨,冻雾雨,zh,"Chinese Simplified"
+281,"Freezing drizzle","Freezing drizzle",冻雾雨,冻雾雨,zh_cmn,Mandarin
+281,"Freezing drizzle","Freezing drizzle",冰冻小雨,冰冻小雨,zh_hsn,Xiang
+281,"Freezing drizzle","Freezing drizzle",凍霧雨,凍霧雨,zh_tw,"Chinese Traditional"
+281,"Freezing drizzle","Freezing drizzle",董鱼,董鱼,zh_wuu,"Wu (Shanghainese)"
+281,"Freezing drizzle","Freezing drizzle",凍霧雨,凍霧雨,zh_yue,"Yue (Cantonese)"
+281,"Freezing drizzle","Freezing drizzle","Ukukhiza okunamakhaza","Ukukhiza okunamakhaza",zu,Zulu
+284,"Heavy freezing drizzle","Heavy freezing drizzle","رذاذ متجمِد شديد","رذاذ متجمِد شديد",ar,Arabic
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Силни преохладени ръмежи","Силни преохладени ръмежи",bg,Bulgarian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","ভারী গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত","ভারী গুড়ি গুড়ি হিম শীতল বৃষ্টিপাত",bn,Bengali
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Silné mrznoucí mrholení","Silné mrznoucí mrholení",cs,Czech
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Finregn og risiko for isslag","Finregn og risiko for isslag",da,Danish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","starker Nieselregen","starker Nieselregen",de,German
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Ισχυρό παγωμένο ψιλόβροχο","Ισχυρό παγωμένο ψιλόβροχο",el,Greek
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Fuerte llovizna helada","Fuerte llovizna helada",es,Spanish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Rankka jäätävä tihkusade","Rankka jäätävä tihkusade",fi,Finnish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Forte bruine verglaçante","Forte bruine verglaçante",fr,French
+284,"Heavy freezing drizzle","Heavy freezing drizzle","बेहद जमा देने वाली बौछार","बेहद जमा देने वाली बौछार",hi,Hindi
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Heves szemerkélő fagyos eső","Heves szemerkélő fagyos eső",hu,Hungarian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Pioviggine congelantesi forte","Pioviggine congelantesi forte",it,Italian
+284,"Heavy freezing drizzle","Heavy freezing drizzle",強い着氷性の霧雨,強い着氷性の霧雨,ja,Japanese
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Grimis deres atis","Grimis deres atis",jv,Javanese
+284,"Heavy freezing drizzle","Heavy freezing drizzle","심한 동결 이슬비","심한 동결 이슬비",ko,Korean
+284,"Heavy freezing drizzle","Heavy freezing drizzle","जोरदार गारठवणारी रिपरिप","जोरदार गारठवणारी रिपरिप",mr,Marathi
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Zware onderkoelde motregen","Zware onderkoelde motregen",nl,Dutch
+284,"Heavy freezing drizzle","Heavy freezing drizzle","ਬਰਫ ਵਾਲੀ ਤੇਜ਼ ਕਿਣ-ਮਿਣ","ਬਰਫ ਵਾਲੀ ਤੇਜ਼ ਕਿਣ-ਮਿਣ",pa,Punjabi
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Ciężka, mroźna mżawka","Ciężka, mroźna mżawka",pl,Polish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Chuvisco forte gelado","Chuvisco forte gelado",pt,Portuguese
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Burniță înghețată în cantităţi însemnate","Burniță înghețată în cantităţi însemnate",ro,Romanian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Сильная замерзающая морось","Сильная замерзающая морось",ru,Russian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","දැඩි මිදෙන තරමට ශීතල සිරි පොද","දැඩි මිදෙන තරමට ශීතල සිරි පොද",si,Sinhalese
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Silné mrznúce mrholenie","Silné mrznúce mrholenie",sk,Slovak
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Jaka sitna kiša koja se ledi","Jaka sitna kiša koja se ledi",sr,Serbian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Tungt underkylt duggregn","Tungt underkylt duggregn",sv,Swedish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","கனமான உறையவைக்கும் மழைத்தூறல்","கனமான உறையவைக்கும் மழைத்தூறல்",ta,Tamil
+284,"Heavy freezing drizzle","Heavy freezing drizzle","భారీ ఘనీభవన జల్లు","భారీ ఘనీభవన జల్లు",te,Telugu
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Yoğun dondurucu çisenti","Yoğun dondurucu çisenti",tr,Turkish
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Сильна ожеледиця","Сильна ожеледиця",uk,Ukrainian
+284,"Heavy freezing drizzle","Heavy freezing drizzle","جمادینے والی شدید بونداباندی","جمادینے والی شدید بونداباندی",ur,Urdu
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Mưa phùn nặng băng giá","Mưa phùn nặng băng giá",vi,Vietnamese
+284,"Heavy freezing drizzle","Heavy freezing drizzle",大冻雾雨,大冻雾雨,zh,"Chinese Simplified"
+284,"Heavy freezing drizzle","Heavy freezing drizzle",大冻雾雨,大冻雾雨,zh_cmn,Mandarin
+284,"Heavy freezing drizzle","Heavy freezing drizzle",大冰冻小雨,大冰冻小雨,zh_hsn,Xiang
+284,"Heavy freezing drizzle","Heavy freezing drizzle",大凍霧雨,大凍霧雨,zh_tw,"Chinese Traditional"
+284,"Heavy freezing drizzle","Heavy freezing drizzle",较拐董鱼,较拐董鱼,zh_wuu,"Wu (Shanghainese)"
+284,"Heavy freezing drizzle","Heavy freezing drizzle",大凍霧雨,大凍霧雨,zh_yue,"Yue (Cantonese)"
+284,"Heavy freezing drizzle","Heavy freezing drizzle","Ukukhiza okunamandla okunamakhaza","Ukukhiza okunamandla okunamakhaza",zu,Zulu
+293,"Patchy light rain","Patchy light rain","أمطار خفيفة متفاوتة","أمطار خفيفة متفاوتة",ar,Arabic
+293,"Patchy light rain","Patchy light rain","Слаби дъждове на отделни места","Слаби дъждове на отделни места",bg,Bulgarian
+293,"Patchy light rain","Patchy light rain","এক পশলা হাল্কা বৃষ্টিপাত","এক পশলা হাল্কা বৃষ্টিপাত",bn,Bengali
+293,"Patchy light rain","Patchy light rain","Místy slabý déšť","Místy slabý déšť",cs,Czech
+293,"Patchy light rain","Patchy light rain",""Stedvise, lette regnbyger"",""Stedvise, lette regnbyger"",da,Danish
+293,"Patchy light rain","Patchy light rain","stellenweise leichter Regenfall","stellenweise leichter Regenfall",de,German
+293,"Patchy light rain","Patchy light rain","Κατά τόπους ασθενής βροχή","Κατά τόπους ασθενής βροχή",el,Greek
+293,"Patchy light rain","Patchy light rain","Lluvias ligeras a intervalos","Lluvias ligeras a intervalos",es,Spanish
+293,"Patchy light rain","Patchy light rain","Hajanainen kevyt sade","Hajanainen kevyt sade",fi,Finnish
+293,"Patchy light rain","Patchy light rain","Pluie légère éparse","Pluie légère éparse",fr,French
+293,"Patchy light rain","Patchy light rain","अलग-अलग इलाकों में हल्की बौछार","अलग-अलग इलाकों में हल्की बौछार",hi,Hindi
+293,"Patchy light rain","Patchy light rain","Foltokban enyhe eső","Foltokban enyhe eső",hu,Hungarian
+293,"Patchy light rain","Patchy light rain","Pioggia debole a tratti","Pioggia debole a tratti",it,Italian
+293,"Patchy light rain","Patchy light rain",所により弱い雨,所により弱い雨,ja,Japanese
+293,"Patchy light rain","Patchy light rain","Udan ora deres ora rata","Udan ora deres ora rata",jv,Javanese
+293,"Patchy light rain","Patchy light rain","곳곳에 가벼운 비","곳곳에 가벼운 비",ko,Korean
+293,"Patchy light rain","Patchy light rain","अनियमित हलकासा पाऊस","अनियमित हलकासा पाऊस",mr,Marathi
+293,"Patchy light rain","Patchy light rain","Plaatselijke lichte regen","Plaatselijke lichte regen",nl,Dutch
+293,"Patchy light rain","Patchy light rain","ਕਿਤੇ-ਕਿਤੇ ਹਲਕਾ ਮੀਂਹ","ਕਿਤੇ-ਕਿਤੇ ਹਲਕਾ ਮੀਂਹ",pa,Punjabi
+293,"Patchy light rain","Patchy light rain","Miejscowe opady lekkiego deszczu","Miejscowe opady lekkiego deszczu",pl,Polish
+293,"Patchy light rain","Patchy light rain","Chuva fraca irregular","Chuva fraca irregular",pt,Portuguese
+293,"Patchy light rain","Patchy light rain","Ploi uşoare pe alocuri","Ploi uşoare pe alocuri",ro,Romanian
+293,"Patchy light rain","Patchy light rain","Местами небольшой дождь","Местами небольшой дождь",ru,Russian
+293,"Patchy light rain","Patchy light rain","තැනින් තැන සැහැල්ලු වැසි","තැනින් තැන සැහැල්ලු වැසි",si,Sinhalese
+293,"Patchy light rain","Patchy light rain","Miestami slabý dážď","Miestami slabý dážď",sk,Slovak
+293,"Patchy light rain","Patchy light rain","Mestimično slaba kiša","Mestimično slaba kiša",sr,Serbian
+293,"Patchy light rain","Patchy light rain","Områden med lätt regn","Områden med lätt regn",sv,Swedish
+293,"Patchy light rain","Patchy light rain","சீரில்லாத இலேசான மழை","சீரில்லாத இலேசான மழை",ta,Tamil
+293,"Patchy light rain","Patchy light rain","చెదురుమదురుగా తేలికపాటి వర్షం","చెదురుమదురుగా తేలికపాటి వర్షం",te,Telugu
+293,"Patchy light rain","Patchy light rain","Düzensiz hafif yağmurlu","Düzensiz hafif yağmurlu",tr,Turkish
+293,"Patchy light rain","Patchy light rain","Місцями мряка","Місцями мряка",uk,Ukrainian
+293,"Patchy light rain","Patchy light rain","جہاں تہاں ہلکی بارش","جہاں تہاں ہلکی بارش",ur,Urdu
+293,"Patchy light rain","Patchy light rain","Mưa nhẹ lả tả","Mưa nhẹ lả tả",vi,Vietnamese
+293,"Patchy light rain","Patchy light rain",片状小雨,片状小雨,zh,"Chinese Simplified"
+293,"Patchy light rain","Patchy light rain",片状小雨,片状小雨,zh_cmn,Mandarin
+293,"Patchy light rain","Patchy light rain",零星小雨,零星小雨,zh_hsn,Xiang
+293,"Patchy light rain","Patchy light rain",片狀小雨,片狀小雨,zh_tw,"Chinese Traditional"
+293,"Patchy light rain","Patchy light rain",撅部肖鱼,撅部肖鱼,zh_wuu,"Wu (Shanghainese)"
+293,"Patchy light rain","Patchy light rain",片狀小雨,片狀小雨,zh_yue,"Yue (Cantonese)"
+293,"Patchy light rain","Patchy light rain","Izihlamvana zemvula lapha nalapha","Izihlamvana zemvula lapha nalapha",zu,Zulu
+296,"Light rain","Light rain","أمطار خفيفة","أمطار خفيفة",ar,Arabic
+296,"Light rain","Light rain","Слаби дъждове","Слаби дъждове",bg,Bulgarian
+296,"Light rain","Light rain","হাল্কা বৃষ্টিপাত","হাল্কা বৃষ্টিপাত",bn,Bengali
+296,"Light rain","Light rain","Slabý déšť","Slabý déšť",cs,Czech
+296,"Light rain","Light rain","Let regn","Let regn",da,Danish
+296,"Light rain","Light rain","leichter Regenfall","leichter Regenfall",de,German
+296,"Light rain","Light rain","Ασθενής βροχή","Ασθενής βροχή",el,Greek
+296,"Light rain","Light rain","Ligeras lluvias","Ligeras lluvias",es,Spanish
+296,"Light rain","Light rain","Kevyt sade","Kevyt sade",fi,Finnish
+296,"Light rain","Light rain","Pluie légère","Pluie légère",fr,French
+296,"Light rain","Light rain","हल्की बारिश","हल्की बारिश",hi,Hindi
+296,"Light rain","Light rain","Enyhe eső","Enyhe eső",hu,Hungarian
+296,"Light rain","Light rain","Pioggia debole","Pioggia debole",it,Italian
+296,"Light rain","Light rain",弱い雨,弱い雨,ja,Japanese
+296,"Light rain","Light rain","Udan ora deres","Udan ora deres",jv,Javanese
+296,"Light rain","Light rain","가벼운 비","가벼운 비",ko,Korean
+296,"Light rain","Light rain","हलकासा पाऊस","हलकासा पाऊस",mr,Marathi
+296,"Light rain","Light rain","Lichte regen","Lichte regen",nl,Dutch
+296,"Light rain","Light rain","ਹਲਕਾ ਮੀਂਹ","ਹਲਕਾ ਮੀਂਹ",pa,Punjabi
+296,"Light rain","Light rain","Lekki deszcz","Lekki deszcz",pl,Polish
+296,"Light rain","Light rain","Chuva fraca","Chuva fraca",pt,Portuguese
+296,"Light rain","Light rain","Ploi uşoare","Ploi uşoare",ro,Romanian
+296,"Light rain","Light rain","Небольшой дождь","Небольшой дождь",ru,Russian
+296,"Light rain","Light rain","සැහැල්ලු වැසි","සැහැල්ලු වැසි",si,Sinhalese
+296,"Light rain","Light rain","Slabý dážď","Slabý dážď",sk,Slovak
+296,"Light rain","Light rain","Slaba kiša","Slaba kiša",sr,Serbian
+296,"Light rain","Light rain","Lätt regn","Lätt regn",sv,Swedish
+296,"Light rain","Light rain","இலேசான மழை","இலேசான மழை",ta,Tamil
+296,"Light rain","Light rain","తేలికపాటి వర్షం","తేలికపాటి వర్షం",te,Telugu
+296,"Light rain","Light rain","Hafif yağmurlu","Hafif yağmurlu",tr,Turkish
+296,"Light rain","Light rain",Мряка,Мряка,uk,Ukrainian
+296,"Light rain","Light rain","ہلکی بارش","ہلکی بارش",ur,Urdu
+296,"Light rain","Light rain","Mưa nhẹ","Mưa nhẹ",vi,Vietnamese
+296,"Light rain","Light rain",小雨,小雨,zh,"Chinese Simplified"
+296,"Light rain","Light rain",小雨,小雨,zh_cmn,Mandarin
+296,"Light rain","Light rain",小雨,小雨,zh_hsn,Xiang
+296,"Light rain","Light rain",小雨,小雨,zh_tw,"Chinese Traditional"
+296,"Light rain","Light rain",肖鱼,肖鱼,zh_wuu,"Wu (Shanghainese)"
+296,"Light rain","Light rain",零星小雨,零星小雨,zh_yue,"Yue (Cantonese)"
+296,"Light rain","Light rain","Imvula engamathe ezimpukane","Imvula engamathe ezimpukane",zu,Zulu
+299,"Moderate rain at times","Moderate rain at times","أمطار معتدلة أحياناً","أمطار معتدلة أحياناً",ar,Arabic
+299,"Moderate rain at times","Moderate rain at times","Умерени прекъснати дъждове","Умерени прекъснати дъждове",bg,Bulgarian
+299,"Moderate rain at times","Moderate rain at times","মাঝে মাঝে মাঝারি বৃষ্টিপাত","মাঝে মাঝে মাঝারি বৃষ্টিপাত",bn,Bengali
+299,"Moderate rain at times","Moderate rain at times","Občasný mírný déšť","Občasný mírný déšť",cs,Czech
+299,"Moderate rain at times","Moderate rain at times",""Stedvise, lette regnbyger"",""Stedvise, lette regnbyger"",da,Danish
+299,"Moderate rain at times","Moderate rain at times","zuweilen mäßiger Regenfall","zuweilen mäßiger Regenfall",de,German
+299,"Moderate rain at times","Moderate rain at times","Μέτρια βροχή κατά περιόδους","Μέτρια βροχή κατά περιόδους",el,Greek
+299,"Moderate rain at times","Moderate rain at times","Periodos de lluvia moderada","Periodos de lluvia moderada",es,Spanish
+299,"Moderate rain at times","Moderate rain at times","Ajoittainen keskivoimakas sade","Ajoittainen keskivoimakas sade",fi,Finnish
+299,"Moderate rain at times","Moderate rain at times","Pluie modérée par moments","Pluie modérée par moments",fr,French
+299,"Moderate rain at times","Moderate rain at times","अक्सर सामान्य बारिश","अक्सर सामान्य बारिश",hi,Hindi
+299,"Moderate rain at times","Moderate rain at times","Időnként mérsékelt eső","Időnként mérsékelt eső",hu,Hungarian
+299,"Moderate rain at times","Moderate rain at times","Pioggia moderata a tratti","Pioggia moderata a tratti",it,Italian
+299,"Moderate rain at times","Moderate rain at times",時々穏やかな雨,時々穏やかな雨,ja,Japanese
+299,"Moderate rain at times","Moderate rain at times","Kadhang udan rada deres","Kadhang udan rada deres",jv,Javanese
+299,"Moderate rain at times","Moderate rain at times","때때로 보통 비","때때로 보통 비",ko,Korean
+299,"Moderate rain at times","Moderate rain at times","कधीतरी मध्यम पाऊस","कधीतरी मध्यम पाऊस",mr,Marathi
+299,"Moderate rain at times","Moderate rain at times","Nu en dan normale regen","Nu en dan normale regen",nl,Dutch
+299,"Moderate rain at times","Moderate rain at times","ਵਾਰ-ਵਾਰ ਦਰਮਿਆਨਾ ਮੀਂਹ","ਵਾਰ-ਵਾਰ ਦਰਮਿਆਨਾ ਮੀਂਹ",pa,Punjabi
+299,"Moderate rain at times","Moderate rain at times","Przejściowe, średnie opady deszczu","Przejściowe, średnie opady deszczu",pl,Polish
+299,"Moderate rain at times","Moderate rain at times","Períodos de chuva moderada","Períodos de chuva moderada",pt,Portuguese
+299,"Moderate rain at times","Moderate rain at times","Ploi moderate uneori","Ploi moderate uneori",ro,Romanian
+299,"Moderate rain at times","Moderate rain at times","Временами умеренный дождь","Временами умеренный дождь",ru,Russian
+299,"Moderate rain at times","Moderate rain at times","යම් අවස්ථාවලදී මධ්‍යස්ථ වැසි","යම් අවස්ථාවලදී මධ්‍යස්ථ වැසි",si,Sinhalese
+299,"Moderate rain at times","Moderate rain at times","Občasný mierny dážď","Občasný mierny dážď",sk,Slovak
+299,"Moderate rain at times","Moderate rain at times","Povremeno umerena kiša","Povremeno umerena kiša",sr,Serbian
+299,"Moderate rain at times","Moderate rain at times","Måttligt regn då och då","Måttligt regn då och då",sv,Swedish
+299,"Moderate rain at times","Moderate rain at times","விட்டுவிட்டு மிதமான மழை","விட்டுவிட்டு மிதமான மழை",ta,Tamil
+299,"Moderate rain at times","Moderate rain at times","పలుసమయాల్లో ఒక మాదిరి వర్షం","పలుసమయాల్లో ఒక మాదిరి వర్షం",te,Telugu
+299,"Moderate rain at times","Moderate rain at times","Ara ara orta kuvvetli yağmurlu","Ara ara orta kuvvetli yağmurlu",tr,Turkish
+299,"Moderate rain at times","Moderate rain at times","Час від часу помірний дощ","Час від часу помірний дощ",uk,Ukrainian
+299,"Moderate rain at times","Moderate rain at times","کبھی کبھار معتدل بارش","کبھی کبھار معتدل بارش",ur,Urdu
+299,"Moderate rain at times","Moderate rain at times","Thỉnh thoảng mưa vừa","Thỉnh thoảng mưa vừa",vi,Vietnamese
+299,"Moderate rain at times","Moderate rain at times",偶尔有中雨,偶尔有中雨,zh,"Chinese Simplified"
+299,"Moderate rain at times","Moderate rain at times",偶尔有中雨,偶尔有中雨,zh_cmn,Mandarin
+299,"Moderate rain at times","Moderate rain at times",有时有中雨,有时有中雨,zh_hsn,Xiang
+299,"Moderate rain at times","Moderate rain at times",偶爾有中雨,偶爾有中雨,zh_tw,"Chinese Traditional"
+299,"Moderate rain at times","Moderate rain at times",有咯晨光中鱼,有咯晨光中鱼,zh_wuu,"Wu (Shanghainese)"
+299,"Moderate rain at times","Moderate rain at times",偶爾有中雨,偶爾有中雨,zh_yue,"Yue (Cantonese)"
+299,"Moderate rain at times","Moderate rain at times","Imvula nje engatheni ngezikhathi ezithile","Imvula nje engatheni ngezikhathi ezithile",zu,Zulu
+302,"Moderate rain","Moderate rain","أمطار معتدلة","أمطار معتدلة",ar,Arabic
+302,"Moderate rain","Moderate rain","Умерени дъждове","Умерени дъждове",bg,Bulgarian
+302,"Moderate rain","Moderate rain","মাঝারি বৃষ্টিপাত","মাঝারি বৃষ্টিপাত",bn,Bengali
+302,"Moderate rain","Moderate rain","Mírný déšť","Mírný déšť",cs,Czech
+302,"Moderate rain","Moderate rain",Regn,Regn,da,Danish
+302,"Moderate rain","Moderate rain","mäßiger Regenfall","mäßiger Regenfall",de,German
+302,"Moderate rain","Moderate rain","Μέτρια βροχή","Μέτρια βροχή",el,Greek
+302,"Moderate rain","Moderate rain","Lluvia moderada","Lluvia moderada",es,Spanish
+302,"Moderate rain","Moderate rain","Keskivoimakas sade","Keskivoimakas sade",fi,Finnish
+302,"Moderate rain","Moderate rain","Pluie modérée","Pluie modérée",fr,French
+302,"Moderate rain","Moderate rain","सामान्य बारिश","सामान्य बारिश",hi,Hindi
+302,"Moderate rain","Moderate rain","Mérsékelt eső","Mérsékelt eső",hu,Hungarian
+302,"Moderate rain","Moderate rain","Pioggia moderata","Pioggia moderata",it,Italian
+302,"Moderate rain","Moderate rain",穏やかな雨,穏やかな雨,ja,Japanese
+302,"Moderate rain","Moderate rain","Udan rada deres","Udan rada deres",jv,Javanese
+302,"Moderate rain","Moderate rain","보통 비","보통 비",ko,Korean
+302,"Moderate rain","Moderate rain","मध्यम पाऊस","मध्यम पाऊस",mr,Marathi
+302,"Moderate rain","Moderate rain","Normale regen","Normale regen",nl,Dutch
+302,"Moderate rain","Moderate rain","ਦਰਮਿਆਨਾ ਮੀਂਹ","ਦਰਮਿਆਨਾ ਮੀਂਹ",pa,Punjabi
+302,"Moderate rain","Moderate rain","Średnie opady deszczu","Średnie opady deszczu",pl,Polish
+302,"Moderate rain","Moderate rain","Chuva moderada","Chuva moderada",pt,Portuguese
+302,"Moderate rain","Moderate rain","Ploi moderate","Ploi moderate",ro,Romanian
+302,"Moderate rain","Moderate rain","Умеренный дождь","Умеренный дождь",ru,Russian
+302,"Moderate rain","Moderate rain","මධ්‍යස්ථ වැසි","මධ්‍යස්ථ වැසි",si,Sinhalese
+302,"Moderate rain","Moderate rain","Mierny dážď","Mierny dážď",sk,Slovak
+302,"Moderate rain","Moderate rain","Umerena kiša","Umerena kiša",sr,Serbian
+302,"Moderate rain","Moderate rain","Måttligt regn","Måttligt regn",sv,Swedish
+302,"Moderate rain","Moderate rain","மிதமான மழை","மிதமான மழை",ta,Tamil
+302,"Moderate rain","Moderate rain","ఒక మాదిరి వర్షం","ఒక మాదిరి వర్షం",te,Telugu
+302,"Moderate rain","Moderate rain","Orta kuvvetli yağmurlu","Orta kuvvetli yağmurlu",tr,Turkish
+302,"Moderate rain","Moderate rain","Помірний дощ","Помірний дощ",uk,Ukrainian
+302,"Moderate rain","Moderate rain","معتدل بارش","معتدل بارش",ur,Urdu
+302,"Moderate rain","Moderate rain","Mưa vừa","Mưa vừa",vi,Vietnamese
+302,"Moderate rain","Moderate rain",中雨,中雨,zh,"Chinese Simplified"
+302,"Moderate rain","Moderate rain",中雨,中雨,zh_cmn,Mandarin
+302,"Moderate rain","Moderate rain",中雨,中雨,zh_hsn,Xiang
+302,"Moderate rain","Moderate rain",中雨,中雨,zh_tw,"Chinese Traditional"
+302,"Moderate rain","Moderate rain",中鱼,中鱼,zh_wuu,"Wu (Shanghainese)"
+302,"Moderate rain","Moderate rain",中雨,中雨,zh_yue,"Yue (Cantonese)"
+302,"Moderate rain","Moderate rain","Imvula engatheni","Imvula engatheni",zu,Zulu
+305,"Heavy rain at times","Heavy rain at times","أمطار شديدة أحياناً","أمطار شديدة أحياناً",ar,Arabic
+305,"Heavy rain at times","Heavy rain at times","Силни прекъснати дъждове","Силни прекъснати дъждове",bg,Bulgarian
+305,"Heavy rain at times","Heavy rain at times","মাঝে মাঝে ভারী বৃষ্টিপাত","মাঝে মাঝে ভারী বৃষ্টিপাত",bn,Bengali
+305,"Heavy rain at times","Heavy rain at times","Občasný silný déšť","Občasný silný déšť",cs,Czech
+305,"Heavy rain at times","Heavy rain at times","Stedvise kraftige regnbyger","Stedvise kraftige regnbyger",da,Danish
+305,"Heavy rain at times","Heavy rain at times","zeitweise starker Regenfall","zeitweise starker Regenfall",de,German
+305,"Heavy rain at times","Heavy rain at times","Ισχυρή βροχή κατά περιόδους","Ισχυρή βροχή κατά περιόδους",el,Greek
+305,"Heavy rain at times","Heavy rain at times","Periodos de fuertes lluvias","Periodos de fuertes lluvias",es,Spanish
+305,"Heavy rain at times","Heavy rain at times","Ajoittainen rankka sade","Ajoittainen rankka sade",fi,Finnish
+305,"Heavy rain at times","Heavy rain at times","Pluie forte par moments","Pluie forte par moments",fr,French
+305,"Heavy rain at times","Heavy rain at times","अक्सर जोरदार बारिश","अक्सर जोरदार बारिश",hi,Hindi
+305,"Heavy rain at times","Heavy rain at times","Időnként heves eső","Időnként heves eső",hu,Hungarian
+305,"Heavy rain at times","Heavy rain at times","Pioggia forte a tratti","Pioggia forte a tratti",it,Italian
+305,"Heavy rain at times","Heavy rain at times",時々大雨,時々大雨,ja,Japanese
+305,"Heavy rain at times","Heavy rain at times","Kadhang udan deres","Kadhang udan deres",jv,Javanese
+305,"Heavy rain at times","Heavy rain at times","때때로 폭우","때때로 폭우",ko,Korean
+305,"Heavy rain at times","Heavy rain at times","कधीतरी जोरदार पाऊस","कधीतरी जोरदार पाऊस",mr,Marathi
+305,"Heavy rain at times","Heavy rain at times","Nu en dan zware regen","Nu en dan zware regen",nl,Dutch
+305,"Heavy rain at times","Heavy rain at times","ਸਮੇ-ਸਮੇਂ ਤੇ ਤੇਜ਼ ਮੀਂਹ","ਸਮੇ-ਸਮੇਂ ਤੇ ਤੇਜ਼ ਮੀਂਹ",pa,Punjabi
+305,"Heavy rain at times","Heavy rain at times","Przejściowe, ciężkie opady deszczu","Przejściowe, ciężkie opady deszczu",pl,Polish
+305,"Heavy rain at times","Heavy rain at times","Períodos de chuva forte","Períodos de chuva forte",pt,Portuguese
+305,"Heavy rain at times","Heavy rain at times","Ploaie torențială uneori","Ploaie torențială uneori",ro,Romanian
+305,"Heavy rain at times","Heavy rain at times","Временами сильный дождь","Временами сильный дождь",ru,Russian
+305,"Heavy rain at times","Heavy rain at times","යම් අවස්ථාවලදී තද වැසි","යම් අවස්ථාවලදී තද වැසි",si,Sinhalese
+305,"Heavy rain at times","Heavy rain at times","Občasný silný dážď","Občasný silný dážď",sk,Slovak
+305,"Heavy rain at times","Heavy rain at times","Povremeno jaka kiša","Povremeno jaka kiša",sr,Serbian
+305,"Heavy rain at times","Heavy rain at times","Tungt regn då och då","Tungt regn då och då",sv,Swedish
+305,"Heavy rain at times","Heavy rain at times","விட்டுவிட்டு கனமான மழை","விட்டுவிட்டு கனமான மழை",ta,Tamil
+305,"Heavy rain at times","Heavy rain at times","పలుసమయాల్లో భారీ వర్షం","పలుసమయాల్లో భారీ వర్షం",te,Telugu
+305,"Heavy rain at times","Heavy rain at times","Ara ara şiddetli yağmurlu","Ara ara şiddetli yağmurlu",tr,Turkish
+305,"Heavy rain at times","Heavy rain at times","Час від часу сильний дощ","Час від часу сильний дощ",uk,Ukrainian
+305,"Heavy rain at times","Heavy rain at times","کبھی کبھار تیز بارش","کبھی کبھار تیز بارش",ur,Urdu
+305,"Heavy rain at times","Heavy rain at times","Thỉnh thoảng mưa nặng hạt","Thỉnh thoảng mưa nặng hạt",vi,Vietnamese
+305,"Heavy rain at times","Heavy rain at times",偶尔有大雨,偶尔有大雨,zh,"Chinese Simplified"
+305,"Heavy rain at times","Heavy rain at times",偶尔有大雨,偶尔有大雨,zh_cmn,Mandarin
+305,"Heavy rain at times","Heavy rain at times",有时有大雨,有时有大雨,zh_hsn,Xiang
+305,"Heavy rain at times","Heavy rain at times",偶爾有大雨,偶爾有大雨,zh_tw,"Chinese Traditional"
+305,"Heavy rain at times","Heavy rain at times",有咯晨光达鱼,有咯晨光达鱼,zh_wuu,"Wu (Shanghainese)"
+305,"Heavy rain at times","Heavy rain at times",偶爾有大雨,偶爾有大雨,zh_yue,"Yue (Cantonese)"
+305,"Heavy rain at times","Heavy rain at times","Imvula enamandla ngezikhathi ezithile","Imvula enamandla ngezikhathi ezithile",zu,Zulu
+308,"Heavy rain","Heavy rain","أمطار شديدة","أمطار شديدة",ar,Arabic
+308,"Heavy rain","Heavy rain","Силни дъждове","Силни дъждове",bg,Bulgarian
+308,"Heavy rain","Heavy rain","ভারী বৃষ্টিপাত","ভারী বৃষ্টিপাত",bn,Bengali
+308,"Heavy rain","Heavy rain","Silný déšť","Silný déšť",cs,Czech
+308,"Heavy rain","Heavy rain","Kraftig Regn","Kraftig Regn",da,Danish
+308,"Heavy rain","Heavy rain","starker Regenfall","starker Regenfall",de,German
+308,"Heavy rain","Heavy rain","Ισχυρή βροχή","Ισχυρή βροχή",el,Greek
+308,"Heavy rain","Heavy rain","Fuertes lluvias","Fuertes lluvias",es,Spanish
+308,"Heavy rain","Heavy rain","Rankka sade","Rankka sade",fi,Finnish
+308,"Heavy rain","Heavy rain","Pluie forte","Pluie forte",fr,French
+308,"Heavy rain","Heavy rain","जोरदार बारिश","जोरदार बारिश",hi,Hindi
+308,"Heavy rain","Heavy rain","Heves eső","Heves eső",hu,Hungarian
+308,"Heavy rain","Heavy rain","Pioggia forte","Pioggia forte",it,Italian
+308,"Heavy rain","Heavy rain",大雨,大雨,ja,Japanese
+308,"Heavy rain","Heavy rain","Udan deres","Udan deres",jv,Javanese
+308,"Heavy rain","Heavy rain",폭우,폭우,ko,Korean
+308,"Heavy rain","Heavy rain","जोरदार पाऊस","जोरदार पाऊस",mr,Marathi
+308,"Heavy rain","Heavy rain","Zware regen","Zware regen",nl,Dutch
+308,"Heavy rain","Heavy rain","ਤੇਜ਼ ਮੀਂਹ","ਤੇਜ਼ ਮੀਂਹ",pa,Punjabi
+308,"Heavy rain","Heavy rain","Ciężkie opady deszczu","Ciężkie opady deszczu",pl,Polish
+308,"Heavy rain","Heavy rain","Chuva forte","Chuva forte",pt,Portuguese
+308,"Heavy rain","Heavy rain","Ploaie torențială","Ploaie torențială",ro,Romanian
+308,"Heavy rain","Heavy rain","Сильный дождь","Сильный дождь",ru,Russian
+308,"Heavy rain","Heavy rain","තද වැසි","තද වැසි",si,Sinhalese
+308,"Heavy rain","Heavy rain","Silný dážď","Silný dážď",sk,Slovak
+308,"Heavy rain","Heavy rain","Jaka kiša","Jaka kiša",sr,Serbian
+308,"Heavy rain","Heavy rain","Tungt regn","Tungt regn",sv,Swedish
+308,"Heavy rain","Heavy rain","கனமான மழை","கனமான மழை",ta,Tamil
+308,"Heavy rain","Heavy rain","భారీ వర్షం","భారీ వర్షం",te,Telugu
+308,"Heavy rain","Heavy rain","Şiddetli yağmurlu","Şiddetli yağmurlu",tr,Turkish
+308,"Heavy rain","Heavy rain","Сильний дощ","Сильний дощ",uk,Ukrainian
+308,"Heavy rain","Heavy rain","تیز بارش","تیز بارش",ur,Urdu
+308,"Heavy rain","Heavy rain","Mưa rơi nặng hạt","Mưa rơi nặng hạt",vi,Vietnamese
+308,"Heavy rain","Heavy rain",大雨,大雨,zh,"Chinese Simplified"
+308,"Heavy rain","Heavy rain",大雨,大雨,zh_cmn,Mandarin
+308,"Heavy rain","Heavy rain",大雨,大雨,zh_hsn,Xiang
+308,"Heavy rain","Heavy rain",大雨,大雨,zh_tw,"Chinese Traditional"
+308,"Heavy rain","Heavy rain",达鱼,达鱼,zh_wuu,"Wu (Shanghainese)"
+308,"Heavy rain","Heavy rain",大雨,大雨,zh_yue,"Yue (Cantonese)"
+308,"Heavy rain","Heavy rain","Imvula enamandla","Imvula enamandla",zu,Zulu
+311,"Light freezing rain","Light freezing rain","أمطار متجمِدة خفيفة","أمطار متجمِدة خفيفة",ar,Arabic
+311,"Light freezing rain","Light freezing rain","Слаби преохладени дъждове","Слаби преохладени дъждове",bg,Bulgarian
+311,"Light freezing rain","Light freezing rain","হাল্কা হিম শীতল বৃষ্টিপাত","হাল্কা হিম শীতল বৃষ্টিপাত",bn,Bengali
+311,"Light freezing rain","Light freezing rain","Slabý mrznoucí déšť","Slabý mrznoucí déšť",cs,Czech
+311,"Light freezing rain","Light freezing rain",""UnderkÂ¿let regn, sÂ¾tter sig som isslag"",""UnderkÂ¿let regn, sÂ¾tter sig som isslag"",da,Danish
+311,"Light freezing rain","Light freezing rain","leichter Eisregen","leichter Eisregen",de,German
+311,"Light freezing rain","Light freezing rain","Ασθενής παγωμένη βροχή","Ασθενής παγωμένη βροχή",el,Greek
+311,"Light freezing rain","Light freezing rain","Ligeras lluvias heladas","Ligeras lluvias heladas",es,Spanish
+311,"Light freezing rain","Light freezing rain","Kevyt jäätävä sade","Kevyt jäätävä sade",fi,Finnish
+311,"Light freezing rain","Light freezing rain","Pluie verglaçante légère","Pluie verglaçante légère",fr,French
+311,"Light freezing rain","Light freezing rain","हल्की जमा देने वाली बारिश","हल्की जमा देने वाली बारिश",hi,Hindi
+311,"Light freezing rain","Light freezing rain","Enyhe fagyos eső","Enyhe fagyos eső",hu,Hungarian
+311,"Light freezing rain","Light freezing rain","Pioggia congelantesi debole","Pioggia congelantesi debole",it,Italian
+311,"Light freezing rain","Light freezing rain",着氷性の弱い雨,着氷性の弱い雨,ja,Japanese
+311,"Light freezing rain","Light freezing rain","Udan atis rada deres","Udan atis rada deres",jv,Javanese
+311,"Light freezing rain","Light freezing rain","약간의 동결 비","약간의 동결 비",ko,Korean
+311,"Light freezing rain","Light freezing rain","हलकासा गारठवणारा पाऊस","हलकासा गारठवणारा पाऊस",mr,Marathi
+311,"Light freezing rain","Light freezing rain","Lichte onderkoelde regen","Lichte onderkoelde regen",nl,Dutch
+311,"Light freezing rain","Light freezing rain","ਹਲਕਾ ਬਰਫ ਵਾਲਾ ਮੀਂਹ","ਹਲਕਾ ਬਰਫ ਵਾਲਾ ਮੀਂਹ",pa,Punjabi
+311,"Light freezing rain","Light freezing rain","Lekkie opady mroźnego deszczu","Lekkie opady mroźnego deszczu",pl,Polish
+311,"Light freezing rain","Light freezing rain","Chuva fraca e gelada","Chuva fraca e gelada",pt,Portuguese
+311,"Light freezing rain","Light freezing rain","Ploaie înghețată în cantităţi mici","Ploaie înghețată în cantităţi mici",ro,Romanian
+311,"Light freezing rain","Light freezing rain","Слабый переохлажденный дождь","Слабый переохлажденный дождь",ru,Russian
+311,"Light freezing rain","Light freezing rain","සැහැල්ලු මිදෙන තරමට ශීතල වැසි","සැහැල්ලු මිදෙන තරමට ශීතල වැසි",si,Sinhalese
+311,"Light freezing rain","Light freezing rain","Slabý mrznúci dážď","Slabý mrznúci dážď",sk,Slovak
+311,"Light freezing rain","Light freezing rain","Slaba ledena kiša","Slaba ledena kiša",sr,Serbian
+311,"Light freezing rain","Light freezing rain","Lätt underkylt regn","Lätt underkylt regn",sv,Swedish
+311,"Light freezing rain","Light freezing rain","இலேசான உறையவைக்கும் மழை","இலேசான உறையவைக்கும் மழை",ta,Tamil
+311,"Light freezing rain","Light freezing rain","తేలికపాటి ఘనీభవన వర్షం","తేలికపాటి ఘనీభవన వర్షం",te,Telugu
+311,"Light freezing rain","Light freezing rain","Hafif dondurucu yağmurlu","Hafif dondurucu yağmurlu",tr,Turkish
+311,"Light freezing rain","Light freezing rain","Невеликий дощ та ожеледиця","Невеликий дощ та ожеледиця",uk,Ukrainian
+311,"Light freezing rain","Light freezing rain","ہلکی جمادینے والی بارش","ہلکی جمادینے والی بارش",ur,Urdu
+311,"Light freezing rain","Light freezing rain","Mưa giá rét nhẹ","Mưa giá rét nhẹ",vi,Vietnamese
+311,"Light freezing rain","Light freezing rain",微冻雨,微冻雨,zh,"Chinese Simplified"
+311,"Light freezing rain","Light freezing rain",微冻雨,微冻雨,zh_cmn,Mandarin
+311,"Light freezing rain","Light freezing rain",冰冻小雨,冰冻小雨,zh_hsn,Xiang
+311,"Light freezing rain","Light freezing rain",微凍雨,微凍雨,zh_tw,"Chinese Traditional"
+311,"Light freezing rain","Light freezing rain",轻董鱼,轻董鱼,zh_wuu,"Wu (Shanghainese)"
+311,"Light freezing rain","Light freezing rain",微凍雨,微凍雨,zh_yue,"Yue (Cantonese)"
+311,"Light freezing rain","Light freezing rain","Imvula engenamandla kodwa ebandayo","Imvula engenamandla kodwa ebandayo",zu,Zulu

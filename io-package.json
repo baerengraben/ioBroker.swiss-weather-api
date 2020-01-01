@@ -64,7 +64,8 @@
 		"materialize": true,
 		"dependencies": [
 			{
-				"js-controller": ">=1.4.2"
+				"js-controller": ">=1.4.2",
+				"libxmljs": ">=0.23.0"
 			}
 		]
 	},
