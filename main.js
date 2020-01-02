@@ -4,14 +4,13 @@
  * Created with @iobroker/create-adapter v1.18.0
  */
 const utils = require("@iobroker/adapter-core");
-var http = require("https");
-var libxmljs = require('libxmljs2');
+const http = require("https");
 const fs = require('fs');
-let xml;
-let xmlDoc;
+const libxmljs = require('libxmljs2');
+var xml;
+var xmlDoc;
 
 class SwissWeatherApi extends utils.Adapter {
-
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
@@ -21,9 +20,6 @@ class SwissWeatherApi extends utils.Adapter {
 			name: "swiss-weather-api",
 		});
 		this.on("ready", this.onReady.bind(this));
-		this.on("objectChange", this.onObjectChange.bind(this));
-		this.on("stateChange", this.onStateChange.bind(this));
-		this.on("unload", this.onUnload.bind(this));
 	}
 
 	/**
@@ -45,7 +41,7 @@ class SwissWeatherApi extends utils.Adapter {
 		this.log.debug("Longitude: " + longitude);
 
 		//Prepare XML File in order to get the weather-icon
-		self.log.debug("Read XML File:...");
+		self.log.debug("Define XML File:...");
 		xml = fs.readFileSync(__dirname + "/img/weather-icons/SRG-SSR-WeatherAPITranslations.xml");
 		xmlDoc = libxmljs.parseXmlString(xml);
 
@@ -71,7 +67,7 @@ class SwissWeatherApi extends utils.Adapter {
 		};
 
 		/**
-		 * First get Access_Token, after that get forcast-informations for
+		 * First get Access_Token, afterwards get forcast-informations for
 		 * - current forecast
 		 * - week forecast
 		 * - next hour forecast
@@ -87,6 +83,10 @@ class SwissWeatherApi extends utils.Adapter {
 				access_token = body.access_token.toString();
 				self.log.debug("Access_Token : " + access_token);
 
+				//********************************************************************************************
+				//* Read Current Forcast
+				//********************************************************************************************
+
 				//Options for getting current Forecast using Authorization Bearer
 				var options_current_forecast = {
 					"method": "GET",
@@ -97,6 +97,7 @@ class SwissWeatherApi extends utils.Adapter {
 						"authorization": "Bearer " + access_token
 					}
 				};
+
 				var reqCurrentForecast = http.request(options_current_forecast, function (res) {
 					var chunks = [];
 					res.on("data", function (chunk) {
@@ -104,8 +105,11 @@ class SwissWeatherApi extends utils.Adapter {
 					});
 					res.on("end", function () {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
-						self.log.info("Current Forecast: " + JSON.stringify(body));
+						self.log.debug("Current Forecast: " + JSON.stringify(body));
 
+						//**********************
+						//*** Formatted Date
+						//**********************
 						//Set Current Forecast Values
 						self.setObjectNotExists("CurrentForecast." + "formatted_date" , {
 							type: "state",
@@ -118,6 +122,9 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("CurrentForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 
+						//**********************
+						//*** Current Day
+						//**********************
 						self.setObjectNotExists("CurrentForecast.current_day.date" , {
 							type: "state",
 							common: {
@@ -129,7 +136,6 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("CurrentForecast.current_day.date", { val: body.current_day.date.toString(), ack: true });
 
-						self.log.info("Units: " + JSON.stringify(body.units.ttn));
 						self.setObjectNotExists("CurrentForecast.current_day.values.ttn" , {
 							type: "state",
 							common: {
@@ -139,7 +145,7 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn, ack: true });
+						self.setStateAsync("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn + " " + body.units.ttn.unit, ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.smbd" , {
 							type: "state",
@@ -161,13 +167,13 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
+						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx + " " + body.units.ttx.unit, ack: true });
 
 						//read icon-name for current_day
 						self.log.debug("get Values by xpath");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.current_day.values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
-						self.log.info("Anzuzeigendes Wetter-Icon: " + gchild.text());
+						self.log.debug("Weather-Icon Name: " + gchild.text());
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon" , {
 							type: "state",
@@ -179,6 +185,139 @@ class SwissWeatherApi extends utils.Adapter {
 							native: {},
 						});
 						self.setStateAsync("CurrentForecast.current_day.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						//**********************
+						//*** Current Hour
+						//**********************
+						if (Object.keys(body.current_hour).length > 0){
+							self.setObjectNotExists("CurrentForecast.current_hour.date" , {
+								type: "state",
+								common: {
+									name: "date",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.date", { val: body.current_hour[0].date, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.smb3" , {
+								type: "state",
+								common: {
+									name: body.units.smb3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.smb3", { val: body.current_hour[0].values[0].smb3, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.ttt" , {
+								type: "state",
+								common: {
+									name: body.units.ttt.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[0].ttt  + " " + body.units.ttt.unit, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
+								type: "state",
+								common: {
+									name: body.units.fff.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[0].fff + " " + body.units.fff.unit, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.ffx3" , {
+								type: "state",
+								common: {
+									name: body.units.ffx3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[0].ffx3  + " " + body.units.ffx3.unit, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.ddd" , {
+								type: "state",
+								common: {
+									name: body.units.ddd.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[0].ddd  + " " + body.units.ddd.unit, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.rr3" , {
+								type: "state",
+								common: {
+									name: body.units.rr3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[0].rr3  + " " + body.units.rr3.unit, ack: true });
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.pr3" , {
+								type: "state",
+								common: {
+									name: body.units.pr3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[0].pr3  + " " + body.units.pr3.name, ack: true });
+
+						} else {
+							self.log.error("CurrentForecast - Current_hour is emtpy;")
+						}
+
+						//**********************
+						//*** Info
+						//**********************
+						self.setObjectNotExists("CurrentForecast.info.id" , {
+							type: "state",
+							common: {
+								name: "id",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.info.id", { val: body.info.id, ack: true });
+
+						self.setObjectNotExists("CurrentForecast.info.plz" , {
+							type: "state",
+							common: {
+								name: "plz",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.info.plz", { val: body.info.plz, ack: true });
+
+						self.setObjectNotExists("CurrentForecast.info.name.de" , {
+							type: "state",
+							common: {
+								name: "name",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.info.name.de", { val: body.info.name.de, ack: true });
+
 					});
 					res.on("error", function (error) {
 						self.log.error(error)
@@ -279,54 +418,11 @@ class SwissWeatherApi extends utils.Adapter {
 		});
 		req.end();
 
-// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
-// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
-// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
-// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
+		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
+		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
+		// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
+		// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
 		setTimeout(this.stop.bind(this), 10000);
-	}
-
-	/**
-	 * Is called when adapter shuts down - callback has to be called under any circumstances!
-	 * @param {() => void} callback
-	 */
-	onUnload(callback) {
-		try {
-			this.log.info("cleaned everything up...");
-			callback();
-		} catch (e) {
-			callback();
-		}
-	}
-
-	/**
-	 * Is called if a subscribed object changes
-	 * @param {string} id
-	 * @param {ioBroker.Object | null | undefined} obj
-	 */
-	onObjectChange(id, obj) {
-		if (obj) {
-			// The object was changed
-			this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-		} else {
-			// The object was deleted
-			this.log.info(`object ${id} deleted`);
-		}
-	}
-
-	/**
-	 * Is called if a subscribed state changes
-	 * @param {string} id
-	 * @param {ioBroker.State | null | undefined} state
-	 */
-	onStateChange(id, state) {
-		if (state) {
-			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			// The state was deleted
-			this.log.info(`state ${id} deleted`);
-		}
 	}
 }
 

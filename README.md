@@ -17,11 +17,21 @@
 Connects to Free SRG-SSR Weather API (https://developer.srgssr.ch/apis/srgssr-weather). 
 Weather-Icons are reused from https://erikflowers.github.io/weather-icons/
 
-## Developer manual
-This section is intended for the developer. It can be deleted later
-
 ### Getting started
+1. Get a free accout on https://developer.srgssr.ch/
+1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
+1. Find out Longitude / Latitude of the chosen location for wich forecast is needed
+1. Install this Adapter on ioBroker
+1. On Adapter Configuration fill in
+   1. ConsumerKey of App
+   1. ConsumerSecret of App
+   1. Longitude / Latitude of the chosen location for wich forecast is needed
 
+This is a scheduled Adapter. It is scheduled ever 15 minutes and reads the forecast-Api of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
+
+
+
+### internal remarks - will be removed
 You are almost done, only a few steps left:
 1. Create a new repository on GitHub with the name `ioBroker.swiss-weather-api`
 1. Initialize the current folder as a new git repository:  
@@ -41,7 +51,7 @@ You are almost done, only a few steps left:
 	```
 1. Head over to [main.js](main.js) and start programming!
 
-### Scripts in `package.json`
+### Scripts in `package.json` - will be removed
 Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
 | Script name | Description                                              |
 |-------------|----------------------------------------------------------|
@@ -50,7 +60,7 @@ Several npm scripts are predefined for your convenience. You can run them using 
 | `test` | Performs a minimal test run on package files and your tests. |
 | `coverage` | Generates code coverage using your test files. |
 
-### Writing tests
+### Writing tests - will be removed
 When done right, testing code is invaluable, because it gives you the 
 confidence to change your code while knowing exactly if and when 
 something breaks. A good read on the topic of test-driven development 
@@ -61,7 +71,7 @@ clear upsides.
 The template provides you with basic tests for the adapter startup and package files.
 It is recommended that you add your own tests into the mix.
 
-### Publishing the adapter
+### Publishing the adapter - will be removed
 Since you have chosen GitHub Actions as your CI service, you can 
 enable automatic releases on npm whenever you push a new git tag that matches the form 
 `v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
@@ -69,7 +79,7 @@ enable automatic releases on npm whenever you push a new git tag that matches th
 To get your adapter released in ioBroker, please refer to the documentation 
 of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
 
-### Test the adapter manually on a local ioBroker installation
+### Test the adapter manually on a local ioBroker installation - will be removed
 In order to install the adapter locally without publishing, the following steps are recommended:
 1. Create a tarball from your dev directory:  
 	```bash
@@ -90,6 +100,10 @@ For later updates, the above procedure is not necessary. Just do the following:
 
 ### 0.0.1
 * (baerengraben) initial release
+
+### 0.0.2
+* (baerengraben) first running version. Reads Current Forecast (https://api.srgssr.ch/forecasts/v1.0/weather/current)
+
 
 ## License
 MIT License
