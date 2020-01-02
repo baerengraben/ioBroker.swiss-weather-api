@@ -240,7 +240,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
 								type: "state",
 								common: {
-									name: body.units.ff3.name, //todo: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+									name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 									type: "string",
 									role: "text"
 								},
@@ -251,7 +251,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ffx3" , {
 								type: "state",
 								common: {
-									name: body.units.fx3.name,
+									name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
 									type: "string",
 									role: "text"
 								},
@@ -339,6 +339,10 @@ class SwissWeatherApi extends utils.Adapter {
 				});
 				reqCurrentForecast.end();
 
+				//********************************************************************************************
+				//* Read Week Forcast
+				//********************************************************************************************
+
 				//Options for getting week forecast using Authorization Bearer
 				var options_weeks_forecast = {
 					"method": "GET",
@@ -355,8 +359,419 @@ class SwissWeatherApi extends utils.Adapter {
 						chunks.push(chunk);
 					});
 					res.on("end", function () {
-						var body = Buffer.concat(chunks);
-						self.log.info("Week Forecast: " + body.toString());
+						var chunksConcat = Buffer.concat(chunks).toString();
+						chunksConcat = chunksConcat.replace(/7days/g, "sevendays");
+						self.log.info("chunksConcat: " + chunksConcat);
+						var body = JSON.parse(chunksConcat);
+						self.log.info("Week Forecast: " + JSON.stringify(body));
+
+						//**********************
+						//*** Day 0
+						//**********************
+						self.setObjectNotExists("WeekForecast.day0.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day0.formatted_date", { val: body.sevendays[0].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day0.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day0.ttn", { val: body.sevendays[0].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day0.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day0.smbd", { val: body.sevendays[0].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[0].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day0.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day0.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day0.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day0.ttx", { val: body.sevendays[0].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 1
+						//**********************
+						self.setObjectNotExists("WeekForecast.day1.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day1.formatted_date", { val: body.sevendays[1].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day1.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day1.ttn", { val: body.sevendays[1].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day1.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day1.smbd", { val: body.sevendays[1].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[1].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day1.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day1.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day1.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day1.ttx", { val: body.sevendays[1].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 2
+						//**********************
+						self.setObjectNotExists("WeekForecast.day2.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day2.formatted_date", { val: body.sevendays[2].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day2.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day2.ttn", { val: body.sevendays[2].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day2.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day2.smbd", { val: body.sevendays[2].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[2].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day2.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day2.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day2.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day2.ttx", { val: body.sevendays[2].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 3
+						//**********************
+						self.setObjectNotExists("WeekForecast.day3.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day3.formatted_date", { val: body.sevendays[3].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day3.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day3.ttn", { val: body.sevendays[3].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day3.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day3.smbd", { val: body.sevendays[3].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[3].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day3.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day3.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day3.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day3.ttx", { val: body.sevendays[3].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 4
+						//**********************
+						self.setObjectNotExists("WeekForecast.day4.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day4.formatted_date", { val: body.sevendays[4].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day4.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day4.ttn", { val: body.sevendays[4].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day4.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day4.smbd", { val: body.sevendays[4].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[4].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day4.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day4.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day4.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day4.ttx", { val: body.sevendays[4].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 5
+						//**********************
+						self.setObjectNotExists("WeekForecast.day5.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day5.formatted_date", { val: body.sevendays[5].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day5.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day5.ttn", { val: body.sevendays[5].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day5.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day5.smbd", { val: body.sevendays[5].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[5].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day5.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day5.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day5.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day5.ttx", { val: body.sevendays[5].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						//**********************
+						//*** Day 6
+						//**********************
+						self.setObjectNotExists("WeekForecast.day6.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day6.formatted_date", { val: body.sevendays[6].formatted_date, ack: true });
+						self.setObjectNotExists("WeekForecast.day6.ttn" , {
+							type: "state",
+							common: {
+								name: body.units.ttn.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day6.ttn", { val: body.sevendays[6].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setObjectNotExists("WeekForecast.day6.smbd" , {
+							type: "state",
+							common: {
+								name: body.units.smbd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day6.smbd", { val: body.sevendays[6].values[1].smbd, ack: true });
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[6].values[1].smbd +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("WeekForecast.day6.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day6.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+						self.setObjectNotExists("WeekForecast.day6.ttx" , {
+							type: "state",
+							common: {
+								name: body.units.ttx.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+
+
+
+
+
+
+
+
 
 						//todo: Set Weekly Forecast Values
 

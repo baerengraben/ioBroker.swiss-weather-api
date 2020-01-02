@@ -14,9 +14,10 @@
 
 ## swiss-weather-api adapter for ioBroker
 
-Connects to Free SRG-SSR Weather API (https://developer.srgssr.ch/apis/srgssr-weather). 
+Connects to free and great SRG-SSR weather API (https://developer.srgssr.ch/apis/srgssr-weather).  
 Weather-Icons are reused from https://erikflowers.github.io/weather-icons/
 
+The SRG-SSR Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland.
 ### Getting started
 1. Get a free accout on https://developer.srgssr.ch/
 1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
