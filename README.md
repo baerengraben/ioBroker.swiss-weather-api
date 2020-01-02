@@ -27,7 +27,7 @@ Weather-Icons are reused from https://erikflowers.github.io/weather-icons/
    1. ConsumerSecret of App
    1. Longitude / Latitude of the chosen location for wich forecast is needed
 
-This is a scheduled Adapter. It is scheduled ever 15 minutes and reads the forecast-Api of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
+This is a scheduled Adapter. It is scheduled every 15 minutes and reads the forecast API of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
 
 
 
