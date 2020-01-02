@@ -30,7 +30,7 @@
   </row>
   <row>
     <Code>5</Code>
-    <Code_icon>Wi-day-storm-showers</Code_icon>
+    <Code_icon>wi-day-storm-showers</Code_icon>
     <Short_Description>so_grhe_shra_bl</Short_Description>
     <Long_Description_German>Sonne, grosse hellgraue Wolke, Regenschauer, Blitz</Long_Description_German>
     <Long_Description_English>sun, big light grey cloud, rain shower, lightning</Long_Description_English>
@@ -219,105 +219,105 @@
   </row>
   <row>
     <Code>-2</Code>
-    <Code_icon>Wi-night-fog</Code_icon>
+    <Code_icon>wi-night-fog</Code_icon>
     <Short_Description>mo_ne</Short_Description>
     <Long_Description_German>Mond, Nebel</Long_Description_German>
     <Long_Description_English>moon, fog</Long_Description_English>
   </row>
   <row>
     <Code>-3</Code>
-    <Code_icon>Wi-night-alt-cloudy</Code_icon>
+    <Code_icon>wi-night-alt-cloudy</Code_icon>
     <Short_Description>mo_grhe</Short_Description>
     <Long_Description_German>Mond grosse hellgraue Wolke</Long_Description_German>
     <Long_Description_English>moon large light grey cloud</Long_Description_English>
   </row>
   <row>
     <Code>-4</Code>
-    <Code_icon>Wi-night-alt-rain</Code_icon>
+    <Code_icon>wi-night-alt-rain</Code_icon>
     <Short_Description>mo_grhe_shra</Short_Description>
     <Long_Description_German>Mond, grosse hellgraue Wolke Regenschauer</Long_Description_German>
     <Long_Description_English>moon, big light grey cloud rain showers</Long_Description_English>
   </row>
   <row>
     <Code>-5</Code>
-    <Code_icon>Wi-night-thunderstorm</Code_icon>
+    <Code_icon>wi-night-thunderstorm</Code_icon>
     <Short_Description>mo_grhe_shra_bl</Short_Description>
     <Long_Description_German>Mond, grosse hellgraue Wolke, Regenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, large light grey cloud, rain shower, lightning</Long_Description_English>
   </row>
   <row>
     <Code>-6</Code>
-    <Code_icon>Wi-night-alt-snow-wind</Code_icon>
+    <Code_icon>wi-night-alt-snow-wind</Code_icon>
     <Short_Description>mo_grhe_shsn</Short_Description>
     <Long_Description_German>Mond grosse hellgraue Wolke, Schneeschauer</Long_Description_German>
     <Long_Description_English>moon large light grey cloud, snow shower</Long_Description_English>
   </row>
   <row>
     <Code>-7</Code>
-    <Code_icon>Wi-night-snow-thunderstorm</Code_icon>
+    <Code_icon>wi-night-snow-thunderstorm</Code_icon>
     <Short_Description>mo_grhe_shsn_bl</Short_Description>
     <Long_Description_German>Mond grosse hellgraue Wolke, Schneeschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon big light grey cloud, snow shower, lightning</Long_Description_English>
   </row>
   <row>
     <Code>-8</Code>
-    <Code_icon>Wi-night-rain-mix</Code_icon>
+    <Code_icon>wi-night-rain-mix</Code_icon>
     <Short_Description>mo_grhe_shsr</Short_Description>
     <Long_Description_German>Mond, grosse hellgraue Wolke, Schneeregenschauer</Long_Description_German>
     <Long_Description_English>moon, big light grey cloud, snow showers</Long_Description_English>
   </row>
   <row>
     <Code>-9</Code>
-    <Code_icon>Wi-night-sleet-storm</Code_icon>
+    <Code_icon>wi-night-sleet-storm</Code_icon>
     <Short_Description>mo_grhe_shsr_bl</Short_Description>
     <Long_Description_German>Mond, grosse hellgraue Wolke, Schneeregenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, big light grey cloud, snow shower, lightning</Long_Description_English>
   </row>
   <row>
     <Code>-10</Code>
-    <Code_icon>Wi-night-alt-partly-cloudy</Code_icon>
+    <Code_icon>wi-night-alt-partly-cloudy</Code_icon>
     <Short_Description>mo_klhe</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke</Long_Description_German>
     <Long_Description_English>moon, small white cloud</Long_Description_English>
   </row>
   <row>
     <Code>-11</Code>
-    <Code_icon>Wi-night-showers</Code_icon>
+    <Code_icon>wi-night-showers</Code_icon>
     <Short_Description>mo_klhe_shra</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Regenschauer</Long_Description_German>
     <Long_Description_English>moon, small white cloud, rain shower</Long_Description_English>
   </row>
   <row>
     <Code>-12</Code>
-    <Code_icon>Wi-night-alt-storm-showers</Code_icon>
+    <Code_icon>wi-night-alt-storm-showers</Code_icon>
     <Short_Description>mo_klhe_shra_bl</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Regenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, small white cloud, rain shower, lightning</Long_Description_English>
   </row>
   <row>
     <Code>-13</Code>
-    <Code_icon>Wi-night-snow</Code_icon>
+    <Code_icon>wi-night-snow</Code_icon>
     <Short_Description>mo_klhe_shsn</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeschauer</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow shower</Long_Description_English>
   </row>
   <row>
     <Code>-14</Code>
-    <Code_icon>Wi-night-snow-thunderstorm</Code_icon>
+    <Code_icon>wi-night-snow-thunderstorm</Code_icon>
     <Short_Description>mo_klhe_shsn_bl</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow shower, lightning</Long_Description_English>
   </row>
   <row>
     <Code>-15</Code>
-    <Code_icon>Wi-night-rain-mix</Code_icon>
+    <Code_icon>wi-night-rain-mix</Code_icon>
     <Short_Description>mo_klhe_shsr</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeregenschauer</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow showers</Long_Description_English>
   </row>
   <row>
     <Code>-16</Code>
-    <Code_icon>Wi-night-sleet-storm</Code_icon>
+    <Code_icon>wi-night-sleet-storm</Code_icon>
     <Short_Description>mo_klhe_shsr_bl</Short_Description>
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeregenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow showers, lightning</Long_Description_English>

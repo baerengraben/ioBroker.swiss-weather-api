@@ -105,7 +105,7 @@ class SwissWeatherApi extends utils.Adapter {
 					});
 					res.on("end", function () {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
-						self.log.debug("Current Forecast: " + JSON.stringify(body));
+						self.log.info("Current Forecast: " + JSON.stringify(body));
 
 						//**********************
 						//*** Formatted Date
@@ -212,6 +212,20 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 							self.setStateAsync("CurrentForecast.current_hour.values.smb3", { val: body.current_hour[0].values[0].smb3, ack: true });
 
+							//read icon-name for current_hour
+							var gchild = xmlDoc.get("/root/row[Code=" + body.current_hour[0].values[0].smb3 +"]/Code_icon");
+							var icon = gchild.text();
+							self.setObjectNotExists("CurrentForecast.current_hour.values.icon" , {
+								type: "state",
+								common: {
+									name: "icon-url",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("CurrentForecast.current_hour.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ttt" , {
 								type: "state",
 								common: {
@@ -221,29 +235,29 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[0].ttt  + " " + body.units.ttt.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[1].ttt  + " " + body.units.ttt.unit, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
 								type: "state",
 								common: {
-									name: body.units.fff.name,
+									name: body.units.ff3.name, //todo: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 									type: "string",
 									role: "text"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[0].fff + " " + body.units.fff.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ffx3" , {
 								type: "state",
 								common: {
-									name: body.units.ffx3.name,
+									name: body.units.fx3.name,
 									type: "string",
 									role: "text"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[0].ffx3  + " " + body.units.ffx3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[3].ffx3  + " " + body.units.fx3.unit, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ddd" , {
 								type: "state",
@@ -254,7 +268,7 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[0].ddd  + " " + body.units.ddd.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[4].ddd  + " " + body.units.ddd.unit, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.rr3" , {
 								type: "state",
@@ -265,7 +279,7 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[0].rr3  + " " + body.units.rr3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[5].rr3  + " " + body.units.rr3.unit, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.pr3" , {
 								type: "state",
@@ -276,7 +290,7 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[0].pr3  + " " + body.units.pr3.name, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3  + " " + body.units.pr3.unit, ack: true });
 
 						} else {
 							self.log.error("CurrentForecast - Current_hour is emtpy;")
