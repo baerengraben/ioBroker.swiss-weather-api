@@ -26,6 +26,7 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		this.log.info("swiss-weather-api: --- start importing forecast values ---");
 		var self = this;
 		var appName = this.config.App_Name;
 		var latitude = this.config.Latitude;
@@ -105,7 +106,7 @@ class SwissWeatherApi extends utils.Adapter {
 					});
 					res.on("end", function () {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
-						self.log.info("Current Forecast: " + JSON.stringify(body));
+						self.log.debug("Current Forecast: " + JSON.stringify(body));
 
 						//**********************
 						//*** Formatted Date
@@ -385,9 +386,9 @@ class SwissWeatherApi extends utils.Adapter {
 					res.on("end", function () {
 						var chunksConcat = Buffer.concat(chunks).toString();
 						chunksConcat = chunksConcat.replace(/7days/g, "sevendays");
-						self.log.info("chunksConcat: " + chunksConcat);
+						self.log.debug("chunksConcat: " + chunksConcat);
 						var body = JSON.parse(chunksConcat);
-						self.log.info("Week Forecast: " + JSON.stringify(body));
+						self.log.debug("Week Forecast: " + JSON.stringify(body));
 
 						//**********************
 						//*** Day 0
@@ -858,7 +859,7 @@ class SwissWeatherApi extends utils.Adapter {
 					});
 					res.on("end", function () {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
-						self.log.info("Hour Forecast: " + JSON.stringify(body));
+						self.log.debug("Hour Forecast: " + JSON.stringify(body));
 
 						//**********************
 						//*** Formatted Date
@@ -1038,9 +1039,9 @@ class SwissWeatherApi extends utils.Adapter {
 					res.on("end", function () {
 						var chunksConcat = Buffer.concat(chunks).toString();
 						chunksConcat = chunksConcat.replace(/24hours/g, "twentyfourhours");
-						self.log.info("chunksConcat: " + chunksConcat);
+						self.log.debug("chunksConcat: " + chunksConcat);
 						var body = JSON.parse(chunksConcat);
-						self.log.info("24h Forecast: " + JSON.stringify(body));
+						self.log.debug("24h Forecast: " + JSON.stringify(body));
 
 						//**********************
 						//*** Formatted Date
@@ -1954,6 +1955,7 @@ class SwissWeatherApi extends utils.Adapter {
 			});
 		});
 		req.end();
+		this.log.info("swiss-weather-api: --- end importing forecast values ---");
 
 		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
 		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
