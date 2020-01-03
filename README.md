@@ -30,48 +30,6 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 
 This is a scheduled Adapter. It is scheduled every 15 minutes and reads the forecast API of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
 
-
-
-### internal remarks - will be removed
-You are almost done, only a few steps left:
-1. Create a new repository on GitHub with the name `ioBroker.swiss-weather-api`
-1. Initialize the current folder as a new git repository:  
-	```bash
-	git init
-	git add .
-	git commit -m "Initial commit"
-	```
-1. Link your local repository with the one on GitHub:  
-	```bash
-	git remote add origin https://github.com/baerengraben/ioBroker.swiss-weather-api
-	```
-
-1. Push all files to the GitHub repo:  
-	```bash
-	git push origin master
-	```
-1. Head over to [main.js](main.js) and start programming!
-
-### Scripts in `package.json` - will be removed
-Several npm scripts are predefined for your convenience. You can run them using `npm run <scriptname>`
-| Script name | Description                                              |
-|-------------|----------------------------------------------------------|
-| `test:js`   | Executes the tests you defined in `*.test.js` files.     |
-| `test:package`    | Ensures your `package.json` and `io-package.json` are valid. |
-| `test` | Performs a minimal test run on package files and your tests. |
-| `coverage` | Generates code coverage using your test files. |
-
-### Writing tests - will be removed
-When done right, testing code is invaluable, because it gives you the 
-confidence to change your code while knowing exactly if and when 
-something breaks. A good read on the topic of test-driven development 
-is https://hackernoon.com/introduction-to-test-driven-development-tdd-61a13bc92d92. 
-Although writing tests before the code might seem strange at first, but it has very 
-clear upsides.
-
-The template provides you with basic tests for the adapter startup and package files.
-It is recommended that you add your own tests into the mix.
-
 ### Publishing the adapter - will be removed
 Since you have chosen GitHub Actions as your CI service, you can 
 enable automatic releases on npm whenever you push a new git tag that matches the form 
