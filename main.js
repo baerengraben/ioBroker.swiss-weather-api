@@ -293,7 +293,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3  + " " + body.units.pr3.unit, ack: true });
 
 						} else {
-							self.log.error("CurrentForecast - Current_hour is emtpy;")
+							self.log.error("CurrentForecast - Current_hour is empty;")
 						}
 
 						//**********************
@@ -854,119 +854,123 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//*** Next Hour
 						//**********************
-						self.setObjectNotExists("HourForecast.nexthour.date" , {
-							type: "date",
-							common: {
-								name: "date",
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.date", { val: body.nexthour[0].date.toString(), ack: true });
+						if (Object.keys(body.nexthour).length > 0){
+							self.setObjectNotExists("HourForecast.nexthour.date" , {
+								type: "date",
+								common: {
+									name: "date",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.date", { val: body.nexthour[0].date.toString(), ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.smb3" , {
-							type: "state",
-							common: {
-								name: body.units.smb3.name,
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.smb3" , {
+								type: "state",
+								common: {
+									name: body.units.smb3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
 
-						//read icon-name
-						var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 +"]/Code_icon");
-						var icon = gchild.text();
-						self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
-							type: "text.url",
-							common: {
-								name: "icon-url",
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+							//read icon-name
+							var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 +"]/Code_icon");
+							var icon = gchild.text();
+							self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
+								type: "text.url",
+								common: {
+									name: "icon-url",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
-							type: "state",
-							common: {
-								name: body.units.ttt.name,
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt + " " + body.units.ttt.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
+								type: "state",
+								common: {
+									name: body.units.ttt.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt + " " + body.units.ttt.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
-							type: "state",
-							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
+								type: "state",
+								common: {
+									name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
-							type: "state",
-							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
+								type: "state",
+								common: {
+									name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
-							type: "state",
-							common: {
-								name: body.units.ddd.name,
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd + " " + body.units.ddd.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
+								type: "state",
+								common: {
+									name: body.units.ddd.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd + " " + body.units.ddd.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
-							type: "state",
-							common: {
-								name: body.units.rr3.name,
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3 + " " + body.units.rr3.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
+								type: "state",
+								common: {
+									name: body.units.rr3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3 + " " + body.units.rr3.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
-							type: "state",
-							common: {
-								name: body.units.pr3.name,
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3 + " " + body.units.pr3.unit, ack: true });
+							self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
+								type: "state",
+								common: {
+									name: body.units.pr3.name,
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3 + " " + body.units.pr3.unit, ack: true });
 
-						self.setObjectNotExists("HourForecast.status" , {
-							type: "state",
-							common: {
-								name: "status",
-								type: "string",
-								role: "text"
-							},
-							native: {},
-						});
-						self.setStateAsync("HourForecast.status", { val: "Success", ack: true });
+							self.setObjectNotExists("HourForecast.status" , {
+								type: "state",
+								common: {
+									name: "status",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							});
+							self.setStateAsync("HourForecast.status", { val: "Success", ack: true });
 
+						} else {
+							self.log.error("Hour Forecast - nexthour is empty;")
+						}
 					});
 					res.on("error", function (error) {
 						self.log.error(error);
