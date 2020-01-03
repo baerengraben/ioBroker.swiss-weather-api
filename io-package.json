@@ -67,11 +67,11 @@
 		]
 	},
 	"native": {
-		"App_Name": "test",
-		"ConsumerKey": "JKSanGbzMfsn7St3O0KwrJxf996b8SkH",
-		"ConsumerSecret": "wlIv5fR5WAGLmThC",
-		"Latitude": "47.037219",
-		"Longitude": "7.376170"
+		"App_Name": "",
+		"ConsumerKey": "",
+		"ConsumerSecret": "",
+		"Latitude": "",
+		"Longitude": ""
 	},
 	"objects": [],
 	"instanceObjects": []
