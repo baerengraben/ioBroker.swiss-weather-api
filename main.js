@@ -299,7 +299,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//*** Info
 						//**********************
-						self.setObjectNotExists("CurrentForecast.info.id" , {
+						self.setObjectNotExists("info.id" , {
 							type: "state",
 							common: {
 								name: "id",
@@ -308,9 +308,9 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.info.id", { val: body.info.id, ack: true });
+						self.setStateAsync("info.id", { val: body.info.id, ack: true });
 
-						self.setObjectNotExists("CurrentForecast.info.plz" , {
+						self.setObjectNotExists("info.plz" , {
 							type: "state",
 							common: {
 								name: "plz",
@@ -319,9 +319,9 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.info.plz", { val: body.info.plz, ack: true });
+						self.setStateAsync("info.plz", { val: body.info.plz, ack: true });
 
-						self.setObjectNotExists("CurrentForecast.info.name.de" , {
+						self.setObjectNotExists("info.name.de" , {
 							type: "state",
 							common: {
 								name: "name",
@@ -330,11 +330,32 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.info.name.de", { val: body.info.name.de, ack: true });
+						self.setStateAsync("info.name.de", { val: body.info.name.de, ack: true });
+
+						self.setObjectNotExists("CurrentForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.status", { val: "Success", ack: true });
 
 					});
 					res.on("error", function (error) {
-						self.log.error(error)
+						self.log.error(error);
+						self.setObjectNotExists("CurrentForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("CurrentForecast.status", { val: error, ack: true });
 					});
 				});
 				reqCurrentForecast.end();
@@ -763,9 +784,31 @@ class SwissWeatherApi extends utils.Adapter {
 							native: {},
 						});
 						self.setStateAsync("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+
+						self.setObjectNotExists("WeekForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.status", { val: "Success", ack: true });
+
 					});
 					res.on("error", function (error) {
-						self.log.error(error)
+						self.log.error(error);
+						self.setObjectNotExists("WeekForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("WeekForecast.status", { val: error, ack: true });
 					});
 				});
 				reqWeekForecast.end();
@@ -829,6 +872,20 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
 
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
 						self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
 							type: "state",
 							common: {
@@ -865,7 +922,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								name: body.units.ddd.name,
 								type: "string",
 								role: "text"
 							},
@@ -876,7 +933,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								name: body.units.rr3.name,
 								type: "string",
 								role: "text"
 							},
@@ -887,16 +944,39 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								name: body.units.pr3.name,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
 						self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3 + " " + body.units.pr3.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.status", { val: "Success", ack: true });
+
 					});
 					res.on("error", function (error) {
-						self.log.error(error)
+						self.log.error(error);
+
+						self.setObjectNotExists("HourForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.status", { val: error, ack: true });
 					});
 				});
 				reqHourForecast.end();
