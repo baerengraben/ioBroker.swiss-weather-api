@@ -112,7 +112,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//Set Current Forecast Values
 						self.setObjectNotExists("CurrentForecast." + "formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -126,7 +126,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Current Day
 						//**********************
 						self.setObjectNotExists("CurrentForecast.current_day.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -176,7 +176,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + gchild.text());
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -191,7 +191,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						if (Object.keys(body.current_hour).length > 0){
 							self.setObjectNotExists("CurrentForecast.current_hour.date" , {
-								type: "state",
+								type: "date",
 								common: {
 									name: "date",
 									type: "string",
@@ -216,7 +216,7 @@ class SwissWeatherApi extends utils.Adapter {
 							var gchild = xmlDoc.get("/root/row[Code=" + body.current_hour[0].values[0].smb3 +"]/Code_icon");
 							var icon = gchild.text();
 							self.setObjectNotExists("CurrentForecast.current_hour.values.icon" , {
-								type: "state",
+								type: "text.url",
 								common: {
 									name: "icon-url",
 									type: "string",
@@ -322,7 +322,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("info.plz", { val: body.info.plz, ack: true });
 
 						self.setObjectNotExists("info.name.de" , {
-							type: "state",
+							type: "location",
 							common: {
 								name: "name",
 								type: "string",
@@ -390,7 +390,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 0
 						//**********************
 						self.setObjectNotExists("WeekForecast.day0.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -423,7 +423,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[0].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day0.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -447,7 +447,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 1
 						//**********************
 						self.setObjectNotExists("WeekForecast.day1.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -480,7 +480,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[1].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day1.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -504,7 +504,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 2
 						//**********************
 						self.setObjectNotExists("WeekForecast.day2.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -537,7 +537,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[2].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day2.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -561,7 +561,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 3
 						//**********************
 						self.setObjectNotExists("WeekForecast.day3.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -594,7 +594,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[3].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day3.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -618,7 +618,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 4
 						//**********************
 						self.setObjectNotExists("WeekForecast.day4.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -651,7 +651,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[4].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day4.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -675,7 +675,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 5
 						//**********************
 						self.setObjectNotExists("WeekForecast.day5.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -708,7 +708,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[5].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day5.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -732,7 +732,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 6
 						//**********************
 						self.setObjectNotExists("WeekForecast.day6.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -765,7 +765,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[6].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("WeekForecast.day6.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -841,7 +841,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//Set Current Forecast Values
 						self.setObjectNotExists("HourForecast." + "formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -855,7 +855,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Next Hour
 						//**********************
 						self.setObjectNotExists("HourForecast.nexthour.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -880,7 +880,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1015,7 +1015,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Formatted Date
 						//**********************
 						self.setObjectNotExists("24hForecast.formatted_date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -1029,7 +1029,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 0
 						//************************
 						self.setObjectNotExists("24hForecast.hour0.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1054,7 +1054,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[0].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour0.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1134,7 +1134,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 1
 						//************************
 						self.setObjectNotExists("24hForecast.hour1.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1159,7 +1159,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[1].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour1.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1239,7 +1239,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 2
 						//************************
 						self.setObjectNotExists("24hForecast.hour2.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1264,7 +1264,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[2].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour2.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1344,7 +1344,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 3
 						//************************
 						self.setObjectNotExists("24hForecast.hour3.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1369,7 +1369,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[3].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour3.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1449,7 +1449,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 4
 						//************************
 						self.setObjectNotExists("24hForecast.hour4.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1474,7 +1474,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[4].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour4.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1554,7 +1554,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 5
 						//************************
 						self.setObjectNotExists("24hForecast.hour5.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1579,7 +1579,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[5].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour5.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1659,7 +1659,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 6
 						//************************
 						self.setObjectNotExists("24hForecast.hour6.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1684,7 +1684,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[6].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour6.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1764,7 +1764,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 7
 						//************************
 						self.setObjectNotExists("24hForecast.hour7.date" , {
-							type: "state",
+							type: "date",
 							common: {
 								name: "date",
 								type: "string",
@@ -1789,7 +1789,7 @@ class SwissWeatherApi extends utils.Adapter {
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[7].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
 						self.setObjectNotExists("24hForecast.hour7.values.icon" , {
-							type: "state",
+							type: "text.url",
 							common: {
 								name: "icon-url",
 								type: "string",

@@ -30,14 +30,6 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 
 This is a scheduled Adapter. It is scheduled every 15 minutes and reads the forecast API of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
 
-### Publishing the adapter - will be removed
-Since you have chosen GitHub Actions as your CI service, you can 
-enable automatic releases on npm whenever you push a new git tag that matches the form 
-`v<major>.<minor>.<patch>`. The necessary steps are described in `.github/workflows/test-and-release.yml`.
-
-To get your adapter released in ioBroker, please refer to the documentation 
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository).
-
 ### Test the adapter manually on a local ioBroker installation - will be removed
 In order to install the adapter locally without publishing, the following steps are recommended:
 1. Create a tarball from your dev directory:  

@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.0.2",
+		"version": "0.1.0",
 		"news": {
+			"0.1.0": {
+				"en": "Running version. Reads the complete weather forecast from https://api.srgssr.ch"
+			},
 			"0.0.2": {
 				"en": "First running version. Reads Current Forecast (https://api.srgssr.ch/forecasts/v1.0/weather/current)"
 			},
@@ -54,6 +57,7 @@
 		"mode": "schedule",
 		"schedule": "15 * * * *",
 		"type": "weather",
+		"connection-type": "cloud polling",
 		"compact": true,
 		"materialize": true,
 		"dependencies": [
