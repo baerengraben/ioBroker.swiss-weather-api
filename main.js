@@ -813,6 +813,10 @@ class SwissWeatherApi extends utils.Adapter {
 				});
 				reqWeekForecast.end();
 
+				//********************************************************************************************
+				//* Read Hour Forcast
+				//********************************************************************************************
+
 				//Options for getting hour forecast using Authorization Bearer
 				var options_hour_forecast = {
 					"method": "GET",
@@ -981,8 +985,12 @@ class SwissWeatherApi extends utils.Adapter {
 				});
 				reqHourForecast.end();
 
-				//Options for getting 24hour forecast using Authorization Bearer
-				var options_24hour_forecast = {
+				//********************************************************************************************
+				//* Read 24h Forcast
+				//********************************************************************************************
+
+				//Options for getting 24h forecast using Authorization Bearer
+				var options_24h_forecast = {
 					"method": "GET",
 					"hostname": "api.srgssr.ch",
 					"port": null,
@@ -991,24 +999,900 @@ class SwissWeatherApi extends utils.Adapter {
 						"authorization": "Bearer " + access_token
 					}
 				};
-				var req24HourForecast = http.request(options_24hour_forecast, function (res) {
+				var req24hForecast = http.request(options_24h_forecast, function (res) {
 					var chunks = [];
 					res.on("data", function (chunk) {
 						chunks.push(chunk);
 					});
 					res.on("end", function () {
-						var body = Buffer.concat(chunks);
-						self.log.info("24Hour Forecast: " + body.toString());
+						var chunksConcat = Buffer.concat(chunks).toString();
+						chunksConcat = chunksConcat.replace(/24hours/g, "twentyfourhours");
+						self.log.info("chunksConcat: " + chunksConcat);
+						var body = JSON.parse(chunksConcat);
+						self.log.info("24h Forecast: " + JSON.stringify(body));
 
-						//todo: Set 24Hour Forecast Values
+						//**********************
+						//*** Formatted Date
+						//**********************
+						self.setObjectNotExists("24hForecast.formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.formatted_date", { val: body.formatted_date.toString(), ack: true });
+
+						//************************
+						//*** 24h Hours - hour 0
+						//************************
+						self.setObjectNotExists("24hForecast.hour0.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.date", { val: body.twentyfourhours[0].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.smb3", { val: body.twentyfourhours[0].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[0].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour0.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.ttt", { val: body.twentyfourhours[0].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.fff", { val: body.twentyfourhours[0].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.ffx3", { val: body.twentyfourhours[0].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.ddd", { val: body.twentyfourhours[0].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.rr3", { val: body.twentyfourhours[0].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour0.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour0.values.pr3", { val: body.twentyfourhours[0].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 1
+						//************************
+						self.setObjectNotExists("24hForecast.hour1.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.date", { val: body.twentyfourhours[1].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.smb3", { val: body.twentyfourhours[1].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[1].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour1.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.ttt", { val: body.twentyfourhours[1].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.fff", { val: body.twentyfourhours[1].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.ffx3", { val: body.twentyfourhours[1].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.ddd", { val: body.twentyfourhours[1].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.rr3", { val: body.twentyfourhours[1].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour1.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour1.values.pr3", { val: body.twentyfourhours[1].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 2
+						//************************
+						self.setObjectNotExists("24hForecast.hour2.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.date", { val: body.twentyfourhours[2].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.smb3", { val: body.twentyfourhours[2].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[2].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour2.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.ttt", { val: body.twentyfourhours[2].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.fff", { val: body.twentyfourhours[2].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.ffx3", { val: body.twentyfourhours[2].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.ddd", { val: body.twentyfourhours[2].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.rr3", { val: body.twentyfourhours[2].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour2.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour2.values.pr3", { val: body.twentyfourhours[2].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 3
+						//************************
+						self.setObjectNotExists("24hForecast.hour3.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.date", { val: body.twentyfourhours[3].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.smb3", { val: body.twentyfourhours[3].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[3].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour3.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.ttt", { val: body.twentyfourhours[3].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.fff", { val: body.twentyfourhours[3].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.ffx3", { val: body.twentyfourhours[3].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.ddd", { val: body.twentyfourhours[3].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.rr3", { val: body.twentyfourhours[3].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour3.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour3.values.pr3", { val: body.twentyfourhours[3].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 4
+						//************************
+						self.setObjectNotExists("24hForecast.hour4.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.date", { val: body.twentyfourhours[4].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.smb3", { val: body.twentyfourhours[4].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[4].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour4.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.ttt", { val: body.twentyfourhours[4].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.fff", { val: body.twentyfourhours[4].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.ffx3", { val: body.twentyfourhours[4].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.ddd", { val: body.twentyfourhours[4].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.rr3", { val: body.twentyfourhours[4].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour4.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour4.values.pr3", { val: body.twentyfourhours[4].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 5
+						//************************
+						self.setObjectNotExists("24hForecast.hour5.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.date", { val: body.twentyfourhours[5].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.smb3", { val: body.twentyfourhours[5].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[5].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour5.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.ttt", { val: body.twentyfourhours[5].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.fff", { val: body.twentyfourhours[5].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.ffx3", { val: body.twentyfourhours[5].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.ddd", { val: body.twentyfourhours[5].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.rr3", { val: body.twentyfourhours[5].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour5.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour5.values.pr3", { val: body.twentyfourhours[5].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 6
+						//************************
+						self.setObjectNotExists("24hForecast.hour6.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.date", { val: body.twentyfourhours[6].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.smb3", { val: body.twentyfourhours[6].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[6].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour6.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.ttt", { val: body.twentyfourhours[6].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.fff", { val: body.twentyfourhours[6].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.ffx3", { val: body.twentyfourhours[6].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.ddd", { val: body.twentyfourhours[6].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.rr3", { val: body.twentyfourhours[6].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour6.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour6.values.pr3", { val: body.twentyfourhours[6].values[6].pr3, ack: true });
+
+						//************************
+						//*** 24h Hours - hour 7
+						//************************
+						self.setObjectNotExists("24hForecast.hour7.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.date", { val: body.twentyfourhours[7].date.toString(), ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.smb3", { val: body.twentyfourhours[7].values[0].smb3, ack: true });
+
+						//read icon-name
+						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[7].values[0].smb3 +"]/Code_icon");
+						var icon = gchild.text();
+						self.setObjectNotExists("24hForecast.hour7.values.icon" , {
+							type: "state",
+							common: {
+								name: "icon-url",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.icon", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.ttt", { val: body.twentyfourhours[7].values[1].ttt, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.fff", { val: body.twentyfourhours[7].values[2].fff, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.ffx3", { val: body.twentyfourhours[7].values[3].ffx3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.ddd", { val: body.twentyfourhours[7].values[4].ddd, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.rr3", { val: body.twentyfourhours[7].values[5].rr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.hour7.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.hour7.values.pr3", { val: body.twentyfourhours[7].values[6].pr3, ack: true });
+
+						self.setObjectNotExists("24hForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.status", { val: "success", ack: true });
 
 
 					});
 					res.on("error", function (error) {
-						self.log.error(error)
+						self.log.error(error);
+						self.setObjectNotExists("24hForecast.status" , {
+							type: "state",
+							common: {
+								name: "status",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("24hForecast.status", { val: error, ack: true });
 					});
 				});
-				req24HourForecast.end();
+				req24hForecast.end();
 			});
 			res.on("error", function (error) {
 				self.log.error(error)
