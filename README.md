@@ -30,30 +30,16 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 
 This is a scheduled Adapter. It is scheduled every 15 minutes and reads the forecast API of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
 
-### Test the adapter manually on a local ioBroker installation - will be removed
-In order to install the adapter locally without publishing, the following steps are recommended:
-1. Create a tarball from your dev directory:  
-	```bash
-	npm pack
-	```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-	```bash
-	cd /opt/iobroker
-	npm i /path/to/tarball.tgz
-	```
-
-For later updates, the above procedure is not necessary. Just do the following:
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.swiss-weather-api`)
-1. Execute `iobroker upload swiss-weather-api` on the ioBroker host
-
 ## Changelog
 
-### 0.0.1
-* (baerengraben) initial release
+### 0.1.0
+* (baerengraben) Running version. Reads the complete weather forecast from https://api.srgssr.ch
 
 ### 0.0.2
 * (baerengraben) first running version. Reads Current Forecast (https://api.srgssr.ch/forecasts/v1.0/weather/current)
+
+### 0.0.1
+* (baerengraben) initial release
 
 
 ## License
