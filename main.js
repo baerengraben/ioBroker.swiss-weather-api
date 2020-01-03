@@ -26,7 +26,6 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.log.info("swiss-weather-api: --- start importing forecast values ---");
 		var self = this;
 		var appName = this.config.App_Name;
 		var latitude = this.config.Latitude;
@@ -1955,7 +1954,6 @@ class SwissWeatherApi extends utils.Adapter {
 			});
 		});
 		req.end();
-		this.log.info("swiss-weather-api: --- end importing forecast values ---");
 
 		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
 		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht

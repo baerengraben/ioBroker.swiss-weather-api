@@ -32,6 +32,9 @@ This is a scheduled Adapter. It is scheduled every 15 minutes and reads the fore
 
 ## Changelog
 
+### 0.1.2
+* (baerengraben) Some fixes.
+
 ### 0.1.0
 * (baerengraben) Running version. Reads the complete weather forecast from https://api.srgssr.ch
 
