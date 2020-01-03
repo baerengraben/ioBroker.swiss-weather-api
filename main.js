@@ -112,7 +112,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//Set Current Forecast Values
 						self.setObjectNotExists("CurrentForecast." + "formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -126,7 +126,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Current Day
 						//**********************
 						self.setObjectNotExists("CurrentForecast.current_day.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -176,7 +176,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -191,7 +191,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						if (Object.keys(body.current_hour).length > 0){
 							self.setObjectNotExists("CurrentForecast.current_hour.date" , {
-								type: "date",
+								type: "state",
 								common: {
 									name: "date",
 									type: "string",
@@ -219,7 +219,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.icon" , {
-								type: "text.url",
+								type: "state",
 								common: {
 									name: "icon-url",
 									type: "string",
@@ -325,7 +325,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("info.plz", { val: body.info.plz, ack: true });
 
 						self.setObjectNotExists("info.name.de" , {
-							type: "location",
+							type: "state",
 							common: {
 								name: "name",
 								type: "string",
@@ -393,7 +393,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 0
 						//**********************
 						self.setObjectNotExists("WeekForecast.day0.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -429,7 +429,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day0.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -453,7 +453,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 1
 						//**********************
 						self.setObjectNotExists("WeekForecast.day1.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -489,7 +489,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day1.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -513,7 +513,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 2
 						//**********************
 						self.setObjectNotExists("WeekForecast.day2.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -549,7 +549,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day2.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -573,7 +573,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 3
 						//**********************
 						self.setObjectNotExists("WeekForecast.day3.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -609,7 +609,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day3.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -633,7 +633,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 4
 						//**********************
 						self.setObjectNotExists("WeekForecast.day4.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -669,7 +669,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day4.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -693,7 +693,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 5
 						//**********************
 						self.setObjectNotExists("WeekForecast.day5.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -729,7 +729,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day5.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -753,7 +753,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Day 6
 						//**********************
 						self.setObjectNotExists("WeekForecast.day6.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -789,7 +789,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("WeekForecast.day6.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -865,7 +865,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						//Set Current Forecast Values
 						self.setObjectNotExists("HourForecast." + "formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -880,7 +880,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//**********************
 						if (Object.keys(body.nexthour).length > 0){
 							self.setObjectNotExists("HourForecast.nexthour.date" , {
-								type: "date",
+								type: "state",
 								common: {
 									name: "date",
 									type: "string",
@@ -908,7 +908,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
-								type: "text.url",
+								type: "state",
 								common: {
 									name: "icon-url",
 									type: "string",
@@ -1046,7 +1046,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** Formatted Date
 						//**********************
 						self.setObjectNotExists("24hForecast.formatted_date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "formatted_date",
 								type: "string",
@@ -1060,7 +1060,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 0
 						//************************
 						self.setObjectNotExists("24hForecast.hour0.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1088,7 +1088,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour0.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1168,7 +1168,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 1
 						//************************
 						self.setObjectNotExists("24hForecast.hour1.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1196,7 +1196,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour1.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1276,7 +1276,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 2
 						//************************
 						self.setObjectNotExists("24hForecast.hour2.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1304,7 +1304,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour2.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1384,7 +1384,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 3
 						//************************
 						self.setObjectNotExists("24hForecast.hour3.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1412,7 +1412,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour3.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1492,7 +1492,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 4
 						//************************
 						self.setObjectNotExists("24hForecast.hour4.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1520,7 +1520,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour4.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1600,7 +1600,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 5
 						//************************
 						self.setObjectNotExists("24hForecast.hour5.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1628,7 +1628,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour5.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1708,7 +1708,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 6
 						//************************
 						self.setObjectNotExists("24hForecast.hour6.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1736,7 +1736,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour6.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
@@ -1816,7 +1816,7 @@ class SwissWeatherApi extends utils.Adapter {
 						//*** 24h Hours - hour 7
 						//************************
 						self.setObjectNotExists("24hForecast.hour7.date" , {
-							type: "date",
+							type: "state",
 							common: {
 								name: "date",
 								type: "string",
@@ -1844,7 +1844,7 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("24hForecast.hour7.values.icon" , {
-							type: "text.url",
+							type: "state",
 							common: {
 								name: "icon-url",
 								type: "string",
