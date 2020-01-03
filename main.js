@@ -763,19 +763,6 @@ class SwissWeatherApi extends utils.Adapter {
 							native: {},
 						});
 						self.setStateAsync("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx + " " + body.units.ttx.unit, ack: true });
-
-
-
-
-
-
-
-
-
-
-						//todo: Set Weekly Forecast Values
-
-
 					});
 					res.on("error", function (error) {
 						self.log.error(error)
@@ -799,12 +786,114 @@ class SwissWeatherApi extends utils.Adapter {
 						chunks.push(chunk);
 					});
 					res.on("end", function () {
-						var body = Buffer.concat(chunks);
-						self.log.info("Hour Forecast: " + body.toString());
+						var body = JSON.parse(Buffer.concat(chunks).toString());
+						self.log.info("Hour Forecast: " + JSON.stringify(body));
 
-						//todo: Set Hour Forecast Values
+						//**********************
+						//*** Formatted Date
+						//**********************
+						//Set Current Forecast Values
+						self.setObjectNotExists("HourForecast." + "formatted_date" , {
+							type: "state",
+							common: {
+								name: "formatted_date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 
+						//**********************
+						//*** Next Hour
+						//**********************
+						self.setObjectNotExists("HourForecast.nexthour.date" , {
+							type: "state",
+							common: {
+								name: "date",
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.date", { val: body.nexthour[0].date.toString(), ack: true });
 
+						self.setObjectNotExists("HourForecast.nexthour.values.smb3" , {
+							type: "state",
+							common: {
+								name: body.units.smb3.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
+							type: "state",
+							common: {
+								name: body.units.ttt.name,
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt + " " + body.units.ttt.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
+							type: "state",
+							common: {
+								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
+							type: "state",
+							common: {
+								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
+							type: "state",
+							common: {
+								name: body.units.ddd.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd + " " + body.units.ddd.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
+							type: "state",
+							common: {
+								name: body.units.rr3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3 + " " + body.units.rr3.unit, ack: true });
+
+						self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
+							type: "state",
+							common: {
+								name: body.units.pr3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+								type: "string",
+								role: "text"
+							},
+							native: {},
+						});
+						self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3 + " " + body.units.pr3.unit, ack: true });
 					});
 					res.on("error", function (error) {
 						self.log.error(error)
