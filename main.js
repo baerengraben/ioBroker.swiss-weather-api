@@ -170,10 +170,10 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx + " " + body.units.ttx.unit, ack: true });
 
 						//read icon-name for current_day
-						self.log.debug("get Values by xpath");
+						self.log.debug("get icon-url by xpath for current day");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.current_day.values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
-						self.log.debug("Weather-Icon Name: " + gchild.text());
+						self.log.debug("Weather-Icon Name: " + icon);
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon" , {
 							type: "text.url",
@@ -213,8 +213,11 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("CurrentForecast.current_hour.values.smb3", { val: body.current_hour[0].values[0].smb3, ack: true });
 
 							//read icon-name for current_hour
+							self.log.debug("get icon-url by xpath for current hour");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.current_hour[0].values[0].smb3 +"]/Code_icon");
 							var icon = gchild.text();
+							self.log.debug("Weather-Icon Name: " + icon);
+
 							self.setObjectNotExists("CurrentForecast.current_hour.values.icon" , {
 								type: "text.url",
 								common: {
@@ -420,8 +423,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day0.smbd", { val: body.sevendays[0].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day0");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[0].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day0.icon" , {
 							type: "text.url",
 							common: {
@@ -477,8 +483,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day1.smbd", { val: body.sevendays[1].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day1");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[1].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day1.icon" , {
 							type: "text.url",
 							common: {
@@ -534,8 +543,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day2.smbd", { val: body.sevendays[2].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day2");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[2].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day2.icon" , {
 							type: "text.url",
 							common: {
@@ -591,8 +603,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day3.smbd", { val: body.sevendays[3].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day3");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[3].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day3.icon" , {
 							type: "text.url",
 							common: {
@@ -648,8 +663,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day4.smbd", { val: body.sevendays[4].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day4");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[4].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day4.icon" , {
 							type: "text.url",
 							common: {
@@ -705,8 +723,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day5.smbd", { val: body.sevendays[5].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day5");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[5].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day5.icon" , {
 							type: "text.url",
 							common: {
@@ -762,8 +783,11 @@ class SwissWeatherApi extends utils.Adapter {
 						});
 						self.setStateAsync("WeekForecast.day6.smbd", { val: body.sevendays[6].values[1].smbd, ack: true });
 						//read icon-name
+						self.log.debug("get icon-url by xpath for weekforecast.day6");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[6].values[1].smbd +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("WeekForecast.day6.icon" , {
 							type: "text.url",
 							common: {
@@ -878,8 +902,11 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
 
 							//read icon-name
+							self.log.debug("get icon-url by xpath for hourforecast.nexthour");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 +"]/Code_icon");
 							var icon = gchild.text();
+							self.log.debug("Weather-Icon Name: " + icon);
+
 							self.setObjectNotExists("HourForecast.nexthour.values.icon" , {
 								type: "text.url",
 								common: {
@@ -1055,8 +1082,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour0.values.smb3", { val: body.twentyfourhours[0].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour0");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[0].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour0.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1160,8 +1190,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour1.values.smb3", { val: body.twentyfourhours[1].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour1");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[1].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour1.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1265,8 +1298,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour2.values.smb3", { val: body.twentyfourhours[2].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour2");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[2].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour2.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1370,8 +1406,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour3.values.smb3", { val: body.twentyfourhours[3].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour3");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[3].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour3.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1475,8 +1514,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour4.values.smb3", { val: body.twentyfourhours[4].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour4");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[4].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour4.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1580,8 +1622,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour5.values.smb3", { val: body.twentyfourhours[5].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour5");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[5].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour5.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1685,8 +1730,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour6.values.smb3", { val: body.twentyfourhours[6].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour6");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[6].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour6.values.icon" , {
 							type: "text.url",
 							common: {
@@ -1790,8 +1838,11 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setStateAsync("24hForecast.hour7.values.smb3", { val: body.twentyfourhours[7].values[0].smb3, ack: true });
 
 						//read icon-name
+						self.log.debug("get icon-url by xpath for 24h forecast.hour7");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[7].values[0].smb3 +"]/Code_icon");
 						var icon = gchild.text();
+						self.log.debug("Weather-Icon Name: " + icon);
+
 						self.setObjectNotExists("24hForecast.hour7.values.icon" , {
 							type: "text.url",
 							common: {
