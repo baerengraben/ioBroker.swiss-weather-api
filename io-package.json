@@ -1,7 +1,7 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.0",
+		"version": "0.1.1",
 		"news": {
 			"0.1.0": {
 				"en": "Running version. Reads the complete weather forecast from https://api.srgssr.ch"
