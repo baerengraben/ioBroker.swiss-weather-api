@@ -130,7 +130,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -141,7 +141,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name + " " + body.units.ttn.unit,
 								type: "string",
-								role: "value.temperature.number"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -152,7 +152,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -163,7 +163,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -180,7 +180,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -191,7 +191,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -207,7 +207,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "date",
 									type: "string",
-									role: "text"
+									role: "date"
 								},
 								native: {},
 							});
@@ -218,7 +218,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: body.units.smb3.name,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
@@ -235,7 +235,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "icon-url",
 									type: "string",
-									role: "text"
+									role: "weather.icon"
 								},
 								native: {},
 							});
@@ -246,7 +246,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "icon-name",
 									type: "string",
-									role: "text"
+									role: "weather.icon"
 								},
 								native: {},
 							});
@@ -456,7 +456,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -467,7 +467,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -528,7 +528,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -539,7 +539,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -600,7 +600,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -611,7 +611,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -672,7 +672,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -683,7 +683,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -744,7 +744,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -755,7 +755,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -816,7 +816,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -827,7 +827,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -888,7 +888,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -899,7 +899,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-name",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1019,7 +1019,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "icon-url",
 									type: "string",
-									role: "text"
+									role: "weather.icon"
 								},
 								native: {},
 							});
@@ -1030,7 +1030,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "icon-name",
 									type: "string",
-									role: "text"
+									role: "weather.icon"
 								},
 								native: {},
 							});
@@ -1210,7 +1210,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1318,7 +1318,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1426,7 +1426,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1534,7 +1534,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1642,7 +1642,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1750,7 +1750,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1858,7 +1858,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
@@ -1966,7 +1966,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "icon-url",
 								type: "string",
-								role: "text"
+								role: "weather.icon"
 							},
 							native: {},
 						});
