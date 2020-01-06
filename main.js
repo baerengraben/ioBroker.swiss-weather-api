@@ -139,13 +139,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("CurrentForecast.current_day.values.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature.number"
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn, ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.smbd" , {
 							type: "state",
@@ -161,13 +161,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("CurrentForecast.current_day.values.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
 
 						//read icon-name for current_day
 						self.log.debug("get icon-url by xpath for current day");
@@ -255,13 +255,13 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ttt" , {
 								type: "state",
 								common: {
-									name: body.units.ttt.name,
+									name: body.units.ttt.name + " " + body.units.ttt.unit,
 									type: "string",
 									role: "text"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[1].ttt  + " " + body.units.ttt.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[1].ttt, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
 								type: "state",
@@ -428,13 +428,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day0.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day0.ttn", { val: body.sevendays[0].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day0.ttn", { val: body.sevendays[0].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day0.smbd" , {
 							type: "state",
 							common: {
@@ -476,13 +476,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day0.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day0.ttx", { val: body.sevendays[0].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day0.ttx", { val: body.sevendays[0].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 1
@@ -500,13 +500,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day1.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day1.ttn", { val: body.sevendays[1].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day1.ttn", { val: body.sevendays[1].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day1.smbd" , {
 							type: "state",
 							common: {
@@ -548,13 +548,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day1.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day1.ttx", { val: body.sevendays[1].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day1.ttx", { val: body.sevendays[1].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 2
@@ -572,13 +572,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day2.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day2.ttn", { val: body.sevendays[2].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day2.ttn", { val: body.sevendays[2].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day2.smbd" , {
 							type: "state",
 							common: {
@@ -620,13 +620,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day2.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day2.ttx", { val: body.sevendays[2].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day2.ttx", { val: body.sevendays[2].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 3
@@ -644,13 +644,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day3.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day3.ttn", { val: body.sevendays[3].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day3.ttn", { val: body.sevendays[3].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day3.smbd" , {
 							type: "state",
 							common: {
@@ -692,13 +692,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day3.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day3.ttx", { val: body.sevendays[3].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day3.ttx", { val: body.sevendays[3].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 4
@@ -716,13 +716,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day4.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day4.ttn", { val: body.sevendays[4].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day4.ttn", { val: body.sevendays[4].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day4.smbd" , {
 							type: "state",
 							common: {
@@ -764,13 +764,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day4.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day4.ttx", { val: body.sevendays[4].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day4.ttx", { val: body.sevendays[4].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 5
@@ -788,13 +788,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day5.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day5.ttn", { val: body.sevendays[5].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day5.ttn", { val: body.sevendays[5].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day5.smbd" , {
 							type: "state",
 							common: {
@@ -836,13 +836,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day5.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day5.ttx", { val: body.sevendays[5].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day5.ttx", { val: body.sevendays[5].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 6
@@ -860,13 +860,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day6.ttn" , {
 							type: "state",
 							common: {
-								name: body.units.ttn.name,
+								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day6.ttn", { val: body.sevendays[6].values[0].ttn + " " + body.units.ttn.unit, ack: true });
+						self.setStateAsync("WeekForecast.day6.ttn", { val: body.sevendays[6].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day6.smbd" , {
 							type: "state",
 							common: {
@@ -908,13 +908,13 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("WeekForecast.day6.ttx" , {
 							type: "state",
 							common: {
-								name: body.units.ttx.name,
+								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
 								role: "text"
 							},
 							native: {},
 						});
-						self.setStateAsync("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx + " " + body.units.ttx.unit, ack: true });
+						self.setStateAsync("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx, ack: true });
 
 						self.setObjectNotExists("WeekForecast.status" , {
 							type: "state",
@@ -1039,13 +1039,13 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
 								type: "state",
 								common: {
-									name: body.units.ttt.name,
+									name: body.units.ttt.name + " " + body.units.ttt.unit,
 									type: "string",
 									role: "text"
 								},
 								native: {},
 							});
-							self.setStateAsync("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt + " " + body.units.ttt.unit, ack: true });
+							self.setStateAsync("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
 								type: "state",
