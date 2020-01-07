@@ -255,9 +255,9 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ttt" , {
 								type: "state",
 								common: {
-									name: body.units.ttt.name + " " + body.units.ttt.unit,
+									name: body.units.ttt.name + " in " + body.units.ttt.unit,
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
@@ -266,57 +266,57 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
 								type: "state",
 								common: {
-									name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+									name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[2].fff, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ffx3" , {
 								type: "state",
 								common: {
-									name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+									name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[3].ffx3  + " " + body.units.fx3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[3].ffx3, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ddd" , {
 								type: "state",
 								common: {
-									name: body.units.ddd.name,
+									name: body.units.ddd.name + " in " + body.units.ddd.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[4].ddd  + " " + body.units.ddd.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[4].ddd, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.rr3" , {
 								type: "state",
 								common: {
-									name: body.units.rr3.name,
+									name: body.units.rr3.name + " in " + body.units.rr3.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[5].rr3  + " " + body.units.rr3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[5].rr3, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.pr3" , {
 								type: "state",
 								common: {
-									name: body.units.pr3.name,
+									name: body.units.pr3.name + " in " + body.units.pr3.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3  + " " + body.units.pr3.unit, ack: true });
+							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3, ack: true });
 
 						} else {
 							self.log.error("CurrentForecast - Current_hour is empty;")
@@ -430,7 +430,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -440,7 +440,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -478,7 +478,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -502,7 +502,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -512,7 +512,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -550,7 +550,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -574,7 +574,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -584,7 +584,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -622,7 +622,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -646,7 +646,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -656,7 +656,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -694,7 +694,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -718,7 +718,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -728,7 +728,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -766,7 +766,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -790,7 +790,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -800,7 +800,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -838,7 +838,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -862,7 +862,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttn.name  + " " + body.units.ttn.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -872,7 +872,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smbd.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -910,7 +910,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.ttx.name  + " " + body.units.ttx.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -991,7 +991,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: "date",
 									type: "string",
-									role: "text"
+									role: "date"
 								},
 								native: {},
 							});
@@ -1002,7 +1002,7 @@ class SwissWeatherApi extends utils.Adapter {
 								common: {
 									name: body.units.smb3.name,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
@@ -1039,9 +1039,9 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
 								type: "state",
 								common: {
-									name: body.units.ttt.name + " " + body.units.ttt.unit,
+									name: body.units.ttt.name + " in " + body.units.ttt.unit,
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
@@ -1050,9 +1050,9 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
 								type: "state",
 								common: {
-									name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+									name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
@@ -1061,9 +1061,9 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
 								type: "state",
 								common: {
-									name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
+									name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'ffx3' is found. So i guess it could be 'fx3'
 									type: "string",
-									role: "text"
+									role: "value.temperature"
 								},
 								native: {},
 							});
@@ -1072,35 +1072,35 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
 								type: "state",
 								common: {
-									name: body.units.ddd.name,
+									name: body.units.ddd.name + " in " + body.units.ddd.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd + " " + body.units.ddd.unit, ack: true });
+							self.setStateAsync("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
 								type: "state",
 								common: {
-									name: body.units.rr3.name,
+									name: body.units.rr3.name + " in " + body.units.rr3.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3 + " " + body.units.rr3.unit, ack: true });
+							self.setStateAsync("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
 								type: "state",
 								common: {
-									name: body.units.pr3.name,
+									name: body.units.pr3.name + " in " + body.units.pr3.unit,
 									type: "string",
-									role: "text"
+									role: "value"
 								},
 								native: {},
 							});
-							self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3 + " " + body.units.pr3.unit, ack: true });
+							self.setStateAsync("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3, ack: true });
 
 							self.setObjectNotExists("HourForecast.status" , {
 								type: "state",
@@ -1182,7 +1182,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1193,7 +1193,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1219,9 +1219,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1230,9 +1230,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1241,9 +1241,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1252,9 +1252,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1263,9 +1263,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1274,9 +1274,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour0.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1290,7 +1290,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1301,7 +1301,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1327,9 +1327,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1338,9 +1338,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1349,9 +1349,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1360,9 +1360,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1371,9 +1371,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1382,9 +1382,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour1.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1398,7 +1398,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1409,7 +1409,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1435,9 +1435,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name  + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1446,9 +1446,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1457,9 +1457,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1468,9 +1468,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1479,9 +1479,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1490,9 +1490,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour2.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1506,7 +1506,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1517,7 +1517,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1543,9 +1543,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1554,9 +1554,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1565,9 +1565,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1576,9 +1576,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1587,9 +1587,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1598,9 +1598,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour3.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1614,7 +1614,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1625,7 +1625,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1651,9 +1651,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1662,9 +1662,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1673,9 +1673,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1684,9 +1684,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1695,9 +1695,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1706,9 +1706,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour4.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1722,7 +1722,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1733,7 +1733,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1759,9 +1759,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1770,9 +1770,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1781,9 +1781,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1792,9 +1792,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1803,9 +1803,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1814,9 +1814,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour5.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1830,7 +1830,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1841,7 +1841,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1867,9 +1867,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1878,9 +1878,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1889,9 +1889,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1900,9 +1900,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1911,9 +1911,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1922,9 +1922,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour6.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1938,7 +1938,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: "date",
 								type: "string",
-								role: "text"
+								role: "date"
 							},
 							native: {},
 						});
@@ -1949,7 +1949,7 @@ class SwissWeatherApi extends utils.Adapter {
 							common: {
 								name: body.units.smb3.name,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -1975,9 +1975,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.ttt" , {
 							type: "state",
 							common: {
-								name: body.units.ttt.name,
+								name: body.units.ttt.name + " in " + body.units.ttt.unit,
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1986,9 +1986,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.fff" , {
 							type: "state",
 							common: {
-								name: body.units.ff3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
+								name: body.units.ff3.name + " in " + body.units.ff3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'ff3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -1997,9 +1997,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.ffx3" , {
 							type: "state",
 							common: {
-								name: body.units.fx3.name, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
+								name: body.units.fx3.name + " in " + body.units.fx3.unit, //todo send srf: this is maybe the wrong attribute. But no unit-Attribute for 'fff' is found. So i guess it could be 'fx3'
 								type: "string",
-								role: "text"
+								role: "value.temperature"
 							},
 							native: {},
 						});
@@ -2008,9 +2008,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.ddd" , {
 							type: "state",
 							common: {
-								name: body.units.ddd.name,
+								name: body.units.ddd.name + " in " + body.units.ddd.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -2019,9 +2019,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.rr3" , {
 							type: "state",
 							common: {
-								name: body.units.rr3.name,
+								name: body.units.rr3.name + " in " + body.units.rr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
@@ -2030,9 +2030,9 @@ class SwissWeatherApi extends utils.Adapter {
 						self.setObjectNotExists("24hForecast.hour7.values.pr3" , {
 							type: "state",
 							common: {
-								name: body.units.pr3.name,
+								name: body.units.pr3.name + " in " + body.units.pr3.unit,
 								type: "string",
-								role: "text"
+								role: "value"
 							},
 							native: {},
 						});
