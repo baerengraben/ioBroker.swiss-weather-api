@@ -51,7 +51,7 @@ This is a scheduled Adapter. It is scheduled every 15 minutes and reads the fore
 ## License
 MIT License
 
-Copyright (c) 2019 baerengraben <baerengraben@intelli.ch>
+Copyright (c) 2020 baerengraben <baerengraben@intelli.ch>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
