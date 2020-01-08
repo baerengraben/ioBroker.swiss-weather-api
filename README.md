@@ -33,6 +33,9 @@ This is a scheduled Adapter. It is scheduled every 15 minutes and reads the fore
 ## Changelog
 
 ### 0.1.2
+* (baerengraben) Role-Definitions updated and added attribute 'icon-name'.
+
+### 0.1.2
 * (baerengraben) Some fixes.
 
 ### 0.1.0
