@@ -33,6 +33,9 @@ This is a scheduled Adapter. It is scheduled every 30 minutes and reads the fore
 
 ## Changelog
 
+### 0.1.4
+* (baerengraben) Added Travis CI testing
+
 ### 0.1.3
 * (baerengraben) Role-Definitions updated and added attribute 'icon-name'.
 

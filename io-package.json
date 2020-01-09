@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.3",
+		"version": "0.1.4",
 		"news": {
+			"0.1.4": {
+				"en": "Added Travis CI Testing"
+			},
 			"0.1.3": {
 				"en": "Roles Updated and added attribute 'icon-name'"
 			},
