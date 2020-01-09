@@ -21,14 +21,15 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 ### Getting started
 1. Get a free accout on https://developer.srgssr.ch/
 1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
-1. Find out Longitude / Latitude of the chosen location for wich forecast is needed
-1. Install this Adapter on ioBroker
+1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed
+1. Install this Adapter on ioBroker => This can take several minutes (~7min on a Raspberry Pi 3)
 1. On Adapter Configuration fill in
    1. ConsumerKey of App
    1. ConsumerSecret of App
-   1. Longitude / Latitude of the chosen location for wich forecast is needed
+   1. Longitude / Latitude of the chosen location for which forecast is needed. => Please use decimal degrees like 32.30642 / 122.61458
 
-This is a scheduled Adapter. It is scheduled every 15 minutes and reads the forecast API of SRG-SSR. Feel free to change the scheduler intervall in instance-view (Schedule).    
+This is a scheduled Adapter. It is scheduled every 30 minutes and reads the forecast API of SRG-SSR. You could change this intervall in instance-view (Schedule). A lower intervall is not recomented, since the minimal forecast is 1 hour. 
+**So please keep in mind that, after installation, it will take 30 minutes until the forecast data is delivered the frist time and the data-objects in data view are created.** 
 
 ## Changelog
 
