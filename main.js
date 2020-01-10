@@ -96,7 +96,7 @@ class SwissWeatherApi extends utils.Adapter {
 			res.on("end", function () {
 				var body = JSON.parse(Buffer.concat(chunks).toString());
 				if (body.access_token === undefined){
-					self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;")
+					self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
 					return;
 				}
 				access_token = body.access_token.toString();
