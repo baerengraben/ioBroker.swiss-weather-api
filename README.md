@@ -18,6 +18,9 @@ Connects to the great SRG-SSR weather API (https://developer.srgssr.ch/apis/srgs
 Weather-Icons are reused from https://erikflowers.github.io/weather-icons/
 
 The SRG-SSR Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland.
+
+**Be aware that this adapter only supports locations within Switzerland.**
+
 ### Getting started
 1. Get a free accout on https://developer.srgssr.ch/
 1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
@@ -26,7 +29,7 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 1. On Adapter Configuration fill in
    1. ConsumerKey of App
    1. ConsumerSecret of App
-   1. Longitude / Latitude of the chosen location for which forecast is needed. => Please use decimal degrees like 32.30642 / 122.61458
+   1. Longitude / Latitude of the chosen swiss location for which forecast is needed. => Please use decimal degrees like 32.30642 / 122.61458
 
 This is a scheduled Adapter. It is scheduled every 30 minutes and reads the forecast API of SRG-SSR. You could change this intervall in instance-view (Schedule). A lower intervall is not recomented, since the minimal forecast is 1 hour. 
 **So please keep in mind that, after installation, it will take 30 minutes until the forecast data is delivered the frist time and the data-objects in data view are created.** 
