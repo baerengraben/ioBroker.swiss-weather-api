@@ -34,6 +34,21 @@ class SwissWeatherApi extends utils.Adapter {
 		var consumerSecret = this.config.ConsumerSecret;
 		var access_token;
 
+		//Mandantory Attributes
+		if (latitude === undefined){
+			self.log.warn("Got no latitude - Is adapter correctly configured (latitude)?;");
+			return;
+		} else if (longitude === undefined){
+			self.log.warn("Got no longitude - Is adapter correctly configured (longitude)?;");
+			return;
+		} else if (consumerKey === undefined){
+			self.log.warn("Got no consumerKey - Is adapter correctly configured (consumerKey)?;");
+			return;
+		} else if (consumerSecret === undefined){
+			self.log.warn("Got no consumerSecret - Is adapter correctly configured (consumerSecret)?;");
+			return;
+		}
+
 		this.log.debug("App Name: " + appName);
 		this.log.debug("Consumer Key: " + consumerKey);
 		this.log.debug("Consumer Secret: " + consumerSecret);
@@ -80,6 +95,10 @@ class SwissWeatherApi extends utils.Adapter {
 			});
 			res.on("end", function () {
 				var body = JSON.parse(Buffer.concat(chunks).toString());
+				if (body.access_token === undefined){
+					self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;")
+					return;
+				}
 				access_token = body.access_token.toString();
 				self.log.debug("Access_Token : " + access_token);
 
@@ -319,7 +338,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3, ack: true });
 
 						} else {
-							self.log.error("CurrentForecast - Current_hour is empty;")
+							self.log.warn("CurrentForecast - Current_hour is empty;")
 						}
 
 						//**********************
