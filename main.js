@@ -338,7 +338,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3, ack: true });
 
 						} else {
-							self.log.warn("CurrentForecast - Current_hour is empty;")
+							self.log.warn("CurrentForecast - Current_hour is empty. Do no import for this cycle")
 						}
 
 						//**********************
@@ -1133,7 +1133,7 @@ class SwissWeatherApi extends utils.Adapter {
 							self.setStateAsync("HourForecast.status", { val: "Success", ack: true });
 
 						} else {
-							self.log.error("Hour Forecast - nexthour is empty;")
+							self.log.warn("Hour Forecast - nexthour is empty. Do no import for this cycle")
 						}
 					});
 					res.on("error", function (error) {
