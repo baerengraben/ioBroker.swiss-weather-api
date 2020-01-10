@@ -126,6 +126,17 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
 						self.log.debug("Current Forecast: " + JSON.stringify(body));
 
+						if (body.code !== undefined) {
+							self.log.debug("Current Forecast - Return Code: " + body.code.toString());
+							if (body.code.toString() === "404.02.001"){
+								self.log.error("Current Forecast - Requested Location is not supported. Please be aware, that this adapter only supports locations within Switzerland.");
+								return;
+							} else {
+								self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+								return;
+							}
+						}
+
 						//**********************
 						//*** Formatted Date
 						//**********************
@@ -430,6 +441,17 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("chunksConcat: " + chunksConcat);
 						var body = JSON.parse(chunksConcat);
 						self.log.debug("Week Forecast: " + JSON.stringify(body));
+
+						if (body.code !== undefined) {
+							self.log.debug("Week Forecast:  - Return Code: " + body.code.toString());
+							if (body.code.toString() === "404.02.001"){
+								self.log.error("Week Forecast - Requested Location is not supported. Please be aware, that this adapter only supports locations within Switzerland.");
+								return;
+							} else {
+								self.log.error("Week Forecast - An error has occured. " + JSON.stringify(body));
+								return;
+							}
+						}
 
 						//**********************
 						//*** Day 0
@@ -986,6 +1008,17 @@ class SwissWeatherApi extends utils.Adapter {
 						var body = JSON.parse(Buffer.concat(chunks).toString());
 						self.log.debug("Hour Forecast: " + JSON.stringify(body));
 
+						if (body.code !== undefined) {
+							self.log.debug("Hour Forecast - Return Code: " + body.code.toString());
+							if (body.code.toString() === "404.02.001"){
+								self.log.error("Hour Forecast - Requested Location is not supported. Please be aware, that this adapter only supports locations within Switzerland.");
+								return;
+							} else {
+								self.log.error("Hour Forecast - An error has occured. " + JSON.stringify(body));
+								return;
+							}
+						}
+
 						//**********************
 						//*** Formatted Date
 						//**********************
@@ -1178,6 +1211,17 @@ class SwissWeatherApi extends utils.Adapter {
 						self.log.debug("chunksConcat: " + chunksConcat);
 						var body = JSON.parse(chunksConcat);
 						self.log.debug("24h Forecast: " + JSON.stringify(body));
+
+						if (body.code !== undefined) {
+							self.log.debug("24h Forecast - Return Code: " + body.code.toString());
+							if (body.code.toString() === "404.02.001"){
+								self.log.error("24h Forecast - Requested Location is not supported. Please be aware, that this adapter only supports locations within Switzerland.");
+								return;
+							} else {
+								self.log.error("24h Forecast - An error has occured. " + JSON.stringify(body));
+								return;
+							}
+						}
 
 						//**********************
 						//*** Formatted Date
