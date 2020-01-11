@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.4",
+		"version": "0.1.5",
 		"news": {
+			"0.1.5": {
+				"en": "Some fixes based on Feedback of forum.iobroker.net"
+			},
 			"0.1.4": {
 				"en": "Added Travis CI Testing"
 			},
