@@ -70,7 +70,7 @@
 		"readme": "https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md",
 		"loglevel": "info",
 		"mode": "schedule",
-		"schedule": "/30 * * * *",
+		"schedule": "*/30 * * * *",
 		"type": "weather",
 		"connection-type": "cloud polling",
 		"compact": true,

@@ -57,12 +57,17 @@ class SwissWeatherApi extends utils.Adapter {
 
 		//Prepare XML File in order to get the weather-icon
 		self.log.debug("Define XML File:...");
-		xml = fs.readFileSync(__dirname + "/img/weather-icons/SRG-SSR-WeatherAPITranslations.xml");
-		xmlDoc = libxmljs.parseXmlString(xml);
+		try {
+			xml = fs.readFileSync(__dirname + "/img/weather-icons/SRG-SSR-WeatherAPITranslations.xml");
+			xmlDoc = libxmljs.parseXmlString(xml);
+		} catch (err) {
+			self.log.error("An error has occured while trying to read SRG-SSR-WeatherAPITranslations.xml. Please create an Issue on Github Project-Site. Error Code is: " + err.code);
+			return;
+		}
 
 		//Convert ConsumerKey and ConsumerSecret to base64
 		let data = consumerKey + ":" + consumerSecret;
-		let buff = new Buffer(data);
+		let buff = new Buffer.from(data)
 		let base64data = buff.toString('base64');
 		this.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
 
