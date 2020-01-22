@@ -7,6 +7,7 @@ const utils = require("@iobroker/adapter-core");
 const http = require("https");
 const fs = require('fs');
 const libxmljs = require('libxmljs2');
+var path = require('path');
 var xml;
 var xmlDoc;
 
@@ -58,7 +59,7 @@ class SwissWeatherApi extends utils.Adapter {
 		//Prepare XML File in order to get the weather-icon
 		self.log.debug("Define XML File:...");
 		try {
-			xml = fs.readFileSync(__dirname + "/img/weather-icons/SRG-SSR-WeatherAPITranslations.xml");
+			xml = fs.readFileSync(path.join(__dirname, 'img', 'weather-icons', 'SRG-SSR-WeatherAPITranslations.xml'));
 			xmlDoc = libxmljs.parseXmlString(xml);
 		} catch (err) {
 			self.log.error("An error has occured while trying to read SRG-SSR-WeatherAPITranslations.xml. Please create an Issue on Github Project-Site. Error Code is: " + err.code);
