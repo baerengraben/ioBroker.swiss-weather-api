@@ -155,8 +155,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 						});
-						self.setState("CurrentForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 
 						//**********************
 						//*** Current Day
@@ -169,8 +170,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.date", { val: body.current_day.date.toString(), ack: true });
 						});
-						self.setState("CurrentForecast.current_day.date", { val: body.current_day.date.toString(), ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.ttn" , {
 							type: "state",
@@ -180,8 +182,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						},function () {
+							self.setState("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn, ack: true });
 						});
-						self.setState("CurrentForecast.current_day.values.ttn", { val: body.current_day.values[0].ttn, ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.smbd" , {
 							type: "state",
@@ -191,8 +194,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.values.smbd", { val: body.current_day.values[1].smbd, ack: true });
 						});
-						self.setState("CurrentForecast.current_day.values.smbd", { val: body.current_day.values[1].smbd, ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.ttx" , {
 							type: "state",
@@ -202,8 +206,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
 						});
-						self.setState("CurrentForecast.current_day.values.ttx", { val: body.current_day.values[2].ttx, ack: true });
 
 						//read icon-name for current_day
 						self.log.debug("get icon-url by xpath for current day");
@@ -219,8 +224,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("CurrentForecast.current_day.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon-name" , {
 							type: "state",
@@ -230,8 +236,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("CurrentForecast.current_day.values.icon-name", { val: icon +".png", ack: true });
 
 
 						//**********************
@@ -246,8 +253,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "date"
 								},
 								native: {},
+							}, function () {
+								self.setState("CurrentForecast.current_hour.date", { val: body.current_hour[0].date, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.date", { val: body.current_hour[0].date, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.smb3" , {
 								type: "state",
@@ -257,8 +265,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.smb3", { val: body.current_hour[0].values[0].smb3, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.smb3", { val: body.current_hour[0].values[0].smb3, ack: true });
 
 							//read icon-name for current_hour
 							self.log.debug("get icon-url by xpath for current hour");
@@ -274,8 +283,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "weather.icon"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.icon-name" , {
 								type: "state",
@@ -285,8 +295,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "weather.icon"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.icon-name", { val: icon +".png", ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.icon-name", { val: icon +".png", ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ttt" , {
 								type: "state",
@@ -296,8 +307,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[1].ttt, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.ttt", { val: body.current_hour[0].values[1].ttt, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.fff" , {
 								type: "state",
@@ -307,8 +319,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[2].fff, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.fff", { val: body.current_hour[0].values[2].fff, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ffx3" , {
 								type: "state",
@@ -318,8 +331,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							},function () {
+								self.setState("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[3].ffx3, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.ffx3", { val: body.current_hour[0].values[3].ffx3, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.ddd" , {
 								type: "state",
@@ -329,8 +343,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[4].ddd, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.ddd", { val: body.current_hour[0].values[4].ddd, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.rr3" , {
 								type: "state",
@@ -340,8 +355,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[5].rr3, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.rr3", { val: body.current_hour[0].values[5].rr3, ack: true });
 
 							self.setObjectNotExists("CurrentForecast.current_hour.values.pr3" , {
 								type: "state",
@@ -351,9 +367,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3, ack: true });
 							});
-							self.setState("CurrentForecast.current_hour.values.pr3", { val: body.current_hour[0].values[6].pr3, ack: true });
-
 						} else {
 							self.log.warn("CurrentForecast - Current_hour is empty. Do no import for this cycle")
 						}
@@ -369,8 +385,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("info.id", { val: body.info.id, ack: true });
 						});
-						self.setState("info.id", { val: body.info.id, ack: true });
 
 						self.setObjectNotExists("info.plz" , {
 							type: "state",
@@ -380,8 +397,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("info.plz", { val: body.info.plz, ack: true });
 						});
-						self.setState("info.plz", { val: body.info.plz, ack: true });
 
 						self.setObjectNotExists("info.name.de" , {
 							type: "state",
@@ -391,8 +409,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("info.name.de", { val: body.info.name.de, ack: true });
 						});
-						self.setState("info.name.de", { val: body.info.name.de, ack: true });
 
 						self.setObjectNotExists("CurrentForecast.status" , {
 							type: "state",
@@ -402,8 +421,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.status", { val: "Success", ack: true });
 						});
-						self.setState("CurrentForecast.status", { val: "Success", ack: true });
 
 					});
 					res.on("error", function (error) {
@@ -416,8 +436,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("CurrentForecast.status", { val: error, ack: true });
 						});
-						self.setState("CurrentForecast.status", { val: error, ack: true });
 					});
 				});
 				reqCurrentForecast.end();
@@ -470,8 +491,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.formatted_date", { val: body.sevendays[0].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day0.formatted_date", { val: body.sevendays[0].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day0.ttn" , {
 							type: "state",
 							common: {
@@ -480,8 +502,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.ttn", { val: body.sevendays[0].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day0.ttn", { val: body.sevendays[0].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day0.smbd" , {
 							type: "state",
 							common: {
@@ -490,8 +513,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.smbd", { val: body.sevendays[0].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day0.smbd", { val: body.sevendays[0].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day0");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[0].values[1].smbd +"]/Code_icon");
@@ -506,8 +530,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day0.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day0.icon-name" , {
 							type: "state",
@@ -517,8 +542,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day0.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day0.ttx" , {
 							type: "state",
@@ -528,8 +554,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.ttx", { val: body.sevendays[0].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day0.ttx", { val: body.sevendays[0].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 1
@@ -542,8 +569,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.formatted_date", { val: body.sevendays[1].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day1.formatted_date", { val: body.sevendays[1].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day1.ttn" , {
 							type: "state",
 							common: {
@@ -552,8 +580,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.ttn", { val: body.sevendays[1].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day1.ttn", { val: body.sevendays[1].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day1.smbd" , {
 							type: "state",
 							common: {
@@ -562,8 +591,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.smbd", { val: body.sevendays[1].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day1.smbd", { val: body.sevendays[1].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day1");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[1].values[1].smbd +"]/Code_icon");
@@ -578,8 +608,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day1.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day1.icon-name" , {
 							type: "state",
@@ -589,8 +620,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day1.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day1.ttx" , {
 							type: "state",
@@ -600,8 +632,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.ttx", { val: body.sevendays[1].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day1.ttx", { val: body.sevendays[1].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 2
@@ -614,8 +647,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.formatted_date", { val: body.sevendays[2].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day2.formatted_date", { val: body.sevendays[2].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day2.ttn" , {
 							type: "state",
 							common: {
@@ -624,8 +658,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.ttn", { val: body.sevendays[2].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day2.ttn", { val: body.sevendays[2].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day2.smbd" , {
 							type: "state",
 							common: {
@@ -634,8 +669,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.smbd", { val: body.sevendays[2].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day2.smbd", { val: body.sevendays[2].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day2");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[2].values[1].smbd +"]/Code_icon");
@@ -650,8 +686,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day2.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day2.icon-name" , {
 							type: "state",
@@ -661,8 +698,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day2.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day2.ttx" , {
 							type: "state",
@@ -672,8 +710,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.ttx", { val: body.sevendays[2].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day2.ttx", { val: body.sevendays[2].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 3
@@ -686,8 +725,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.formatted_date", { val: body.sevendays[3].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day3.formatted_date", { val: body.sevendays[3].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day3.ttn" , {
 							type: "state",
 							common: {
@@ -696,8 +736,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.ttn", { val: body.sevendays[3].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day3.ttn", { val: body.sevendays[3].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day3.smbd" , {
 							type: "state",
 							common: {
@@ -706,8 +747,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.smbd", { val: body.sevendays[3].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day3.smbd", { val: body.sevendays[3].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day3");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[3].values[1].smbd +"]/Code_icon");
@@ -722,8 +764,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day3.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day3.icon-name" , {
 							type: "state",
@@ -733,8 +776,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day3.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day3.ttx" , {
 							type: "state",
@@ -744,8 +788,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.ttx", { val: body.sevendays[3].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day3.ttx", { val: body.sevendays[3].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 4
@@ -758,8 +803,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.formatted_date", { val: body.sevendays[4].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day4.formatted_date", { val: body.sevendays[4].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day4.ttn" , {
 							type: "state",
 							common: {
@@ -768,8 +814,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.ttn", { val: body.sevendays[4].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day4.ttn", { val: body.sevendays[4].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day4.smbd" , {
 							type: "state",
 							common: {
@@ -778,8 +825,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.smbd", { val: body.sevendays[4].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day4.smbd", { val: body.sevendays[4].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day4");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[4].values[1].smbd +"]/Code_icon");
@@ -794,8 +842,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day4.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day4.icon-name" , {
 							type: "state",
@@ -805,8 +854,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day4.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day4.ttx" , {
 							type: "state",
@@ -816,8 +866,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.ttx", { val: body.sevendays[4].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day4.ttx", { val: body.sevendays[4].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 5
@@ -830,8 +881,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.formatted_date", { val: body.sevendays[5].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day5.formatted_date", { val: body.sevendays[5].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day5.ttn" , {
 							type: "state",
 							common: {
@@ -840,8 +892,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.ttn", { val: body.sevendays[5].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day5.ttn", { val: body.sevendays[5].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day5.smbd" , {
 							type: "state",
 							common: {
@@ -850,8 +903,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.smbd", { val: body.sevendays[5].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day5.smbd", { val: body.sevendays[5].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day5");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[5].values[1].smbd +"]/Code_icon");
@@ -866,8 +920,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day5.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day5.icon-name" , {
 							type: "state",
@@ -877,8 +932,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day5.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day5.ttx" , {
 							type: "state",
@@ -888,8 +944,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.ttx", { val: body.sevendays[5].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day5.ttx", { val: body.sevendays[5].values[2].ttx, ack: true });
 
 						//**********************
 						//*** Day 6
@@ -902,8 +959,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.formatted_date", { val: body.sevendays[6].formatted_date, ack: true });
 						});
-						self.setState("WeekForecast.day6.formatted_date", { val: body.sevendays[6].formatted_date, ack: true });
 						self.setObjectNotExists("WeekForecast.day6.ttn" , {
 							type: "state",
 							common: {
@@ -912,8 +970,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.ttn", { val: body.sevendays[6].values[0].ttn, ack: true });
 						});
-						self.setState("WeekForecast.day6.ttn", { val: body.sevendays[6].values[0].ttn, ack: true });
 						self.setObjectNotExists("WeekForecast.day6.smbd" , {
 							type: "state",
 							common: {
@@ -922,8 +981,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.smbd", { val: body.sevendays[6].values[1].smbd, ack: true });
 						});
-						self.setState("WeekForecast.day6.smbd", { val: body.sevendays[6].values[1].smbd, ack: true });
 						//read icon-name
 						self.log.debug("get icon-url by xpath for weekforecast.day6");
 						var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[6].values[1].smbd +"]/Code_icon");
@@ -938,8 +998,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day6.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day6.icon-name" , {
 							type: "state",
@@ -949,8 +1010,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("WeekForecast.day6.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("WeekForecast.day6.ttx" , {
 							type: "state",
@@ -960,8 +1022,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx, ack: true });
 						});
-						self.setState("WeekForecast.day6.ttx", { val: body.sevendays[6].values[2].ttx, ack: true });
 
 						self.setObjectNotExists("WeekForecast.status" , {
 							type: "state",
@@ -971,9 +1034,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.status", { val: "Success", ack: true });
 						});
-						self.setState("WeekForecast.status", { val: "Success", ack: true });
-
 					});
 					res.on("error", function (error) {
 						self.log.error(error);
@@ -985,8 +1048,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("WeekForecast.status", { val: error, ack: true });
 						});
-						self.setState("WeekForecast.status", { val: error, ack: true });
 					});
 				});
 				reqWeekForecast.end();
@@ -1037,8 +1101,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("HourForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 						});
-						self.setState("HourForecast." + "formatted_date", { val: body.formatted_date.toString(), ack: true });
 
 						//**********************
 						//*** Next Hour
@@ -1052,8 +1117,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "date"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.date", { val: body.nexthour[0].date.toString(), ack: true });
 							});
-							self.setState("HourForecast.nexthour.date", { val: body.nexthour[0].date.toString(), ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.smb3" , {
 								type: "state",
@@ -1063,8 +1129,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.smb3", { val: body.nexthour[0].values[0].smb3, ack: true });
 
 							//read icon-name
 							self.log.debug("get icon-url by xpath for hourforecast.nexthour");
@@ -1080,8 +1147,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "weather.icon"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.icon-name" , {
 								type: "state",
@@ -1091,8 +1159,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "weather.icon"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.icon-name", { val:icon +".png", ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.icon-name", { val:icon +".png", ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.ttt" , {
 								type: "state",
@@ -1102,8 +1171,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.ttt", { val: body.nexthour[0].values[1].ttt, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.fff" , {
 								type: "state",
@@ -1113,8 +1183,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
 								type: "state",
@@ -1124,8 +1195,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value.temperature"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
 								type: "state",
@@ -1135,8 +1207,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.ddd", { val: body.nexthour[0].values[4].ddd, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.rr3" , {
 								type: "state",
@@ -1146,8 +1219,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.rr3", { val: body.nexthour[0].values[5].rr3, ack: true });
 
 							self.setObjectNotExists("HourForecast.nexthour.values.pr3" , {
 								type: "state",
@@ -1157,8 +1231,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "value"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3, ack: true });
 							});
-							self.setState("HourForecast.nexthour.values.pr3", { val: body.nexthour[0].values[6].pr3, ack: true });
 
 							self.setObjectNotExists("HourForecast.status" , {
 								type: "state",
@@ -1168,8 +1243,9 @@ class SwissWeatherApi extends utils.Adapter {
 									role: "text"
 								},
 								native: {},
+							}, function () {
+								self.setState("HourForecast.status", { val: "Success", ack: true });
 							});
-							self.setState("HourForecast.status", { val: "Success", ack: true });
 
 						} else {
 							self.log.warn("Hour Forecast - nexthour is empty. Do no import for this cycle")
@@ -1186,8 +1262,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("HourForecast.status", { val: error, ack: true });
 						});
-						self.setState("HourForecast.status", { val: error, ack: true });
 					});
 				});
 				reqHourForecast.end();
@@ -1240,8 +1317,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.formatted_date", { val: body.formatted_date.toString(), ack: true });
 						});
-						self.setState("24hForecast.formatted_date", { val: body.formatted_date.toString(), ack: true });
 
 						//************************
 						//*** 24h Hours - hour 0
@@ -1254,8 +1332,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.date", { val: body.twentyfourhours[0].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour0.date", { val: body.twentyfourhours[0].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.smb3" , {
 							type: "state",
@@ -1265,8 +1344,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.smb3", { val: body.twentyfourhours[0].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.smb3", { val: body.twentyfourhours[0].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour0");
@@ -1282,8 +1362,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour0.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.icon-name" , {
 							type: "state",
@@ -1293,8 +1374,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour0.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.ttt" , {
 							type: "state",
@@ -1304,8 +1386,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.ttt", { val: body.twentyfourhours[0].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.ttt", { val: body.twentyfourhours[0].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.fff" , {
 							type: "state",
@@ -1315,8 +1398,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.fff", { val: body.twentyfourhours[0].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.fff", { val: body.twentyfourhours[0].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.ffx3" , {
 							type: "state",
@@ -1326,8 +1410,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.ffx3", { val: body.twentyfourhours[0].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.ffx3", { val: body.twentyfourhours[0].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.ddd" , {
 							type: "state",
@@ -1337,8 +1422,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.ddd", { val: body.twentyfourhours[0].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.ddd", { val: body.twentyfourhours[0].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.rr3" , {
 							type: "state",
@@ -1348,8 +1434,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.rr3", { val: body.twentyfourhours[0].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.rr3", { val: body.twentyfourhours[0].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour0.values.pr3" , {
 							type: "state",
@@ -1359,8 +1446,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.pr3", { val: body.twentyfourhours[0].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour0.values.pr3", { val: body.twentyfourhours[0].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 1
@@ -1373,8 +1461,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.date", { val: body.twentyfourhours[1].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour1.date", { val: body.twentyfourhours[1].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.smb3" , {
 							type: "state",
@@ -1384,8 +1473,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.smb3", { val: body.twentyfourhours[1].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.smb3", { val: body.twentyfourhours[1].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour1");
@@ -1401,8 +1491,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour1.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.icon-name" , {
 							type: "state",
@@ -1412,8 +1503,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.icon-name", { val:icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour1.values.icon-name", { val:icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.ttt" , {
 							type: "state",
@@ -1423,8 +1515,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.ttt", { val: body.twentyfourhours[1].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.ttt", { val: body.twentyfourhours[1].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.fff" , {
 							type: "state",
@@ -1434,8 +1527,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.fff", { val: body.twentyfourhours[1].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.fff", { val: body.twentyfourhours[1].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.ffx3" , {
 							type: "state",
@@ -1445,8 +1539,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.ffx3", { val: body.twentyfourhours[1].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.ffx3", { val: body.twentyfourhours[1].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.ddd" , {
 							type: "state",
@@ -1456,8 +1551,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.ddd", { val: body.twentyfourhours[1].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.ddd", { val: body.twentyfourhours[1].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.rr3" , {
 							type: "state",
@@ -1467,8 +1563,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.rr3", { val: body.twentyfourhours[1].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.rr3", { val: body.twentyfourhours[1].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour1.values.pr3" , {
 							type: "state",
@@ -1478,8 +1575,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.pr3", { val: body.twentyfourhours[1].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour1.values.pr3", { val: body.twentyfourhours[1].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 2
@@ -1492,8 +1590,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.date", { val: body.twentyfourhours[2].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour2.date", { val: body.twentyfourhours[2].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.smb3" , {
 							type: "state",
@@ -1503,8 +1602,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.smb3", { val: body.twentyfourhours[2].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.smb3", { val: body.twentyfourhours[2].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour2");
@@ -1520,8 +1620,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour2.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.icon-name" , {
 							type: "state",
@@ -1531,8 +1632,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour2.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.ttt" , {
 							type: "state",
@@ -1542,8 +1644,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.ttt", { val: body.twentyfourhours[2].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.ttt", { val: body.twentyfourhours[2].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.fff" , {
 							type: "state",
@@ -1553,8 +1656,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.fff", { val: body.twentyfourhours[2].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.fff", { val: body.twentyfourhours[2].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.ffx3" , {
 							type: "state",
@@ -1564,8 +1668,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.ffx3", { val: body.twentyfourhours[2].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.ffx3", { val: body.twentyfourhours[2].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.ddd" , {
 							type: "state",
@@ -1575,8 +1680,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.ddd", { val: body.twentyfourhours[2].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.ddd", { val: body.twentyfourhours[2].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.rr3" , {
 							type: "state",
@@ -1586,8 +1692,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.rr3", { val: body.twentyfourhours[2].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.rr3", { val: body.twentyfourhours[2].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour2.values.pr3" , {
 							type: "state",
@@ -1597,8 +1704,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.pr3", { val: body.twentyfourhours[2].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour2.values.pr3", { val: body.twentyfourhours[2].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 3
@@ -1611,8 +1719,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.date", { val: body.twentyfourhours[3].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour3.date", { val: body.twentyfourhours[3].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.smb3" , {
 							type: "state",
@@ -1622,8 +1731,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.smb3", { val: body.twentyfourhours[3].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.smb3", { val: body.twentyfourhours[3].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour3");
@@ -1639,8 +1749,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour3.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.icon-name" , {
 							type: "state",
@@ -1650,8 +1761,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour3.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.ttt" , {
 							type: "state",
@@ -1661,8 +1773,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.ttt", { val: body.twentyfourhours[3].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.ttt", { val: body.twentyfourhours[3].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.fff" , {
 							type: "state",
@@ -1672,8 +1785,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.fff", { val: body.twentyfourhours[3].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.fff", { val: body.twentyfourhours[3].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.ffx3" , {
 							type: "state",
@@ -1683,8 +1797,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.ffx3", { val: body.twentyfourhours[3].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.ffx3", { val: body.twentyfourhours[3].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.ddd" , {
 							type: "state",
@@ -1694,8 +1809,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.ddd", { val: body.twentyfourhours[3].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.ddd", { val: body.twentyfourhours[3].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.rr3" , {
 							type: "state",
@@ -1705,8 +1821,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.rr3", { val: body.twentyfourhours[3].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.rr3", { val: body.twentyfourhours[3].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour3.values.pr3" , {
 							type: "state",
@@ -1716,8 +1833,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.pr3", { val: body.twentyfourhours[3].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour3.values.pr3", { val: body.twentyfourhours[3].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 4
@@ -1730,8 +1848,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.date", { val: body.twentyfourhours[4].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour4.date", { val: body.twentyfourhours[4].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.smb3" , {
 							type: "state",
@@ -1741,8 +1860,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.smb3", { val: body.twentyfourhours[4].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.smb3", { val: body.twentyfourhours[4].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour4");
@@ -1758,8 +1878,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour4.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.icon-name" , {
 							type: "state",
@@ -1769,8 +1890,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour4.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.ttt" , {
 							type: "state",
@@ -1780,8 +1902,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.ttt", { val: body.twentyfourhours[4].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.ttt", { val: body.twentyfourhours[4].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.fff" , {
 							type: "state",
@@ -1791,8 +1914,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.fff", { val: body.twentyfourhours[4].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.fff", { val: body.twentyfourhours[4].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.ffx3" , {
 							type: "state",
@@ -1802,8 +1926,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.ffx3", { val: body.twentyfourhours[4].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.ffx3", { val: body.twentyfourhours[4].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.ddd" , {
 							type: "state",
@@ -1813,8 +1938,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.ddd", { val: body.twentyfourhours[4].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.ddd", { val: body.twentyfourhours[4].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.rr3" , {
 							type: "state",
@@ -1824,8 +1950,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.rr3", { val: body.twentyfourhours[4].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.rr3", { val: body.twentyfourhours[4].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour4.values.pr3" , {
 							type: "state",
@@ -1835,8 +1962,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.pr3", { val: body.twentyfourhours[4].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour4.values.pr3", { val: body.twentyfourhours[4].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 5
@@ -1849,8 +1977,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.date", { val: body.twentyfourhours[5].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour5.date", { val: body.twentyfourhours[5].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.smb3" , {
 							type: "state",
@@ -1860,8 +1989,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.smb3", { val: body.twentyfourhours[5].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.smb3", { val: body.twentyfourhours[5].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour5");
@@ -1877,8 +2007,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour5.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.icon-name" , {
 							type: "state",
@@ -1888,8 +2019,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour5.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.ttt" , {
 							type: "state",
@@ -1899,8 +2031,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.ttt", { val: body.twentyfourhours[5].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.ttt", { val: body.twentyfourhours[5].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.fff" , {
 							type: "state",
@@ -1910,8 +2043,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.fff", { val: body.twentyfourhours[5].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.fff", { val: body.twentyfourhours[5].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.ffx3" , {
 							type: "state",
@@ -1921,8 +2055,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.ffx3", { val: body.twentyfourhours[5].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.ffx3", { val: body.twentyfourhours[5].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.ddd" , {
 							type: "state",
@@ -1932,8 +2067,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.ddd", { val: body.twentyfourhours[5].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.ddd", { val: body.twentyfourhours[5].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.rr3" , {
 							type: "state",
@@ -1943,8 +2079,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.rr3", { val: body.twentyfourhours[5].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.rr3", { val: body.twentyfourhours[5].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour5.values.pr3" , {
 							type: "state",
@@ -1954,8 +2091,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour5.values.pr3", { val: body.twentyfourhours[5].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour5.values.pr3", { val: body.twentyfourhours[5].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 6
@@ -1968,8 +2106,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.date", { val: body.twentyfourhours[6].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour6.date", { val: body.twentyfourhours[6].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.smb3" , {
 							type: "state",
@@ -1979,8 +2118,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.smb3", { val: body.twentyfourhours[6].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.smb3", { val: body.twentyfourhours[6].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour6");
@@ -1996,8 +2136,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour6.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.icon-name" , {
 							type: "state",
@@ -2007,8 +2148,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour6.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.ttt" , {
 							type: "state",
@@ -2018,8 +2160,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.ttt", { val: body.twentyfourhours[6].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.ttt", { val: body.twentyfourhours[6].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.fff" , {
 							type: "state",
@@ -2029,8 +2172,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.fff", { val: body.twentyfourhours[6].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.fff", { val: body.twentyfourhours[6].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.ffx3" , {
 							type: "state",
@@ -2040,8 +2184,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.ffx3", { val: body.twentyfourhours[6].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.ffx3", { val: body.twentyfourhours[6].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.ddd" , {
 							type: "state",
@@ -2051,8 +2196,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.ddd", { val: body.twentyfourhours[6].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.ddd", { val: body.twentyfourhours[6].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.rr3" , {
 							type: "state",
@@ -2062,8 +2208,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.rr3", { val: body.twentyfourhours[6].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.rr3", { val: body.twentyfourhours[6].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour6.values.pr3" , {
 							type: "state",
@@ -2073,8 +2220,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.pr3", { val: body.twentyfourhours[6].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour6.values.pr3", { val: body.twentyfourhours[6].values[6].pr3, ack: true });
 
 						//************************
 						//*** 24h Hours - hour 7
@@ -2087,8 +2235,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "date"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.date", { val: body.twentyfourhours[7].date.toString(), ack: true });
 						});
-						self.setState("24hForecast.hour7.date", { val: body.twentyfourhours[7].date.toString(), ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.smb3" , {
 							type: "state",
@@ -2098,8 +2247,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.smb3", { val: body.twentyfourhours[7].values[0].smb3, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.smb3", { val: body.twentyfourhours[7].values[0].smb3, ack: true });
 
 						//read icon-name
 						self.log.debug("get icon-url by xpath for 24h forecast.hour7");
@@ -2115,8 +2265,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour7.values.icon-url", { val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/"+ icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.icon-name" , {
 							type: "state",
@@ -2126,8 +2277,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "weather.icon"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.icon-name", { val: icon +".png", ack: true });
 						});
-						self.setState("24hForecast.hour7.values.icon-name", { val: icon +".png", ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.ttt" , {
 							type: "state",
@@ -2137,8 +2289,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.ttt", { val: body.twentyfourhours[7].values[1].ttt, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.ttt", { val: body.twentyfourhours[7].values[1].ttt, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.fff" , {
 							type: "state",
@@ -2148,8 +2301,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.fff", { val: body.twentyfourhours[7].values[2].fff, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.fff", { val: body.twentyfourhours[7].values[2].fff, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.ffx3" , {
 							type: "state",
@@ -2159,8 +2313,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value.temperature"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.ffx3", { val: body.twentyfourhours[7].values[3].ffx3, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.ffx3", { val: body.twentyfourhours[7].values[3].ffx3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.ddd" , {
 							type: "state",
@@ -2170,8 +2325,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.ddd", { val: body.twentyfourhours[7].values[4].ddd, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.ddd", { val: body.twentyfourhours[7].values[4].ddd, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.rr3" , {
 							type: "state",
@@ -2181,8 +2337,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.rr3", { val: body.twentyfourhours[7].values[5].rr3, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.rr3", { val: body.twentyfourhours[7].values[5].rr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.hour7.values.pr3" , {
 							type: "state",
@@ -2192,8 +2349,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "value"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.pr3", { val: body.twentyfourhours[7].values[6].pr3, ack: true });
 						});
-						self.setState("24hForecast.hour7.values.pr3", { val: body.twentyfourhours[7].values[6].pr3, ack: true });
 
 						self.setObjectNotExists("24hForecast.status" , {
 							type: "state",
@@ -2203,11 +2361,11 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.status", { val: "success", ack: true });
 						});
-						self.setState("24hForecast.status", { val: "success", ack: true });
-
-
 					});
+
 					res.on("error", function (error) {
 						self.log.error(error);
 						self.setObjectNotExists("24hForecast.status" , {
@@ -2218,8 +2376,9 @@ class SwissWeatherApi extends utils.Adapter {
 								role: "text"
 							},
 							native: {},
+						}, function () {
+							self.setState("24hForecast.status", { val: error, ack: true });
 						});
-						self.setState("24hForecast.status", { val: error, ack: true });
 					});
 				});
 				req24hForecast.end();
@@ -2231,9 +2390,17 @@ class SwissWeatherApi extends utils.Adapter {
 		req.end();
 
 		// Setze ein Timeout. Nach 10s wird der eigene Prozess gekillt.
-		// Gefühlt ein ziemlicher Hack. Wenn man den Timeout hier nicht setzt, wird der Prozess nicht
-		// wieder gestartet obschon das Ding als "schedule" im io-package.json definiert wurde...
-		// ioBroker würde dann melden "Process already runnung" und kein restart durchführen
+		// Dies ist notwendig, weil auch ein Scheduled-Job nicht einfach nach nach beendigung der
+		// programmierten Arbeit beendet wird:
+		//
+		// "There are processes in the adapter core logic that reports values like memory usage, cpu usage,
+		// connectio/alive status and such and these data are reported by default every 15s ...
+		// so without calling "stop" in general this reporting is running as expected and so process still runs."
+		//
+		// Eigentlich müsste hier sauber überprüft werden, ob alle HTTP-Requests beendet worden sind.
+		// Anschliessend kann der Scheduler beendet werden. Ich warte hier einfach 10s weil die Calls in 99% der Fälle
+		// nicht 10s benötigen. => Muss aber noch sauber umgesetzt werden...
+		//
 		setTimeout(this.stop.bind(this), 10000);
 	}
 }
