@@ -1184,7 +1184,7 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							}, function () {
-								self.setState("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff + " " + body.units.ff3.unit, ack: true });
+								self.setState("HourForecast.nexthour.values.fff", { val: body.nexthour[0].values[2].fff, ack: true });
 							});
 
 							self.setObjectNotExists("HourForecast.nexthour.values.ffx3" , {
@@ -1196,7 +1196,7 @@ class SwissWeatherApi extends utils.Adapter {
 								},
 								native: {},
 							}, function () {
-								self.setState("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3 + " " + body.units.fx3.unit, ack: true });
+								self.setState("HourForecast.nexthour.values.ffx3", { val: body.nexthour[0].values[3].ffx3, ack: true });
 							});
 
 							self.setObjectNotExists("HourForecast.nexthour.values.ddd" , {
