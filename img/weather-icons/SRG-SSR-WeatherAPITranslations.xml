@@ -322,12 +322,4 @@
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeregenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow showers, lightning</Long_Description_English>
   </row>
-  <row>
-<!--    dieser code stimmt nicht... todo: srf anfragen was -17 ist... -->
-    <Code>-17</Code>
-    <Code_icon>wi-night-sleet-storm</Code_icon>
-    <Short_Description>mo_klhe_shsr_bl</Short_Description>
-    <Long_Description_German>Mond, kleine weisse Wolke, Schneeregenschauer, Blitz</Long_Description_German>
-    <Long_Description_English>moon, small white cloud, snow showers, lightning</Long_Description_English>
-  </row>
 </root>

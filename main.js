@@ -10,6 +10,7 @@ const libxmljs = require('libxmljs2');
 var path = require('path');
 var xml;
 var xmlDoc;
+var icon = "";
 
 class SwissWeatherApi extends utils.Adapter {
 	/**
@@ -231,7 +232,13 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name for current_day
 							self.log.debug("get icon-url by xpath for current day");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.current_day.values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.current_day.values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
+
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("CurrentForecast.current_day.values.icon-url", {
@@ -302,7 +309,12 @@ class SwissWeatherApi extends utils.Adapter {
 								//read icon-name for current_hour
 								self.log.debug("get icon-url by xpath for current hour");
 								var gchild = xmlDoc.get("/root/row[Code=" + body.current_hour[0].values[0].smb3 + "]/Code_icon");
-								var icon = gchild.text();
+								if (gchild==undefined) {
+									icon = "notavailable";
+									self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.current_hour[0].values[0].smb3);
+								} else {
+									icon = gchild.text();
+								}
 								self.log.debug("Weather-Icon Name: " + icon);
 
 								self.setObjectNotExists("CurrentForecast.current_hour.values.icon-url", {
@@ -576,7 +588,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day0");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[0].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[0].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day0.icon-url", {
@@ -660,7 +677,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day1");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[1].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[1].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day1.icon-url", {
@@ -744,7 +766,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day2");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[2].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[2].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day2.icon-url", {
@@ -828,7 +855,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day3");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[3].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[3].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day3.icon-url", {
@@ -912,7 +944,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day4");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[4].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[4].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day4.icon-url", {
@@ -996,7 +1033,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day5");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[5].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[5].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day5.icon-url", {
@@ -1080,7 +1122,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for weekforecast.day6");
 							var gchild = xmlDoc.get("/root/row[Code=" + body.sevendays[6].values[1].smbd + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.sevendays[6].values[1].smbd);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("WeekForecast.day6.icon-url", {
@@ -1241,7 +1288,12 @@ class SwissWeatherApi extends utils.Adapter {
 								//read icon-name
 								self.log.debug("get icon-url by xpath for hourforecast.nexthour");
 								var gchild = xmlDoc.get("/root/row[Code=" + body.nexthour[0].values[0].smb3 + "]/Code_icon");
-								var icon = gchild.text();
+								if (gchild==undefined) {
+									icon = "notavailable";
+									self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.nexthour[0].values[0].smb3);
+								} else {
+									icon = gchild.text();
+								}
 								self.log.debug("Weather-Icon Name: " + icon);
 
 								self.setObjectNotExists("HourForecast.nexthour.values.icon-url", {
@@ -1489,7 +1541,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour0: " + body.twentyfourhours[0].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[0].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[0].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour0.values.icon-url", {
@@ -1645,7 +1702,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour1: " + body.twentyfourhours[1].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[1].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[1].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour1.values.icon-url", {
@@ -1801,7 +1863,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour2: " + body.twentyfourhours[2].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[2].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[2].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour2.values.icon-url", {
@@ -1957,7 +2024,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour3: " + body.twentyfourhours[3].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[3].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[3].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour3.values.icon-url", {
@@ -2113,7 +2185,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour4: " + body.twentyfourhours[4].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[4].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[4].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour4.values.icon-url", {
@@ -2269,7 +2346,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour5: " + body.twentyfourhours[5].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[5].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[5].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour5.values.icon-url", {
@@ -2425,7 +2507,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour6: " + body.twentyfourhours[6].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[6].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[6].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour6.values.icon-url", {
@@ -2581,7 +2668,12 @@ class SwissWeatherApi extends utils.Adapter {
 							//read icon-name
 							self.log.debug("get icon-url by xpath for 24h forecast.hour7: " + body.twentyfourhours[7].values[0].smb3);
 							var gchild = xmlDoc.get("/root/row[Code=" + body.twentyfourhours[7].values[0].smb3 + "]/Code_icon");
-							var icon = gchild.text();
+							if (gchild==undefined) {
+								icon = "notavailable";
+								self.log.info("Icon could not be found. Please create an issue on github. Icon number was: " + body.twentyfourhours[7].values[0].smb3);
+							} else {
+								icon = gchild.text();
+							}
 							self.log.debug("Weather-Icon Name: " + icon);
 
 							self.setObjectNotExists("24hForecast.hour7.values.icon-url", {
