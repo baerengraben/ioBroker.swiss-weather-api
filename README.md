@@ -34,6 +34,8 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 This is a scheduled Adapter. It is scheduled every 30 minutes and reads the forecast API of SRG-SSR. You could change this intervall in instance-view (Schedule). A lower intervall is not recomented, since the minimal forecast is 1 hour. 
 **So please keep in mind that, after installation, it will take 30 minutes until the forecast data is delivered the frist time and the data-objects in data view are created.** 
 
+On first installation you might want to check if everything works fine and don't want to wait for 30min. In this case you can change the scheduler to 1min. => If everything is working properly, **please change it back to 30min**.
+
 ## Changelog
 
 ### 0.1.5
