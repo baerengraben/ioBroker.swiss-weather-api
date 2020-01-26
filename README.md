@@ -38,6 +38,9 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
+### 0.1.6
+* (baerengraben) Some fixes based on Feedback of forum.iobroker.net
+
 ### 0.1.5
 * (baerengraben) Some fixes based on Feedback of forum.iobroker.net
 
