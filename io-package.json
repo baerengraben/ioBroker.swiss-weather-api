@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.6",
+		"version": "0.1.7",
 		"news": {
+			"0.1.7": {
+				"en": "Added Icon-Codes -17 to -30 => These are not yet confirmed by srf... "
+			},
 			"0.1.6": {
 				"en": "Some fixes based on Feedback of forum.iobroker.net"
 			},

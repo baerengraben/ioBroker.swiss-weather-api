@@ -38,6 +38,9 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
+### 0.1.7
+* (baerengraben) Added Icon-Codes -17 to -30 => These are not yet confirmed by srf...  
+
 ### 0.1.6
 * (baerengraben) Some fixes based on Feedback of forum.iobroker.net
 

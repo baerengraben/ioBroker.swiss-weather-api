@@ -322,4 +322,102 @@
     <Long_Description_German>Mond, kleine weisse Wolke, Schneeregenschauer, Blitz</Long_Description_German>
     <Long_Description_English>moon, small white cloud, snow showers, lightning</Long_Description_English>
   </row>
+  <row>
+    <Code>-17</Code>
+    <Code_icon>wi-night-fog</Code_icon>
+    <Short_Description>ne</Short_Description>
+    <Long_Description_German>Nebel</Long_Description_German>
+    <Long_Description_English>fog</Long_Description_English>
+  </row>
+  <row>
+    <Code>-18</Code>
+    <Code_icon>wi-night-cloudy</Code_icon>
+    <Short_Description>grdu</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke</Long_Description_German>
+    <Long_Description_English>large dark cloud</Long_Description_English>
+  </row>
+  <row>
+    <Code>-19</Code>
+    <Code_icon>wi-night-cloudy</Code_icon>
+    <Short_Description>grhe</Short_Description>
+    <Long_Description_German>Grosse hellgraue Wolke</Long_Description_German>
+    <Long_Description_English>large light grey cloud</Long_Description_English>
+  </row>
+  <row>
+    <Code>-20</Code>
+    <Code_icon>wi-night-showers</Code_icon>
+    <Short_Description>grdu_ra</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Regen</Long_Description_German>
+    <Long_Description_English>big dark cloud, rain</Long_Description_English>
+  </row>
+  <row>
+    <Code>-21</Code>
+    <Code_icon>wi-night-snow</Code_icon>
+    <Short_Description>grdu_sn</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schnee</Long_Description_German>
+    <Long_Description_English>big dark cloud, snow</Long_Description_English>
+  </row>
+  <row>
+    <Code>-22</Code>
+    <Code_icon>wi-night-rain-mix</Code_icon>
+    <Short_Description>grdu_sr</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schneeregen</Long_Description_German>
+    <Long_Description_English>big dark cloud, snow rain</Long_Description_English>
+  </row>
+  <row>
+    <Code>-23</Code>
+    <Code_icon>wi-night-rain</Code_icon>
+    <Short_Description>grdu_ra3</Short_Description>
+    <Long_Description_German>Grosse dunkle, starker Regen</Long_Description_German>
+    <Long_Description_English>big dark, heavy rain</Long_Description_English>
+  </row>
+  <row>
+    <Code>-24</Code>
+    <Code_icon>wi-night-snow-wind</Code_icon>
+    <Short_Description>grdu_sn3</Short_Description>
+    <Long_Description_German>Grosse dunkle, starker Schneefall</Long_Description_German>
+    <Long_Description_English>big dark, heavy snowfall</Long_Description_English>
+  </row>
+  <row>
+    <Code>-25</Code>
+    <Code_icon>wi-night-hail</Code_icon>
+    <Short_Description>grdu_shra</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Regenschauer</Long_Description_German>
+    <Long_Description_English>big dark cloud, rain shower</Long_Description_English>
+  </row>
+  <row>
+    <Code>-26</Code>
+    <Code_icon>wi-night-thunderstorm</Code_icon>
+    <Short_Description>grdu_shra_bl</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Regenschauer, Blitz</Long_Description_German>
+    <Long_Description_English>big dark cloud, rain shower, lightning</Long_Description_English>
+  </row>
+  <row>
+    <Code>-27</Code>
+    <Code_icon>wi-night-snow-wind</Code_icon>
+    <Short_Description>grdu_shsn</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schneeschauer</Long_Description_German>
+    <Long_Description_English>big dark cloud, snow shower</Long_Description_English>
+  </row>
+  <row>
+    <Code>-28</Code>
+    <Code_icon>wi-night-storm-showers</Code_icon>
+    <Short_Description>grdu_shsn_bl</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schneeschauer, Blitz</Long_Description_German>
+    <Long_Description_English>big dark cloud, snow showers, lightning</Long_Description_English>
+  </row>
+  <row>
+    <Code>-29</Code>
+    <Code_icon>wi-night-rain-mix</Code_icon>
+    <Short_Description>grdu_shsr</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schneeregenschauer</Long_Description_German>
+    <Long_Description_English>large dark cloud, snow showers</Long_Description_English>
+  </row>
+  <row>
+    <Code>-30</Code>
+    <Code_icon>wi-night-storm-showers</Code_icon>
+    <Short_Description>grdu_shsr_bl</Short_Description>
+    <Long_Description_German>Grosse dunkle Wolke, Schneeregenschauer, Blitz</Long_Description_German>
+    <Long_Description_English>big dark cloud, snow showers, lightning</Long_Description_English>
+  </row>
 </root>
