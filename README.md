@@ -38,6 +38,11 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
+### 0.1.8
+* (baerengraben) Added Icons provided by SRGSSR => Thank you!! :)
+* (baerengraben) Added new Object icon-url-srgssr => Contains the url-link to the srgssr Icon
+
+
 ### 0.1.7
 **Attention**: If you have already installed a previous Version of swiss-weather-api (<= 0.1.6) please remove the adapter and install it completely new. This makes shure you get the new Unit-Names for "fff" and "ffx3" which where corrected by SRG. 
 * (baerengraben) Added Icon-Codes -17 to -30 => These are not yet confirmed by srf - but I beleave these are correct.  

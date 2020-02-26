@@ -256,6 +256,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("CurrentForecast.current_day.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("CurrentForecast.current_day.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.current_day.values[1].smbd + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("CurrentForecast.current_day.values.icon-name", {
 							type: "state",
 							common: {
@@ -329,6 +344,21 @@ class SwissWeatherApi extends utils.Adapter {
 								self.log.debug("Weather-Icon Name current_hour: " + this.icon);
 								self.setState("CurrentForecast.current_hour.values.icon-url", {
 									val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+									ack: true
+								});
+							}.bind({icon: icon}));
+
+							self.setObjectNotExists("CurrentForecast.current_hour.values.icon-url-srgssr", {
+								type: "state",
+								common: {
+									name: "icon-url-srgssr",
+									type: "string",
+									role: "weather.icon"
+								},
+								native: {},
+							}, function () {
+								self.setState("CurrentForecast.current_hour.values.icon-url-srgssr", {
+									val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.current_hour[0].values[0].smb3 + ".png",
 									ack: true
 								});
 							}.bind({icon: icon}));
@@ -613,6 +643,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("WeekForecast.day0.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day0.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[0].values[1].smbd + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("WeekForecast.day0.icon-name", {
 							type: "state",
 							common: {
@@ -699,6 +744,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name day1: " + this.icon);
 							self.setState("WeekForecast.day1.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("WeekForecast.day1.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day1.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[1].values[1].smbd + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -793,6 +853,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("WeekForecast.day2.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day2.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[2].values[1].smbd + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("WeekForecast.day2.icon-name", {
 							type: "state",
 							common: {
@@ -879,6 +954,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name day3: " + this.icon);
 							self.setState("WeekForecast.day3.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("WeekForecast.day3.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day3.icon-url", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[3].values[1].smbd + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -973,6 +1063,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("WeekForecast.day4.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day4.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[4].values[1].smbd + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("WeekForecast.day4.icon-name", {
 							type: "state",
 							common: {
@@ -1063,6 +1168,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("WeekForecast.day5.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day5.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[5].values[1].smbd + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("WeekForecast.day5.icon-name", {
 							type: "state",
 							common: {
@@ -1149,6 +1269,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name day6: " + this.icon);
 							self.setState("WeekForecast.day6.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("WeekForecast.day6.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("WeekForecast.day6.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[6].values[1].smbd + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -1316,6 +1451,21 @@ class SwissWeatherApi extends utils.Adapter {
 								self.log.debug("Weather-Icon Name nexthour: " + this.icon);
 								self.setState("HourForecast.nexthour.values.icon-url", {
 									val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+									ack: true
+								});
+							}.bind({icon: icon}));
+
+							self.setObjectNotExists("HourForecast.nexthour.values.icon-url-srgssr", {
+								type: "state",
+								common: {
+									name: "icon-url-srgssr",
+									type: "string",
+									role: "weather.icon"
+								},
+								native: {},
+							}, function () {
+								self.setState("HourForecast.nexthour.values.icon-url-srgssr", {
+									val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.nexthour[0].values[0].smb3 + ".png",
 									ack: true
 								});
 							}.bind({icon: icon}));
@@ -1574,6 +1724,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("24hForecast.hour0.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour0.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[0].values[0].smb3 + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("24hForecast.hour0.values.icon-name", {
 							type: "state",
 							common: {
@@ -1732,6 +1897,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name hour1: " + this.icon);
 							self.setState("24hForecast.hour1.values.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("24hForecast.hour1.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour1.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[1].values[0].smb3 + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -1898,6 +2078,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("24hForecast.hour2.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour2.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[2].values[0].smb3 + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("24hForecast.hour2.values.icon-name", {
 							type: "state",
 							common: {
@@ -2056,6 +2251,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name hour3: " + this.icon);
 							self.setState("24hForecast.hour3.values.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("24hForecast.hour3.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour3.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[3].values[0].smb3 + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -2222,6 +2432,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("24hForecast.hour4.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour4.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[4].values[0].smb3 + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("24hForecast.hour4.values.icon-name", {
 							type: "state",
 							common: {
@@ -2380,6 +2605,22 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name hour5: " + this.icon);
 							self.setState("24hForecast.hour5.values.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("24hForecast.hour5.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.log.debug("Weather-Icon Name hour5: " + this.icon);
+							self.setState("24hForecast.hour5.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[5].values[0].smb3 + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
@@ -2546,6 +2787,21 @@ class SwissWeatherApi extends utils.Adapter {
 							});
 						}.bind({icon: icon}));
 
+						self.setObjectNotExists("24hForecast.hour6.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour6.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[6].values[0].smb3 + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
 						self.setObjectNotExists("24hForecast.hour6.values.icon-name", {
 							type: "state",
 							common: {
@@ -2704,6 +2960,21 @@ class SwissWeatherApi extends utils.Adapter {
 							self.log.debug("Weather-Icon Name hour7: " + this.icon);
 							self.setState("24hForecast.hour7.values.icon-url", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/weather-icons/png_64x64/" + this.icon + ".png",
+								ack: true
+							});
+						}.bind({icon: icon}));
+
+						self.setObjectNotExists("24hForecast.hour7.values.icon-url-srgssr", {
+							type: "state",
+							common: {
+								name: "icon-url-srgssr",
+								type: "string",
+								role: "weather.icon"
+							},
+							native: {},
+						}, function () {
+							self.setState("24hForecast.hour7.values.icon-url-srgssr", {
+								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.twentyfourhours[7].values[0].smb3 + ".png",
 								ack: true
 							});
 						}.bind({icon: icon}));
