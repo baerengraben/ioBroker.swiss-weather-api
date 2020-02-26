@@ -22,7 +22,7 @@ The SRG-SSR Weather REST API allows you to get weather forecasts and reports fro
 **Be aware that this adapter only supports locations within Switzerland.**
 
 ### Getting started
-1. Get a free accout on https://developer.srgssr.ch/
+1. Get a free accout on https://developer.srgssr.ch/ 
 1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
 1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed
 1. Install this Adapter on ioBroker => This can take several minutes (~7min on a Raspberry Pi 3)
