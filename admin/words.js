@@ -27,16 +27,16 @@ systemDictionary = {
 		"zh-cn": "SRGSSR应用程序的名称"
 	},
 	"ConsumerKey": {
-	"en": "ConsumerKey of App",
-	"de": "ConsumerKey der App",
-	"ru": "ConsumerKey из приложения",
-	"pt": "ConsumerKey of App",
-	"nl": "ConsumerKey van App",
-	"fr": "ConsumerKey of App",
-	"it": "ConsumerKey of App",
-	"es": "ConsumerKey de la aplicación",
-	"pl": "ConsumerKey of App",
-	"zh-cn": "应用程序的ConsumerKey"
+		"en": "ConsumerKey of App",
+		"de": "ConsumerKey der App",
+		"ru": "ConsumerKey из приложения",
+		"pt": "ConsumerKey of App",
+		"nl": "ConsumerKey van App",
+		"fr": "ConsumerKey of App",
+		"it": "ConsumerKey of App",
+		"es": "ConsumerKey de la aplicación",
+		"pl": "ConsumerKey of App",
+		"zh-cn": "应用程序的ConsumerKey"
 	},
 	"ConsumerSecret":  {
 		"en": "ConsumerSecret of App",
