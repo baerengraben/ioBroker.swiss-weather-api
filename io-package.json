@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.8",
+		"version": "0.1.9",
 		"news": {
+			"0.1.9": {
+				"en": "Dependency- and Vulnerabilites-Updates"
+			},
 			"0.1.8": {
 				"en": "Added Icons provided by SRGSSR "
 			},

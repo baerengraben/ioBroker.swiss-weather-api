@@ -38,6 +38,9 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
+### 0.1.9
+* (baerengraben) Dependency- and Vulnerabilites-Updates
+
 ### 0.1.8
 * (baerengraben) Added Icons provided by SRGSSR => Thank you!! :)
 * (baerengraben) Added new Object icon-url-srgssr => Contains the url-link to the srgssr Icon
