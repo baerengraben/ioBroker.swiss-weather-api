@@ -3139,7 +3139,7 @@ class SwissWeatherApi extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			this.log.info("cleaned everything up...");
+			this.log.debug("cleaned everything up...");
 			clearTimeout(timeout);
 			callback();
 		} catch (e) {
