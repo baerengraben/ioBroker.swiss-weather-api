@@ -10,6 +10,7 @@ const libxmljs = require('libxmljs2');
 var path = require('path');
 var xml;
 var xmlDoc;
+var timeout;
 
 class SwissWeatherApi extends utils.Adapter {
 	/**
@@ -21,6 +22,7 @@ class SwissWeatherApi extends utils.Adapter {
 			name: "swiss-weather-api",
 		});
 		this.on("ready", this.onReady.bind(this));
+		this.on("unload", this.onUnload.bind(this));
 	}
 
 	/**
@@ -3127,12 +3129,28 @@ class SwissWeatherApi extends utils.Adapter {
 		// Ich habe das mal versucht umzusetzen und mich dabei brutal mit der Callback-Hölle und await etc. verzettelt.
 		// Evtl. kann das mal einer geradeziehen, der das besser im Griff hat. Ich hab da zuwenig Nerven für... :)
 		// Nach 10s den Adapter stoppen funktioniert sehr stabil. also lasse ich das so.
-		setTimeout(this.stop.bind(this), 10000);
+		timeout = setTimeout(this.stop.bind(this), 10000);
 	}
+
+
+	/**
+	 * Is called when adapter shuts down - callback has to be called under any circumstances!
+	 * @param {() => void} callback
+	 */
+	onUnload(callback) {
+		try {
+			this.log.info("cleaned everything up...");
+			clearTimeout(timeout);
+			callback();
+		} catch (e) {
+			callback();
+		}
+	}
+
 }
 
 // @ts-ignore parent is a valid property on module
-	if (module.parent) {
+if (module.parent) {
 	// Export the constructor in compact mode
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
