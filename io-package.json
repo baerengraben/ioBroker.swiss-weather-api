@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.1.9",
+		"version": "0.2.0",
 		"news": {
+			"0.2.0": {
+				"en": " Updates in order to commit to iobroker stable"
+			},
 			"0.1.9": {
 				"en": "Dependency- and Vulnerabilites-Updates"
 			},
