@@ -969,7 +969,7 @@ class SwissWeatherApi extends utils.Adapter {
 							},
 							native: {},
 						}, function () {
-							self.setState("WeekForecast.day3.icon-url", {
+							self.setState("WeekForecast.day3.icon-url-srgssr", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/srgssr/" + body.sevendays[3].values[1].smbd + ".png",
 								ack: true
 							});
