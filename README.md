@@ -43,6 +43,9 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
+### 0.2.1
+* (baerengraben) Some bug fixing
+
 ### 0.2.0
 * (baerengraben) Updates in order to commit to iobroker stable
 

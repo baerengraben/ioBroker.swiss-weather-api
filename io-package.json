@@ -3,6 +3,9 @@
 		"name": "swiss-weather-api",
 		"version": "0.2.0",
 		"news": {
+			"0.2.1": {
+				"en": "Some bug fixing"
+			},
 			"0.2.0": {
 				"en": " Updates in order to commit to iobroker stable"
 			},
