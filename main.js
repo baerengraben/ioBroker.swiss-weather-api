@@ -399,7 +399,7 @@ class SwissWeatherApi extends utils.Adapter {
 								type: "state",
 								common: {
 									name: body.units.fff.name + " in " + body.units.fff.unit,
-									type: "string",
+									type: "number",
 									role: "value.temperature"
 								},
 								native: {},
@@ -1506,7 +1506,7 @@ class SwissWeatherApi extends utils.Adapter {
 								type: "state",
 								common: {
 									name: body.units.fff.name + " in " + body.units.fff.unit,
-									type: "string",
+									type: "number",
 									role: "value.temperature"
 								},
 								native: {},
@@ -1772,7 +1772,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -1949,7 +1949,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -2126,7 +2126,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -2303,7 +2303,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -2480,7 +2480,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -2658,7 +2658,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -2835,7 +2835,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
@@ -3012,7 +3012,7 @@ class SwissWeatherApi extends utils.Adapter {
 							type: "state",
 							common: {
 								name: body.units.fff.name + " in " + body.units.fff.unit,
-								type: "string",
+								type: "number",
 								role: "value.temperature"
 							},
 							native: {},
