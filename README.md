@@ -43,7 +43,7 @@ On first installation you might want to check if everything works fine and don't
 
 ## Changelog
 
-### 0.2.1
+### 0.2.2
 * (baerengraben) Some bug fixing
 * (baerengraben) Enhancement https://github.com/baerengraben/iobroker.swiss-weather-api/issues/10
 

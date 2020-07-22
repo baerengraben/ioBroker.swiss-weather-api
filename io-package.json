@@ -1,10 +1,10 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.2.1",
+		"version": "0.2.2",
 		"news": {
-			"0.2.1": {
-				"en": "Some bug fixing"
+			"0.2.2": {
+				"en": "Some bug fixing & Enhancement https://github.com/baerengraben/iobroker.swiss-weather-api/issues/10"
 			},
 			"0.2.0": {
 				"en": " Updates in order to commit to iobroker stable"
