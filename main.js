@@ -303,7 +303,7 @@ class SwissWeatherApi extends utils.Adapter {
 								native: {},
 							}, function () {
 								self.setState("CurrentForecast.current_hour.date", {
-									val: body.current_hour[0].date,
+									val: body.current_hour[0].date.toString(),
 									ack: true
 								});
 							});
