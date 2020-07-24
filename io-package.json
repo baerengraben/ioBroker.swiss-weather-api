@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.2.3",
+		"version": "0.3.0",
 		"news": {
+			"0.3.0": {
+				"en": "Change from Scheduled Adapter to Deamon Adapter. The query interval can now be configured. The adapter no longer terminates and the first query is made 10s after the adapter is started. Attention: For installing this version, please delete the adapter completely and install it again (no update)"
+			},
 			"0.2.3": {
 				"en": "Update Dependencies"
 			},
