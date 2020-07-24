@@ -14,7 +14,7 @@ systemDictionary = {
 		"pl": "Ustawienia adaptera dla swiss-weather-api",
 		"zh-cn": "swiss-weather-api的适配器设置"
 	},
-	"Name of SRGSSR App": {
+	"App_Name": {
 		"en": "Name of SRGSSR App",
 		"de": "Name der SRGSSR App",
 		"ru": "Название приложения СРГССР",
@@ -73,5 +73,17 @@ systemDictionary = {
 		"es": "Longitud",
 		"pl": "Długość geograficzna",
 		"zh-cn": "经度"
+	},
+	"PollInterval": {
+		"en": "Poll Interval in Minutes",
+		"de": "Abfrageintervall in Minuten",
+		"ru": "Интервал опроса в минутах",
+		"pt": "Intervalo de votação em minutos",
+		"nl": "Pollinterval in minuten",
+		"fr": "Intervalle de sondage en minutes",
+		"it": "Intervallo di polling in minuti",
+		"es": "Intervalo de encuesta en minutos",
+		"pl": "Okres odpytywania w minutach",
+		"zh-cn": "分钟的轮询间隔"
 	}
 };

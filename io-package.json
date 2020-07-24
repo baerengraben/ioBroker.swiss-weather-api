@@ -90,8 +90,7 @@
 		"extIcon": "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/admin/swiss-weather-api.png",
 		"readme": "https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md",
 		"loglevel": "info",
-		"mode": "schedule",
-		"schedule": "*/30 * * * *",
+		"mode": "daemon",
 		"type": "weather",
 		"connection-type": "cloud polling",
 		"compact": true,
@@ -107,7 +106,8 @@
 		"ConsumerKey": "",
 		"ConsumerSecret": "",
 		"Latitude": "",
-		"Longitude": ""
+		"Longitude": "",
+		"PollInterval": "30"
 	},
 	"objects": [],
 	"instanceObjects": []
