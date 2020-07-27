@@ -43,7 +43,7 @@ The first query is made 10s after the adapter was started. After the first start
 ## Changelog
 
 ### 0.3.0
-* (baerengraben)  Change from Scheduled Adapter to Deamon Adapter. The query interval is now configurable by parameter. The first query is made 10s after the adapter was started. Attention: For installing this version, please delete the older adapter version completely and install it again.
+* (baerengraben)  Change from Scheduled Adapter to Deamon Adapter(https://github.com/baerengraben/iobroker.swiss-weather-api/issues/11). The query interval is now configurable by parameter. The first query is made 10s after the adapter was started. Attention: For installing this version, please delete the older adapter version completely and install it again.
 
 ### 0.2.3
 * (baerengraben) Update Dependencies

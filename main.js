@@ -3142,7 +3142,6 @@ var doIt = function(self) {
 		});
 	});
 	req.end();
-	self.log.debug("Swiss-Weather-API: End Get Weather Infos...");
 	setTimeout(doIt, pollInterval, self);
 }
 
