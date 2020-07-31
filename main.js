@@ -49,24 +49,27 @@ class SwissWeatherApi extends utils.Adapter {
 	}
 }
 
+/**
+ * Get longitude/latitude from system if not set or not valid
+ * do not change if we have already a valid value
+ * so we could use different settings compared to system if necessary
+ * @param self Adapter
+ */
 function GetSystemData(self) {
-	//get longitude/latitude from system if not set or not valid
-	//do not change if we have already a valid value
-	//so we could use different settings compared to system if necessary
 	if (typeof self.config.Longitude == undefined || self.config.Longitude == null || self.config.Longitude.length == 0 || isNaN(self.config.Longitude)
 		|| typeof self.config.Latitude == undefined || self.config.Latitude == null || self.config.Latitude.length == 0 || isNaN(self.config.Latitude)) {
-		self.log.info("longitude/longitude not set, get data from system " + typeof self.config.Longitude + " " + self.config.Longitude + "/" + typeof self.config.Latitude + " " + self.config.Latitude);
+		self.log.info("longitude/longitude not set, get data from system ");
 		self.getForeignObject("system.config", (err, state) => {
 			if (err) {
 				self.log.error(err);
 			} else {
 				self.config.Longitude = state.common.longitude;
 				self.config.Latitude = state.common.latitude;
-				self.log.debug("system  longitude " + self.config.Longitude + " latitude " + self.config.Latitude);
+				self.log.info("system  longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
 			}
 		});
 	} else {
-		self.log.info("longitude/longitude will be set by self-Config: " + typeof self.config.Longitude + " " + self.config.Longitude + "/" + typeof self.config.Latitude + " " + self.config.Latitude);
+		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
 	}
 }
 
