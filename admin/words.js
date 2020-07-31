@@ -51,28 +51,28 @@ systemDictionary = {
 		"zh-cn": "App的消费者秘方"
 	},
 	"Latitude":{
-		"en": "Latitude",
-		"de": "Latitude",
-		"ru": "широта",
-		"pt": "Latitude",
-		"nl": "Breedtegraad",
-		"fr": "Latitude",
-		"it": "Latitudine",
-		"es": "Latitud",
-		"pl": "Szerokość",
-		"zh-cn": "纬度"
+		"en": "Latitude (leave blank to use system config latitude)",
+		"de": "Breitengrad (leer lassen, um den Breitengrad aus der Systemkonfiguration zu verwenden)",
+		"ru": "Широта (оставьте пустым, чтобы использовать широту конфигурации системы)",
+		"pt": "Latitude (deixe em branco para usar a latitude de configuração do sistema)",
+		"nl": "Latitude (laat leeg om systeemconfiguratie latitude te gebruiken)",
+		"fr": "Latitude (laissez vide pour utiliser la latitude de configuration du système)",
+		"it": "Latitudine (lasciare vuoto per usare la latitudine di configurazione del sistema)",
+		"es": "Latitud (dejar en blanco para usar la latitud de configuración del sistema)",
+		"pl": "Szerokość geograficzna (pozostaw puste, aby użyć szerokości geograficznej konfiguracji systemu)",
+		"zh-cn": "纬度（留空以使用系统配置纬度）"
 	},
 	"Longitude": {
-		"en": "Longitude",
-		"de": "Longitude",
-		"ru": "Долгота",
-		"pt": "Longitude",
-		"nl": "Lengtegraad",
-		"fr": "Longitude",
-		"it": "Longitudine",
-		"es": "Longitud",
-		"pl": "Długość geograficzna",
-		"zh-cn": "经度"
+		"en": "Longitude (leave blank to use system config longitude)",
+		"de": "Längengrad (leer lassen, um den Längengrad aus der Systemkonfiguration zu verwenden)",
+		"ru": "Долгота (оставьте пустым, чтобы использовать системную долготу)",
+		"pt": "Longitude (deixe em branco para usar a longitude do sistema)",
+		"nl": "Lengtegraad (laat leeg om de lengtegraad van het systeem te gebruiken)",
+		"fr": "Longitude (laissez vide pour utiliser la longitude du système)",
+		"it": "Longitudine (lasciare vuoto per usare la longitudine del sistema)",
+		"es": "Longitud (dejar en blanco para usar la longitud del sistema)",
+		"pl": "Długość geograficzna (pozostaw puste, aby użyć długości geograficznej systemu)",
+		"zh-cn": "经度（留空以使用系统经度）"
 	},
 	"PollInterval": {
 		"en": "Poll Interval in Minutes",

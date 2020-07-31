@@ -62,7 +62,7 @@ function GetSystemData(self) {
 			} else {
 				self.config.Longitude = state.common.longitude;
 				self.config.Latitude = state.common.latitude;
-				self.log.info("system  longitude " + self.config.Longitude + " latitude " + self.config.Latitude);
+				self.log.debug("system  longitude " + self.config.Longitude + " latitude " + self.config.Latitude);
 			}
 		});
 	} else {
