@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.3.0",
+		"version": "0.3.1",
 		"news": {
+			"0.3.1": {
+				"en": "Adapter-Config attributes longitude & latitude is optional now. If no longitude/latitude is set, the adpater is getting the longitude/latitude from ioBroker System-Attributes."
+			},
 			"0.3.0": {
 				"en": "Change from Scheduled Adapter to Deamon Adapter (https://github.com/baerengraben/iobroker.swiss-weather-api/issues/11). The query interval can now be configured. The adapter no longer terminates and the first query is made 10s after the adapter is started. Attention: For installing this version, please delete the adapter completely and install it again (no update)"
 			},
