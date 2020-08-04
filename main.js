@@ -60,8 +60,8 @@ function GetSystemData(self) {
 		|| typeof self.config.Latitude == undefined || self.config.Latitude == null || self.config.Latitude.length == 0 || isNaN(self.config.Latitude)) {
 		self.log.info("longitude/longitude not set, get data from system ");
 		self.getForeignObject("system.config", (err, state) => {
-			if (err) {
-				self.log.error(err);
+			if (err || state === undefined || state === null) {
+				self.log.error("longitude/latitude not set in adapter-config and reading in system-config failed");
 			} else {
 				self.config.Longitude = state.common.longitude;
 				self.config.Latitude = state.common.latitude;
