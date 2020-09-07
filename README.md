@@ -43,6 +43,9 @@ The first query is made 10s after the adapter was started. After the first start
 
 ## Changelog
 
+### 0.3.2
+* (baerengraben)  Fix for https://github.com/baerengraben/iobroker.swiss-weather-api/issues/13.
+
 ### 0.3.1
 * (baerengraben)  Adapter-Config attributes longitude & latitude is optional now. If no longitude/latitude is set, the adpater is getting the longitude/latitude from ioBroker System-Attributes (https://github.com/baerengraben/iobroker.swiss-weather-api/issues/6).
 
