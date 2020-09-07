@@ -186,6 +186,15 @@ var doIt = function(self) {
 					var body = JSON.parse(Buffer.concat(chunks).toString());
 					self.log.debug("Current Forecast: " + JSON.stringify(body));
 
+					//Check for errors in response
+					if (body.fault !== undefined) {
+						self.log.error("Response has announced an error: " + body.fault.faultstring);
+						if (body.fault.detail.errorcode.includes('InvalidAPICallAsNoApiProductMatchFound')){
+							self.log.error("InvalidAPICallAsNoApiProductMatchFound: Wrong SRF-Product is linked to your SRF-App. Please choose the free SRF Product 'SRG-SSR-PUBLIC-API-V2'. Other SRF Prducts are not supported at the moment");
+						}
+						return;
+					}
+
 					if (body.code !== undefined) {
 						self.log.debug("Current Forecast - Return Code: " + body.code.toString());
 						if (body.code.toString() === "404.02.001") {
@@ -616,6 +625,15 @@ var doIt = function(self) {
 					self.log.debug("chunksConcat: " + chunksConcat);
 					var body = JSON.parse(chunksConcat);
 					self.log.debug("Week Forecast: " + JSON.stringify(body));
+
+					//Check for errors in response
+					if (body.fault !== undefined) {
+						self.log.error("Response has announced an error: " + body.fault.faultstring);
+						if (body.fault.detail.errorcode.includes('InvalidAPICallAsNoApiProductMatchFound')){
+							self.log.error("InvalidAPICallAsNoApiProductMatchFound: Wrong SRF-Product is linked to your SRF-App. Please choose the free SRF Product 'SRG-SSR-PUBLIC-API-V2'. Other SRF Prducts are not supported at the moment");
+						}
+						return;
+					}
 
 					if (body.code !== undefined) {
 						self.log.debug("Week Forecast:  - Return Code: " + body.code.toString());
@@ -1415,6 +1433,15 @@ var doIt = function(self) {
 					var body = JSON.parse(Buffer.concat(chunks).toString());
 					self.log.debug("Hour Forecast: " + JSON.stringify(body));
 
+					//Check for errors in response
+					if (body.fault !== undefined) {
+						self.log.error("Response has announced an error: " + body.fault.faultstring);
+						if (body.fault.detail.errorcode.includes('InvalidAPICallAsNoApiProductMatchFound')){
+							self.log.error("InvalidAPICallAsNoApiProductMatchFound: Wrong SRF-Product is linked to your SRF-App. Please choose the free SRF Product 'SRG-SSR-PUBLIC-API-V2'. Other SRF Prducts are not supported at the moment");
+						}
+						return;
+					}
+
 					if (body.code !== undefined) {
 						self.log.debug("Hour Forecast - Return Code: " + body.code.toString());
 						if (body.code.toString() === "404.02.001") {
@@ -1685,6 +1712,15 @@ var doIt = function(self) {
 					self.log.debug("chunksConcat: " + chunksConcat);
 					var body = JSON.parse(chunksConcat);
 					self.log.debug("24h Forecast: " + JSON.stringify(body));
+
+					//Check for errors in response
+					if (body.fault !== undefined) {
+						self.log.error("Response has announced an error: " + body.fault.faultstring);
+						if (body.fault.detail.errorcode.includes('InvalidAPICallAsNoApiProductMatchFound')){
+							self.log.error("InvalidAPICallAsNoApiProductMatchFound: Wrong SRF-Product is linked to your SRF-App. Please choose the free SRF Product 'SRG-SSR-PUBLIC-API-V2'. Other SRF Prducts are not supported at the moment");
+						}
+						return;
+					}
 
 					if (body.code !== undefined) {
 						self.log.debug("24h Forecast - Return Code: " + body.code.toString());
