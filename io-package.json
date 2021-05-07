@@ -58,30 +58,30 @@
 				"en": "Initial release"
 			}
 		},
-		"title": "Swiss Weather API (SRG-SSR API)",
+		"title": "Swiss Weather API (SRF Weather)",
 		"titleLang": {
-			"en": "Swiss Weather API (SRG-SSR API)",
-			"de": "Schweizer Wetter API (SRG-SSR API)",
-			"ru": "Swiss Weather API (SRG-SSR API)",
-			"pt": "API do clima suíço (API SRG-SSR)",
-			"nl": "Swiss Weather API (SRG-SSR API)",
-			"fr": "API Météo Suisse (API SRG-SSR)",
-			"it": "API meteorologica svizzera (API SRG-SSR)",
-			"es": "API meteorológica suiza (SRG-SSR API)",
-			"pl": "Szwajcarski interfejs API pogody (API SRG-SSR)",
-			"zh-cn": "瑞士天气API（SRG-SSR API）"
+			"en": "Swiss Weather API (SRF Weather)",
+			"de": "Schweizer Wetter API (SRF Weather)",
+			"ru": "Swiss Weather API (SRF Weather)",
+			"pt": "API do clima suíço (SRF Weather)",
+			"nl": "Swiss Weather API (SRF Weather)",
+			"fr": "API Météo Suisse (SRF Weather)",
+			"it": "API meteorologica svizzera (SRF Weather)",
+			"es": "API meteorológica suiza (SRF Weather)",
+			"pl": "Szwajcarski interfejs API pogody (SRF Weather)",
+			"zh-cn": "瑞士天气API（SRF Weather）"
 		},
 		"desc": {
-			"en": "Connects to Free SRG-SSR Weather API (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"de": "Verbindung zur kostenlosen SRG-SSR-Wetter-API (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"ru": "Подключается к бесплатному API погоды SRG-SSR (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"pt": "Conecta-se à API meteorológica SRG-SSR gratuita (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"nl": "Maakt verbinding met Free SRG-SSR Weather API (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"fr": "Se connecte à l'API météo SRG-SSR gratuite (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"it": "Si collega all'API meteo SRG-SSR gratuita (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"es": "Se conecta a la API meteorológica SRG-SSR gratuita (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"pl": "Łączy się z bezpłatnym SRG-SSR Weather API (https://developer.srgssr.ch/apis/srgssr-weather)",
-			"zh-cn": "连接到免费的SRG-SSR Weather API（https://developer.srgssr.ch/apis/srgssr-weather）"
+			"en": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+			"de": "Stellt eine Verbindung zur SRF-Wetter-API her (https://developer.srgssr.ch/apis/srf-weather)",
+			"ru": "Подключается к SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+			"pt": "Conecta-se à SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+			"nl": "Maakt verbinding met SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+			"fr": "Se connecte à l'API Météo SRF (https://developer.srgssr.ch/apis/srf-weather)",
+			"it": "Si collega all'API Weather SRF (https://developer.srgssr.ch/apis/srf-weather)",
+			"es": "Se conecta a la API meteorológica de SRF (https://developer.srgssr.ch/apis/srf-weather)",
+			"pl": "Łączy się z SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+			"zh-cn": "连接到SRF Weather API（https://developer.srgssr.ch/apis/srf-weather）"
 		},
 		"authors": [
 			"baerengraben <baerengraben@intelli.ch>"
@@ -89,11 +89,10 @@
 		"keywords": [
 			"SRG-SSR",
 			"Weather API",
-			"SRF"
+			"SRF Weather"
 		],
 		"license": "MIT",
 		"platform": "Javascript/Node.js",
-		"main": "main.js",
 		"icon": "swiss-weather-api.png",
 		"enabled": true,
 		"extIcon": "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/admin/swiss-weather-api.png",
@@ -101,9 +100,9 @@
 		"loglevel": "info",
 		"mode": "daemon",
 		"type": "weather",
-		"connection-type": "cloud polling",
+		"connectionType": "cloud",
 		"compact": true,
-		"materialize": true,
+		"materializeTab": true,
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"

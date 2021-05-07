@@ -17,6 +17,7 @@ class SwissWeatherApi extends utils.Adapter {
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
 	constructor(options) {
+		// @ts-ignore
 		super({
 			...options,
 			name: "swiss-weather-api",
