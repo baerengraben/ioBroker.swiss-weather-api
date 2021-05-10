@@ -1,0 +1,3103 @@
+// Forecast by geolocationid
+// Example Response of the new SRF Weather API - 10.05.2021
+// https://api.srgssr.ch/srf-meteo/forecast/47.0401,7.3749
+{
+  "geolocation": {
+    "id": "47.0401,7.3749",
+    "lat": 47.0401,
+    "lon": 7.3749,
+    "station_id": "S17383",
+    "timezone": "Europe/Zurich",
+    "default_name": "Schüpfen",
+    "alarm_region_id": "56",
+    "alarm_region_name": "BE Mittelland",
+    "district": "",
+    "geolocation_names": [
+      {
+        "district": "",
+        "id": "e380dd06b64cc2455975da556f63346d",
+        "location_id": "4180003054",
+        "type": "city",
+        "language": 0,
+        "translation_type": "orig",
+        "name": "Schüpfen",
+        "country": "Schweiz",
+        "province": "Bern",
+        "inhabitants": 0,
+        "height": 524,
+        "plz": 3054,
+        "ch": 1
+      }
+    ]
+  },
+  "forecast": {
+    "60minutes": [
+      {
+        "local_date_time": "2021-05-10T00:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 14.7,
+        "TTH_C": 15.7,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 130,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T01:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13.9,
+        "TTH_C": 15.5,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 140,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T02:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 13,
+        "TTH_C": 15.2,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 160,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T03:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 12.4,
+        "TTH_C": 14.6,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 15,
+        "DD_DEG": 180,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T04:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 12.1,
+        "TTH_C": 14.3,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 15,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T05:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.8,
+        "TTH_C": 14,
+        "PROBPCP_PERCENT": 2,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T06:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 12.9,
+        "TTH_C": 13.9,
+        "PROBPCP_PERCENT": 2,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 160,
+        "SYMBOL_CODE": 10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T07:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 12.8,
+        "TTH_C": 14.2,
+        "PROBPCP_PERCENT": 4,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 190,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T08:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 13,
+        "TTH_C": 14.8,
+        "PROBPCP_PERCENT": 6,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 13,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T09:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 13.3,
+        "TTH_C": 14.9,
+        "PROBPCP_PERCENT": 8,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 11,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T10:00:00+02:00",
+        "TTT_C": 16,
+        "TTL_C": 14.6,
+        "TTH_C": 16.6,
+        "PROBPCP_PERCENT": 7,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 13,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 16,
+          "background_color": "#d4da13",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T11:00:00+02:00",
+        "TTT_C": 17,
+        "TTL_C": 15.6,
+        "TTH_C": 17.8,
+        "PROBPCP_PERCENT": 14,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 17,
+          "background_color": "#e4e214",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T12:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 14.5,
+        "TTH_C": 15.5,
+        "PROBPCP_PERCENT": 22,
+        "RRR_MM": 1,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 290,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T13:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 14.2,
+        "TTH_C": 16,
+        "PROBPCP_PERCENT": 27,
+        "RRR_MM": 0.7,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T14:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 14.1,
+        "TTH_C": 16.7,
+        "PROBPCP_PERCENT": 67,
+        "RRR_MM": 0.8,
+        "FF_KMH": 13,
+        "FX_KMH": 24,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T15:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13.9,
+        "TTH_C": 16.9,
+        "PROBPCP_PERCENT": 71,
+        "RRR_MM": 1.3,
+        "FF_KMH": 13,
+        "FX_KMH": 22,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T16:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13.5,
+        "TTH_C": 16.7,
+        "PROBPCP_PERCENT": 73,
+        "RRR_MM": 1.6,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T17:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13.2,
+        "TTH_C": 16.4,
+        "PROBPCP_PERCENT": 71,
+        "RRR_MM": 1.7,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T18:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 12.8,
+        "TTH_C": 15.8,
+        "PROBPCP_PERCENT": 71,
+        "RRR_MM": 1.7,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T19:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 12.4,
+        "TTH_C": 15.2,
+        "PROBPCP_PERCENT": 72,
+        "RRR_MM": 1.6,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T20:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.9,
+        "TTH_C": 14.5,
+        "PROBPCP_PERCENT": 72,
+        "RRR_MM": 1.5,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T21:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.4,
+        "TTH_C": 13.8,
+        "PROBPCP_PERCENT": 71,
+        "RRR_MM": 1.3,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": -4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T22:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.9,
+        "TTH_C": 12.9,
+        "PROBPCP_PERCENT": 69,
+        "RRR_MM": 1,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": -4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T23:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 10.5,
+        "TTH_C": 12.3,
+        "PROBPCP_PERCENT": 67,
+        "RRR_MM": 0.7,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": -4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T00:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 10.1,
+        "TTH_C": 11.9,
+        "PROBPCP_PERCENT": 65,
+        "RRR_MM": 0.5,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": -4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T01:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.8,
+        "TTH_C": 11.6,
+        "PROBPCP_PERCENT": 63,
+        "RRR_MM": 0.4,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T02:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 11.4,
+        "PROBPCP_PERCENT": 62,
+        "RRR_MM": 0.3,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T03:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9.2,
+        "TTH_C": 11.2,
+        "PROBPCP_PERCENT": 61,
+        "RRR_MM": 0.2,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T04:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9,
+        "TTH_C": 10.8,
+        "PROBPCP_PERCENT": 62,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T05:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.8,
+        "TTH_C": 10.6,
+        "PROBPCP_PERCENT": 65,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T06:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.7,
+        "TTH_C": 10.5,
+        "PROBPCP_PERCENT": 70,
+        "RRR_MM": 0.4,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T07:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.8,
+        "TTH_C": 10.4,
+        "PROBPCP_PERCENT": 77,
+        "RRR_MM": 0.9,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T08:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9,
+        "TTH_C": 10.4,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 1.4,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 340,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T09:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9.4,
+        "TTH_C": 11,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.2,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 310,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T10:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.9,
+        "TTH_C": 11.7,
+        "PROBPCP_PERCENT": 78,
+        "RRR_MM": 1.1,
+        "FF_KMH": 7,
+        "FX_KMH": 13,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T11:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 10.2,
+        "TTH_C": 12.2,
+        "PROBPCP_PERCENT": 77,
+        "RRR_MM": 1,
+        "FF_KMH": 9,
+        "FX_KMH": 15,
+        "DD_DEG": 260,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T12:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.9,
+        "TTH_C": 12.5,
+        "PROBPCP_PERCENT": 77,
+        "RRR_MM": 1,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T13:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.4,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 79,
+        "RRR_MM": 1.2,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T14:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.1,
+        "TTH_C": 12.7,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.4,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T15:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.1,
+        "TTH_C": 12.7,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.5,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T16:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.2,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 1.6,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T17:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.2,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 1.7,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T18:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 8.9,
+        "TTH_C": 12.1,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 1.7,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T19:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.5,
+        "TTH_C": 11.7,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.6,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T20:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.3,
+        "TTH_C": 11.1,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 1.6,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": 23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T21:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8.2,
+        "TTH_C": 10.6,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.8,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -23,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T22:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8.1,
+        "TTH_C": 10.1,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 1.7,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T23:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8,
+        "TTH_C": 9.6,
+        "PROBPCP_PERCENT": 78,
+        "RRR_MM": 1.5,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T00:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7.8,
+        "TTH_C": 9.4,
+        "PROBPCP_PERCENT": 76,
+        "RRR_MM": 1.1,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T01:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.6,
+        "TTH_C": 9.2,
+        "PROBPCP_PERCENT": 73,
+        "RRR_MM": 0.8,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T02:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.3,
+        "TTH_C": 9.1,
+        "PROBPCP_PERCENT": 70,
+        "RRR_MM": 0.5,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T03:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7,
+        "TTH_C": 8.8,
+        "PROBPCP_PERCENT": 70,
+        "RRR_MM": 0.3,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T04:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.7,
+        "TTH_C": 8.5,
+        "PROBPCP_PERCENT": 71,
+        "RRR_MM": 0.2,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T05:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.5,
+        "TTH_C": 8.3,
+        "PROBPCP_PERCENT": 69,
+        "RRR_MM": 0.2,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T06:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.3,
+        "TTH_C": 8.1,
+        "PROBPCP_PERCENT": 60,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T07:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.3,
+        "TTH_C": 7.9,
+        "PROBPCP_PERCENT": 48,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 20,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T08:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.6,
+        "TTH_C": 8.2,
+        "PROBPCP_PERCENT": 37,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 25,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T09:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.2,
+        "TTH_C": 8.8,
+        "PROBPCP_PERCENT": 29,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T10:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8.1,
+        "TTH_C": 9.9,
+        "PROBPCP_PERCENT": 22,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T11:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.9,
+        "TTH_C": 10.9,
+        "PROBPCP_PERCENT": 17,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T12:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 11.8,
+        "PROBPCP_PERCENT": 13,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T13:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.3,
+        "TTH_C": 12.7,
+        "PROBPCP_PERCENT": 11,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T14:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 11,
+        "TTH_C": 13.4,
+        "PROBPCP_PERCENT": 10,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T15:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.5,
+        "TTH_C": 14.1,
+        "PROBPCP_PERCENT": 11,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T16:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.9,
+        "TTH_C": 14.5,
+        "PROBPCP_PERCENT": 15,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 300,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T17:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 12,
+        "TTH_C": 14.6,
+        "PROBPCP_PERCENT": 17,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 320,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T18:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.8,
+        "TTH_C": 14.4,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 340,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T19:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.4,
+        "TTH_C": 13.8,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 350,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T20:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.7,
+        "TTH_C": 12.9,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 13,
+        "DD_DEG": 360,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T21:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.7,
+        "TTH_C": 11.7,
+        "PROBPCP_PERCENT": 20,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 10,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T22:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8.6,
+        "TTH_C": 10.2,
+        "PROBPCP_PERCENT": 22,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 70,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T23:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.7,
+        "TTH_C": 9.1,
+        "PROBPCP_PERCENT": 22,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 150,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T00:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.1,
+        "TTH_C": 8.5,
+        "PROBPCP_PERCENT": 20,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 6,
+        "DD_DEG": 180,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T01:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.7,
+        "TTH_C": 8.3,
+        "PROBPCP_PERCENT": 16,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 6,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T02:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.5,
+        "TTH_C": 8.1,
+        "PROBPCP_PERCENT": 16,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 6,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T03:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.2,
+        "TTH_C": 7.8,
+        "PROBPCP_PERCENT": 21,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T04:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.9,
+        "TTH_C": 7.7,
+        "PROBPCP_PERCENT": 31,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T05:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.7,
+        "TTH_C": 7.5,
+        "PROBPCP_PERCENT": 37,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T06:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.7,
+        "TTH_C": 7.5,
+        "PROBPCP_PERCENT": 38,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T07:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.8,
+        "TTH_C": 7.6,
+        "PROBPCP_PERCENT": 36,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T08:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.2,
+        "TTH_C": 8,
+        "PROBPCP_PERCENT": 34,
+        "RRR_MM": 0.1,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T09:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.1,
+        "TTH_C": 8.9,
+        "PROBPCP_PERCENT": 34,
+        "RRR_MM": 0.1,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T10:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8,
+        "TTH_C": 10.2,
+        "PROBPCP_PERCENT": 34,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T11:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.8,
+        "TTH_C": 11.2,
+        "PROBPCP_PERCENT": 33,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T12:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.4,
+        "TTH_C": 11.8,
+        "PROBPCP_PERCENT": 29,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T13:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 12.2,
+        "PROBPCP_PERCENT": 23,
+        "RRR_MM": 0.1,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T14:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.8,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 20,
+        "RRR_MM": 0.1,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 4,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T15:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.1,
+        "TTH_C": 13.1,
+        "PROBPCP_PERCENT": 21,
+        "RRR_MM": 0,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T16:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.5,
+        "TTH_C": 13.5,
+        "PROBPCP_PERCENT": 24,
+        "RRR_MM": 0,
+        "FF_KMH": 13,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T17:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.6,
+        "TTH_C": 13.6,
+        "PROBPCP_PERCENT": 26,
+        "RRR_MM": 0,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T18:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.5,
+        "TTH_C": 13.5,
+        "PROBPCP_PERCENT": 23,
+        "RRR_MM": 0,
+        "FF_KMH": 11,
+        "FX_KMH": 20,
+        "DD_DEG": 260,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T19:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.1,
+        "TTH_C": 13.1,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 11,
+        "FX_KMH": 19,
+        "DD_DEG": 260,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T20:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 12.4,
+        "PROBPCP_PERCENT": 15,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T21:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.9,
+        "TTH_C": 11.3,
+        "PROBPCP_PERCENT": 15,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 13,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T22:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7.9,
+        "TTH_C": 9.9,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T23:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.1,
+        "TTH_C": 8.9,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 9,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T00:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.5,
+        "TTH_C": 8.3,
+        "PROBPCP_PERCENT": 14,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T01:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.2,
+        "TTH_C": 8,
+        "PROBPCP_PERCENT": 8,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T02:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.8,
+        "TTH_C": 7.8,
+        "PROBPCP_PERCENT": 5,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 7,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "60minutes",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      }
+    ],
+    "day": [
+      {
+        "local_date_time": "2021-05-10T00:00:00+02:00",
+        "TX_C": 17,
+        "TN_C": 12,
+        "PROBPCP_PERCENT": 92,
+        "RRR_MM": 16,
+        "FF_KMH": 7,
+        "FX_KMH": 31,
+        "DD_DEG": 270,
+        "SUNSET": 2052,
+        "SUNRISE": 601,
+        "SUN_H": 0,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        },
+        "max_color": {
+          "temperature": 17,
+          "background_color": "#e4e214",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T00:00:00+02:00",
+        "TX_C": 13,
+        "TN_C": 9,
+        "PROBPCP_PERCENT": 88,
+        "RRR_MM": 27,
+        "FF_KMH": 4,
+        "FX_KMH": 26,
+        "DD_DEG": 240,
+        "SUNSET": 2053,
+        "SUNRISE": 559,
+        "SUN_H": 0,
+        "SYMBOL_CODE": 23,
+        "type": "day",
+        "min_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        },
+        "max_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T00:00:00+02:00",
+        "TX_C": 14,
+        "TN_C": 7,
+        "PROBPCP_PERCENT": 70,
+        "RRR_MM": 2,
+        "FF_KMH": 4,
+        "FX_KMH": 22,
+        "DD_DEG": 280,
+        "SUNSET": 2055,
+        "SUNRISE": 558,
+        "SUN_H": 4,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        },
+        "max_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T00:00:00+02:00",
+        "TX_C": 13,
+        "TN_C": 6,
+        "PROBPCP_PERCENT": 76,
+        "RRR_MM": 1,
+        "FF_KMH": 6,
+        "FX_KMH": 26,
+        "DD_DEG": 250,
+        "SUNSET": 2056,
+        "SUNRISE": 557,
+        "SUN_H": 4,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 6,
+          "background_color": "#045f6c",
+          "text_color": "#ffffff"
+        },
+        "max_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T00:00:00+02:00",
+        "TX_C": 14,
+        "TN_C": 5,
+        "PROBPCP_PERCENT": 66,
+        "RRR_MM": 2,
+        "FF_KMH": 4,
+        "FX_KMH": 26,
+        "DD_DEG": 310,
+        "SUNSET": 2057,
+        "SUNRISE": 555,
+        "SUN_H": 3,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 5,
+          "background_color": "#0c5a7c",
+          "text_color": "#ffffff"
+        },
+        "max_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T00:00:00+02:00",
+        "TX_C": 14,
+        "TN_C": 7,
+        "PROBPCP_PERCENT": 51,
+        "RRR_MM": 3,
+        "FF_KMH": 4,
+        "FX_KMH": 26,
+        "DD_DEG": 250,
+        "SUNSET": 2058,
+        "SUNRISE": 554,
+        "SUN_H": 3,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        },
+        "max_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T00:00:00+02:00",
+        "TX_C": 17,
+        "TN_C": 7,
+        "PROBPCP_PERCENT": 63,
+        "RRR_MM": 3,
+        "FF_KMH": 7,
+        "FX_KMH": 31,
+        "DD_DEG": 250,
+        "SUNSET": 2100,
+        "SUNRISE": 553,
+        "SUN_H": 5,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        },
+        "max_color": {
+          "temperature": 17,
+          "background_color": "#e4e214",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-17T00:00:00+02:00",
+        "TX_C": 18,
+        "TN_C": 8,
+        "PROBPCP_PERCENT": 63,
+        "RRR_MM": 5,
+        "FF_KMH": 7,
+        "FX_KMH": 37,
+        "DD_DEG": 250,
+        "SUNSET": 2101,
+        "SUNRISE": 552,
+        "SUN_H": 5,
+        "SYMBOL_CODE": 4,
+        "type": "day",
+        "min_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        },
+        "max_color": {
+          "temperature": 18,
+          "background_color": "#e4e20c",
+          "text_color": "#000000"
+        }
+      }
+    ],
+    "hour": [
+      {
+        "local_date_time": "2021-05-10T02:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 13,
+        "TTH_C": 15.2,
+        "PROBPCP_PERCENT": 1,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 20,
+        "DD_DEG": 160,
+        "SYMBOL_CODE": -10,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T05:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.8,
+        "TTH_C": 14,
+        "PROBPCP_PERCENT": 2,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 19,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T08:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 13,
+        "TTH_C": 14.8,
+        "PROBPCP_PERCENT": 6,
+        "RRR_MM": 0,
+        "FF_KMH": 7,
+        "FX_KMH": 19,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T11:00:00+02:00",
+        "TTT_C": 17,
+        "TTL_C": 15.6,
+        "TTH_C": 17.8,
+        "PROBPCP_PERCENT": 16,
+        "RRR_MM": 0.3,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 17,
+          "background_color": "#e4e214",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T14:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 14.1,
+        "TTH_C": 16.7,
+        "PROBPCP_PERCENT": 67,
+        "RRR_MM": 2.6,
+        "FF_KMH": 13,
+        "FX_KMH": 26,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T17:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13.2,
+        "TTH_C": 16.4,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 4.6,
+        "FF_KMH": 11,
+        "FX_KMH": 28,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T20:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.9,
+        "TTH_C": 14.5,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 4.8,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 270,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-10T23:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 10.5,
+        "TTH_C": 12.3,
+        "PROBPCP_PERCENT": 80,
+        "RRR_MM": 3,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T02:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 11.4,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 1.2,
+        "FF_KMH": 7,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T05:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.8,
+        "TTH_C": 10.6,
+        "PROBPCP_PERCENT": 79,
+        "RRR_MM": 0.6,
+        "FF_KMH": 6,
+        "FX_KMH": 17,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -20,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T08:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9,
+        "TTH_C": 10.4,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 2.8,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 340,
+        "SYMBOL_CODE": 20,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T11:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 10.2,
+        "TTH_C": 12.2,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 3.3,
+        "FF_KMH": 9,
+        "FX_KMH": 17,
+        "DD_DEG": 260,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T14:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.1,
+        "TTH_C": 12.7,
+        "PROBPCP_PERCENT": 81,
+        "RRR_MM": 3.7,
+        "FF_KMH": 9,
+        "FX_KMH": 20,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T17:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.2,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 83,
+        "RRR_MM": 4.8,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T20:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.3,
+        "TTH_C": 11.1,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 4.9,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": 23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-11T23:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 8,
+        "TTH_C": 9.6,
+        "PROBPCP_PERCENT": 83,
+        "RRR_MM": 4.9,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T02:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.3,
+        "TTH_C": 9.1,
+        "PROBPCP_PERCENT": 82,
+        "RRR_MM": 2.4,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -23,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T05:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.5,
+        "TTH_C": 8.3,
+        "PROBPCP_PERCENT": 79,
+        "RRR_MM": 0.7,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": -20,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T08:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.6,
+        "TTH_C": 8.2,
+        "PROBPCP_PERCENT": 67,
+        "RRR_MM": 0.3,
+        "FF_KMH": 7,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 20,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T11:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.9,
+        "TTH_C": 10.9,
+        "PROBPCP_PERCENT": 38,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T14:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 11,
+        "TTH_C": 13.4,
+        "PROBPCP_PERCENT": 21,
+        "RRR_MM": 0,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 280,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T17:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 12,
+        "TTH_C": 14.6,
+        "PROBPCP_PERCENT": 19,
+        "RRR_MM": 0.2,
+        "FF_KMH": 9,
+        "FX_KMH": 20,
+        "DD_DEG": 320,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T20:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.7,
+        "TTH_C": 12.9,
+        "PROBPCP_PERCENT": 30,
+        "RRR_MM": 0.2,
+        "FF_KMH": 7,
+        "FX_KMH": 19,
+        "DD_DEG": 360,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-12T23:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.7,
+        "TTH_C": 9.1,
+        "PROBPCP_PERCENT": 32,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 11,
+        "DD_DEG": 150,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T02:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.5,
+        "TTH_C": 8.1,
+        "PROBPCP_PERCENT": 42,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 9,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T05:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.7,
+        "TTH_C": 7.5,
+        "PROBPCP_PERCENT": 54,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 9,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T08:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 6.2,
+        "TTH_C": 8,
+        "PROBPCP_PERCENT": 61,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T11:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8.8,
+        "TTH_C": 11.2,
+        "PROBPCP_PERCENT": 51,
+        "RRR_MM": 0.3,
+        "FF_KMH": 7,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T14:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.8,
+        "TTH_C": 12.6,
+        "PROBPCP_PERCENT": 36,
+        "RRR_MM": 0.2,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T17:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.6,
+        "TTH_C": 13.6,
+        "PROBPCP_PERCENT": 37,
+        "RRR_MM": 0.1,
+        "FF_KMH": 11,
+        "FX_KMH": 24,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T20:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.6,
+        "TTH_C": 12.4,
+        "PROBPCP_PERCENT": 25,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-13T23:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.1,
+        "TTH_C": 8.9,
+        "PROBPCP_PERCENT": 25,
+        "RRR_MM": 0,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T02:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.8,
+        "TTH_C": 7.8,
+        "PROBPCP_PERCENT": 18,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 11,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -10,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T05:00:00+02:00",
+        "TTT_C": 6,
+        "TTL_C": 4.9,
+        "TTH_C": 7.1,
+        "PROBPCP_PERCENT": 19,
+        "RRR_MM": 0,
+        "FF_KMH": 4,
+        "FX_KMH": 9,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 6,
+          "background_color": "#045f6c",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T08:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.6,
+        "TTH_C": 7.6,
+        "PROBPCP_PERCENT": 23,
+        "RRR_MM": 0.1,
+        "FF_KMH": 4,
+        "FX_KMH": 9,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T11:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 9.1,
+        "TTH_C": 11.5,
+        "PROBPCP_PERCENT": 19,
+        "RRR_MM": 0.1,
+        "FF_KMH": 7,
+        "FX_KMH": 13,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T14:00:00+02:00",
+        "TTT_C": 12,
+        "TTL_C": 10.5,
+        "TTH_C": 13.9,
+        "PROBPCP_PERCENT": 23,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 20,
+        "DD_DEG": 310,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 12,
+          "background_color": "#a4ca2c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T17:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 10.5,
+        "TTH_C": 14.5,
+        "PROBPCP_PERCENT": 38,
+        "RRR_MM": 0.2,
+        "FF_KMH": 11,
+        "FX_KMH": 24,
+        "DD_DEG": 290,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T20:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 8.9,
+        "TTH_C": 12.5,
+        "PROBPCP_PERCENT": 42,
+        "RRR_MM": 0.2,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-14T23:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7.5,
+        "TTH_C": 9.7,
+        "PROBPCP_PERCENT": 46,
+        "RRR_MM": 0.4,
+        "FF_KMH": 6,
+        "FX_KMH": 17,
+        "DD_DEG": 200,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T02:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.6,
+        "TTH_C": 9,
+        "PROBPCP_PERCENT": 44,
+        "RRR_MM": 0.3,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T05:00:00+02:00",
+        "TTT_C": 7,
+        "TTL_C": 5.8,
+        "TTH_C": 8.4,
+        "PROBPCP_PERCENT": 46,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 7,
+          "background_color": "#1c766b",
+          "text_color": "#ffffff"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T08:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.6,
+        "TTH_C": 9,
+        "PROBPCP_PERCENT": 40,
+        "RRR_MM": 0.4,
+        "FF_KMH": 6,
+        "FX_KMH": 11,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T11:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.5,
+        "TTH_C": 12.3,
+        "PROBPCP_PERCENT": 35,
+        "RRR_MM": 0.4,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T14:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 10.8,
+        "TTH_C": 14.6,
+        "PROBPCP_PERCENT": 23,
+        "RRR_MM": 0.3,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T17:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 10.7,
+        "TTH_C": 15.3,
+        "PROBPCP_PERCENT": 30,
+        "RRR_MM": 0.3,
+        "FF_KMH": 11,
+        "FX_KMH": 24,
+        "DD_DEG": 260,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T20:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.1,
+        "TTH_C": 13.1,
+        "PROBPCP_PERCENT": 34,
+        "RRR_MM": 0.4,
+        "FF_KMH": 9,
+        "FX_KMH": 22,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-15T23:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7.6,
+        "TTH_C": 10.2,
+        "PROBPCP_PERCENT": 42,
+        "RRR_MM": 0.7,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T02:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.9,
+        "TTH_C": 9.3,
+        "PROBPCP_PERCENT": 40,
+        "RRR_MM": 0.7,
+        "FF_KMH": 7,
+        "FX_KMH": 15,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T05:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 6.4,
+        "TTH_C": 9,
+        "PROBPCP_PERCENT": 35,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 15,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T08:00:00+02:00",
+        "TTT_C": 8,
+        "TTL_C": 7.1,
+        "TTH_C": 9.7,
+        "PROBPCP_PERCENT": 37,
+        "RRR_MM": 0.2,
+        "FF_KMH": 6,
+        "FX_KMH": 13,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 8,
+          "background_color": "#2c865c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T11:00:00+02:00",
+        "TTT_C": 13,
+        "TTL_C": 11.2,
+        "TTH_C": 14.2,
+        "PROBPCP_PERCENT": 29,
+        "RRR_MM": 0.1,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 13,
+          "background_color": "#b4d21f",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T14:00:00+02:00",
+        "TTT_C": 15,
+        "TTL_C": 13,
+        "TTH_C": 17.4,
+        "PROBPCP_PERCENT": 26,
+        "RRR_MM": 0.1,
+        "FF_KMH": 13,
+        "FX_KMH": 26,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 15,
+          "background_color": "#c4d71c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T17:00:00+02:00",
+        "TTT_C": 16,
+        "TTL_C": 13.7,
+        "TTH_C": 18.5,
+        "PROBPCP_PERCENT": 38,
+        "RRR_MM": 0.2,
+        "FF_KMH": 15,
+        "FX_KMH": 30,
+        "DD_DEG": 250,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 16,
+          "background_color": "#d4da13",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T20:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 11.8,
+        "TTH_C": 16.2,
+        "PROBPCP_PERCENT": 44,
+        "RRR_MM": 0.4,
+        "FF_KMH": 11,
+        "FX_KMH": 28,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-16T23:00:00+02:00",
+        "TTT_C": 11,
+        "TTL_C": 9.2,
+        "TTH_C": 12.2,
+        "PROBPCP_PERCENT": 44,
+        "RRR_MM": 0.5,
+        "FF_KMH": 7,
+        "FX_KMH": 20,
+        "DD_DEG": 210,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 11,
+          "background_color": "#7cba34",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-17T02:00:00+02:00",
+        "TTT_C": 10,
+        "TTL_C": 8,
+        "TTH_C": 11,
+        "PROBPCP_PERCENT": 43,
+        "RRR_MM": 0.7,
+        "FF_KMH": 9,
+        "FX_KMH": 19,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -4,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 10,
+          "background_color": "#5caa44",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-17T05:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7,
+        "TTH_C": 10.2,
+        "PROBPCP_PERCENT": 37,
+        "RRR_MM": 0.3,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 220,
+        "SYMBOL_CODE": -3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-17T08:00:00+02:00",
+        "TTT_C": 9,
+        "TTL_C": 7.7,
+        "TTH_C": 11.1,
+        "PROBPCP_PERCENT": 29,
+        "RRR_MM": 0.4,
+        "FF_KMH": 7,
+        "FX_KMH": 17,
+        "DD_DEG": 230,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 9,
+          "background_color": "#449a54",
+          "text_color": "#000000"
+        }
+      },
+      {
+        "local_date_time": "2021-05-17T11:00:00+02:00",
+        "TTT_C": 14,
+        "TTL_C": 12.1,
+        "TTH_C": 15.1,
+        "PROBPCP_PERCENT": 26,
+        "RRR_MM": 0.3,
+        "FF_KMH": 11,
+        "FX_KMH": 22,
+        "DD_DEG": 240,
+        "SYMBOL_CODE": 3,
+        "type": "hour",
+        "cur_color": {
+          "temperature": 14,
+          "background_color": "#bcd61c",
+          "text_color": "#000000"
+        }
+      }
+    ]
+  }
+}

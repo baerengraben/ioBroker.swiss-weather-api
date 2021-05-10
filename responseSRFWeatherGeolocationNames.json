@@ -1,0 +1,32 @@
+// GeolocationNames by name or zip
+// Example Response of the new SRF Weather API - 10.05.2021
+// https://api.srgssr.ch/srf-meteo/geolocationNames
+[
+  {
+    "district": "",
+    "id": "e380dd06b64cc2455975da556f63346d",
+    "geolocation": {
+      "id": "47.0401,7.3749",
+      "lat": 47.0401,
+      "lon": 7.3749,
+      "station_id": "S17383",
+      "timezone": "Europe/Zurich",
+      "default_name": "Schüpfen",
+      "alarm_region_id": "56",
+      "alarm_region_name": "BE Mittelland",
+      "district": "",
+      "geolocation_names": []
+    },
+    "location_id": "4180003054",
+    "type": "city",
+    "language": 0,
+    "translation_type": "orig",
+    "name": "Schüpfen",
+    "country": "Schweiz",
+    "province": "Bern",
+    "inhabitants": 0,
+    "height": 524,
+    "plz": 3054,
+    "ch": 1
+  }
+]
