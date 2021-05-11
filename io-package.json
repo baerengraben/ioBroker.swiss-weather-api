@@ -103,6 +103,7 @@
 		"connectionType": "cloud",
 		"compact": true,
 		"materializeTab": true,
+		"materialize": true,
 		"dependencies": [
 			{
 				"js-controller": ">=1.4.2"
