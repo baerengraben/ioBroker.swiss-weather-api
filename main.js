@@ -124,18 +124,31 @@ function getToken(self){
 }
 
 function GetGeolocationId(self){
-	//Options for getting current Geolocation id
-	var options_geolocationId = {
-		"method": "GET",
+	// First get Access Token
+	var access_token;
+
+	//Convert ConsumerKey and ConsumerSecret to base64
+	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
+	let buff = Buffer.from(data);
+	let base64data = buff.toString('base64');
+	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
+
+	//Options for getting Access-Token
+	var options_Access_Token = {
+		"json": true,
+		"method": "POST",
 		"hostname": "api.srgssr.ch",
 		"port": null,
-		"path": "srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+		"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
 		"headers": {
-			"authorization": "Basic " + getToken(self)
+			"Authorization": "Basic " + base64data,
+			"Cache-Control": "no-cache",
+			"Content-Length": 0,
+			"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
 		}
 	};
 
-	var req = http.request(options_geolocationId, function (res) {
+	var req = http.request(options_Access_Token, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
@@ -146,35 +159,69 @@ function GetGeolocationId(self){
 				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
 				return;
 			}
+			access_token = body.access_token.toString();
+			self.log.debug("Access_Token : " + access_token);
 
-			if (body.code !== undefined) {
-				self.log.debug("Current Forecast - Return Code: " + body.code.toString());
-				if (body.code.toString().startsWith("404")) {
-					self.log.error("Get Gelocation id - Resource not found");
-					return;
-				} else if (body.code.toString().startsWith("400")){
-					self.log.error("Get Gelocation id -  Invalid request");
-					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					return;
-				} else if (body.code.toString().startsWith("401")){
-					self.log.error("Get Gelocation id -  Invalid or expired access token ");
-					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					return;
-				} else {
-					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					return;
+			//Options for getting current Geolocation id
+			var options_geolocationId = {
+				"method": "GET",
+				"hostname": "api.srgssr.ch",
+				"port": null,
+				"path": "srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+				"headers": {
+					"authorization": "Basic " + access_token
 				}
-			}
+			};
 
-			// show answer
-			self.log.debug(body.code.t());
+			//Now get GeolocationId
+			var req = http.request(options_geolocationId, function (res) {
+				var chunks = [];
+				res.on("data", function (chunk) {
+					chunks.push(chunk);
+				});
+				res.on("end", function () {
+					var body = JSON.parse(Buffer.concat(chunks).toString());
+					if (body.access_token === undefined) {
+						self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
+						return;
+					}
 
+					if (body.code !== undefined) {
+						self.log.debug("Current Forecast - Return Code: " + body.code.toString());
+						if (body.code.toString().startsWith("404")) {
+							self.log.error("Get Gelocation id - Resource not found");
+							return;
+						} else if (body.code.toString().startsWith("400")){
+							self.log.error("Get Gelocation id -  Invalid request");
+							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+							return;
+						} else if (body.code.toString().startsWith("401")){
+							self.log.error("Get Gelocation id -  Invalid or expired access token ");
+							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+							return;
+						} else {
+							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+							return;
+						}
+					}
+
+					// show answer
+					self.log.debug(body.code.t());
+
+				});
+				res.on("error", function (error) {
+					self.log.error(error)
+				});
+			});
+			req.end();
 		});
 		res.on("error", function (error) {
 			self.log.error(error)
 		});
 	});
 	req.end();
+
+
 }
 
 // var doIt = function(self) {
