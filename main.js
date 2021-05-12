@@ -153,6 +153,7 @@ function GetGeolocationId(self){
 			chunks.push(chunk);
 		});
 		res.on("end", function () {
+			self.log.debug("Answer of Request Access Token: " + Buffer.concat(chunks).toString());
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 			if (body.access_token === undefined) {
 				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
