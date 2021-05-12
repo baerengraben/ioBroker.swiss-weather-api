@@ -126,44 +126,44 @@ function getToken(self){
 function GetGeolocationId(self){
 	// First get Access Token
 	var access_token;
-	//Convert ConsumerKey and ConsumerSecret to base64
-	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
-	let buff = Buffer.from(data);
-	let base64data = buff.toString('base64');
-	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
+	// //Convert ConsumerKey and ConsumerSecret to base64
+	// let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
+	// let buff = Buffer.from(data);
+	// let base64data = buff.toString('base64');
+	// self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
+	//
+	// //Options for getting Access-Token
+	// var options_Access_Token = {
+	// 	"json": true,
+	// 	"method": "POST",
+	// 	"hostname": "api.srgssr.ch",
+	// 	"port": null,
+	// 	"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
+	// 	"headers": {
+	// 		"Authorization": "Basic " + base64data,
+	// 		"Cache-Control": "no-cache",
+	// 		"Content-Length": 0,
+	// 		"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
+	// 	}
+	// };
 
-	//Options for getting Access-Token
-	var options_Access_Token = {
-		"json": true,
-		"method": "POST",
-		"hostname": "api.srgssr.ch",
-		"port": null,
-		"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
-		"headers": {
-			"Authorization": "Basic " + base64data,
-			"Cache-Control": "no-cache",
-			"Content-Length": 0,
-			"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
-		}
-	};
-
-	var req = http.request(options_Access_Token, function (res) {
-		var chunks = [];
-		res.on("data", function (chunk) {
-			chunks.push(chunk);
-		});
-		res.on("end", function () {
-			self.log.debug("Answer of Request Access Token: " + Buffer.concat(chunks).toString());
-			var body = JSON.parse(JSON.stringify(Buffer.concat(chunks).toString()));
-			if (body.access_token === undefined) {
-				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?");
-				return;
-			} else if (body.access_token == ""){
-				self.log.warn("Got an empty Token - It may be that the maximum number of queries for today is exhausted");
-				return;
-			}
-			access_token = body.access_token.toString();
-			self.log.debug("Access_Token : " + access_token);
+	// var req = http.request(options_Access_Token, function (res) {
+	// 	var chunks = [];
+	// 	res.on("data", function (chunk) {
+	// 		chunks.push(chunk);
+	// 	});
+	// 	res.on("end", function () {
+	// 		self.log.debug("Answer of Request Access Token: " + Buffer.concat(chunks).toString());
+	// 		var body = JSON.parse(JSON.stringify(Buffer.concat(chunks).toString()));
+	// 		if (body.access_token === undefined) {
+	// 			self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)? It may also be that the maximum number of queries for today is exhausted");
+	// 			return;
+	// 		} else if (body.access_token == ""){
+	// 			self.log.warn("Got an empty Token - It may be that the maximum number of queries for today is exhausted");
+	// 			return;
+	// 		}
+	// 		access_token = body.access_token.toString();
+	// 		self.log.debug("Access_Token : " + access_token);
 
 			//Now get GeolocationId
 			//Options for getting current Geolocation id
@@ -173,7 +173,8 @@ function GetGeolocationId(self){
 				"port": null,
 				"path": "/srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 				"headers": {
-					"authorization": "Bearer " + access_token
+					"authorization": "Bearer M0zAGlnIK6LdMAkM3Pa2L7hL8Bb8"
+					// "authorization": "Bearer " + access_token
 				}
 			};
 
@@ -221,12 +222,12 @@ function GetGeolocationId(self){
 				});
 			});
 			req.end();
-		});
-		res.on("error", function (error) {
-			self.log.error(error)
-		});
-	});
-	req.end();
+	// 	});
+	// 	res.on("error", function (error) {
+	// 		self.log.error(error)
+	// 	});
+	// });
+	// req.end();
 
 
 }
