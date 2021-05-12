@@ -189,9 +189,10 @@ function GetGeolocationId(self){
 				res.on("end", function () {
 					self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
 					var body = JSON.parse(JSON.stringify(Buffer.concat(chunks).toString()));
+					self.log.debug("Body: " + body);
 
 					//check if there is a Error-Code
-					if (body.code !== undefined) {
+					if (body.hasOwnProperty("code")) {
 						self.log.debug("Return Code: " + body.code.toString());
 						if (body.code.toString().startsWith("404")) {
 							self.log.error("Get Gelocation id - Resource not found");
