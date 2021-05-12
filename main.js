@@ -124,7 +124,6 @@ function getToken(self){
 }
 
 function GetGeolocationId(self){
-	var access_token = getToken(self);
 	//Options for getting current Geolocation id
 	var options_geolocationId = {
 		"method": "GET",
@@ -132,7 +131,7 @@ function GetGeolocationId(self){
 		"port": null,
 		"path": "srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 		"headers": {
-			"authorization": "Basic " + access_token
+			"authorization": "Basic " + getToken(self)
 		}
 	};
 
