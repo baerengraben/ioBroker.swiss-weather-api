@@ -187,35 +187,32 @@ function GetGeolocationId(self){
 					chunks.push(chunk);
 				});
 				res.on("end", function () {
-					self.log.debug(Buffer.concat(chunks).toString());
-					// var body = JSON.parse(Buffer.concat(chunks).toString());
-					// if (body.access_token === undefined) {
-					// 	self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
-					// 	return;
-					// }
-					//
-					// if (body.code !== undefined) {
-					// 	self.log.debug("Current Forecast - Return Code: " + body.code.toString());
-					// 	if (body.code.toString().startsWith("404")) {
-					// 		self.log.error("Get Gelocation id - Resource not found");
-					// 		return;
-					// 	} else if (body.code.toString().startsWith("400")){
-					// 		self.log.error("Get Gelocation id -  Invalid request");
-					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					// 		return;
-					// 	} else if (body.code.toString().startsWith("401")){
-					// 		self.log.error("Get Gelocation id -  Invalid or expired access token ");
-					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					// 		return;
-					// 	} else {
-					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-					// 		return;
-					// 	}
-					// }
-					//
-					// // show answer
-					// self.log.debug(body.code.t());
+					self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
+					var body = JSON.parse(JSON.stringify(Buffer.concat(chunks).toString()));
 
+					//check if there is a Error-Code
+					if (body.code !== undefined) {
+						self.log.debug("Return Code: " + body.code.toString());
+						if (body.code.toString().startsWith("404")) {
+							self.log.error("Get Gelocation id - Resource not found");
+							return;
+						} else if (body.code.toString().startsWith("400")){
+							self.log.error("Get Gelocation id -  Invalid request");
+							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							return;
+						} else if (body.code.toString().startsWith("401")){
+							self.log.error("Get Gelocation id -  Invalid or expired access token ");
+							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							return;
+						} else if (body.code.toString().startsWith("429")) {
+							self.log.error("Get Gelocation id -  Invalid or expired access token ");
+							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							return;
+						} else {
+							self.log.error("Get Gelocation id - An error has occured. " + body);
+							return;
+						}
+					}
 				});
 				res.on("error", function (error) {
 					self.log.error(error)
