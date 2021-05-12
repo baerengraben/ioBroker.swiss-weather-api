@@ -170,7 +170,7 @@ function GetGeolocationId(self){
 				"port": null,
 				"path": "/srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 				"headers": {
-					"authorization": "Basic " + access_token
+					"authorization": "Bearer " + access_token
 				}
 			};
 
