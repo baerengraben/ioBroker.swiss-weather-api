@@ -161,18 +161,21 @@ function GetGeolocationId(self){
 			access_token = body.access_token.toString();
 			self.log.debug("Access_Token : " + access_token);
 
+			//Now get GeolocationId
 			//Options for getting current Geolocation id
 			var options_geolocationId = {
 				"method": "GET",
 				"hostname": "api.srgssr.ch",
 				"port": null,
-				"path": "srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+				"path": "/srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 				"headers": {
 					"authorization": "Basic " + access_token
 				}
 			};
 
-			//Now get GeolocationId
+			self.log.debug("Options to get GeolocationId: " + options_geolocationId)
+
+			//set request
 			var req = http.request(options_geolocationId, function (res) {
 				var chunks = [];
 				res.on("data", function (chunk) {
