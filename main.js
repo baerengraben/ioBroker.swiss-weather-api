@@ -173,7 +173,7 @@ function GetGeolocationId(self){
 				}
 			};
 
-			self.log.debug("Options to get GeolocationId: " + options_geolocationId)
+			self.log.debug("Options to get GeolocationId: " + options_geolocationId.toString())
 
 			//set request
 			var req = http.request(options_geolocationId, function (res) {
