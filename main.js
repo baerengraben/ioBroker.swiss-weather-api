@@ -190,8 +190,7 @@ function GetGeolocationId(self){
 					self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
 					var body = JSON.parse(JSON.stringify(Buffer.concat(chunks)));
 					self.log.debug("Body: " + body);
-					self.log.debug("schaue mal ob code vorhanden ist: " + Buffer.concat(chunks).hasOwnProperty("code").toString() + ("code" in Buffer.concat(chunks)).toString())
-
+					self.log.debug("schaue mal ob code vorhanden ist: " + body.hasProperty("code").toString() );
 
 					//check if there is a Error-Code
 					if ("code" in Buffer.concat(chunks)) {
