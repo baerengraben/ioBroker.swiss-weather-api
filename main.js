@@ -126,7 +126,6 @@ function getToken(self){
 function GetGeolocationId(self){
 	// First get Access Token
 	var access_token;
-
 	//Convert ConsumerKey and ConsumerSecret to base64
 	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
 	let buff = Buffer.from(data);
@@ -180,33 +179,34 @@ function GetGeolocationId(self){
 					chunks.push(chunk);
 				});
 				res.on("end", function () {
-					var body = JSON.parse(Buffer.concat(chunks).toString());
-					if (body.access_token === undefined) {
-						self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
-						return;
-					}
-
-					if (body.code !== undefined) {
-						self.log.debug("Current Forecast - Return Code: " + body.code.toString());
-						if (body.code.toString().startsWith("404")) {
-							self.log.error("Get Gelocation id - Resource not found");
-							return;
-						} else if (body.code.toString().startsWith("400")){
-							self.log.error("Get Gelocation id -  Invalid request");
-							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-							return;
-						} else if (body.code.toString().startsWith("401")){
-							self.log.error("Get Gelocation id -  Invalid or expired access token ");
-							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-							return;
-						} else {
-							self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
-							return;
-						}
-					}
-
-					// show answer
-					self.log.debug(body.code.t());
+					self.log.debug(Buffer.concat(chunks).toString());
+					// var body = JSON.parse(Buffer.concat(chunks).toString());
+					// if (body.access_token === undefined) {
+					// 	self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
+					// 	return;
+					// }
+					//
+					// if (body.code !== undefined) {
+					// 	self.log.debug("Current Forecast - Return Code: " + body.code.toString());
+					// 	if (body.code.toString().startsWith("404")) {
+					// 		self.log.error("Get Gelocation id - Resource not found");
+					// 		return;
+					// 	} else if (body.code.toString().startsWith("400")){
+					// 		self.log.error("Get Gelocation id -  Invalid request");
+					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					// 		return;
+					// 	} else if (body.code.toString().startsWith("401")){
+					// 		self.log.error("Get Gelocation id -  Invalid or expired access token ");
+					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					// 		return;
+					// 	} else {
+					// 		self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					// 		return;
+					// 	}
+					// }
+					//
+					// // show answer
+					// self.log.debug(body.code.t());
 
 				});
 				res.on("error", function (error) {
