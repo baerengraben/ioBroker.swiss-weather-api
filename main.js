@@ -12,7 +12,6 @@ var xml;
 var xmlDoc;
 var timeout;
 var geolocationId;
-var access_token;
 
 class SwissWeatherApi extends utils.Adapter {
 	/**
@@ -34,8 +33,7 @@ class SwissWeatherApi extends utils.Adapter {
 	async onReady() {
 //		var myself = this;
 		getSystemData(this); // read Longitude und Latitude
-		getToken(this);
-//		GetGeolocationId(this); // get geolocation id in order to read forecast by id
+		GetGeolocationId(this); // get geolocation id in order to read forecast by id
 //		setTimeout(doIt, 10000, myself); // First start after 10s
 	}
 
@@ -78,7 +76,9 @@ function getSystemData(self) {
 	}
 }
 
-function prepareOptionsAccessToken(self) {
+function getToken(self){
+	var access_token;
+
 	//Convert ConsumerKey and ConsumerSecret to base64
 	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
 	let buff = Buffer.from(data);
@@ -99,12 +99,8 @@ function prepareOptionsAccessToken(self) {
 			"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
 		}
 	};
-	return options_Access_Token;
-}
 
-function getToken(self){
-	var requestOptions = prepareOptionsAccessToken(self);
-	var req = http.request(requestOptions, function (res) {
+	var req = http.request(options_Access_Token, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
@@ -123,9 +119,63 @@ function getToken(self){
 		});
 	});
 	req.end();
+
+	return access_token;
 }
 
 function GetGeolocationId(self){
+	var access_token = getToken(self);
+	//Options for getting current Geolocation id
+	var options_geolocationId = {
+		"method": "GET",
+		"hostname": "api.srgssr.ch",
+		"port": null,
+		"path": "srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+		"headers": {
+			"authorization": "Basic " + access_token
+		}
+	};
+
+	var req = http.request(options_geolocationId, function (res) {
+		var chunks = [];
+		res.on("data", function (chunk) {
+			chunks.push(chunk);
+		});
+		res.on("end", function () {
+			var body = JSON.parse(Buffer.concat(chunks).toString());
+			if (body.access_token === undefined) {
+				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
+				return;
+			}
+
+			if (body.code !== undefined) {
+				self.log.debug("Current Forecast - Return Code: " + body.code.toString());
+				if (body.code.toString().startsWith("404")) {
+					self.log.error("Get Gelocation id - Resource not found");
+					return;
+				} else if (body.code.toString().startsWith("400")){
+					self.log.error("Get Gelocation id -  Invalid request");
+					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					return;
+				} else if (body.code.toString().startsWith("401")){
+					self.log.error("Get Gelocation id -  Invalid or expired access token ");
+					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					return;
+				} else {
+					self.log.error("Current Forecast - An error has occured. " + JSON.stringify(body));
+					return;
+				}
+			}
+
+			// show answer
+			self.log.debug(body.code.t());
+
+		});
+		res.on("error", function (error) {
+			self.log.error(error)
+		});
+	});
+	req.end();
 }
 
 // var doIt = function(self) {
