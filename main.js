@@ -11,7 +11,6 @@ var path = require('path');
 var xml;
 var xmlDoc;
 var timeout;
-var geolocationId;
 
 class SwissWeatherApi extends utils.Adapter {
 	/**
@@ -199,21 +198,225 @@ function GetGeolocationId(self){
 							return;
 						} else if (body.code.toString().startsWith("400")){
 							self.log.error("Get Gelocation id -  Invalid request");
-							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 							return;
 						} else if (body.code.toString().startsWith("401")){
 							self.log.error("Get Gelocation id -  Invalid or expired access token ");
-							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 							return;
 						} else if (body.code.toString().startsWith("429")) {
 							self.log.error("Get Gelocation id -  Invalid or expired access token ");
-							self.log.error("Get Gelocation id  - An error has occured. " + body);
+							self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 							return;
 						} else {
-							self.log.error("Get Gelocation id - An error has occured. " + body);
+							self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
 							return;
 						}
 					}
+
+					//Extract GeolocationID
+					var geolocationId = body[0].id.toString();
+
+					//Now get forecast
+					//Options for getting forecast
+					var options_forecast = {
+						"method": "GET",
+						"hostname": "api.srgssr.ch",
+						"port": null,
+						"path": "/srf-meteo/forecast/"+geolocationId,
+						"headers": {
+							"authorization": "Bearer " + access_token
+						}
+					};
+
+					self.log.debug("Options to get forecast: " + options_forecast.toString())
+
+					//set request
+					var req = http.request(options_forecast, function (res) {
+						var chunks = [];
+						res.on("data", function (chunk) {
+							chunks.push(chunk);
+						});
+						res.on("end", function () {
+							self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
+							var body = JSON.parse(Buffer.concat(chunks).toString());
+							self.log.debug("Body: " + JSON.stringify(body));
+
+							//check if there is a Error-Code
+							if (body.hasOwnProperty("code")) {
+								self.log.debug("Return Code: " + body.code.toString());
+								if (body.code.toString().startsWith("404")) {
+									self.log.error("Get Gelocation id - Resource not found");
+									return;
+								} else if (body.code.toString().startsWith("400")){
+									self.log.error("Get Gelocation id -  Invalid request");
+									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									return;
+								} else if (body.code.toString().startsWith("401")){
+									self.log.error("Get Gelocation id -  Invalid or expired access token ");
+									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									return;
+								} else if (body.code.toString().startsWith("429")) {
+									self.log.error("Get Gelocation id -  Invalid or expired access token ");
+									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									return;
+								} else {
+									self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
+									return;
+								}
+							}
+
+							//**************************************
+							//*** Start extract forcast informations
+							//**************************************
+
+							//*** geolocation informations ***
+							self.setObjectNotExists("geolocation." + "id", {
+								type: "state",
+								common: {
+									name: "id",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "id", {
+									val: body.geolocation.id.toString(),
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "lat", {
+								type: "state",
+								common: {
+									name: "lat",
+									type: "number",
+									role: "value.gps.latitude",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "lat", {
+									val: body.geolocation.lat,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "lon", {
+								type: "state",
+								common: {
+									name: "lon",
+									type: "number",
+									role: "value.gps.longitude",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "lon", {
+									val: body.geolocation.lon,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_name", {
+								type: "state",
+								common: {
+									name: "geolocation_name",
+									type: "string",
+									role: "location"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_name", {
+									val: body.geolocation.geolocation_names[0].name.toString(),
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "province", {
+								type: "state",
+								common: {
+									name: "province",
+									type: "string",
+									role: "location"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "province", {
+									val: body.geolocation.geolocation_names[0].province.toString(),
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "height", {
+								type: "state",
+								common: {
+									name: "height",
+									type: "number",
+									role: "value",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "height", {
+									val: body.geolocation.geolocation_names[0].height,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "plz", {
+								type: "state",
+								common: {
+									name: "plz",
+									type: "number",
+									role: "value",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "plz", {
+									val: body.geolocation.geolocation_names[0].plz,
+									ack: true
+								});
+							});
+
+							//*** forecast - 60 minutes ***
+							self.setObjectNotExists("forecast." + "60minutes." + "local_date_time", {
+								type: "state",
+								common: {
+									name: "Date for validity of record",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("forecast." + "60minutes." + "local_date_time", {
+									val: body.forecast["60minutes"][0].local_date_time,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("forecast." + "60minutes." + "TTT_C", {
+								type: "state",
+								common: {
+									name: "Current temperature in °C",
+									type: "number",
+									role: "value",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("forecast." + "60minutes." + "TTT_C", {
+									val: body.forecast["60minutes"][0].TTT_C,
+									ack: true
+								});
+							});
+
+							//todo
+
+
+
+
+						});
+						res.on("error", function (error) {
+							self.log.error(error)
+						});
+					});
+					req.end();
 				});
 				res.on("error", function (error) {
 					self.log.error(error)
