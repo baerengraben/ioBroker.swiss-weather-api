@@ -154,9 +154,13 @@ function GetGeolocationId(self){
 		});
 		res.on("end", function () {
 			self.log.debug("Answer of Request Access Token: " + Buffer.concat(chunks).toString());
+
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 			if (body.access_token === undefined) {
-				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
+				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?");
+				return;
+			} else if (body.access_token == ""){
+				self.log.warn("Got an empty Token - It may be that the maximum number of queries for today is exhausted");
 				return;
 			}
 			access_token = body.access_token.toString();
