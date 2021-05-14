@@ -147,6 +147,8 @@ function GetGeolocationId(self){
 		}
 	};
 
+	self.log.debug("Options to get Access Token: " + JSON.stringify(options_Access_Token));
+
 	var req = https.request(options_Access_Token, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
@@ -173,12 +175,11 @@ function GetGeolocationId(self){
 				"port": null,
 				"path": "/srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 				"headers": {
-					// "authorization": "Bearer fQ3dXEZnEIhLkofSkRY1RyMtRDFR"
 					"authorization": "Bearer " + access_token
 				}
 			};
 
-			self.log.debug("Options to get GeolocationId: " + options_geolocationId.toString())
+			self.log.debug("Options to get GeolocationId: " + JSON.stringify(options_geolocationId));
 
 			//set request
 			var req = https.request(options_geolocationId, function (res) {
