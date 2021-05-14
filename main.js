@@ -4,7 +4,8 @@
  * Created with @iobroker/create-adapter v1.18.0
  */
 const utils = require("@iobroker/adapter-core");
-const http = require("https");
+// const http = require("https");
+const { http, https } = require('follow-redirects');
 const fs = require('fs');
 const libxmljs = require('libxmljs2');
 var path = require('path');
@@ -99,7 +100,7 @@ function getToken(self){
 		}
 	};
 
-	var req = http.request(options_Access_Token, function (res) {
+	var req = https.request(options_Access_Token, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
@@ -146,7 +147,7 @@ function GetGeolocationId(self){
 		}
 	};
 
-	var req = http.request(options_Access_Token, function (res) {
+	var req = https.request(options_Access_Token, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
@@ -180,7 +181,7 @@ function GetGeolocationId(self){
 			self.log.debug("Options to get GeolocationId: " + options_geolocationId.toString())
 
 			//set request
-			var req = http.request(options_geolocationId, function (res) {
+			var req = https.request(options_geolocationId, function (res) {
 				var chunks = [];
 				res.on("data", function (chunk) {
 					chunks.push(chunk);
@@ -232,7 +233,7 @@ function GetGeolocationId(self){
 					self.log.debug("Options to get forecast: " + options_forecast.toString())
 
 					//set request
-					var req = http.request(options_forecast, function (res) {
+					var req = https.request(options_forecast, function (res) {
 						var chunks = [];
 						res.on("data", function (chunk) {
 							chunks.push(chunk);
