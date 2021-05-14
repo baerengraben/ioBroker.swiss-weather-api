@@ -25,7 +25,8 @@
   "dependencies": {
     "@iobroker/adapter-core": "^2.4.0",
     "request": "^2.88.2",
-    "libxmljs2": "^0.26.0"
+    "libxmljs2": "^0.26.0",
+    "follow-redirects": "^1.14.1"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.0.0",
