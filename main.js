@@ -238,7 +238,7 @@ function GetGeolocationId(self){
 							chunks.push(chunk);
 						});
 						res.on("end", function () {
-							self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
+							self.log.debug("Answer of forecast Request: " + Buffer.concat(chunks).toString());
 							var body = JSON.parse(Buffer.concat(chunks).toString());
 							self.log.debug("Body: " + JSON.stringify(body));
 
@@ -246,22 +246,22 @@ function GetGeolocationId(self){
 							if (body.hasOwnProperty("code")) {
 								self.log.debug("Return Code: " + body.code.toString());
 								if (body.code.toString().startsWith("404")) {
-									self.log.error("Get Gelocation id - Resource not found");
+									self.log.error("Forecast - Resource not found");
 									return;
 								} else if (body.code.toString().startsWith("400")){
-									self.log.error("Get Gelocation id -  Invalid request");
-									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									self.log.error("Forecast -  Invalid request");
+									self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else if (body.code.toString().startsWith("401")){
-									self.log.error("Get Gelocation id -  Invalid or expired access token ");
-									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									self.log.error("Forecast -  Invalid or expired access token ");
+									self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else if (body.code.toString().startsWith("429")) {
-									self.log.error("Get Gelocation id -  Invalid or expired access token ");
-									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+									self.log.error("Forecast -  Invalid or expired access token ");
+									self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else {
-									self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
+									self.log.error("Forecast - An error has occured. " + JSON.stringify(body));
 									return;
 								}
 							}
@@ -271,140 +271,275 @@ function GetGeolocationId(self){
 							//**************************************
 
 							//*** geolocation informations ***
-							self.setObjectNotExists("geolocation." + "id", {
-								type: "state",
-								common: {
-									name: "id",
-									type: "string",
-									role: "text"
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "id", {
-									val: body.geolocation.id.toString(),
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "lat", {
-								type: "state",
-								common: {
-									name: "lat",
-									type: "number",
-									role: "value.gps.latitude",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "lat", {
-									val: body.geolocation.lat,
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "lon", {
-								type: "state",
-								common: {
-									name: "lon",
-									type: "number",
-									role: "value.gps.longitude",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "lon", {
-									val: body.geolocation.lon,
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "geolocation_name", {
-								type: "state",
-								common: {
-									name: "geolocation_name",
-									type: "string",
-									role: "location"
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "geolocation_name", {
-									val: body.geolocation.geolocation_names[0].name.toString(),
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "province", {
-								type: "state",
-								common: {
-									name: "province",
-									type: "string",
-									role: "location"
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "province", {
-									val: body.geolocation.geolocation_names[0].province.toString(),
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "height", {
-								type: "state",
-								common: {
-									name: "height",
-									type: "number",
-									role: "value",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "height", {
-									val: body.geolocation.geolocation_names[0].height,
-									ack: true
-								});
-							});
-							self.setObjectNotExists("geolocation." + "plz", {
-								type: "state",
-								common: {
-									name: "plz",
-									type: "number",
-									role: "value",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "plz", {
-									val: body.geolocation.geolocation_names[0].plz,
-									ack: true
-								});
-							});
-
-							//*** forecast - 60 minutes ***
-							self.setObjectNotExists("forecast." + "60minutes." + "local_date_time", {
-								type: "state",
-								common: {
-									name: "Date for validity of record",
-									type: "string",
-									role: "text",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("forecast." + "60minutes." + "local_date_time", {
-									val: body.forecast["60minutes"][0].local_date_time,
-									ack: true
-								});
-							});
-							self.setObjectNotExists("forecast." + "60minutes." + "TTT_C", {
-								type: "state",
-								common: {
-									name: "Current temperature in °C",
-									type: "number",
-									role: "value",
-									write: false
-								},
-								native: {},
-							}, function () {
-								self.setState("forecast." + "60minutes." + "TTT_C", {
-									val: body.forecast["60minutes"][0].TTT_C,
-									ack: true
-								});
-							});
+							// self.setObjectNotExists("geolocation." + "id", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "id",
+							// 		type: "string",
+							// 		role: "text"
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "id", {
+							// 		val: body.geolocation.id.toString(),
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "lat", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "lat",
+							// 		type: "number",
+							// 		role: "value.gps.latitude",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "lat", {
+							// 		val: body.geolocation.lat,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "lon", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "lon",
+							// 		type: "number",
+							// 		role: "value.gps.longitude",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "lon", {
+							// 		val: body.geolocation.lon,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "geolocation_name", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "geolocation_name",
+							// 		type: "string",
+							// 		role: "location"
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "geolocation_name", {
+							// 		val: body.geolocation.geolocation_names[0].name.toString(),
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "province", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "province",
+							// 		type: "string",
+							// 		role: "location"
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "province", {
+							// 		val: body.geolocation.geolocation_names[0].province.toString(),
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "height", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "height",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "height", {
+							// 		val: body.geolocation.geolocation_names[0].height,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("geolocation." + "plz", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "plz",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("geolocation." + "plz", {
+							// 		val: body.geolocation.geolocation_names[0].plz,
+							// 		ack: true
+							// 	});
+							// });
+							//
+							// //*** forecast - 60 minutes ***
+							// self.setObjectNotExists("forecast." + "60minutes." + "local_date_time", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Date for validity of record",
+							// 		type: "string",
+							// 		role: "text",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "local_date_time", {
+							// 		val: body.forecast["60minutes"][0].local_date_time,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "TTT_C", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Current temperature in °C",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "TTT_C", {
+							// 		val: body.forecast["60minutes"][0].TTT_C,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "TTL_C", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Error range lower limit",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "TTL_C", {
+							// 		val: body.forecast["60minutes"][0].TTL_C,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "TTH_C", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Error range upper limit",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "TTH_C", {
+							// 		val: body.forecast["60minutes"][0].TTH_C,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "PROBPCP_PERCENT", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Probability of precipitation in %",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "PROBPCP_PERCENT", {
+							// 		val: body.forecast["60minutes"][0].PROBPCP_PERCENT,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "RRR_MM", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Precipitation total",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "RRR_MM", {
+							// 		val: body.forecast["60minutes"][0].RRR_MM,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "FF_KMH", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Wind speed in km/h",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "FF_KMH", {
+							// 		val: body.forecast["60minutes"][0].FF_KMH,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "FX_KMH", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Peak wind speed in km/h",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "FX_KMH", {
+							// 		val: body.forecast["60minutes"][0].FX_KMH,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "DD_DEG", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Wind direction in angular degrees: 0 = North wind",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "DD_DEG", {
+							// 		val: body.forecast["60minutes"][0].DD_DEG,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "SYMBOL_CODE", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "Mapping to weather icon",
+							// 		type: "number",
+							// 		role: "value",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "SYMBOL_CODE", {
+							// 		val: body.forecast["60minutes"][0].SYMBOL_CODE,
+							// 		ack: true
+							// 	});
+							// });
+							// self.setObjectNotExists("forecast." + "60minutes." + "type", {
+							// 	type: "state",
+							// 	common: {
+							// 		name: "result set; possible values: 60minutes, hour, day",
+							// 		type: "string",
+							// 		role: "text",
+							// 		write: false
+							// 	},
+							// 	native: {},
+							// }, function () {
+							// 	self.setState("forecast." + "60minutes." + "type", {
+							// 		val: body.forecast["60minutes"][0].type,
+							// 		ack: true
+							// 	});
+							// });
 
 							//todo
 
