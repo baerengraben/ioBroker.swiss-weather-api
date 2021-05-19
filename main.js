@@ -744,6 +744,51 @@ function GetGeolocationId(self){
 									ack: true
 								});
 							});
+							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "temperature", {
+								type: "state",
+								common: {
+									name: "temperature",
+									type: "number",
+									role: "value",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("forecast." + "60minutes." + "cur_color." + "temperature", {
+									val: body.forecast["60minutes"][0].cur_color.temperature,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "background_color", {
+								type: "state",
+								common: {
+									name: "background color",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("forecast." + "60minutes." + "cur_color." + "background_color", {
+									val: body.forecast["60minutes"][0].cur_color.background_color,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "text_color", {
+								type: "state",
+								common: {
+									name: "text color",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("forecast." + "60minutes." + "cur_color." + "text_color", {
+									val: body.forecast["60minutes"][0].cur_color.text_color,
+									ack: true
+								});
+							});
 
 							//todo
 
