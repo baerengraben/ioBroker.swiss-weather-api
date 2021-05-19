@@ -747,7 +747,7 @@ function GetGeolocationId(self){
 							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "temperature", {
 								type: "state",
 								common: {
-									name: "temperature",
+									name: "Temperature value",
 									type: "number",
 									role: "value",
 									write: false
@@ -762,7 +762,7 @@ function GetGeolocationId(self){
 							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "background_color", {
 								type: "state",
 								common: {
-									name: "background color",
+									name: "background hex color value",
 									type: "string",
 									role: "text",
 									write: false
@@ -777,7 +777,7 @@ function GetGeolocationId(self){
 							self.setObjectNotExists("forecast." + "60minutes." + "cur_color." + "text_color", {
 								type: "state",
 								common: {
-									name: "text color",
+									name: "text hex color value",
 									type: "string",
 									role: "text",
 									write: false
@@ -790,7 +790,7 @@ function GetGeolocationId(self){
 								});
 							});
 
-							//todo
+							//todo iterate over all 60minutes objects
 
 
 
