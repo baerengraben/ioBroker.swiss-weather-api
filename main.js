@@ -290,7 +290,7 @@ function GetGeolocationId(self){
 							self.setObjectNotExists("geolocation." + "lat", {
 								type: "state",
 								common: {
-									name: "lat",
+									name: "latitude",
 									type: "number",
 									role: "value.gps.latitude",
 									write: false
@@ -305,7 +305,7 @@ function GetGeolocationId(self){
 							self.setObjectNotExists("geolocation." + "lon", {
 								type: "state",
 								common: {
-									name: "lon",
+									name: "longitude",
 									type: "number",
 									role: "value.gps.longitude",
 									write: false
@@ -317,61 +317,277 @@ function GetGeolocationId(self){
 									ack: true
 								});
 							});
-							self.setObjectNotExists("geolocation." + "geolocation_name", {
+							self.setObjectNotExists("geolocation." + "station_id", {
 								type: "state",
 								common: {
-									name: "geolocation_name",
+									name: "station id",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "station_id", {
+									val: body.geolocation.station_id,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "timezone", {
+								type: "state",
+								common: {
+									name: "timezone",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "timezone", {
+									val: body.geolocation.timezone,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "default_name", {
+								type: "state",
+								common: {
+									name: "default name",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "default_name", {
+									val: body.geolocation.default_name,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "alarm_region_id", {
+								type: "state",
+								common: {
+									name: "alarm region id",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "alarm_region_id", {
+									val: body.geolocation.alarm_region_id,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "alarm_region_name", {
+								type: "state",
+								common: {
+									name: "alarm region name",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "alarm_region_name", {
+									val: body.geolocation.alarm_region_name,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "district", {
+								type: "state",
+								common: {
+									name: "district",
+									type: "string",
+									role: "text",
+									write: false
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "district", {
+									val: body.geolocation.district,
+									ack: true
+								});
+							});
+
+							//Geolocation_Names
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "district", {
+								type: "state",
+								common: {
+									name: "district",
 									type: "string",
 									role: "location"
 								},
 								native: {},
 							}, function () {
-								self.setState("geolocation." + "geolocation_name", {
+								self.setState("geolocation." + "geolocation_names." + "district", {
+									val: body.geolocation.geolocation_names[0].district,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "id", {
+								type: "state",
+								common: {
+									name: "id",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "id", {
+									val: body.geolocation.geolocation_names[0].id,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "location_id", {
+								type: "state",
+								common: {
+									name: "location_id",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "location_id", {
+									val: body.geolocation.geolocation_names[0].location_id,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "type", {
+								type: "state",
+								common: {
+									name: "type",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "type", {
+									val: body.geolocation.geolocation_names[0].type,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "language", {
+								type: "state",
+								common: {
+									name: "language",
+									type: "number",
+									role: "value"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "language", {
+									val: body.geolocation.geolocation_names[0].language,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "translation_type", {
+								type: "state",
+								common: {
+									name: "translation type",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "translation_type", {
+									val: body.geolocation.geolocation_names[0].translation_type,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "name", {
+								type: "state",
+								common: {
+									name: "name",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "name", {
 									val: body.geolocation.geolocation_names[0].name,
 									ack: true
 								});
 							});
-							self.setObjectNotExists("geolocation." + "province", {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "country", {
+								type: "state",
+								common: {
+									name: "country",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "country", {
+									val: body.geolocation.geolocation_names[0].country,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "province", {
 								type: "state",
 								common: {
 									name: "province",
 									type: "string",
-									role: "location"
+									role: "text"
 								},
 								native: {},
 							}, function () {
-								self.setState("geolocation." + "province", {
+								self.setState("geolocation." + "geolocation_names." + "province", {
 									val: body.geolocation.geolocation_names[0].province,
 									ack: true
 								});
 							});
-							self.setObjectNotExists("geolocation." + "height", {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "inhabitants", {
+								type: "state",
+								common: {
+									name: "inhabitants",
+									type: "number",
+									role: "value"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "inhabitants", {
+									val: body.geolocation.geolocation_names[0].inhabitants,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "height", {
 								type: "state",
 								common: {
 									name: "height",
 									type: "number",
-									role: "value",
-									write: false
+									role: "value"
 								},
 								native: {},
 							}, function () {
-								self.setState("geolocation." + "height", {
+								self.setState("geolocation." + "geolocation_names." + "height", {
 									val: body.geolocation.geolocation_names[0].height,
 									ack: true
 								});
 							});
-							self.setObjectNotExists("geolocation." + "plz", {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "plz", {
 								type: "state",
 								common: {
 									name: "plz",
 									type: "number",
-									role: "value",
-									write: false
+									role: "value"
 								},
 								native: {},
 							}, function () {
-								self.setState("geolocation." + "plz", {
+								self.setState("geolocation." + "geolocation_names." + "plz", {
 									val: body.geolocation.geolocation_names[0].plz,
+									ack: true
+								});
+							});
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "ch", {
+								type: "state",
+								common: {
+									name: "ch",
+									type: "number",
+									role: "value"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "ch", {
+									val: body.geolocation.geolocation_names[0].ch,
 									ack: true
 								});
 							});
