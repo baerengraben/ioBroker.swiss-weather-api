@@ -579,7 +579,7 @@ function GetGeolocationId(self){
 							});
 
 							//iterate over all 60minutes objects odered by local_date_time
-							body.forecast["60minutes"][0].forEach(obj => {
+							body.forecast["60minutes"].forEach(obj => {
 								//*** forecast - 60 minutes ***
 								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "local_date_time", {
 									type: "state",
