@@ -578,10 +578,11 @@ function GetGeolocationId(self){
 								});
 							});
 
-							//iterate over all 60minutes objects odered by local_date_time
-							body.forecast["60minutes"].forEach(obj => {
+							//iterate over all 60minutes objects
+							var count = 0;
+							body.forecast["60minutes"].forEach(function(obj,index) {
 								//*** forecast - 60 minutes ***
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "local_date_time", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "local_date_time", {
 									type: "state",
 									common: {
 										name: "Date for validity of record",
@@ -591,12 +592,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "local_date_time", {
+									self.setState("forecast." + "60minutes." + index +"." + "local_date_time", {
 										val: obj.local_date_time,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "TTT_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "TTT_C", {
 									type: "state",
 									common: {
 										name: "Current temperature in °C",
@@ -606,12 +607,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "TTT_C", {
+									self.setState("forecast." + "60minutes." + index +"." + "TTT_C", {
 										val: obj.TTT_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "TTL_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "TTL_C", {
 									type: "state",
 									common: {
 										name: "Error range lower limit",
@@ -621,12 +622,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "TTL_C", {
+									self.setState("forecast." + "60minutes." + index +"." + "TTL_C", {
 										val: obj.TTL_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "TTH_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "TTH_C", {
 									type: "state",
 									common: {
 										name: "Error range upper limit",
@@ -636,12 +637,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "TTH_C", {
+									self.setState("forecast." + "60minutes." + index +"." + "TTH_C", {
 										val: obj.TTH_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "PROBPCP_PERCENT", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "PROBPCP_PERCENT", {
 									type: "state",
 									common: {
 										name: "Probability of precipitation in %",
@@ -651,12 +652,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "PROBPCP_PERCENT", {
+									self.setState("forecast." + "60minutes." + index +"." + "PROBPCP_PERCENT", {
 										val: obj.PROBPCP_PERCENT,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "RRR_MM", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "RRR_MM", {
 									type: "state",
 									common: {
 										name: "Precipitation total",
@@ -666,12 +667,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "RRR_MM", {
+									self.setState("forecast." + "60minutes." + index +"." + "RRR_MM", {
 										val: obj.RRR_MM,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "FF_KMH", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "FF_KMH", {
 									type: "state",
 									common: {
 										name: "Wind speed in km/h",
@@ -681,12 +682,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "FF_KMH", {
+									self.setState("forecast." + "60minutes." + index +"." + "FF_KMH", {
 										val: obj.FF_KMH,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "FX_KMH", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "FX_KMH", {
 									type: "state",
 									common: {
 										name: "Peak wind speed in km/h",
@@ -696,12 +697,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "FX_KMH", {
+									self.setState("forecast." + "60minutes." + index +"." + "FX_KMH", {
 										val: obj.FX_KMH,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "DD_DEG", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "DD_DEG", {
 									type: "state",
 									common: {
 										name: "Wind direction in angular degrees: 0 = North wind",
@@ -711,12 +712,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "DD_DEG", {
+									self.setState("forecast." + "60minutes." + index +"." + "DD_DEG", {
 										val: obj.DD_DEG,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "SYMBOL_CODE", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "SYMBOL_CODE", {
 									type: "state",
 									common: {
 										name: "Mapping to weather icon",
@@ -726,12 +727,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "SYMBOL_CODE", {
+									self.setState("forecast." + "60minutes." + index +"." + "SYMBOL_CODE", {
 										val: obj.SYMBOL_CODE,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "type", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "type", {
 									type: "state",
 									common: {
 										name: "result set; possible values: 60minutes, hour, day",
@@ -741,12 +742,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "type", {
+									self.setState("forecast." + "60minutes." + index +"." + "type", {
 										val: obj.type,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "temperature", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "cur_color." + "temperature", {
 									type: "state",
 									common: {
 										name: "Temperature value",
@@ -756,12 +757,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "temperature", {
+									self.setState("forecast." + "60minutes." + index +"." + "cur_color." + "temperature", {
 										val: obj.cur_color.temperature,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "background_color", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "cur_color." + "background_color", {
 									type: "state",
 									common: {
 										name: "background hex color value",
@@ -771,12 +772,12 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "background_color", {
+									self.setState("forecast." + "60minutes." + index +"." + "cur_color." + "background_color", {
 										val: obj.cur_color.background_color,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "text_color", {
+								self.setObjectNotExists("forecast." + "60minutes." + index +"." + "cur_color." + "text_color", {
 									type: "state",
 									common: {
 										name: "text hex color value",
@@ -786,7 +787,7 @@ function GetGeolocationId(self){
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + obj.local_date_time +"." + "cur_color." + "text_color", {
+									self.setState("forecast." + "60minutes." + index +"." + "cur_color." + "text_color", {
 										val: obj.cur_color.text_color,
 										ack: true
 									});
