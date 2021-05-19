@@ -327,7 +327,7 @@ function GetGeolocationId(self){
 								native: {},
 							}, function () {
 								self.setState("geolocation." + "geolocation_name", {
-									val: body.geolocation.geolocation_names[0].name.toString(),
+									val: body.geolocation.geolocation_names[0].name,
 									ack: true
 								});
 							});
@@ -341,7 +341,7 @@ function GetGeolocationId(self){
 								native: {},
 							}, function () {
 								self.setState("geolocation." + "province", {
-									val: body.geolocation.geolocation_names[0].province.toString(),
+									val: body.geolocation.geolocation_names[0].province,
 									ack: true
 								});
 							});
