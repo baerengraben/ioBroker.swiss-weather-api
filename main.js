@@ -197,6 +197,7 @@ function doIt(self){
 							self.log.debug("Answer of forecast Request: " + Buffer.concat(chunks).toString());
 							var body = JSON.parse(Buffer.concat(chunks).toString());
 							self.log.debug("Body: " + JSON.stringify(body));
+							var icon = "";
 
 							//check if there is a Error-Code
 							if (body.hasOwnProperty("code")) {
@@ -695,6 +696,49 @@ function doIt(self){
 										ack: true
 									});
 								});
+								self.setObjectNotExists("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_COLOR", {
+									type: "state",
+									common: {
+										name: "URL to color Icon",
+										type: "string",
+										role: "weather.icon"
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_COLOR", {
+										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Color/" + obj.SYMBOL_CODE + ".png",
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_DARK", {
+									type: "state",
+									common: {
+										name: "URL to dark Icon",
+										type: "string",
+										role: "weather.icon"
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_DARK", {
+										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Dark/" + obj.SYMBOL_CODE + ".png",
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_LIGHT", {
+									type: "state",
+									common: {
+										name: "URL to light Icon",
+										type: "string",
+										role: "weather.icon"
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "60minutes.item_" + index_formattet +"." + "ICON_URL_LIGHT", {
+										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Light/" + obj.SYMBOL_CODE + ".png",
+										ack: true
+									});
+								});
+
 								self.setObjectNotExists("forecast." + "60minutes.item_" + index_formattet +"." + "type", {
 									type: "state",
 									common: {
