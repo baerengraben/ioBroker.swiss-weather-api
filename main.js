@@ -578,7 +578,17 @@ function GetGeolocationId(self){
 								});
 							});
 
-							//*** iterate over all 60minutes objects ***
+							//*** Create 60minutes forecast ***
+							self.setObjectNotExists("forecast." + "60minutes", {
+								type: "channel",
+								common: {
+									name: "Forecast data for time windows of 60 minutes",
+									role: "info"
+								},
+								native: {},
+							});
+
+							//iterate over all 60minutes objects
 							body.forecast["60minutes"].forEach(function(obj,index) {
 								self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "local_date_time", {
 									type: "state",
@@ -792,7 +802,7 @@ function GetGeolocationId(self){
 								});
 							});
 
-							//*** iterate over all day objects ***
+							//*** Create day forecast ***
 							self.setObjectNotExists("forecast." + "day", {
 								type: "channel",
 								common: {
@@ -801,228 +811,313 @@ function GetGeolocationId(self){
 								},
 								native: {},
 							});
-							//
-							//
-							// body.forecast["day"].forEach(function(obj,index) {
-							// 	self.setObjectNotExists("forecast." + "day.item_" + index +"." + "local_date_time", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Date for validity of record",
-							// 			type: "string",
-							// 			role: "text",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "day.item_" + index +"." + "local_date_time", {
-							// 			val: obj.local_date_time,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "TTT_C", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Current temperature in °C",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "TTT_C", {
-							// 			val: obj.TTT_C,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "TTL_C", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Error range lower limit",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "TTL_C", {
-							// 			val: obj.TTL_C,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "TTH_C", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Error range upper limit",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "TTH_C", {
-							// 			val: obj.TTH_C,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "PROBPCP_PERCENT", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Probability of precipitation in %",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "PROBPCP_PERCENT", {
-							// 			val: obj.PROBPCP_PERCENT,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "RRR_MM", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Precipitation total",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "RRR_MM", {
-							// 			val: obj.RRR_MM,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "FF_KMH", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Wind speed in km/h",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "FF_KMH", {
-							// 			val: obj.FF_KMH,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "FX_KMH", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Peak wind speed in km/h",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "FX_KMH", {
-							// 			val: obj.FX_KMH,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "DD_DEG", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Wind direction in angular degrees: 0 = North wind",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "DD_DEG", {
-							// 			val: obj.DD_DEG,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "SYMBOL_CODE", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Mapping to weather icon",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "SYMBOL_CODE", {
-							// 			val: obj.SYMBOL_CODE,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "type", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "result set; possible values: 60minutes, hour, day",
-							// 			type: "string",
-							// 			role: "text",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "type", {
-							// 			val: obj.type,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "cur_color." + "temperature", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "Temperature value",
-							// 			type: "number",
-							// 			role: "value",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "cur_color." + "temperature", {
-							// 			val: obj.cur_color.temperature,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "cur_color." + "background_color", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "background hex color value",
-							// 			type: "string",
-							// 			role: "text",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "cur_color." + "background_color", {
-							// 			val: obj.cur_color.background_color,
-							// 			ack: true
-							// 		});
-							// 	});
-							// 	self.setObjectNotExists("forecast." + "60minutes.item_" + index +"." + "cur_color." + "text_color", {
-							// 		type: "state",
-							// 		common: {
-							// 			name: "text hex color value",
-							// 			type: "string",
-							// 			role: "text",
-							// 			write: false
-							// 		},
-							// 		native: {},
-							// 	}, function () {
-							// 		self.setState("forecast." + "60minutes.item_" + index +"." + "cur_color." + "text_color", {
-							// 			val: obj.cur_color.text_color,
-							// 			ack: true
-							// 		});
-							// 	});
-							//
-							// });
 
+							//iterate over all day objects
+							body.forecast["day"].forEach(function(obj,index) {
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "local_date_time", {
+									type: "state",
+									common: {
+										name: "Date for validity of record",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "local_date_time", {
+										val: obj.local_date_time,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "TX_C", {
+									type: "state",
+									common: {
+										name: "Maximum temperature in °C",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "TX_C", {
+										val: obj.TX_C,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "TN_C", {
+									type: "state",
+									common: {
+										name: "Lowest temperature in °C",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "TN_C", {
+										val: obj.TN_C,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "PROBPCP_PERCENT", {
+									type: "state",
+									common: {
+										name: "Probability of precipitation in %",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "PROBPCP_PERCENT", {
+										val: obj.PROBPCP_PERCENT,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "RRR_MM", {
+									type: "state",
+									common: {
+										name: "Precipitation total",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "RRR_MM", {
+										val: obj.RRR_MM,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "FF_KMH", {
+									type: "state",
+									common: {
+										name: "Wind speed in km/h",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "FF_KMH", {
+										val: obj.FF_KMH,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "FX_KMH", {
+									type: "state",
+									common: {
+										name: "Peak wind speed in km/h",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "FX_KMH", {
+										val: obj.FX_KMH,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "DD_DEG", {
+									type: "state",
+									common: {
+										name: "Wind direction in angular degrees: 0 = North wind",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "DD_DEG", {
+										val: obj.DD_DEG,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "SUNSET", {
+									type: "state",
+									common: {
+										name: "Time sunset",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "SUNSET", {
+										val: obj.SUNSET,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "SUNRISE", {
+									type: "state",
+									common: {
+										name: "Time sunrise",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "SUNRISE", {
+										val: obj.SUNRISE,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "SUN_H", {
+									type: "state",
+									common: {
+										name: "Sun hours",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "SUN_H", {
+										val: obj.SUN_H,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "SYMBOL_CODE", {
+									type: "state",
+									common: {
+										name: "Mapping to weather icon",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "SYMBOL_CODE", {
+										val: obj.SYMBOL_CODE,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "type", {
+									type: "state",
+									common: {
+										name: "result set; possible values: 60minutes, hour, day",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "type", {
+										val: obj.type,
+										ack: true
+									});
+								});
 
-
-
-
-
-
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "min_color", {
+									type: "channel",
+									common: {
+										name: "Mapping temperature / color value",
+										role: "info"
+									},
+									native: {},
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "min_color." + "temperature", {
+									type: "state",
+									common: {
+										name: "temperature",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "min_color." + "temperature", {
+										val: obj.min_color.temperature,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "min_color." + "background_color", {
+									type: "state",
+									common: {
+										name: "background color",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "min_color." + "background_color", {
+										val: obj.min_color.background_color,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "min_color." + "text_color", {
+									type: "state",
+									common: {
+										name: "text color",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "min_color." + "text_color", {
+										val: obj.min_color.text_color,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "max_color", {
+									type: "channel",
+									common: {
+										name: "Mapping temperature / color value",
+										role: "info"
+									},
+									native: {},
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "max_color." + "temperature", {
+									type: "state",
+									common: {
+										name: "temperature",
+										type: "number",
+										role: "value",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "max_color." + "temperature", {
+										val: obj.max_color.temperature,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "max_color." + "background_color", {
+									type: "state",
+									common: {
+										name: "background color",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "max_color." + "background_color", {
+										val: obj.max_color.background_color,
+										ack: true
+									});
+								});
+								self.setObjectNotExists("forecast." + "day.item_" + index +"." + "max_color." + "text_color", {
+									type: "state",
+									common: {
+										name: "text color",
+										type: "string",
+										role: "text",
+										write: false
+									},
+									native: {},
+								}, function () {
+									self.setState("forecast." + "day.item_" + index +"." + "max_color." + "text_color", {
+										val: obj.max_color.text_color,
+										ack: true
+									});
+								});
+							});
+							// todo : hour
 							});
 						res.on("error", function (error) {
 							self.log.error(error)
