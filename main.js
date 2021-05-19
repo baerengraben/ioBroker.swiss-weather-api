@@ -173,7 +173,7 @@ function GetGeolocationId(self){
 				"method": "GET",
 				"hostname": "api.srgssr.ch",
 				"port": null,
-				"path": "/srf-meteo/geolocations/?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+				"path": "/srf-meteo/geolocations?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
 				"headers": {
 					"authorization": "Bearer " + access_token
 				}
