@@ -437,24 +437,10 @@ function GetGeolocationId(self){
 									ack: true
 								});
 							});
-							self.setObjectNotExists("geolocation." + "geolocation_names." + "location_id", {
-								type: "state",
-								common: {
-									name: "location_id",
-									type: "string",
-									role: "text"
-								},
-								native: {},
-							}, function () {
-								self.setState("geolocation." + "geolocation_names." + "location_id", {
-									val: body.geolocation.geolocation_names[0].location_id,
-									ack: true
-								});
-							});
 							self.setObjectNotExists("geolocation." + "geolocation_names." + "type", {
 								type: "state",
 								common: {
-									name: "type",
+									name: "City or POI (Point of Interest)",
 									type: "string",
 									role: "text"
 								},
