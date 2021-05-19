@@ -31,10 +31,9 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-//		var myself = this;
+		var myself = this;
 		getSystemData(this); // read Longitude und Latitude
-		GetGeolocationId(this); // get geolocation id in order to read forecast by id
-//		setTimeout(doIt, 10000, myself); // First start after 10s
+		setTimeout(doIt, 10000, myself); // First start after 10s
 	}
 
 	/**
@@ -76,58 +75,13 @@ function getSystemData(self) {
 	}
 }
 
-function getToken(self){
-	var access_token;
 
-	//Convert ConsumerKey and ConsumerSecret to base64
-	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
-	let buff = Buffer.from(data);
-	let base64data = buff.toString('base64');
-	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
-
-	//Options for getting Access-Token
-	var options_Access_Token = {
-		"json": true,
-		"method": "POST",
-		"hostname": "api.srgssr.ch",
-		"port": null,
-		"path": "/oauth/v1/accesstoken?grant_type=client_credentials",
-		"headers": {
-			"Authorization": "Basic " + base64data,
-			"Cache-Control": "no-cache",
-			"Content-Length": 0,
-			"Postman-Token": "24264e32-2de0-f1e3-f3f8-eab014bb6d76"
-		}
-	};
-
-	var req = https.request(options_Access_Token, function (res) {
-		var chunks = [];
-		res.on("data", function (chunk) {
-			chunks.push(chunk);
-		});
-		res.on("end", function () {
-			var body = JSON.parse(Buffer.concat(chunks).toString());
-			if (body.access_token === undefined) {
-				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)?;");
-				return;
-			}
-			access_token = body.access_token.toString();
-			self.log.debug("Access_Token : " + access_token);
-		});
-		res.on("error", function (error) {
-			self.log.error(error)
-		});
-	});
-	req.end();
-
-	return access_token;
-}
-
-function GetGeolocationId(self){
+function doIt(self){
 	// First get Access Token
 	var access_token;
 	//Convert ConsumerKey and ConsumerSecret to base64
 	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
+	var pollInterval = self.config.PollInterval * 60000; //Convert minute to miliseconds
 	let buff = Buffer.from(data);
 	let base64data = buff.toString('base64');
 	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
@@ -822,7 +776,7 @@ function GetGeolocationId(self){
 							});
 
 							//iterate over all day objects
-							body.forecast["day"].forEach(function(obj,index_formattet) {
+							body.forecast["day"].forEach(function(obj,index) {
 								var index_formattet = (index).toLocaleString(undefined, {minimumIntegerDigits: 2});
 								self.setObjectNotExists("forecast." + "day.item_" + index_formattet +"." + "local_date_time", {
 									type: "state",
@@ -1377,6 +1331,7 @@ function GetGeolocationId(self){
 		});
 	});
 	req.end();
+	setTimeout(doIt, pollInterval, self);
 }
 
 // var doIt = function(self) {

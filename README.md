@@ -28,8 +28,7 @@ Since Version 0.1.8 SRG-SSR even provides their own icons. So you can choose whi
 
 ### Getting started
 1. Get a free accout on https://developer.srgssr.ch/ 
-1. Make sure using the product "SRG-SSR-PUBLIC-API-V2" since this is their free product  
-1. Go to "My Apps" and create a new App. This will create a specific ConsumerKey and ConsumerSecret
+1. Go to "My Apps" and create a new App. Here you can choose a Product. "Freemium" is their free product. If you only want to do 50 request per day or/and don't want to pay for more request per day, "Freemium" is what you want to choose. Now, this will create a specific ConsumerKey and ConsumerSecret
 1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed
 1. Install this Adapter on ioBroker => This can take several minutes (~7min on a Raspberry Pi 3)
 1. On Adapter Configuration fill in
@@ -43,8 +42,9 @@ The first query is made 10s after the adapter was started. After the first start
 
 ## Changelog
 
-### 0.3.3
+### 0.9.0
 * (baerengraben)  Removed NodeJs 10 support and added NodeJs 16 support 
+* (baerengraben)  Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API will be decommissioned on Sept. 2021)
 
 ### 0.3.2
 * (baerengraben)  Fix for https://github.com/baerengraben/iobroker.swiss-weather-api/issues/13.

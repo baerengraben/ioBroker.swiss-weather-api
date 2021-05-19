@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.3.2",
+		"version": "0.9.0",
 		"news": {
+			"0.9.0": {
+				"en": "Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API will be decommissioned on Sept. 2021)"
+			},
 			"0.3.2": {
 				"en": "Fix for https://github.com/baerengraben/iobroker.swiss-weather-api/issues/13"
 			},
