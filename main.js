@@ -615,6 +615,12 @@ function doIt(self) {
 								var objDate = new Date(startTimeISOString);
 								var myPath;
 
+								self.log.debug("Compare today " + today + " with objDate " +  objDate);
+								self.log.debug("Compare today1 " + today1 + " with objDate " +  objDate);
+								self.log.debug("Compare today2 " + today2 + " with objDate " +  objDate);
+								self.log.debug("Compare today3 " + today3 + " with objDate " +  objDate);
+								self.log.debug("Compare today4 " + today4 + " with objDate " +  objDate);
+								self.log.debug("Compare today5 " + today5 + " with objDate " +  objDate);
 								if (datesAreOnSameDay(today, objDate)) {
 									myPath = "day0";
 								} else if (datesAreOnSameDay(today1, objDate)) {
@@ -627,7 +633,7 @@ function doIt(self) {
 									myPath = "day4";
 								} else if (datesAreOnSameDay(today5, objDate)) {
 									myPath = "day5";
-								} else{
+								} else {
 									self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
 									return;
 								}
