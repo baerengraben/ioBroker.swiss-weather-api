@@ -97,6 +97,7 @@ function getSystemData(self) {
 function doIt(self) {
 	process.on('uncaughtException', function(err) {
 		self.log.error("Allgemeiner Fehler " + err.message);
+		doIt(self);
 	});
 	// First get Access Token
 	var access_token;
