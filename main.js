@@ -95,6 +95,9 @@ function getSystemData(self) {
 }
 
 function doIt(self) {
+	process.on('uncaughtException', function(err) {
+		self.log.error("Allgemeiner Fehler " + err.message);
+	});
 	// First get Access Token
 	var access_token;
 	//Convert ConsumerKey and ConsumerSecret to base64
@@ -1736,10 +1739,6 @@ function doIt(self) {
 		res.on("error", function (error) {
 			self.log.error(error)
 		});
-	});
-	req.on('error', function(err) {
-		// handle errors with the request itself
-		self.log.error("Fehler " + err.message);
 	});
 	req.end();
 	setTimeout(doIt, pollInterval, self);
