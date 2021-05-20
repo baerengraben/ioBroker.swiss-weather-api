@@ -218,7 +218,8 @@ function doIt(self) {
 						}
 					};
 
-					self.log.debug("Options to get forecast: " + JSON.stringify(options_forecast))
+					self.log.debug("Options to get forecast: " + JSON.stringify(options_forecast));
+					self.log.info("Getting forecast for GeolocationId: " + geolocationId);
 
 					//set request
 					var req = https.request(options_forecast, function (res) {
@@ -229,7 +230,6 @@ function doIt(self) {
 						res.on("end", function () {
 							self.log.debug("Answer of forecast Request: " + Buffer.concat(chunks).toString());
 							var body = JSON.parse(Buffer.concat(chunks).toString());
-							self.log.debug("Body: " + JSON.stringify(body));
 
 							//check if there is a Error-Code
 							if (body.hasOwnProperty("code")) {
