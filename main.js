@@ -1737,6 +1737,10 @@ function doIt(self) {
 			self.log.error(error)
 		});
 	});
+	req.on('error', function(err) {
+		// handle errors with the request itself
+		self.log.error("Fehler " + err.message);
+	});
 	req.end();
 	setTimeout(doIt, pollInterval, self);
 }
