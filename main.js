@@ -26,6 +26,7 @@ function getTimeFormattet(actualDate) {
 	return hour + ":" + min + ":" + sec;
 }
 
+// @ts-ignore
 Date.prototype.addDays = function(days) {
 	var date = new Date(this.valueOf());
 	date.setDate(date.getDate() + days);
