@@ -25,9 +25,10 @@ function getActualDateFormattet(actualDate) {
 	return year + "-" + month + "-" + day;
 }
 
-Date.prototype.addDays = function (d) {
-	this.setTime (this.getTime () + (d*24*60*60*1000));
-	return new Date(this);
+Date.prototype.addDays = function(days) {
+	var date = new Date(this.valueOf());
+	date.setDate(date.getDate() + days);
+	return date;
 }
 
 class SwissWeatherApi extends utils.Adapter {
@@ -101,11 +102,11 @@ function doIt(self) {
 	let base64data = buff.toString('base64');
 	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
 	var today = new Date();
-	var today1 = today.addDays(1);
-	var today2 = today.addDays(2);
-	var today3 = today.addDays(3);
-	var today4 = today.addDays(4);
-	var today5 = today.addDays(5);
+	var today1 = new Date().addDays(1);
+	var today2 = new Date().addDays(2);
+	var today3 = new Date().addDays(3);
+	var today4 = new Date().addDays(4);
+	var today5 = new Date().addDays(5);
 
 	//Options for getting Access-Token
 	var options_Access_Token = {
