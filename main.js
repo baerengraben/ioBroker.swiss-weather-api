@@ -104,12 +104,19 @@ function doIt(self) {
 	let base64data = buff.toString('base64');
 	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
 	var today = new Date();
+	// @ts-ignore
 	var today1 = new Date().addDays(1);
+	// @ts-ignore
 	var today2 = new Date().addDays(2);
+	// @ts-ignore
 	var today3 = new Date().addDays(3);
+	// @ts-ignore
 	var today4 = new Date().addDays(4);
+	// @ts-ignore
 	var today5 = new Date().addDays(5);
+	// @ts-ignore
 	var today6 = new Date().addDays(6);
+	// @ts-ignore
 	var today7 = new Date().addDays(7);
 
 	//Options for getting Access-Token
