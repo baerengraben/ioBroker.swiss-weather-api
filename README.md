@@ -14,17 +14,13 @@
 
 ## swiss-weather-api adapter for ioBroker
 
-Connects to the great SRG-SSR weather API (https://developer.srgssr.ch/apis/srgssr-weather).  
+Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).  
+The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day. 
 
-The SRG-SSR Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland.
+##**Icons**
+Since Version 0.1.8 SRG-SSR provides their own icons. So each Datapoint provides an URL to the correspondig weather-situation.
 
-**Icons**
-
-Weather-Icons are reused from https://erikflowers.github.io/weather-icons/ 
-
-Since Version 0.1.8 SRG-SSR even provides their own icons. So you can choose which Icons-Set you want to use.
-
-**Be aware that this adapter only supports locations within Switzerland.**
+##**Please Be aware that this adapter only supports locations within Switzerland.**
 
 ### Getting started
 1. Get a free accout on https://developer.srgssr.ch/ 
@@ -44,7 +40,8 @@ The first query is made 10s after the adapter was started. After the first start
 
 ### 0.9.0
 * (baerengraben)  Removed NodeJs 10 support and added NodeJs 16 support 
-* (baerengraben)  Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API will be decommissioned on Sept. 2021)
+* (baerengraben)  Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API (Adapter Version 0.3.2 and earlier) will be decommissioned on Sept. 2021)
+* (baerengraben)  Removed Icon-Support from https://erikflowers.github.io/weather-icons/ since SRF is providing their own icons.
 
 ### 0.3.2
 * (baerengraben)  Fix for https://github.com/baerengraben/iobroker.swiss-weather-api/issues/13.
