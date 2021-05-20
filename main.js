@@ -25,6 +25,13 @@ function getActualDateFormattet(actualDate) {
 	return year + "-" + month + "-" + day;
 }
 
+function getTimeFormattet(actualDate) {
+	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
+	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
+	var sec = (actualDate.getSeconds()<10?'0':'') + actualDate.getSeconds();
+	return hour + ":" + min + ":" + sec;
+}
+
 Date.prototype.addDays = function(days) {
 	var date = new Date(this.valueOf());
 	date.setDate(date.getDate() + days);
@@ -615,6 +622,7 @@ function doIt(self) {
 								var startTimeISOString = obj.local_date_time;
 								var objDate = new Date(startTimeISOString);
 								var myPath;
+								var myTime =  getTimeFormattet(objDate);
 
 								self.log.debug("Compare today " + today + " with objDate " +  objDate);
 								self.log.debug("Compare today1 " + today1 + " with objDate " +  objDate);
@@ -639,7 +647,7 @@ function doIt(self) {
 									return;
 								}
 
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "local_date_time", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "local_date_time", {
 									type: "state",
 									common: {
 										name: "Date for validity of record",
@@ -649,12 +657,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "local_date_time", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "local_date_time", {
 										val: obj.local_date_time,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "TTT_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTT_C", {
 									type: "state",
 									common: {
 										name: "Current temperature in °C",
@@ -664,12 +672,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "TTT_C", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTT_C", {
 										val: obj.TTT_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "TTL_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTL_C", {
 									type: "state",
 									common: {
 										name: "Error range lower limit",
@@ -679,12 +687,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "TTL_C", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTL_C", {
 										val: obj.TTL_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "TTH_C", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTH_C", {
 									type: "state",
 									common: {
 										name: "Error range upper limit",
@@ -694,12 +702,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "TTH_C", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "TTH_C", {
 										val: obj.TTH_C,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "PROBPCP_PERCENT", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "PROBPCP_PERCENT", {
 									type: "state",
 									common: {
 										name: "Probability of precipitation in %",
@@ -709,12 +717,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "PROBPCP_PERCENT", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "PROBPCP_PERCENT", {
 										val: obj.PROBPCP_PERCENT,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "RRR_MM", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "RRR_MM", {
 									type: "state",
 									common: {
 										name: "Precipitation total",
@@ -724,12 +732,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "RRR_MM", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "RRR_MM", {
 										val: obj.RRR_MM,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "FF_KMH", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "FF_KMH", {
 									type: "state",
 									common: {
 										name: "Wind speed in km/h",
@@ -739,12 +747,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "FF_KMH", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "FF_KMH", {
 										val: obj.FF_KMH,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "FX_KMH", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "FX_KMH", {
 									type: "state",
 									common: {
 										name: "Peak wind speed in km/h",
@@ -754,12 +762,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "FX_KMH", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "FX_KMH", {
 										val: obj.FX_KMH,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "DD_DEG", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "DD_DEG", {
 									type: "state",
 									common: {
 										name: "Wind direction in angular degrees: 0 = North wind",
@@ -769,12 +777,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "DD_DEG", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "DD_DEG", {
 										val: obj.DD_DEG,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "SYMBOL_CODE", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "SYMBOL_CODE", {
 									type: "state",
 									common: {
 										name: "Mapping to weather icon",
@@ -784,12 +792,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "SYMBOL_CODE", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "SYMBOL_CODE", {
 										val: obj.SYMBOL_CODE,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "ICON_URL_COLOR", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_COLOR", {
 									type: "state",
 									common: {
 										name: "URL to color Icon",
@@ -798,12 +806,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "ICON_URL_COLOR", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_COLOR", {
 										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Color/" + obj.SYMBOL_CODE + ".png",
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "ICON_URL_DARK", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_DARK", {
 									type: "state",
 									common: {
 										name: "URL to dark Icon",
@@ -812,12 +820,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "ICON_URL_DARK", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_DARK", {
 										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Dark/" + obj.SYMBOL_CODE + ".png",
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "ICON_URL_LIGHT", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_LIGHT", {
 									type: "state",
 									common: {
 										name: "URL to light Icon",
@@ -826,13 +834,13 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "ICON_URL_LIGHT", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "ICON_URL_LIGHT", {
 										val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Light/" + obj.SYMBOL_CODE + ".png",
 										ack: true
 									});
 								});
 
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "type", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "type", {
 									type: "state",
 									common: {
 										name: "result set; possible values: 60minutes, hour, day",
@@ -842,12 +850,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "type", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "type", {
 										val: obj.type,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "cur_color", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color", {
 									type: "channel",
 									common: {
 										name: "Mapping temperature / color value",
@@ -855,7 +863,7 @@ function doIt(self) {
 									},
 									native: {},
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "cur_color." + "temperature", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "temperature", {
 									type: "state",
 									common: {
 										name: "Temperature value",
@@ -865,12 +873,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "cur_color." + "temperature", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "temperature", {
 										val: obj.cur_color.temperature,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "cur_color." + "background_color", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "background_color", {
 									type: "state",
 									common: {
 										name: "background hex color value",
@@ -880,12 +888,12 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "cur_color." + "background_color", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "background_color", {
 										val: obj.cur_color.background_color,
 										ack: true
 									});
 								});
-								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "cur_color." + "text_color", {
+								self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "text_color", {
 									type: "state",
 									common: {
 										name: "text hex color value",
@@ -895,7 +903,7 @@ function doIt(self) {
 									},
 									native: {},
 								}, function () {
-									self.setState("forecast." + "60minutes." + myPath +"." + "cur_color." + "text_color", {
+									self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "text_color", {
 										val: obj.cur_color.text_color,
 										ack: true
 									});
