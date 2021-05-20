@@ -18,7 +18,7 @@ Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weat
 The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day. 
 
 ##**Icons**
-Since Version 0.1.8 SRG-SSR provides their own icons. So each Datapoint provides an URL to the correspondig weather-situation.
+Since Version 0.1.8 SRG-SSR provides their own icons. So each Datapoint provides an URL to the correspondig weather-situation (Color, Dark, and Light Icons).
 
 ##**Please Be aware that this adapter only supports locations within Switzerland.**
 
