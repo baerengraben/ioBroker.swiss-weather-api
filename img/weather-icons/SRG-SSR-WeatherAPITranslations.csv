@@ -1,0 +1,47 @@
+Code,Code_icon,Short_Description,Long_Description_German,Long_Description_English
+1,wi-day-sunny,so,Sonne,sun
+2,wi-day-fog,so_ne,"Sonne, Nebel","sun, fog"
+3,wi-day-cloudy,so_grhe,Sonne grosse hellgraue Wolke,sun large light grey cloud
+4,wi-day-showers,so_grhe_shra,"Sonne, grosse hellgraue Wolke Regenschauer","sun, large light grey cloud Rain showers"
+5,wi-day-storm-showers,so_grhe_shra_bl,"Sonne, grosse hellgraue Wolke, Regenschauer, Blitz","sun, big light grey cloud, rain shower, lightning"
+6,wi-day-snow,so_grhe_shsn,"Sonne grosse hellgraue Wolke, Schneeschauer","sun large light grey cloud, snow shower"
+7,wi-day-snow-thunderstorm,so_grhe_shsn_bl,"Sonne grosse hellgraue Wolke, Schneeschauer, Blitz","sun big light grey cloud, snow shower, lightning"
+8,wi-day-rain-mix,so_grhe_shsr,"Sonne, grosse hellgraue Wolke, Schneeregenschauer","sun, big light grey cloud, snow showers"
+9,wi-day-sleet-storm,so_grhe_shsr_bl,"Sonne, grosse hellgraue Wolke, Schneeregenschauer, Blitz","sun, big light grey cloud, snow showers, lightning"
+10,wi-day-cloudy-high,so_klhe,"Sonne, kleine weisse Wolke","sun, small white cloud"
+11,wi-day-sprinkle,so_klhe_shra,"Sonne, kleine weisse Wolke, Regenschauer","sun, small white cloud, rain shower"
+12,wi-day-sleet-storm,so_klhe_shra_bl,"Sonne, kleine weisse Wolke, Regenschauer, Blitz","sun, small white cloud, rain shower, lightning"
+13,wi-day-snow-wind,so_klhe_shsn,"Sonne, kleine weisse Wolke, Schneeschauer","sun, small white cloud, snow shower"
+14,wi-day-snow-thunderstorm,so_klhe_shsn_bl,"Sonne, kleine weisse Wolke, Schneeschauer, Blitz","sun, small white cloud, snow shower, lightning"
+15,wi-day-rain-mix,so_klhe_shsr,"Sonne, kleine weisse Wolke, Schneeregenschauer","sun, small white cloud, snow showers"
+16,wi-day-sleet-storm,so_klhe_shsr_bl,"Sonner, kleine weisse Wolke, Schneeregenschauer, Blitz","sunny, small white cloud, snow shower, lightning"
+17,wi-fog,ne,Nebel,fog
+18,wi-cloudy,grdu,Grosse dunkle Wolke,large dark cloud
+19,wi-cloudy,grhe,Grosse hellgraue Wolke,large light grey cloud
+20,wi-showers,grdu_ra,"Grosse dunkle Wolke, Regen","big dark cloud, rain"
+21,wi-snow,grdu_sn,"Grosse dunkle Wolke, Schnee","big dark cloud, snow"
+22,wi-rain-mix,grdu_sr,"Grosse dunkle Wolke, Schneeregen","big dark cloud, snow rain"
+23,wi-rain,grdu_ra3,"Grosse dunkle, starker Regen","big dark, heavy rain"
+24,wi-snow-wind,grdu_sn3,"Grosse dunkle, starker Schneefall","big dark, heavy snowfall"
+25,wi-hail,grdu_shra,"Grosse dunkle Wolke, Regenschauer","big dark cloud, rain shower"
+26,wi-thunderstorm,grdu_shra_bl,"Grosse dunkle Wolke, Regenschauer, Blitz","big dark cloud, rain shower, lightning"
+27,wi-snow-wind,grdu_shsn,"Grosse dunkle Wolke, Schneeschauer","big dark cloud, snow shower"
+28,wi-storm-showers,grdu_shsn_bl,"Grosse dunkle Wolke, Schneeschauer, Blitz","big dark cloud, snow showers, lightning"
+29,wi-rain-mix,grdu_shsr,"Grosse dunkle Wolke, Schneeregenschauer","large dark cloud, snow showers"
+30,wi-storm-showers,grdu_shsr_bl,"Grosse dunkle Wolke, Schneeregenschauer, Blitz","big dark cloud, snow showers, lightning"
+-1,wi-night-clear,mo,Mond,moon
+-2,wi-night-fog,mo_ne,"Mond, Nebel","moon, fog"
+-3,wi-night-alt-cloudy,mo_grhe,Mond grosse hellgraue Wolke,moon large light grey cloud
+-4,wi-night-alt-rain,mo_grhe_shra,"Mond, grosse hellgraue Wolke Regenschauer","moon, big light grey cloud rain showers"
+-5,wi-night-thunderstorm,mo_grhe_shra_bl,"Mond, grosse hellgraue Wolke, Regenschauer, Blitz","moon, large light grey cloud, rain shower, lightning"
+-6,wi-night-alt-snow-wind,mo_grhe_shsn,"Mond grosse hellgraue Wolke, Schneeschauer","moon large light grey cloud, snow shower"
+-7,wi-night-snow-thunderstorm,mo_grhe_shsn_bl,"Mond grosse hellgraue Wolke, Schneeschauer, Blitz","moon big light grey cloud, snow shower, lightning"
+-8,wi-night-rain-mix,mo_grhe_shsr,"Mond, grosse hellgraue Wolke, Schneeregenschauer","moon, big light grey cloud, snow showers"
+-9,wi-night-sleet-storm,mo_grhe_shsr_bl,"Mond, grosse hellgraue Wolke, Schneeregenschauer, Blitz","moon, big light grey cloud, snow shower, lightning"
+-10,wi-night-alt-partly-cloudy,mo_klhe,"Mond, kleine weisse Wolke","moon, small white cloud"
+-11,wi-night-showers,mo_klhe_shra,"Mond, kleine weisse Wolke, Regenschauer","moon, small white cloud, rain shower"
+-12,wi-night-alt-storm-showers,mo_klhe_shra_bl,"Mond, kleine weisse Wolke, Regenschauer, Blitz","moon, small white cloud, rain shower, lightning"
+-13,wi-night-snow,mo_klhe_shsn,"Mond, kleine weisse Wolke, Schneeschauer","moon, small white cloud, snow shower"
+-14,wi-night-snow-thunderstorm,mo_klhe_shsn_bl,"Mond, kleine weisse Wolke, Schneeschauer, Blitz","moon, small white cloud, snow shower, lightning"
+-15,wi-night-rain-mix,mo_klhe_shsr,"Mond, kleine weisse Wolke, Schneeregenschauer","moon, small white cloud, snow showers"
+-16,wi-night-sleet-storm,mo_klhe_shsr_bl,"Mond, kleine weisse Wolke, Schneeregenschauer, Blitz","moon, small white cloud, snow showers, lightning"
