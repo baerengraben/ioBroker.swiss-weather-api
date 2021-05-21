@@ -101,9 +101,12 @@ function doIt(self) {
 	//Resolves https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/32
 	dns.resolve4('api.srgssr.ch', function (err, addresses) {
 		if (err) {
-			self.log.debug('DNS Resolve Failed for api.srgssr.ch: ' + err.message);
+			self.log.error('DNS Resolve Failed for api.srgssr.ch: ' + err.message);
+			self.log.error('Retrying in 10min...');
+			//todo: set Status of adapter to yellow
+			setTimeout(doIt, 10 * 60000, self);
 		} else {
-			self.log.debug('Successfull DNS resolvefor api.srgssr.ch: ' + JSON.stringify(addresses));
+			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			var access_token;
 			//Convert ConsumerKey and ConsumerSecret to base64
 			let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
@@ -1745,10 +1748,9 @@ function doIt(self) {
 				});
 			});
 			req.end();
+			setTimeout(doIt, pollInterval, self);
 		}
 	});
-
-	setTimeout(doIt, pollInterval, self);
 }
 
 // @ts-ignore parent is a valid property on module
