@@ -103,11 +103,11 @@ function doIt(self) {
 		if (err) {
 			self.log.error('DNS Resolve Failed for api.srgssr.ch: ' + err.message + ' Is there an internet connection?');
 			self.log.error('Retrying in 10min...');
-			//todo: set Status of adapter to yellow
-			self.info.connection = false;
+			self.setState('info.connection', false, true);
 			setTimeout(doIt, 10 * 60000, self);
 		} else {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
+			self.setState('info.connection', true, true);
 			var access_token;
 			//Convert ConsumerKey and ConsumerSecret to base64
 			let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
