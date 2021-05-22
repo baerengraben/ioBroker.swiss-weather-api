@@ -52,6 +52,7 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		this.setState('info.connection', true, true);
 		getSystemData(this); // read Longitude und Latitude
 		setTimeout(doIt, 10000, this); // First start after 10s
 	}
@@ -84,6 +85,7 @@ function getSystemData(self) {
 		self.getForeignObject("system.config", (err, state) => {
 			if (err || state === undefined || state === null) {
 				self.log.error("longitude/latitude not set in adapter-config and reading in system-config failed");
+				self.setState('info.connection', false, true);
 			} else {
 				self.config.Longitude = state.common.longitude;
 				self.config.Latitude = state.common.latitude;
@@ -96,6 +98,7 @@ function getSystemData(self) {
 }
 
 function doIt(self) {
+	self.setState('info.connection', true, true);
 	var pollInterval = self.config.PollInterval * 60000; //Convert minute to miliseconds
 	//First of all check if there is a working DNS-Resolver
 	//Resolves https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/32
@@ -157,9 +160,11 @@ function doIt(self) {
 					var body = JSON.parse(Buffer.concat(chunks).toString());
 					if (body.access_token === undefined) {
 						self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)? It may also be that the maximum number of queries for today is exhausted");
+						self.setState('info.connection', false, true);
 						return;
 					} else if (body.access_token == ""){
 						self.log.warn("Got an empty Token - It may be that the maximum number of queries for today is exhausted");
+						self.setState('info.connection', false, true);
 						return;
 					}
 					access_token = body.access_token.toString();
@@ -194,21 +199,26 @@ function doIt(self) {
 							if (body.hasOwnProperty("code")) {
 								self.log.debug("Return Code: " + body.code.toString());
 								if (body.code.toString().startsWith("404")) {
+									self.setState('info.connection', false, true);
 									self.log.error("Get Gelocation id - Resource not found");
 									return;
 								} else if (body.code.toString().startsWith("400")){
+									self.setState('info.connection', false, true);
 									self.log.error("Get Gelocation id -  Invalid request");
 									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else if (body.code.toString().startsWith("401")){
+									self.setState('info.connection', false, true);
 									self.log.error("Get Gelocation id -  Invalid or expired access token ");
 									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else if (body.code.toString().startsWith("429")) {
+									self.setState('info.connection', false, true);
 									self.log.error("Get Gelocation id -  Invalid or expired access token ");
 									self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 									return;
 								} else {
+									self.setState('info.connection', false, true);
 									self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
 									return;
 								}
@@ -246,21 +256,26 @@ function doIt(self) {
 									if (body.hasOwnProperty("code")) {
 										self.log.debug("Return Code: " + body.code.toString());
 										if (body.code.toString().startsWith("404")) {
+											self.setState('info.connection', false, true);
 											self.log.error("Forecast - Resource not found");
 											return;
 										} else if (body.code.toString().startsWith("400")){
+											self.setState('info.connection', false, true);
 											self.log.error("Forecast -  Invalid request");
 											self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 											return;
 										} else if (body.code.toString().startsWith("401")){
+											self.setState('info.connection', false, true);
 											self.log.error("Forecast -  Invalid or expired access token ");
 											self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 											return;
 										} else if (body.code.toString().startsWith("429")) {
+											self.setState('info.connection', false, true);
 											self.log.error("Forecast -  Invalid or expired access token ");
 											self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 											return;
 										} else {
+											self.setState('info.connection', false, true);
 											self.log.error("Forecast - An error has occured. " + JSON.stringify(body));
 											return;
 										}
@@ -652,6 +667,7 @@ function doIt(self) {
 										} else if (datesAreOnSameDay(today5, objDate)) {
 											myPath = "day5";
 										} else {
+											self.setState('info.connection', false, true);
 											self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
 											return;
 										}
@@ -1018,6 +1034,7 @@ function doIt(self) {
 											myPath = "day7";
 										} else {
 											self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
+											self.setState('info.connection', false, true);
 											return;
 										}
 
@@ -1466,6 +1483,7 @@ function doIt(self) {
 										} else if (datesAreOnSameDay(today7, objDate)) {
 											myPath = "day7";
 										} else {
+											self.setState('info.connection', false, true);
 											self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
 											return;
 										}
@@ -1733,18 +1751,21 @@ function doIt(self) {
 									});
 								});
 								res.on("error", function (error) {
+									self.setState('info.connection', false, true);
 									self.log.error(error)
 								});
 							});
 							req.end();
 						});
 						res.on("error", function (error) {
+							self.setState('info.connection', false, true);
 							self.log.error(error)
 						});
 					});
 					req.end();
 				});
 				res.on("error", function (error) {
+					self.setState('info.connection', false, true);
 					self.log.error(error)
 				});
 			});
