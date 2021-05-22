@@ -122,5 +122,21 @@
 		"PollInterval": "30"
 	},
 	"objects": [],
-	"instanceObjects": []
+	"instanceObjects": [
+		{
+			"_id": "info.connection",
+			"type": "state",
+			"common": {
+				"name": "SRF Weather connected",
+				"type": "boolean",
+				"role": "indicator.connected",
+				"read": true,
+				"write": false,
+				"def": false,
+				"desc": "Is SRF Weather connected?"
+			},
+			"native": {
+			}
+		}
+	]
 }

@@ -104,6 +104,7 @@ function doIt(self) {
 			self.log.error('DNS Resolve Failed for api.srgssr.ch: ' + err.message + ' Is there an internet connection?');
 			self.log.error('Retrying in 10min...');
 			//todo: set Status of adapter to yellow
+			self.info.connection = false;
 			setTimeout(doIt, 10 * 60000, self);
 		} else {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
