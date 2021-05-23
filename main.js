@@ -96,6 +96,7 @@ function getToken(self,myCallback){
 			}
 			access_token = body.access_token.toString();
 			self.log.debug("Access_Token : " + access_token);
+			myCallback(self,getForecast);
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
@@ -103,7 +104,6 @@ function getToken(self,myCallback){
 		});
 	});
 	req.end();
-	myCallback(self,getForecast);
 }
 
 function getForecast(self){
@@ -1712,6 +1712,7 @@ function getGeolocationId(self,myCallback) {
 			}
 			//Extract GeolocationID
 			geolocationId = body[0].id.toString();
+			myCallback(self);
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
@@ -1719,7 +1720,6 @@ function getGeolocationId(self,myCallback) {
 		});
 	});
 	req.end();
-	myCallback(self);
 }
 
 function doIt(self) {
