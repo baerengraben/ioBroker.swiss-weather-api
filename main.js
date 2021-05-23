@@ -51,7 +51,7 @@ function getTimeFormattet(actualDate) {
 	return hour + ":" + min + ":" + sec;
 }
 
-function getToken(self){
+function getToken(self,myCallback){
 	self.log.debug('getting Token...');
 
 	//Convert ConsumerKey and ConsumerSecret to base64
@@ -103,6 +103,7 @@ function getToken(self){
 		});
 	});
 	req.end();
+	myCallback(self,getForecast);
 }
 
 function getForecast(self){
@@ -1655,7 +1656,7 @@ function getForecast(self){
 	req.end();
 }
 
-function getGeolocationId(self, getForecastCallback) {
+function getGeolocationId(self,myCallback) {
 	self.log.debug("Getting GeolocationId....");
 	//Options for getting current Geolocation id
 	var options_geolocationId = {
@@ -1718,7 +1719,7 @@ function getGeolocationId(self, getForecastCallback) {
 		});
 	});
 	req.end();
-	getForecastCallback(self);
+	myCallback(self);
 }
 
 function doIt(self) {
@@ -1736,15 +1737,13 @@ function doIt(self) {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			self.setState('info.connection', true, true);
 
-			//get Token
-			getToken(self);
 			// Check if there is already a geolocationId, if not => Get one
 			if (geolocationId) {
 				self.log.debug("geolocationId is available, move forwared to get forcasts...");
-				getForecast(self);
+				getToken(self,getForecast);
 			} else {
-				self.log.debug("There is no geolocationId, so getting one...");
-				getGeolocationId(self, getForecast);
+				self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
+				getToken(self,getGeolocationId);
 			}
 			setTimeout(doIt, pollInterval, self);
 		}
