@@ -12,6 +12,11 @@
 
 **Tests:**: [![Travis-CI](http://img.shields.io/travis/baerengraben/ioBroker.swiss-weather-api/master.svg)](https://travis-ci.org/baerengraben/ioBroker.swiss-weather-api)
 
+#Achtung!!!
+**SRG has completely rebuilt its API. The old API (<= adapter version 0.3.2) is NOT supported anymore. From adapter version 0.9.x the new API of the SRG is used. That's why a new SRG APP (eg product "Freemium") must be created (https://developer.srgssr.ch/apis/srf-weather). See also Readme, chapter "Getting started". Please also note that the new API will also create completely new objects.**
+
+**The good news is that the new API also provides  more data. ;)**
+
 ## swiss-weather-api adapter for ioBroker
 
 Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).  
