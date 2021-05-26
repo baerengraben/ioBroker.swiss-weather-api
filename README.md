@@ -17,6 +17,15 @@
 
 **The good news is that the new API also provides  more data. ;)**
 
+**Update procedure**
+
+So my recommendation for the update from 0.3.2 to 0.9.x is:
+- remove the old adapter before installing version 0.9.x.
+   - please note that the data-objects will be removed accordingly as well.
+- create a new freemium app on srg developer portal (https://developer.srgssr.ch/apis/srf-weather)
+- install new version 0.9.x and set configuration with new consumerkey and consumersecret    
+  - on startup, the new adapter will create new, different data-objects.
+
 ## swiss-weather-api adapter for ioBroker
 
 Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).  
