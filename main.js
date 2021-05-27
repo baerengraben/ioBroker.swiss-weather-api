@@ -1711,8 +1711,14 @@ function getGeolocationId(self,myCallback) {
 				}
 			}
 			//Extract GeolocationID
-			geolocationId = body[0].id.toString();
-			myCallback(self);
+			if (body[0].id == undefined) {
+				self.setState('info.connection', false, true);
+				self.log.error("Could not get a geolocation id. Is the adapter configured cleanly? Please note that from version 0.9.x a new App must be created under the SRG-SSR Developer portal ('freemium' subscription is needed). " + JSON.stringify(body));
+				return;
+			} else {
+				geolocationId = body[0].id.toString();
+				myCallback(self);
+			}
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
