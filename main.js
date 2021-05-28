@@ -109,14 +109,14 @@ function getToken(self,myCallback){
 }
 
 function setCurrentHour(self){
-	let path = adapterName + "." + self.instance + ".forecast.60minutes.day0"
+	let path = self.namespace + ".forecast.60minutes.day0"
 	let updatePath = "forecast.current_hour";
 	self.log.info('update current hour...');
 	//get systemtime hour
 	var date = new Date();
 	var hour = (date.getHours()<10?'0':'') + date.getHours();
 
-	if (self.getState(path + ".00:00:00.DD_DEG").val === undefined) {
+	if (self.getState(path + ".00:00:00.DD_DEG") === undefined) {
 		self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.00:00:00.DD_DEG' + '. Try my luck on next hour...');
 		return; // do nothing
 	} else {
