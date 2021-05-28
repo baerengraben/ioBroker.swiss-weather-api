@@ -1664,10 +1664,7 @@ function getForecast(self,myCallback){
 			self.log.error(error)
 		});
 	});
-	req.end();
-
-	//update current hour
-	myCallback(self);
+	req.end(myCallback(self)); //update current hour
 }
 
 function getGeolocationId(self,myCallback) {
