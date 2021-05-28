@@ -142,55 +142,55 @@ function setCurrentHour(self){
 			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 			
-			self.getState(path + '.00:00:00.cur_color.background_color', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.cur_color.background_color', function(err, state) {
 				local_background_color = state.val;
 			});
-			self.getState(path + '.00:00:00.cur_color.temperature', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.cur_color.temperature', function(err, state) {
 				local_temperature = state.val;
 			});
-			self.getState(path + '.00:00:00.cur_color.text_color', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.cur_color.text_color', function(err, state) {
 				local_text_color = state.val;
 			});
-			self.getState(path + '.00:00:00.DD_DEG', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.DD_DEG', function(err, state) {
 				local_DD_DEG = state.val;
 			});
-			self.getState(path + '.00:00:00.FF_KMH', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.FF_KMH', function(err, state) {
 				local_FF_KMH = state.val;
 			});
-			self.getState(path + '.00:00:00.FX_KMH', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.FX_KMH', function(err, state) {
 				local_FX_KMH = state.val;
 			});
-			self.getState(path + '.00:00:00.ICON_URL_COLOR', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.ICON_URL_COLOR', function(err, state) {
 				local_ICON_URL_COLOR = state.val;
 			});
-			self.getState(path + '.00:00:00.ICON_URL_DARK', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.ICON_URL_DARK', function(err, state) {
 				local_ICON_URL_DARK = state.val;
 			});
-			self.getState(path + '.00:00:00.ICON_URL_LIGHT', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.ICON_URL_LIGHT', function(err, state) {
 				local_ICON_URL_LIGHT = state.val;
 			});
-			self.getState(path + '.00:00:00.PROBPCP_PERCENT', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.PROBPCP_PERCENT', function(err, state) {
 				local_PROBPCP_PERCENT = state.val;
 			});
-			self.getState(path + '.00:00:00.RRR_MM', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.RRR_MM', function(err, state) {
 				local_RRR_MM = state.val;
 			});
-			self.getState(path + '.00:00:00.SYMBOL_CODE', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.SYMBOL_CODE', function(err, state) {
 				local_SYMBOL_CODE = state.val;
 			});
-			self.getState(path + '.00:00:00.TTH_C', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.TTH_C', function(err, state) {
 				local_TTH_C = state.val;
 			});
-			self.getState(path + '.00:00:00.TTL_C', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.TTL_C', function(err, state) {
 				local_TTL_C = state.val;
 			});
-			self.getState(path + '.00:00:00.TTT_C', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.TTT_C', function(err, state) {
 				local_TTT_C = state.val;
 			});
-			self.getState(path + '.00:00:00.local_date_time', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.local_date_time', function(err, state) {
 				local_local_date_time = state.val;
 			});
-			self.getState(path + '.00:00:00.type', function(err, state) {
+			self.getState(path + '.' + hour +':00:00.type', function(err, state) {
 				local_type = state.val;
 			});
 
