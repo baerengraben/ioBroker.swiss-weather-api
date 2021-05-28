@@ -1819,13 +1819,12 @@ class SwissWeatherApi extends utils.Adapter {
 		this.setState('info.connection', true, true);
 		//ensure that current_hour is uptodate on every minute '0'
 		this.crons.push(cron.schedule('0 * * * *', async() => {
-			this.log.debug('cron started to update object curren_hour')
 			setCurrentHour(this);
 		}))
 		// read system Longitude, Latitude
-		getSystemData(this);
+//		getSystemData(this);
 		//to and get some forecast
-		setTimeout(doIt, 10000, this); // First start after 10s
+//		setTimeout(doIt, 10000, this); // First start after 10s
 	}
 
 	/**
