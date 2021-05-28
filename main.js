@@ -116,7 +116,7 @@ function setCurrentHour(self){
 	var date = new Date();
 	var hour = (date.getHours()<10?'0':'') + date.getHours();
 
-	if (self.getState(path + ".00:00:00.DD_DEG") === undefined) {
+	if (self.getState(path + ".00:00:00.DD_DEG").val === undefined) {
 		self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.00:00:00.DD_DEG' + '. Try my luck on next hour...');
 		return; // do nothing
 	} else {
@@ -144,7 +144,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "local_date_time", {
-				val: self.getState(path + "." + hour + ":00:00" + ".local_date_time"),
+				val: self.getState(path + "." + hour + ":00:00" + ".local_date_time").val,
 				ack: true
 			});
 		});
@@ -159,7 +159,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTT_C", {
-				val: self.getState(path + "." + hour + ":00:00" + ".TTT_C"),
+				val: self.getState(path + "." + hour + ":00:00" + ".TTT_C").val,
 				ack: true
 			});
 		});
@@ -174,7 +174,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTL_C", {
-				val: self.getState(path + "." + hour + ":00:00" + ".TTL_C"),
+				val: self.getState(path + "." + hour + ":00:00" + ".TTL_C").val,
 				ack: true
 			});
 		});
@@ -189,7 +189,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTH_C", {
-				val: self.getState(path + "." + hour + ":00:00" + ".TTH_C"),
+				val: self.getState(path + "." + hour + ":00:00" + ".TTH_C").val,
 				ack: true
 			});
 		});
@@ -204,7 +204,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "PROBPCP_PERCENT", {
-				val: self.getState(path + "." + hour + ":00:00" + ".PROBPCP_PERCENT"),
+				val: self.getState(path + "." + hour + ":00:00" + ".PROBPCP_PERCENT").val,
 				ack: true
 			});
 		});
@@ -219,7 +219,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "RRR_MM", {
-				val: self.getState(path + "." + hour + ":00:00" + ".RRR_MM"),
+				val: self.getState(path + "." + hour + ":00:00" + ".RRR_MM").val,
 				ack: true
 			});
 		});
@@ -234,7 +234,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "FF_KMH", {
-				val: self.getState(path + "." + hour + ":00:00" + ".FF_KMH"),
+				val: self.getState(path + "." + hour + ":00:00" + ".FF_KMH").val,
 				ack: true
 			});
 		});
@@ -249,7 +249,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "FX_KMH", {
-				val: self.getState(path + "." + hour + ":00:00" + ".FX_KMH"),
+				val: self.getState(path + "." + hour + ":00:00" + ".FX_KMH").val,
 				ack: true
 			});
 		});
@@ -264,7 +264,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "DD_DEG", {
-				val: self.getState(path + "." + hour + ":00:00" + ".DD_DEG"),
+				val: self.getState(path + "." + hour + ":00:00" + ".DD_DEG").val,
 				ack: true
 			});
 		});
@@ -279,7 +279,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "SYMBOL_CODE", {
-				val: self.getState(path + "." + hour + ":00:00" + ".SYMBOL_CODE"),
+				val: self.getState(path + "." + hour + ":00:00" + ".SYMBOL_CODE").val,
 				ack: true
 			});
 		});
@@ -293,7 +293,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_COLOR", {
-				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_COLOR"),
+				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_COLOR").val,
 				ack: true
 			});
 		});
@@ -307,7 +307,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_DARK", {
-				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_DARK"),
+				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_DARK").val,
 				ack: true
 			});
 		});
@@ -321,7 +321,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_LIGHT", {
-				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_LIGHT"),
+				val: self.getState(path + "." + hour + ":00:00" + ".ICON_URL_LIGHT").val,
 				ack: true
 			});
 		});
@@ -337,7 +337,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "type", {
-				val: self.getState(path + "." + hour + ":00:00" + ".type"),
+				val: self.getState(path + "." + hour + ":00:00" + ".type").val,
 				ack: true
 			});
 		});
@@ -360,7 +360,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "temperature", {
-				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.temperature"),
+				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.temperature").val,
 				ack: true
 			});
 		});
@@ -375,7 +375,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "background_color", {
-				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.background_color"),
+				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.background_color").val,
 				ack: true
 			});
 		});
@@ -390,7 +390,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "text_color", {
-				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.text_color"),
+				val: self.getState(path + "." + hour + ":00:00" + ".cur_color.text_color").val,
 				ack: true
 			});
 		});
