@@ -122,7 +122,7 @@ function setCurrentHour(self){
 			self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.00:00:00.DD_DEG' + '. Try my luck on next hour...');
 			return; // do nothing
 		} else {
-			self.log.debug('forecast data is available. Updating current_hour...read correspondenting hour forecast from ' +
+			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
 			//*** Create current_hour object  ***
