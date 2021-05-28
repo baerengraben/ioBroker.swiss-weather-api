@@ -5,6 +5,7 @@
  */
 const utils = require("@iobroker/adapter-core");
 var dns = require('dns');
+const cron = require('node-cron');
 const { http, https } = require('follow-redirects');
 var timeout;
 var geolocationId;
@@ -106,7 +107,17 @@ function getToken(self,myCallback){
 	req.end();
 }
 
-function getForecast(self){
+function setCurrentHour(self){
+	self.log.info('update current hour...');
+	// todo
+	// 1. Check if there is already forecast data
+	//     if not, just do nothing and wait for next iteration (minute 0)
+	// 2. Check system Time and get actual hour
+	// 3. read correspondenting hour forecast from swiss-weather-api.0.forecast.60minutes.day0.<actual hour>
+	//    and write it to swiss-weather-api.0.forecast.current_hour
+}
+
+function getForecast(self,myCallback){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
@@ -1654,6 +1665,9 @@ function getForecast(self){
 		});
 	});
 	req.end();
+
+	//update current hour
+	myCallback(self);
 }
 
 function getGeolocationId(self,myCallback) {
@@ -1717,7 +1731,8 @@ function getGeolocationId(self,myCallback) {
 				return;
 			} else {
 				geolocationId = body[0].id.toString();
-				myCallback(self);
+				//getForecast
+				myCallback(self,setCurrentHour);
 			}
 		});
 		res.on("error", function (error) {
@@ -1791,6 +1806,7 @@ class SwissWeatherApi extends utils.Adapter {
 			...options,
 			name: "swiss-weather-api",
 		});
+		this.crons = [];
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
@@ -1799,8 +1815,16 @@ class SwissWeatherApi extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
+		//set state to 'ok'
 		this.setState('info.connection', true, true);
-		getSystemData(this); // read Longitude und Latitude
+		//ensure that current_hour is uptodate on every minute '0'
+		this.crons.push(cron.schedule('0 * * * *', async() => {
+			this.log.debug('cron started to update object curren_hour')
+			setCurrentHour(this);
+		}))
+		// read system Longitude, Latitude
+		getSystemData(this);
+		//to and get some forecast
 		setTimeout(doIt, 10000, this); // First start after 10s
 	}
 
@@ -1810,6 +1834,10 @@ class SwissWeatherApi extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
+			for (const croni in this.crons) {
+				const onecron = this.crons[croni]
+				onecron.destroy()
+			}
 			this.log.debug("cleaned everything up...");
 			clearTimeout(timeout);
 			callback();
