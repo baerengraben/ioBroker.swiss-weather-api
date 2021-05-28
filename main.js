@@ -1658,13 +1658,16 @@ function getForecast(self,myCallback){
 					});
 				});
 			});
+
+			//update current hour
+			myCallback(self);
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
 			self.log.error(error)
 		});
 	});
-	req.end(myCallback(self)); //update current hour
+	req.end();
 }
 
 function getGeolocationId(self,myCallback) {
