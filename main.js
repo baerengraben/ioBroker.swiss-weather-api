@@ -46,6 +46,31 @@ function getActualDateFormattet(actualDate) {
 	return year + "-" + month + "-" + day;
 }
 
+/**
+ * Get longitude/latitude from system if not set or not valid
+ * do not change if we have already a valid value
+ * so we could use different settings compared to system if necessary
+ * @param self Adapter
+ */
+function getSystemData(self) {
+	if (typeof self.config.Longitude == undefined || self.config.Longitude == null || self.config.Longitude.length == 0 || isNaN(self.config.Longitude)
+		|| typeof self.config.Latitude == undefined || self.config.Latitude == null || self.config.Latitude.length == 0 || isNaN(self.config.Latitude)) {
+		self.log.info("longitude/longitude not set, get data from system ");
+		self.getForeignObject("system.config", (err, state) => {
+			if (err || state === undefined || state === null) {
+				self.log.error("longitude/latitude not set in adapter-config and reading in system-config failed");
+				self.setState('info.connection', false, true);
+			} else {
+				self.config.Longitude = state.common.longitude;
+				self.config.Latitude = state.common.latitude;
+				self.log.info("system  longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
+			}
+		});
+	} else {
+		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
+	}
+}
+
 function getTimeFormattet(actualDate) {
 	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
@@ -2118,31 +2143,6 @@ function doIt(self) {
 	});
 }
 
-/**
- * Get longitude/latitude from system if not set or not valid
- * do not change if we have already a valid value
- * so we could use different settings compared to system if necessary
- * @param self Adapter
- */
-function getSystemData(self) {
-	if (typeof self.config.Longitude == undefined || self.config.Longitude == null || self.config.Longitude.length == 0 || isNaN(self.config.Longitude)
-		|| typeof self.config.Latitude == undefined || self.config.Latitude == null || self.config.Latitude.length == 0 || isNaN(self.config.Latitude)) {
-		self.log.info("longitude/longitude not set, get data from system ");
-		self.getForeignObject("system.config", (err, state) => {
-			if (err || state === undefined || state === null) {
-				self.log.error("longitude/latitude not set in adapter-config and reading in system-config failed");
-				self.setState('info.connection', false, true);
-			} else {
-				self.config.Longitude = state.common.longitude;
-				self.config.Latitude = state.common.latitude;
-				self.log.info("system  longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
-			}
-		});
-	} else {
-		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
-	}
-}
-
 class SwissWeatherApi extends utils.Adapter {
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
@@ -2167,7 +2167,7 @@ class SwissWeatherApi extends utils.Adapter {
 		//ensure that current_hour is uptodate on every minute '0'
 		this.crons.push(cron.schedule('0 * * * *', async() => {
 			setCurrentHour(this);
-		}))
+		}));
 		// read system Longitude, Latitude
 		getSystemData(this);
 		//to and get some forecast
