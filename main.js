@@ -469,7 +469,7 @@ function setCurrentHour(self){
 	});
 }
 
-function getForecast(self,myCallback){
+function getForecast(self){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
@@ -1718,8 +1718,6 @@ function getForecast(self,myCallback){
 				},
 				native: {},
 			});
-
-
 			//iterate over all hour objects
 			body.forecast["hour"].forEach(function(obj,index) {
 				var startTimeISOString = obj.local_date_time;
@@ -2010,9 +2008,6 @@ function getForecast(self,myCallback){
 					});
 				});
 			});
-
-			//update current hour
-			myCallback(self);
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
@@ -2084,7 +2079,7 @@ function getGeolocationId(self,myCallback) {
 			} else {
 				geolocationId = body[0].id.toString();
 				//getForecast
-				myCallback(self,setCurrentHour);
+				myCallback(self);
 			}
 		});
 		res.on("error", function (error) {
