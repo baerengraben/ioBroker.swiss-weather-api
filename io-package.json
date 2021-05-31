@@ -38,33 +38,6 @@
 			},
 			"0.1.7": {
 				"en": "Added Icon-Codes -17 to -30 => These are not yet confirmed by srf... "
-			},
-			"0.1.6": {
-				"en": "Some fixes based on Feedback of forum.iobroker.net"
-			},
-			"0.1.5": {
-				"en": "Some fixes based on Feedback of forum.iobroker.net"
-			},
-			"0.1.4": {
-				"en": "Added Travis CI Testing"
-			},
-			"0.1.3": {
-				"en": "Roles Updated and added attribute 'icon-name'"
-			},
-			"0.1.2": {
-				"en": "Some fixes"
-			},
-			"0.1.1": {
-				"en": "Some fixes"
-			},
-			"0.1.0": {
-				"en": "Running version. Delivers the complete weather forecast from https://api.srgssr.ch"
-			},
-			"0.0.2": {
-				"en": "First running version. Reads Current Forecast (https://api.srgssr.ch/forecasts/v1.0/weather/current)"
-			},
-			"0.0.1": {
-				"en": "Initial release"
 			}
 		},
 		"title": "Swiss Weather API (SRF Weather)",
