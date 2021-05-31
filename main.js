@@ -223,7 +223,7 @@ function setCurrentHour(self){
 			self.setObjectNotExists(updatePath, {
 				type: "channel",
 				common: {
-					name: "Holds the current hour data. This is updated on every http-call AND on every full hour by coping the data from forecast.60minutes.day0 - actual hour",
+					name: "Holds the current hour data. This is updated on every full hour by coping the data from forecast.60minutes.day0 - actual hour",
 					role: "info"
 				},
 				native: {},
