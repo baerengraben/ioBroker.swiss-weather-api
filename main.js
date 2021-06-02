@@ -1357,7 +1357,7 @@ function getForecast(self){
 					native: {},
 				}, function () {
 					self.setState("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
-						val: day_name,
+						val: this.day_name,
 						ack: true
 					});
 				}.bind({day_name: day_name}));
