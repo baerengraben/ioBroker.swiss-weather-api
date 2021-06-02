@@ -47,6 +47,15 @@ function getActualDateFormattet(actualDate) {
 }
 
 /**
+ * Get name of day
+ * @param date Date Object
+ * @returns {string} Name of Day
+ */
+function getDayName(date){
+	return date.toLocaleString(undefined, {weekday: 'long' });
+}
+
+/**
  * Get longitude/latitude from system if not set or not valid
  * do not change if we have already a valid value
  * so we could use different settings compared to system if necessary
@@ -1301,28 +1310,53 @@ function getForecast(self){
 				var objDate = new Date(startTimeISOString);
 				var myPath;
 				var myTime =  getTimeFormattet(objDate);
+				var day_name;
 
 				if (datesAreOnSameDay(today, objDate)) {
 					myPath = "day0";
+					day_name = getDayName(today);
 				} else if (datesAreOnSameDay(today1, objDate)) {
 					myPath = "day1";
+					day_name = getDayName(today1);
 				} else if (datesAreOnSameDay(today2, objDate)) {
 					myPath = "day2";
+					day_name = getDayName(today2);
 				} else if (datesAreOnSameDay(today3, objDate)) {
 					myPath = "day3";
+					day_name = getDayName(today3);
 				} else if (datesAreOnSameDay(today4, objDate)) {
 					myPath = "day4";
+					day_name = getDayName(today4);
 				} else if (datesAreOnSameDay(today5, objDate)) {
 					myPath = "day5";
+					day_name = getDayName(today5);
 				} else if (datesAreOnSameDay(today6, objDate)) {
 					myPath = "day6";
+					day_name = getDayName(today6);
 				} else if (datesAreOnSameDay(today7, objDate)) {
 					myPath = "day7";
+					day_name = getDayName(today7);
 				} else {
 					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
 					self.setState('info.connection', false, true);
 					return;
 				}
+
+				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "day_name", {
+					type: "state",
+					common: {
+						name: "Date Name - Browser Default Language is used to get Language",
+						type: "string",
+						role: "text",
+						write: false
+					},
+					native: {},
+				}, function () {
+					self.setState("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
+						val: day_name,
+						ack: true
+					});
+				});
 
 				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
 					type: "state",
