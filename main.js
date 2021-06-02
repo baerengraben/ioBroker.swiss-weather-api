@@ -52,7 +52,9 @@ function getActualDateFormattet(actualDate) {
  * @returns {string} Name of Day
  */
 function getDayName(date){
-	return date.toLocaleString(undefined, {weekday: 'long' });
+	var arrayOfWeekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
+	var weekdayNumber = date.getDay();
+	return arrayOfWeekdays[weekdayNumber];
 }
 
 /**
