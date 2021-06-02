@@ -1312,7 +1312,7 @@ function getForecast(self){
 				var objDate = new Date(startTimeISOString);
 				var myPath;
 				var myTime =  getTimeFormattet(objDate);
-				var day_name;
+				var day_name = "";
 
 				if (datesAreOnSameDay(today, objDate)) {
 					myPath = "day0";
@@ -1349,15 +1349,15 @@ function getForecast(self){
 				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "day_name", {
 					type: "state",
 					common: {
-						name: "Date Name - Browser Default Language is used to get Language",
+						name: "Day Name",
 						type: "string",
-						role: "text",
-						write: false
+						role: "text"
 					},
 					native: {},
 				}, function () {
+					self.log.info("Dayname in function = " + day_name);
 					self.setState("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
-						val: this.day_name,
+						val: day_name,
 						ack: true
 					});
 				}.bind({day_name: day_name}));
