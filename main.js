@@ -1344,6 +1344,8 @@ function getForecast(self){
 					return;
 				}
 
+				self.log.info("Dayname = " + day_name);
+
 				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "day_name", {
 					type: "state",
 					common: {
