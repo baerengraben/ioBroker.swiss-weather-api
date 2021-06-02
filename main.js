@@ -1359,7 +1359,7 @@ function getForecast(self){
 					self.setState("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
 						val: day_name,
 						ack: true
-					});
+					}.bind({day_name: day_name}));
 				}.bind({day_name: day_name}));
 
 				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
