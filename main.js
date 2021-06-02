@@ -1357,9 +1357,9 @@ function getForecast(self){
 				}, function () {
 					self.log.info("Dayname in function = " + day_name);
 					self.setState("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
-						val: day_name,
+						val: "schubidubiduuu" + day_name,
 						ack: true
-					}.bind({day_name: day_name}));
+					});
 				}.bind({day_name: day_name}));
 
 				self.setObjectNotExists("forecast." + "day." + myPath +"." + myTime +"." + "local_date_time", {
