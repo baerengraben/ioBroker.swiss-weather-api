@@ -26,6 +26,8 @@ var today5;
 var today6;
 // @ts-ignore
 var today7;
+// @ts-ignore
+var lastSuccessfulRun;
 
 // @ts-ignore
 Date.prototype.addDays = function(days) {
@@ -43,7 +45,9 @@ function getActualDateFormattet(actualDate) {
 	var	year = (actualDate.getFullYear());
 	var month = (actualDate.getMonth()<10?'0':'') + actualDate.getMonth();
 	var day = (actualDate.getDate()<10?'0':'') + actualDate.getDate();
-	return year + "-" + month + "-" + day;
+	var hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
+	var minutes = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
+	return hour + ":" + minutes + " " + day + "." + month + "." + year;
 }
 
 /**
@@ -509,20 +513,14 @@ function getForecast(self){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
-	// @ts-ignore
 	today1 = new Date().addDays(1);
-	// @ts-ignore
 	today2 = new Date().addDays(2);
-	// @ts-ignore
 	today3 = new Date().addDays(3);
-	// @ts-ignore
 	today4 = new Date().addDays(4);
-	// @ts-ignore
 	today5 = new Date().addDays(5);
-	// @ts-ignore
 	today6 = new Date().addDays(6);
-	// @ts-ignore
 	today7 = new Date().addDays(7);
+	lastSuccessfulRun = getActualDateFormattet(today);
 
 	//Get forecast
 	//Options for getting forecast
@@ -2067,6 +2065,23 @@ function getForecast(self){
 						ack: true
 					});
 				});
+
+				//Set last Sucessfull run
+				self.setObjectNotExists("info.lastrun", {
+					type: "state",
+					common: {
+						name: "Last successful run",
+						type: "string",
+						role: "text",
+						write: false
+					},
+					native: {},
+				}, function () {
+					self.setState("info.lastrun", {
+						val: lastSuccessfulRun,
+						ack: true
+					});
+				}.bind({lastSuccessfulRun: lastSuccessfulRun}));
 			});
 		});
 		res.on("error", function (error) {
