@@ -86,14 +86,9 @@ function getSystemData(self) {
 	}
 }
 
-function createJson(self){
-
-	var chartJson = {} // empty Object
-	var axisLabels = 'axisLabels';
-	var graphs = 'graphs';
-	chartJson[axisLabels] = []; // empty Array, push axisLabels attributes in here
-	chartJson[graphs] = []; // empty Array, push graphs attributes in here
-	var myHours = [
+function createJson(body) {
+	//Templates
+	let myHoursFull = [
 		"1h",
 		"2h",
 		"3h",
@@ -117,338 +112,486 @@ function createJson(self){
 		"23h",
 		"24h"
 	];
-	var myGraphs = [
-		{
-			"data": [
-				19,
-				19,
-				18,
-				19,
-				19,
-				20,
-				20,
-				21,
-				22,
-				24,
-				24,
-				24,
-				23,
-				22,
-				23,
-				23,
-				24,
-				23,
-				23,
-				22,
-				22,
-				21,
-				20,
-				20
-			],
-			"type": "line",
-			"color": "gray",
-			"legendText": "Temperatur",
-			"line_pointSizeHover": 5,
-			"line_pointSize": 0,
-			"line_Tension": 0.3,
-			"yAxis_show": false,
-			"yAxis_gridLines_show": false,
-			"yAxis_gridLines_ticks_length": 5,
-			"yAxis_min": 0,
-			"yAxis_max": 30,
-			"yAxis_step": 5,
-			"yAxis_position": "left",
-			"yAxis_appendix": " °C",
-			"yAxis_zeroLineWidth": 0.1,
-			"yAxis_zeroLineColor": "black",
-			"displayOrder": 0,
-			"tooltip_AppendText": " °C",
-			"datalabel_backgroundColor": [
-				"#2b9a44",
-				"#2b9a44",
-				"#3aa35b",
-				"#2b9a44",
-				"#2b9a44",
-				"#1d922e",
-				"#1d922e",
-				"#0e8917",
-				"#008000",
-				"#668f00",
-				"#668f00",
-				"#668f00",
-				"#338700",
-				"#008000",
-				"#338700",
-				"#338700",
-				"#668f00",
-				"#338700",
-				"#338700",
-				"#008000",
-				"#008000",
-				"#0e8917",
-				"#1d922e",
-				"#1d922e"
-			],
-			"datalabel_color": "white",
-			"datalabel_offset": -10,
-			"datalabel_fontFamily": "RobotoCondensed-Light",
-			"datalabel_fontSize": 12,
-			"datalabel_borderRadius": 6,
-			"datalabel_show": "auto",
-			"line_PointColor": [
-				"#2b9a44",
-				"#2b9a44",
-				"#3aa35b",
-				"#2b9a44",
-				"#2b9a44",
-				"#1d922e",
-				"#1d922e",
-				"#0e8917",
-				"#008000",
-				"#668f00",
-				"#668f00",
-				"#668f00",
-				"#338700",
-				"#008000",
-				"#338700",
-				"#338700",
-				"#668f00",
-				"#338700",
-				"#338700",
-				"#008000",
-				"#008000",
-				"#0e8917",
-				"#1d922e",
-				"#1d922e"
-			],
-			"line_PointColorBorder": [
-				"#2b9a44",
-				"#2b9a44",
-				"#3aa35b",
-				"#2b9a44",
-				"#2b9a44",
-				"#1d922e",
-				"#1d922e",
-				"#0e8917",
-				"#008000",
-				"#668f00",
-				"#668f00",
-				"#668f00",
-				"#338700",
-				"#008000",
-				"#338700",
-				"#338700",
-				"#668f00",
-				"#338700",
-				"#338700",
-				"#008000",
-				"#008000",
-				"#0e8917",
-				"#1d922e",
-				"#1d922e"
-			],
-			"line_PointColorHover": [
-				"#2b9a44",
-				"#2b9a44",
-				"#3aa35b",
-				"#2b9a44",
-				"#2b9a44",
-				"#1d922e",
-				"#1d922e",
-				"#0e8917",
-				"#008000",
-				"#668f00",
-				"#668f00",
-				"#668f00",
-				"#338700",
-				"#008000",
-				"#338700",
-				"#338700",
-				"#668f00",
-				"#338700",
-				"#338700",
-				"#008000",
-				"#008000",
-				"#0e8917",
-				"#1d922e",
-				"#1d922e"
-			],
-			"line_PointColorBorderHover": [
-				"#2b9a44",
-				"#2b9a44",
-				"#3aa35b",
-				"#2b9a44",
-				"#2b9a44",
-				"#1d922e",
-				"#1d922e",
-				"#0e8917",
-				"#008000",
-				"#668f00",
-				"#668f00",
-				"#668f00",
-				"#338700",
-				"#008000",
-				"#338700",
-				"#338700",
-				"#668f00",
-				"#338700",
-				"#338700",
-				"#008000",
-				"#008000",
-				"#0e8917",
-				"#1d922e",
-				"#1d922e"
-			],
-			"use_gradient_color": true,
-			"gradient_color": [
-				{
-					"value": -20,
-					"color": "#5b2c6f66"
-				},
-				{
-					"value": 0,
-					"color": "#2874a666"
-				},
-				{
-					"value": 14,
-					"color": "#73c6b666"
-				},
-				{
-					"value": 22,
-					"color": "#00800066"
-				},
-				{
-					"value": 27,
-					"color": "#ffa50066"
-				},
-				{
-					"value": 35,
-					"color": "#ff000066"
-				}
-			],
-			"use_line_gradient_fill_color": true,
-			"line_gradient_fill_color": [
-				{
-					"value": -20,
-					"color": "#5b2c6f66"
-				},
-				{
-					"value": 0,
-					"color": "#2874a666"
-				},
-				{
-					"value": 14,
-					"color": "#73c6b666"
-				},
-				{
-					"value": 22,
-					"color": "#00800066"
-				},
-				{
-					"value": 27,
-					"color": "#ffa50066"
-				},
-				{
-					"value": 35,
-					"color": "#ff000066"
-				}
-			]
-		},
-		{
-			"data": [
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				50,
-				19,
-				33,
-				36,
-				23,
-				14,
-				16,
-				34,
-				46,
-				40,
-				24,
-				22
-			],
-			"type": "line",
-			"color": "#93BDFF",
-			"legendText": "Regenwahrscheinlichkeit",
-			"line_UseFillColor": true,
-			"line_pointSize": 0,
-			"line_pointSizeHover": 5,
-			"yAxis_min": 0,
-			"yAxis_max": 100,
-			"yAxis_maxSteps": 10,
-			"yAxis_position": "left",
-			"yAxis_gridLines_show": false,
-			"yAxis_gridLines_border_show": false,
-			"yAxis_zeroLineWidth": 0.1,
-			"yAxis_zeroLineColor": "black",
-			"yAxis_appendix": " %",
-			"displayOrder": 1,
-			"tooltip_AppendText": " %",
-			"datalabel_show": false
-		},
-		{
-			"data": [
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"0",
-				"1.3",
-				"2.5",
-				0,
-				1.9,
-				1.17,
-				0,
-				0,
-				0,
-				0.18,
-				0.7,
-				0.2,
-				0,
-				0
-			],
-			"type": "bar",
-			"color": "#0061C1",
-			"legendText": "Niederschlag",
-			"yAxis_min": 0,
-			"yAxis_max": 5,
-			"yAxis_maxSteps": 10,
-			"yAxis_position": "right",
-			"yAxis_gridLines_show": false,
-			"yAxis_appendix": " mm",
-			"yAxis_gridLines_border_show": false,
-			"yAxis_zeroLineWidth": 0.1,
-			"yAxis_zeroLineColor": "black",
-			"displayOrder": 1,
-			"tooltip_AppendText": " mm",
-			"datalabel_show": false
-		}
+	let myHoursReduced = [
+		"1h",
+		"2h",
+		"3h"
 	];
-	chartJson[axisLabels].push(myHours);
-	chartJson[graphs].push(myGraphs);
+	let myGraphsTemplateTemperatur = {
+		"data": [
+			17,
+			19,
+			18,
+			19,
+			19,
+			20,
+			20,
+			21,
+			22,
+			24,
+			24,
+			24,
+			23,
+			22,
+			23,
+			23,
+			24,
+			23,
+			23,
+			22,
+			22,
+			21,
+			20,
+			20
+		],
+		"type": "line",
+		"color": "gray",
+		"legendText": "Temperatur",
+		"line_pointSizeHover": 5,
+		"line_pointSize": 0,
+		"line_Tension": 0.3,
+		"yAxis_show": false,
+		"yAxis_gridLines_show": false,
+		"yAxis_gridLines_ticks_length": 5,
+		"yAxis_min": 0,
+		"yAxis_max": 30,
+		"yAxis_step": 5,
+		"yAxis_position": "left",
+		"yAxis_appendix": " °C",
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"displayOrder": 0,
+		"tooltip_AppendText": " °C",
+		"datalabel_backgroundColor": [
+			"#2b9a44",
+			"#2b9a44",
+			"#3aa35b",
+			"#2b9a44",
+			"#2b9a44",
+			"#1d922e",
+			"#1d922e",
+			"#0e8917",
+			"#008000",
+			"#668f00",
+			"#668f00",
+			"#668f00",
+			"#338700",
+			"#008000",
+			"#338700",
+			"#338700",
+			"#668f00",
+			"#338700",
+			"#338700",
+			"#008000",
+			"#008000",
+			"#0e8917",
+			"#1d922e",
+			"#1d922e"
+		],
+		"datalabel_color": "white",
+		"datalabel_offset": -10,
+		"datalabel_fontFamily": "RobotoCondensed-Light",
+		"datalabel_fontSize": 12,
+		"datalabel_borderRadius": 6,
+		"datalabel_show": "auto",
+		"line_PointColor": [
+			"#2b9a44",
+			"#2b9a44",
+			"#3aa35b",
+			"#2b9a44",
+			"#2b9a44",
+			"#1d922e",
+			"#1d922e",
+			"#0e8917",
+			"#008000",
+			"#668f00",
+			"#668f00",
+			"#668f00",
+			"#338700",
+			"#008000",
+			"#338700",
+			"#338700",
+			"#668f00",
+			"#338700",
+			"#338700",
+			"#008000",
+			"#008000",
+			"#0e8917",
+			"#1d922e",
+			"#1d922e"
+		],
+		"line_PointColorBorder": [
+			"#2b9a44",
+			"#2b9a44",
+			"#3aa35b",
+			"#2b9a44",
+			"#2b9a44",
+			"#1d922e",
+			"#1d922e",
+			"#0e8917",
+			"#008000",
+			"#668f00",
+			"#668f00",
+			"#668f00",
+			"#338700",
+			"#008000",
+			"#338700",
+			"#338700",
+			"#668f00",
+			"#338700",
+			"#338700",
+			"#008000",
+			"#008000",
+			"#0e8917",
+			"#1d922e",
+			"#1d922e"
+		],
+		"line_PointColorHover": [
+			"#2b9a44",
+			"#2b9a44",
+			"#3aa35b",
+			"#2b9a44",
+			"#2b9a44",
+			"#1d922e",
+			"#1d922e",
+			"#0e8917",
+			"#008000",
+			"#668f00",
+			"#668f00",
+			"#668f00",
+			"#338700",
+			"#008000",
+			"#338700",
+			"#338700",
+			"#668f00",
+			"#338700",
+			"#338700",
+			"#008000",
+			"#008000",
+			"#0e8917",
+			"#1d922e",
+			"#1d922e"
+		],
+		"line_PointColorBorderHover": [
+			"#2b9a44",
+			"#2b9a44",
+			"#3aa35b",
+			"#2b9a44",
+			"#2b9a44",
+			"#1d922e",
+			"#1d922e",
+			"#0e8917",
+			"#008000",
+			"#668f00",
+			"#668f00",
+			"#668f00",
+			"#338700",
+			"#008000",
+			"#338700",
+			"#338700",
+			"#668f00",
+			"#338700",
+			"#338700",
+			"#008000",
+			"#008000",
+			"#0e8917",
+			"#1d922e",
+			"#1d922e"
+		],
+		"use_gradient_color": true,
+		"gradient_color": [
+			{
+				"value": -20,
+				"color": "#5b2c6f66"
+			},
+			{
+				"value": 0,
+				"color": "#2874a666"
+			},
+			{
+				"value": 14,
+				"color": "#73c6b666"
+			},
+			{
+				"value": 22,
+				"color": "#00800066"
+			},
+			{
+				"value": 27,
+				"color": "#ffa50066"
+			},
+			{
+				"value": 35,
+				"color": "#ff000066"
+			}
+		],
+		"use_line_gradient_fill_color": true,
+		"line_gradient_fill_color": [
+			{
+				"value": -20,
+				"color": "#5b2c6f66"
+			},
+			{
+				"value": 0,
+				"color": "#2874a666"
+			},
+			{
+				"value": 14,
+				"color": "#73c6b666"
+			},
+			{
+				"value": 22,
+				"color": "#00800066"
+			},
+			{
+				"value": 27,
+				"color": "#ffa50066"
+			},
+			{
+				"value": 35,
+				"color": "#ff000066"
+			}
+		]
+	};
+	let myGraphsTemplateRegenwahrscheinlichkeit = {
+		"data": [
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			50,
+			19,
+			33,
+			36,
+			23,
+			14,
+			16,
+			34,
+			46,
+			40,
+			24,
+			22
+		],
+		"type": "line",
+		"color": "#93BDFF",
+		"legendText": "Regenwahrscheinlichkeit",
+		"line_UseFillColor": true,
+		"line_pointSize": 0,
+		"line_pointSizeHover": 5,
+		"yAxis_min": 0,
+		"yAxis_max": 100,
+		"yAxis_maxSteps": 10,
+		"yAxis_position": "left",
+		"yAxis_gridLines_show": false,
+		"yAxis_gridLines_border_show": false,
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"yAxis_appendix": " %",
+		"displayOrder": 1,
+		"tooltip_AppendText": " %",
+		"datalabel_show": false
+	};
+	let myGraphsTemplateNiederschlag = {
+		"data": [
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"0",
+			"1.3",
+			"2.5",
+			0,
+			1.9,
+			1.17,
+			0,
+			0,
+			0,
+			0.18,
+			0.7,
+			0.2,
+			0,
+			0
+		],
+		"type": "bar",
+		"color": "#0061C1",
+		"legendText": "Niederschlag",
+		"yAxis_min": 0,
+		"yAxis_max": 5,
+		"yAxis_maxSteps": 10,
+		"yAxis_position": "right",
+		"yAxis_gridLines_show": false,
+		"yAxis_appendix": " mm",
+		"yAxis_gridLines_border_show": false,
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"displayOrder": 1,
+		"tooltip_AppendText": " mm",
+		"datalabel_show": false
+	};
+	var chartJson = [];
 
-	self.log.debug("Chart Json:" + JSON.stringify(chartJson));
+	//Day0
+	var chartJsonDay0 = {} // empty Object
+	var axisLabelsDay0 = 'axisLabels';
+	var graphsDay0 = 'graphs';
+	chartJsonDay0[axisLabelsDay0] = []; // empty Array, push axisLabels attributes in here
+	chartJsonDay0[graphsDay0] = []; // empty Array, push graphs attributes in here
+	let myGraphsTemperaturDay0 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	let myGraphsTemperaturDataDay0 = [];
+	let myGraphsNiederschlagDay0 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
+	let myGraphsNiederschlagDataDay0 = [];
+	let myGraphsRegenwahrscheinlichkeitDay0 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
+	let myGraphsRegenwahrscheinlichkeitDataDay0 = [];
 
+	//Day1
+	var chartJsonDay1 = {} // empty Object
+	var axisLabelsDay1 = 'axisLabels';
+	var graphsDay1 = 'graphs';
+	chartJsonDay1[axisLabelsDay1] = []; // empty Array, push axisLabels attributes in here
+	chartJsonDay1[graphsDay1] = []; // empty Array, push graphs attributes in here
+	let myGraphsTemperaturDay1 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	let myGraphsTemperaturDataDay1 = [];
+	let myGraphsNiederschlagDay1 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
+	let myGraphsNiederschlagDataDay1 = [];
+	let myGraphsRegenwahrscheinlichkeitDay1 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
+	let myGraphsRegenwahrscheinlichkeitDataDay1 = [];
+
+	//Day2
+	var chartJsonDay2 = {} // empty Object
+	var axisLabelsDay2 = 'axisLabels';
+	var graphsDay2 = 'graphs';
+	chartJsonDay2[axisLabelsDay2] = []; // empty Array, push axisLabels attributes in here
+	chartJsonDay2[graphsDay2] = []; // empty Array, push graphs attributes in here
+	let myGraphsTemperaturDay2 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	let myGraphsTemperaturDataDay2 = [];
+	let myGraphsNiederschlagDay2 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
+	let myGraphsNiederschlagDataDay2 = [];
+	let myGraphsRegenwahrscheinlichkeitDay2 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
+	let myGraphsRegenwahrscheinlichkeitDataDay2 = [];
+
+	//Day3
+	var chartJsonDay3 = {} // empty Object
+	var axisLabelsDay3 = 'axisLabels';
+	var graphsDay3 = 'graphs';
+	chartJsonDay3[axisLabelsDay3] = []; // empty Array, push axisLabels attributes in here
+	chartJsonDay3[graphsDay3] = []; // empty Array, push graphs attributes in here
+	let myGraphsTemperaturDay3 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	let myGraphsTemperaturDataDay3 = [];
+	let myGraphsNiederschlagDay3 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
+	let myGraphsNiederschlagDataDay3 = [];
+	let myGraphsRegenwahrscheinlichkeitDay3 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
+	let myGraphsRegenwahrscheinlichkeitDataDay3 = [];
+
+	//Day4
+	var chartJsonDay4 = {} // empty Object
+	var axisLabelsDay4 = 'axisLabels';
+	var graphsDay4 = 'graphs';
+	chartJsonDay4[axisLabelsDay4] = []; // empty Array, push axisLabels attributes in here
+	chartJsonDay4[graphsDay4] = []; // empty Array, push graphs attributes in here
+	let myGraphsTemperaturDay4 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	let myGraphsTemperaturDataDay4 = [];
+	let myGraphsNiederschlagDay4 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
+	let myGraphsNiederschlagDataDay4 = [];
+	let myGraphsRegenwahrscheinlichkeitDay4 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
+	let myGraphsRegenwahrscheinlichkeitDataDay4 = [];
+
+	body.forecast["60minutes"].forEach(function(obj,index) {
+		if (index < 24) {
+			//        console.log("index " + index + " Objekt für Tag 0" + " " + obj.TTT_C);
+			myGraphsTemperaturDataDay0.push(obj.TTT_C);
+			myGraphsRegenwahrscheinlichkeitDataDay0.push(obj.PROBPCP_PERCENT);
+			myGraphsNiederschlagDataDay0.push(obj.RRR_MM);
+		} else if (index > 23 && index < 48){
+			//      console.log("index " + index + " Objekt für Tag 1" + " " + obj.TTT_C);
+			myGraphsTemperaturDataDay1.push(obj.TTT_C);
+			myGraphsRegenwahrscheinlichkeitDataDay1.push(obj.PROBPCP_PERCENT);
+			myGraphsNiederschlagDataDay1.push(obj.RRR_MM);
+		} else if  (index > 47 && index < 72){
+			//      console.log("index " + index + " Objekt für Tag 2" + " " + obj.TTT_C);
+			myGraphsTemperaturDataDay2.push(obj.TTT_C);
+			myGraphsRegenwahrscheinlichkeitDataDay2.push(obj.PROBPCP_PERCENT);
+			myGraphsNiederschlagDataDay2.push(obj.RRR_MM);
+		} else if  (index > 71 && index < 96){
+			//     console.log("index " + index + " Objekt für Tag 3" + " " + obj.TTT_C);
+			myGraphsTemperaturDataDay3.push(obj.TTT_C);
+			myGraphsRegenwahrscheinlichkeitDataDay3.push(obj.PROBPCP_PERCENT);
+			myGraphsNiederschlagDataDay3.push(obj.RRR_MM);
+		} else if  (index > 95){
+			//     console.log("index " + index + " Objekt für Tag 4" + " " + obj.TTT_C);
+			myGraphsTemperaturDataDay4.push(obj.TTT_C);
+			myGraphsRegenwahrscheinlichkeitDataDay4.push(obj.PROBPCP_PERCENT);
+			myGraphsNiederschlagDataDay4.push(obj.RRR_MM);
+		}
+	});
+
+	// Day0
+	myGraphsTemperaturDay0.data = myGraphsTemperaturDataDay0;
+	myGraphsRegenwahrscheinlichkeitDay0.data = myGraphsRegenwahrscheinlichkeitDataDay0;
+	myGraphsNiederschlagDay0.data = myGraphsNiederschlagDataDay0;
+	// Day1
+	myGraphsTemperaturDay1.data = myGraphsTemperaturDataDay1;
+	myGraphsRegenwahrscheinlichkeitDay1.data = myGraphsRegenwahrscheinlichkeitDataDay1;
+	myGraphsNiederschlagDay1.data = myGraphsNiederschlagDataDay1;
+	// Day2
+	myGraphsTemperaturDay2.data = myGraphsTemperaturDataDay2;
+	myGraphsRegenwahrscheinlichkeitDay2.data = myGraphsRegenwahrscheinlichkeitDataDay2;
+	myGraphsNiederschlagDay2.data = myGraphsNiederschlagDataDay2;
+	// Day3
+	myGraphsTemperaturDay3.data = myGraphsTemperaturDataDay3;
+	myGraphsRegenwahrscheinlichkeitDay3.data = myGraphsRegenwahrscheinlichkeitDataDay3;
+	myGraphsNiederschlagDay3.data = myGraphsNiederschlagDataDay3;
+	// Day4
+	myGraphsTemperaturDay4.data = myGraphsTemperaturDataDay4;
+	myGraphsRegenwahrscheinlichkeitDay4.data = myGraphsRegenwahrscheinlichkeitDataDay4;
+	myGraphsNiederschlagDay4.data = myGraphsNiederschlagDataDay4;
+
+	//Day0
+	chartJsonDay0[axisLabelsDay0] = myHoursFull;
+	chartJsonDay0[graphsDay0].push(myGraphsTemperaturDay0 );
+	chartJsonDay0[graphsDay0].push(myGraphsRegenwahrscheinlichkeitDay0);
+	chartJsonDay0[graphsDay0].push(myGraphsNiederschlagDay0);
+	//Day1
+	chartJsonDay1[axisLabelsDay1] = myHoursFull;
+	chartJsonDay1[graphsDay1].push(myGraphsTemperaturDay1);
+	chartJsonDay1[graphsDay1].push(myGraphsRegenwahrscheinlichkeitDay1);
+	chartJsonDay1[graphsDay1].push(myGraphsNiederschlagDay1);
+	//Day2
+	chartJsonDay2[axisLabelsDay2] = myHoursFull;
+	chartJsonDay2[graphsDay2].push(myGraphsTemperaturDay2);
+	chartJsonDay2[graphsDay2].push(myGraphsRegenwahrscheinlichkeitDay2);
+	chartJsonDay2[graphsDay2].push(myGraphsNiederschlagDay2);
+	//Day3
+	chartJsonDay3[axisLabelsDay3] = myHoursFull;
+	chartJsonDay3[graphsDay3].push(myGraphsTemperaturDay3);
+	chartJsonDay3[graphsDay3].push(myGraphsRegenwahrscheinlichkeitDay3);
+	chartJsonDay3[graphsDay3].push(myGraphsNiederschlagDay3);
+	//Day4
+	chartJsonDay4[axisLabelsDay4] = myHoursReduced;
+	chartJsonDay4[graphsDay4].push(myGraphsTemperaturDay4);
+	chartJsonDay4[graphsDay4].push(myGraphsRegenwahrscheinlichkeitDay4);
+	chartJsonDay4[graphsDay4].push(myGraphsNiederschlagDay4);
+
+	chartJson.push(chartJsonDay0);
+	chartJson.push(chartJsonDay1);
+	chartJson.push(chartJsonDay2);
+	chartJson.push(chartJsonDay3);
+	chartJson.push(chartJsonDay4);
+
+	return chartJson;
 }
 
 function getTimeFormattet(actualDate) {
@@ -1335,7 +1478,8 @@ function getForecast(self){
 					myPath = "day5";
 				} else {
 					self.setState('info.connection', false, true);
-					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
+					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString +
+						"\n either SRF returns an incorrect date or your system date is set incorrectly. Please check if your system date is set correctly." );
 					return;
 				}
 
@@ -1598,6 +1742,25 @@ function getForecast(self){
 					self.setState("forecast." + "60minutes." + myPath +"." + myTime +"." + "cur_color." + "text_color", {
 						val: obj.cur_color.text_color,
 						ack: true
+					});
+				});
+
+				var jsonCharts = (createJson(body));
+				jsonCharts.forEach(function(obj,index) {
+					self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "JsonChart", {
+						type: "state",
+						common: {
+							name: "JSON containing the weather-values of this 60min forecast - Use this with Material Design JSON Chart",
+							type: "string",
+							role: "text",
+							write: false
+						},
+						native: {},
+					}, function () {
+						self.setState("forecast." + "60minutes." + myPath +"." + "JsonChart", {
+							val: JSON.stringify(obj),
+							ack: true
+						});
 					});
 				});
 			});
