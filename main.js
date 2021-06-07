@@ -1747,7 +1747,7 @@ function getForecast(self){
 
 				var jsonCharts = (createJson(body));
 				jsonCharts.forEach(function(obj,index) {
-					self.setObjectNotExists("forecast." + "60minutes." + myPath +"." + "JsonChart", {
+					self.setObjectNotExists("forecast." + "60minutes.day" + index +"." + "JsonChart", {
 						type: "state",
 						common: {
 							name: "JSON containing the weather-values of this 60min forecast - Use this with Material Design JSON Chart",
@@ -1757,7 +1757,7 @@ function getForecast(self){
 						},
 						native: {},
 					}, function () {
-						self.setState("forecast." + "60minutes." + myPath +"." + "JsonChart", {
+						self.setState("forecast." + "60minutes.day" + index +"." + "JsonChart", {
 							val: JSON.stringify(obj),
 							ack: true
 						});
