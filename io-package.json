@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.9.3",
+		"version": "0.9.4",
 		"news": {
+			"0.9.4": {
+				"en": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/47"
+			},
 			"0.9.3": {
 				"en": "Function Update: Added day_name to identify weekday from \"forecast.day.day0.day_name\" to \"forecast.day.day7.day_name\". Added last_run as Object on swiss-weather-api.0.info.lastrun. Added JsonChart Object on swiss-weather-api.0.forecast.60minutes.day(0-4).JsonChart"
 			},
@@ -26,21 +29,6 @@
 			},
 			"0.2.3": {
 				"en": "Update Dependencies"
-			},
-			"0.2.2": {
-				"en": "Some bug fixing & Enhancement https://github.com/baerengraben/iobroker.swiss-weather-api/issues/10"
-			},
-			"0.2.0": {
-				"en": " Updates in order to commit to iobroker stable"
-			},
-			"0.1.9": {
-				"en": "Dependency- and Vulnerabilites-Updates"
-			},
-			"0.1.8": {
-				"en": "Added Icons provided by SRGSSR "
-			},
-			"0.1.7": {
-				"en": "Added Icon-Codes -17 to -30 => These are not yet confirmed by srf... "
 			}
 		},
 		"title": "Swiss Weather API (SRF Weather)",
