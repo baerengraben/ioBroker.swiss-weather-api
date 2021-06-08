@@ -2756,9 +2756,10 @@ class SwissWeatherApi extends utils.Adapter {
 				const onecron = this.crons[croni]
 				onecron.destroy()
 			}
-			this.log.debug("cleaned everything up...");
-			this.setState('info.connection', false, true);
+			//set state to 'nok'
+			this.setState('swiss-weather-api.0.info.connection', false, true);
 			clearTimeout(timeout);
+			this.log.debug("cleaned everything up...");
 			callback();
 		} catch (e) {
 			callback();
