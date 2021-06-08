@@ -1027,7 +1027,7 @@ function setCurrentHour(self){
 	});
 }
 
-async function getForecast(self){
+function getForecast(self){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
@@ -1063,8 +1063,7 @@ async function getForecast(self){
 	self.log.info("Getting forecast for GeolocationId: " + geolocationId);
 
 	//set request
-	//we have to wait before updating currenthour Objects.
-	var req = await https.request(options_forecast, function (res) {
+	var req = https.request(options_forecast, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
@@ -2633,7 +2632,10 @@ async function getForecast(self){
 		});
 	});
 	req.end();
-	setCurrentHour(self);
+	//we have to wait before updating currenthour Objects.
+	//Instead of going to callback hell, just wait 20s.
+	// => not a problem if https.request is not finished. In this case, currentHour will be set on every hour (cron)
+	setTimeout(setCurrentHour, 20000, self);
 }
 
 function getGeolocationId(self,myCallback) {
