@@ -1063,6 +1063,7 @@ async function getForecast(self){
 	self.log.info("Getting forecast for GeolocationId: " + geolocationId);
 
 	//set request
+	//we have to wait before updating currenthour Objects.
 	var req = await https.request(options_forecast, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
