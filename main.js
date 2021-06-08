@@ -2651,62 +2651,70 @@ function getGeolocationId(self,myCallback) {
 
 	self.log.debug("Options to get GeolocationId: " + JSON.stringify(options_geolocationId));
 
-	//set request
-	var req = https.request(options_geolocationId, function (res) {
-		var chunks = [];
-		res.on("data", function (chunk) {
-			chunks.push(chunk);
-		});
-		res.on("end", function () {
-			self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
-			var body = JSON.parse(Buffer.concat(chunks).toString());
-			self.log.debug("Body: " + JSON.stringify(body));
+	const promise = new Promise((resolve, reject) => {
+		//set request
+		var req = https.request(options_geolocationId, function (res) {
+			var chunks = [];
+			res.on("data", function (chunk) {
+				chunks.push(chunk);
+			});
+			res.on("end", function () {
+				self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
+				var body = JSON.parse(Buffer.concat(chunks).toString());
+				self.log.debug("Body: " + JSON.stringify(body));
 
-			//check if there is a Error-Code
-			if (body.hasOwnProperty("code")) {
-				self.log.debug("Return Code: " + body.code.toString());
-				if (body.code.toString().startsWith("404")) {
+				//check if there is a Error-Code
+				if (body.hasOwnProperty("code")) {
+					self.log.debug("Return Code: " + body.code.toString());
+					if (body.code.toString().startsWith("404")) {
+						self.setState('info.connection', false, true);
+						self.log.error("Get Gelocation id - Resource not found");
+						return;
+					} else if (body.code.toString().startsWith("400")) {
+						self.setState('info.connection', false, true);
+						self.log.error("Get Gelocation id -  Invalid request");
+						self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+						return;
+					} else if (body.code.toString().startsWith("401")) {
+						self.setState('info.connection', false, true);
+						self.log.error("Get Gelocation id -  Invalid or expired access token ");
+						self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+						return;
+					} else if (body.code.toString().startsWith("429")) {
+						self.setState('info.connection', false, true);
+						self.log.error("Get Gelocation id -  Invalid or expired access token ");
+						self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+						return;
+					} else {
+						self.setState('info.connection', false, true);
+						self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
+						return;
+					}
+				}
+				//Extract GeolocationID
+				if (body[0].id === undefined) {
 					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id - Resource not found");
-					return;
-				} else if (body.code.toString().startsWith("400")) {
-					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id -  Invalid request");
-					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
-					return;
-				} else if (body.code.toString().startsWith("401")) {
-					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id -  Invalid or expired access token ");
-					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
-					return;
-				} else if (body.code.toString().startsWith("429")) {
-					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id -  Invalid or expired access token ");
-					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+					self.log.error("Could not get a geolocation id. Is the adapter configured cleanly? Please note that from version 0.9.x a new App must be created under the SRG-SSR Developer portal ('freemium' subscription is needed). Please check readme for more details https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md" + JSON.stringify(body));
 					return;
 				} else {
-					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
-					return;
+					geolocationId = body[0].id.toString();
+					//getForecast
+					myCallback(self);
 				}
-			}
-			//Extract GeolocationID
-			if (body[0].id === undefined) {
+			});
+			res.on("error", function (error) {
 				self.setState('info.connection', false, true);
-				self.log.error("Could not get a geolocation id. Is the adapter configured cleanly? Please note that from version 0.9.x a new App must be created under the SRG-SSR Developer portal ('freemium' subscription is needed). Please check readme for more details https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md" + JSON.stringify(body));
-				return;
-			} else {
-				geolocationId = body[0].id.toString();
-				//getForecast
-				myCallback(self);
-			}
+				self.log.error(error)
+			});
 		});
-		res.on("error", function (error) {
-			self.setState('info.connection', false, true);
-			self.log.error(error)
-		});
-	});
-	req.end();
+		req.end();
+	})
+	promise.then(res => {
+		self.log.debug("Calling set setCurrentHour after waited for API-Response....");
+		setCurrentHour(self);
+	}).catch(err => {
+		self.log.error("Error found: " + err);
+	})
 }
 
 function doIt(self) {
