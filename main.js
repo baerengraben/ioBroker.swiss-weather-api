@@ -82,10 +82,8 @@ function getSystemData(self) {
 }
 
 /**
- * Get longitude/latitude from system if not set or not valid
- * do not change if we have already a valid value
- * so we could use different settings compared to system if necessary
- * @param self Adapter
+ * Reads ioBroker default Language and set it to adapter defaultLanguage
+ * @param self Adapter,
  */
 function getSystemLanguage(self) {
 	self.log.info("Get default language from system ");
@@ -665,6 +663,10 @@ function getToken(self,myCallback){
 	req.end();
 }
 
+/**
+ * Sets the current hour objects with the corresponding values of forecast.60minutes.day0
+ * @param self Adapter
+ */
 function setCurrentHour(self){
 	let path = self.namespace + ".forecast.60minutes.day0"
 	let updatePath = "forecast.current_hour";
@@ -2628,6 +2630,9 @@ function getForecast(self){
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
 			self.log.error(error)
+		});
+		res.on('finish',function (){
+			setCurrentHour(self)
 		});
 	});
 	req.end();
