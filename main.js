@@ -86,14 +86,13 @@ function getSystemData(self) {
  * @param self Adapter,
  */
 function getSystemLanguage(self) {
-	self.log.info("Get default language from system ");
 	self.getForeignObject("system.config", (err, state) => {
 		if (err || state === undefined || state === null) {
-			self.log.error("Default language not set in system-config. Setting default language as en-GB...");
+			self.log.error("Default language not set in system-config. Setting default language as en-GB to use for weekday names.");
 			self.defaultLanguage = "en-GB";
 		} else {
 			self.defaultLanguage = state.common.language;
-			self.log.debug("system  language: " + self.defaultLanguage);
+			self.log.debug("use system  language for weekday names: " + self.defaultLanguage);
 		}
 	});
 }
