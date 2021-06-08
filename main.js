@@ -51,7 +51,7 @@ function getActualDateFormattet(actualDate) {
  * @param date Date Object
  * @returns {string} Name of Day
  */
-function getDayName(date,defaultlang){
+function getDayName(date,defaultLanguage){
 	var weekday = date.toLocaleString(defaultLanguage , { weekday: "long" });
 	return weekday;
 }
@@ -94,6 +94,7 @@ function getSystemLanguage(self) {
 		} else {
 			self.defaultLanguage = state.common.language;
 			self.log.info("system  language: " + state.common.language);
+			self.log.info("system  language: " + self.defaultLanguage);
 		}
 	});
 }
