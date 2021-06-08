@@ -36,11 +36,6 @@ Date.prototype.addDays = function(days) {
 	return date;
 }
 
-const datesAreOnSameDay = (first, second) =>
-	first.getFullYear() === second.getFullYear() &&
-	first.getMonth() === second.getMonth() &&
-	first.getDate() === second.getDate();
-
 function getActualDateFormattet(actualDate) {
 	var	year = (actualDate.getFullYear());
 	var month = (actualDate.getMonth()<10?'0':'') + actualDate.getMonth();
@@ -511,27 +506,22 @@ function createJson(body) {
 
 	body.forecast["60minutes"].forEach(function(obj,index) {
 		if (index < 24) {
-			//        console.log("index " + index + " Objekt für Tag 0" + " " + obj.TTT_C);
 			myGraphsTemperaturDataDay0.push(obj.TTT_C);
 			myGraphsRegenwahrscheinlichkeitDataDay0.push(obj.PROBPCP_PERCENT);
 			myGraphsNiederschlagDataDay0.push(obj.RRR_MM);
 		} else if (index > 23 && index < 48){
-			//      console.log("index " + index + " Objekt für Tag 1" + " " + obj.TTT_C);
 			myGraphsTemperaturDataDay1.push(obj.TTT_C);
 			myGraphsRegenwahrscheinlichkeitDataDay1.push(obj.PROBPCP_PERCENT);
 			myGraphsNiederschlagDataDay1.push(obj.RRR_MM);
 		} else if  (index > 47 && index < 72){
-			//      console.log("index " + index + " Objekt für Tag 2" + " " + obj.TTT_C);
 			myGraphsTemperaturDataDay2.push(obj.TTT_C);
 			myGraphsRegenwahrscheinlichkeitDataDay2.push(obj.PROBPCP_PERCENT);
 			myGraphsNiederschlagDataDay2.push(obj.RRR_MM);
 		} else if  (index > 71 && index < 96){
-			//     console.log("index " + index + " Objekt für Tag 3" + " " + obj.TTT_C);
 			myGraphsTemperaturDataDay3.push(obj.TTT_C);
 			myGraphsRegenwahrscheinlichkeitDataDay3.push(obj.PROBPCP_PERCENT);
 			myGraphsNiederschlagDataDay3.push(obj.RRR_MM);
 		} else if  (index > 95){
-			//     console.log("index " + index + " Objekt für Tag 4" + " " + obj.TTT_C);
 			myGraphsTemperaturDataDay4.push(obj.TTT_C);
 			myGraphsRegenwahrscheinlichkeitDataDay4.push(obj.PROBPCP_PERCENT);
 			myGraphsNiederschlagDataDay4.push(obj.RRR_MM);
@@ -689,7 +679,7 @@ function setCurrentHour(self){
 		} else {
 			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
-			
+
 			self.getState(path + '.' + hour +':00:00.cur_color.background_color', function(err, state) {
 				local_background_color = state.val;
 			});
@@ -1464,22 +1454,19 @@ function getForecast(self){
 				var myPath;
 				var myTime =  getTimeFormattet(objDate);
 
-				if (datesAreOnSameDay(today, objDate)) {
+				if (index < 24) {
 					myPath = "day0";
-				} else if (datesAreOnSameDay(today1, objDate)) {
+				} else if (index > 23 && index < 48){
 					myPath = "day1";
-				} else if (datesAreOnSameDay(today2, objDate)) {
+				} else if  (index > 47 && index < 72){
 					myPath = "day2";
-				} else if (datesAreOnSameDay(today3, objDate)) {
+				} else if  (index > 71 && index < 96){
 					myPath = "day3";
-				} else if (datesAreOnSameDay(today4, objDate)) {
+				} else if  (index > 95){
 					myPath = "day4";
-				} else if (datesAreOnSameDay(today5, objDate)) {
-					myPath = "day5";
 				} else {
 					self.setState('info.connection', false, true);
-					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString +
-						"\n either SRF returns an incorrect date or your system date is set incorrectly. Please check if your system date is set correctly." );
+					self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
 					return;
 				}
 
@@ -1847,33 +1834,33 @@ function getForecast(self){
 				var myTime =  getTimeFormattet(objDate);
 				var day_name = "";
 
-				if (datesAreOnSameDay(today, objDate)) {
+				if (index === 0) {
 					myPath = "day0";
 					day_name = getDayName(today);
-				} else if (datesAreOnSameDay(today1, objDate)) {
+				} else if (index === 1) {
 					myPath = "day1";
 					day_name = getDayName(today1);
-				} else if (datesAreOnSameDay(today2, objDate)) {
+				} else if (index === 2) {
 					myPath = "day2";
 					day_name = getDayName(today2);
-				} else if (datesAreOnSameDay(today3, objDate)) {
+				} else if (index === 3) {
 					myPath = "day3";
 					day_name = getDayName(today3);
-				} else if (datesAreOnSameDay(today4, objDate)) {
+				} else if (index === 4) {
 					myPath = "day4";
 					day_name = getDayName(today4);
-				} else if (datesAreOnSameDay(today5, objDate)) {
+				} else if (index === 5) {
 					myPath = "day5";
 					day_name = getDayName(today5);
-				} else if (datesAreOnSameDay(today6, objDate)) {
+				} else if (index === 6) {
 					myPath = "day6";
 					day_name = getDayName(today6);
-				} else if (datesAreOnSameDay(today7, objDate)) {
+				} else if (index === 7) {
 					myPath = "day7";
 					day_name = getDayName(today7);
 				} else {
-					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
 					self.setState('info.connection', false, true);
+					self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
 					return;
 				}
 
@@ -2318,25 +2305,25 @@ function getForecast(self){
 				var myPath;
 				var myTime =  getTimeFormattet(objDate);
 
-				if (datesAreOnSameDay(today, objDate)) {
+				if (index < 8) {
 					myPath = "day0";
-				} else if (datesAreOnSameDay(today1, objDate)) {
+				} else if (index > 7 && index < 16) {
 					myPath = "day1";
-				} else if (datesAreOnSameDay(today2, objDate)) {
+				} else if (index > 15 && index < 24) {
 					myPath = "day2";
-				} else if (datesAreOnSameDay(today3, objDate)) {
+				} else if (index > 23 && index < 32) {
 					myPath = "day3";
-				} else if (datesAreOnSameDay(today4, objDate)) {
+				} else if (index > 31 && index < 40) {
 					myPath = "day4";
-				} else if (datesAreOnSameDay(today5, objDate)) {
+				} else if (index > 39 && index < 48) {
 					myPath = "day5";
-				} else if (datesAreOnSameDay(today6, objDate)) {
+				} else if (index > 47 && index < 56) {
 					myPath = "day6";
-				} else if (datesAreOnSameDay(today7, objDate)) {
+				} else if (index > 55 && index < 64) {
 					myPath = "day7";
 				} else {
 					self.setState('info.connection', false, true);
-					self.log.error("invalid date found. Could not assign date. The date received is not one of the coming week. " + startTimeISOString);
+					self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
 					return;
 				}
 
@@ -2770,6 +2757,7 @@ class SwissWeatherApi extends utils.Adapter {
 				onecron.destroy()
 			}
 			this.log.debug("cleaned everything up...");
+			this.setState('info.connection', false, true);
 			clearTimeout(timeout);
 			callback();
 		} catch (e) {
