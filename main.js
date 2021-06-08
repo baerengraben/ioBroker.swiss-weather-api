@@ -8,6 +8,7 @@ var dns = require('dns');
 const cron = require('node-cron');
 const { http, https } = require('follow-redirects');
 const adapterName = "swiss-weather-api";
+var defaultLanguage = "undefined";
 var timeout;
 var geolocationId;
 var access_token;
@@ -50,10 +51,9 @@ function getActualDateFormattet(actualDate) {
  * @param date Date Object
  * @returns {string} Name of Day
  */
-function getDayName(date){
-	var arrayOfWeekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
-	var weekdayNumber = date.getDay();
-	return arrayOfWeekdays[weekdayNumber];
+function getDayName(date,defaultlang){
+	var weekday = date.toLocaleString(defaultlang, { weekday: "long" });
+	return weekday;
 }
 
 /**
@@ -79,6 +79,25 @@ function getSystemData(self) {
 	} else {
 		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
 	}
+}
+
+/**
+ * Get longitude/latitude from system if not set or not valid
+ * do not change if we have already a valid value
+ * so we could use different settings compared to system if necessary
+ * @param self Adapter
+ */
+function getSystemLanguage(self) {
+	self.log.info("Get default language from system ");
+	self.getForeignObject("system.config", (err, state) => {
+		if (err || state === undefined || state === null) {
+			self.log.error("Default language not set in system-config. Setting default language as en-GB...");
+			self.defaultLanguage = "en-GB";
+		} else {
+			self.defaultLanguage = self.config.language;
+			self.log.info("system  language: " + self.config.language);
+		}
+	});
 }
 
 function createJson(body) {
@@ -1836,28 +1855,28 @@ function getForecast(self){
 
 				if (index === 0) {
 					myPath = "day0";
-					day_name = getDayName(today);
+					day_name = getDayName(today,defaultLanguage);
 				} else if (index === 1) {
 					myPath = "day1";
-					day_name = getDayName(today1);
+					day_name = getDayName(today1,defaultLanguage);
 				} else if (index === 2) {
 					myPath = "day2";
-					day_name = getDayName(today2);
+					day_name = getDayName(today2,defaultLanguage);
 				} else if (index === 3) {
 					myPath = "day3";
-					day_name = getDayName(today3);
+					day_name = getDayName(today3,defaultLanguage);
 				} else if (index === 4) {
 					myPath = "day4";
-					day_name = getDayName(today4);
+					day_name = getDayName(today4,defaultLanguage);
 				} else if (index === 5) {
 					myPath = "day5";
-					day_name = getDayName(today5);
+					day_name = getDayName(today5,defaultLanguage);
 				} else if (index === 6) {
 					myPath = "day6";
-					day_name = getDayName(today6);
+					day_name = getDayName(today6,defaultLanguage);
 				} else if (index === 7) {
 					myPath = "day7";
-					day_name = getDayName(today7);
+					day_name = getDayName(today7,defaultLanguage);
 				} else {
 					self.setState('info.connection', false, true);
 					self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
@@ -2740,8 +2759,9 @@ class SwissWeatherApi extends utils.Adapter {
 		this.crons.push(cron.schedule('0 * * * *', async() => {
 			setCurrentHour(this);
 		}));
-		// read system Longitude, Latitude
+		// read system Longitude, Latitude and language
 		getSystemData(this);
+		getSystemLanguage(this);
 		//to and get some forecast
 		setTimeout(doIt, 10000, this); // First start after 10s
 	}
