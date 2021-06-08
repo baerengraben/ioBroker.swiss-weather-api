@@ -654,7 +654,7 @@ function getToken(self,myCallback){
 			}
 			access_token = body.access_token.toString();
 			self.log.debug("Access_Token : " + access_token);
-			myCallback(self,getForecast);
+			myCallback(self,getForecast).then((html) => self.log.info("is this working?"));
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
@@ -1030,41 +1030,41 @@ function setCurrentHour(self){
 }
 
 function getForecast(self){
-	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
+	return new Promise((resolve, reject) => {
+		self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
-	today = new Date();
-	// @ts-ignore
-	today1 = new Date().addDays(1);
-	// @ts-ignore
-	today2 = new Date().addDays(2);
-	// @ts-ignore
-	today3 = new Date().addDays(3);
-	// @ts-ignore
-	today4 = new Date().addDays(4);
-	// @ts-ignore
-	today5 = new Date().addDays(5);
-	// @ts-ignore
-	today6 = new Date().addDays(6);
-	// @ts-ignore
-	today7 = new Date().addDays(7);
-	lastSuccessfulRun = getActualDateFormattet(today);
+		today = new Date();
+		// @ts-ignore
+		today1 = new Date().addDays(1);
+		// @ts-ignore
+		today2 = new Date().addDays(2);
+		// @ts-ignore
+		today3 = new Date().addDays(3);
+		// @ts-ignore
+		today4 = new Date().addDays(4);
+		// @ts-ignore
+		today5 = new Date().addDays(5);
+		// @ts-ignore
+		today6 = new Date().addDays(6);
+		// @ts-ignore
+		today7 = new Date().addDays(7);
+		lastSuccessfulRun = getActualDateFormattet(today);
 
-	//Get forecast
-	//Options for getting forecast
-	var options_forecast = {
-		"method": "GET",
-		"hostname": "api.srgssr.ch",
-		"port": null,
-		"path": "/srf-meteo/forecast/"+geolocationId,
-		"headers": {
-			"authorization": "Bearer " + access_token
-		}
-	};
+		//Get forecast
+		//Options for getting forecast
+		var options_forecast = {
+			"method": "GET",
+			"hostname": "api.srgssr.ch",
+			"port": null,
+			"path": "/srf-meteo/forecast/"+geolocationId,
+			"headers": {
+				"authorization": "Bearer " + access_token
+			}
+		};
 
-	self.log.debug("Options to get forecast: " + JSON.stringify(options_forecast));
-	self.log.info("Getting forecast for GeolocationId: " + geolocationId);
+		self.log.debug("Options to get forecast: " + JSON.stringify(options_forecast));
+		self.log.info("Getting forecast for GeolocationId: " + geolocationId);
 
-	const promise = new Promise(function (resolve, reject) {
 		//set request
 		var req = https.request(options_forecast, function (res) {
 			var chunks = [];
@@ -2635,11 +2635,6 @@ function getForecast(self){
 			});
 		});
 		req.end();
-	});
-
-	promise.then(function(body) {
-		self.log.info("do this after forecast call");
-		setCurrentHour(self);
 	});
 }
 
