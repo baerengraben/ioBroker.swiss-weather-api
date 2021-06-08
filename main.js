@@ -1857,28 +1857,28 @@ function getForecast(self){
 
 				if (index === 0) {
 					myPath = "day0";
-					day_name = getDayName(today,defaultLanguage);
+					day_name = getDayName(today,self.defaultLanguage);
 				} else if (index === 1) {
 					myPath = "day1";
-					day_name = getDayName(today1,defaultLanguage);
+					day_name = getDayName(today1,self.defaultLanguage);
 				} else if (index === 2) {
 					myPath = "day2";
-					day_name = getDayName(today2,defaultLanguage);
+					day_name = getDayName(today2,self.defaultLanguage);
 				} else if (index === 3) {
 					myPath = "day3";
-					day_name = getDayName(today3,defaultLanguage);
+					day_name = getDayName(today3,self.defaultLanguage);
 				} else if (index === 4) {
 					myPath = "day4";
-					day_name = getDayName(today4,defaultLanguage);
+					day_name = getDayName(today4,self.defaultLanguage);
 				} else if (index === 5) {
 					myPath = "day5";
-					day_name = getDayName(today5,defaultLanguage);
+					day_name = getDayName(today5,self.defaultLanguage);
 				} else if (index === 6) {
 					myPath = "day6";
-					day_name = getDayName(today6,defaultLanguage);
+					day_name = getDayName(today6,self.defaultLanguage);
 				} else if (index === 7) {
 					myPath = "day7";
-					day_name = getDayName(today7,defaultLanguage);
+					day_name = getDayName(today7,self.defaultLanguage);
 				} else {
 					self.setState('info.connection', false, true);
 					self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
