@@ -94,8 +94,8 @@ function getSystemLanguage(self) {
 			self.log.error("Default language not set in system-config. Setting default language as en-GB...");
 			self.defaultLanguage = "en-GB";
 		} else {
-			self.defaultLanguage = self.config.language;
-			self.log.info("system  language: " + self.config.language);
+			self.defaultLanguage = state.common.language;
+			self.log.info("system  language: " + state.common.language);
 		}
 	});
 }
