@@ -2631,11 +2631,8 @@ function getForecast(self){
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
 			self.log.error(error)
-		});
-		res.on('finish',function (){
-			setCurrentHour(self)
-		});
-	});
+		}).on;
+	}).then(function (){setCurrentHour(self)});
 	req.end();
 }
 
@@ -2779,8 +2776,8 @@ class SwissWeatherApi extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			for (const croni in this.crons) {
-				const onecron = this.crons[croni]
-				onecron.destroy()
+				const onecron = this.crons[croni];
+				onecron.destroy();
 			}
 			clearTimeout(timeout);
 			this.log.info("cleaned everything up...");
