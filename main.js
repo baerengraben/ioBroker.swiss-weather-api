@@ -654,7 +654,7 @@ function getToken(self,myCallback){
 			}
 			access_token = body.access_token.toString();
 			self.log.debug("Access_Token : " + access_token);
-			myCallback(self,getForecast).then((html) => self.log.info("is this working?"));
+			myCallback(self,getForecast);
 		});
 		res.on("error", function (error) {
 			self.setState('info.connection', false, true);
