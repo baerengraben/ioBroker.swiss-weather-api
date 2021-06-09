@@ -77,7 +77,7 @@
 		"mode": "daemon",
 		"type": "weather",
 		"connectionType": "cloud",
-		"dataSource": " poll",
+		"dataSource": "poll",
 		"compact": true,
 		"materializeTab": true,
 		"materialize": true,
