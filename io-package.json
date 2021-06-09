@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.9.4",
+		"version": "0.9.5",
 		"news": {
+			"0.9.5": {
+				"en": "Some small improvements "
+			},
 			"0.9.4": {
 				"en": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/47"
 			},

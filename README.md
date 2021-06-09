@@ -62,6 +62,9 @@ The first query is made 10s after the adapter was started. After the first start
 
 ## Changelog
 
+### 0.9.5
+* (baerengraben)  Some small improvements
+
 ### 0.9.4
 * (baerengraben)  Bugfix: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/47 
 
