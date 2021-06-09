@@ -2788,8 +2788,14 @@ class SwissWeatherApi extends utils.Adapter {
 		try {
 			for (const croni in this.crons) {
 				const onecron = this.crons[croni];
-				onecron.destroy();
+				if (typeof onecron.destroy() === 'function' ){
+					this.log.info("destroy cron job");
+					onecron.destroy();
+				} else {
+					this.log.info("onecron.destroy ist not a function. will not destroy cron job");
+				}
 			}
+
 			clearTimeout(timeout);
 			this.log.info("cleaned everything up...");
 			callback();
