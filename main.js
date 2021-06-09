@@ -2788,7 +2788,7 @@ class SwissWeatherApi extends utils.Adapter {
 		try {
 			for (const croni in this.crons) {
 				const onecron = this.crons[croni];
-				if (typeof onecron.destroy() === 'function' ){
+				if (typeof onecron.destroy === 'function' ){
 					this.log.info("destroy cron job");
 					onecron.destroy();
 				} else {
