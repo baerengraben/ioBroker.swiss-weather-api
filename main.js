@@ -52,7 +52,16 @@ function getActualDateFormattet(actualDate) {
  * @returns {string} Name of Day
  */
 function getDayName(date,defaultLanguage){
-	var weekday = date.toLocaleString(defaultLanguage , { weekday: "long" });
+	var mainversion = parseInt(process.version.substr(1,2))
+	var weekday = "undefined";
+	var arrayOfWeekdays = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"]
+	// dateObj.toLocaleString("default", { weekday: "long" }) is only supported > nodejs 13
+	if (mainversion >12){
+		weekday = date.toLocaleString(defaultLanguage , { weekday: "long" });
+	} else {
+		var weekdayNumber = date.getDay();
+		weekday =  arrayOfWeekdays[weekdayNumber];
+	}
 	return weekday;
 }
 
