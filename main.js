@@ -13,6 +13,7 @@ var defaultLanguage = "undefined";
 var timeout;
 var geolocationId;
 var access_token;
+let cronJob;
 var today;
 // @ts-ignore
 var today1;
@@ -128,7 +129,7 @@ function getSystemLanguage(self) {
 /**
  * Creates a json Object for usage with Material Design JSON Chart
  * @param body srf api response containing 60minutes json object
- * @returns {String} containing Json for usage with Material Design JSON Chart
+ * @returns {*[]} containing Json for usage with Material Design JSON Chart
  */
 function createJson(body) {
 	//Templates
@@ -2975,7 +2976,6 @@ class SwissWeatherApi extends utils.Adapter {
 			...options,
 			name: adapterName,
 		});
-		this.crons = [];
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 	}
@@ -2987,9 +2987,9 @@ class SwissWeatherApi extends utils.Adapter {
 		//set state to 'ok'
 		this.setState('info.connection', true, true);
 		//ensure that current_hour is uptodate on every minute '0'
-		this.crons.push(cron.schedule('0 * * * *', async() => {
+		cronJob = cron.schedule('0 * * * *', async() => {
 			setCurrentHour(this);
-		}));
+		});
 		// read system Longitude, Latitude and language
 		getSystemData(this);
 		getSystemLanguage(this);
@@ -3003,10 +3003,9 @@ class SwissWeatherApi extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			for (const croni in this.crons) {
-				const onecron = this.crons[croni];
-				this.log.debug("destroy cron job");
-				onecron.destroy();
+			if(cronJob) {
+				cronJob.destroy();
+				this.log.debug('Cron job destroyed');
 			}
 
 			clearTimeout(timeout);
