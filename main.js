@@ -3004,7 +3004,7 @@ class SwissWeatherApi extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			if(cronJob) {
-				cronJob.destroy();
+				cronJob.stop();
 				this.log.debug('Cron job destroyed');
 			}
 
