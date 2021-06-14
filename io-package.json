@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.9.5",
+		"version": "0.9.6",
 		"news": {
+			"0.9.6": {
+				"en": "Bugfix and RC for stable release."
+			},
 			"0.9.5": {
 				"en": "Some small improvements "
 			},
