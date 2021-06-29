@@ -1190,6 +1190,10 @@ function getForecast(self){
 					self.log.error("Forecast - An error has occured. " + JSON.stringify(body));
 					return;
 				}
+			}  else if (body.hasOwnProperty("fault")){
+				self.setState('info.connection', false, true);
+				self.log.error("A fault was delivered by SRF: " + JSON.stringify(body));
+				return;
 			}
 
 			//**************************************
@@ -2948,7 +2952,12 @@ function getGeolocationId(self,myCallback) {
 					self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
 					return;
 				}
+			} else if (body.hasOwnProperty("fault")){
+				self.setState('info.connection', false, true);
+				self.log.error("A fault was delivered by SRF: " + JSON.stringify(body));
+				return;
 			}
+
 			//Extract GeolocationID
 			if (typeof body[0].id === undf || body[0].id == null) {
 				self.setState('info.connection', false, true);
