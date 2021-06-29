@@ -40,6 +40,20 @@ Date.prototype.addDays = function(days) {
 }
 
 /**
+ * Checks if JSON is valid
+ * @param str JSON String
+ * @returns {boolean} true == valid; false == invalid
+ */
+function isValidJSONString(str) {
+	try {
+		JSON.parse(str);
+	} catch (e) {
+		return false;
+	}
+	return true;
+}
+
+/**
  * returns formattet Time
  * @param actualDate  Date Object
  * @returns {string}  hour + ":" + min + ":" + sec
@@ -702,6 +716,12 @@ function getToken(self,myCallback){
 		});
 		res.on("end", function () {
 			self.log.debug("Answer of Request Access Token: " + Buffer.concat(chunks).toString());
+			if (!isValidJSONString(Buffer.concat(chunks).toString())){
+				self.log.error("Delivered SRF-JSON is not valid: " + Buffer.concat(chunks).toString());
+				self.log.error("Possible cause is an incorrectly configured adapter. Please check configuration. If error persists, create an issue on https://github.com/baerengraben/ioBroker.swiss-weather-api.");
+				self.setState('info.connection', false, true);
+				return;
+			}
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 			if (typeof body.access_token === undf || body.access_token == null) {
 				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)? It may also be that the maximum number of queries for today is exhausted");
@@ -1135,6 +1155,12 @@ function getForecast(self){
 		});
 		res.on("end", function () {
 			self.log.debug("Answer of forecast Request: " + Buffer.concat(chunks).toString());
+			if (!isValidJSONString(Buffer.concat(chunks).toString())){
+				self.log.error("Delivered SRF-JSON is not valid: " + Buffer.concat(chunks).toString());
+				self.log.error("Possible cause is an incorrectly configured adapter. Please check configuration. If error persists, create an issue on https://github.com/baerengraben/ioBroker.swiss-weather-api.");
+				self.setState('info.connection', false, true);
+				return;
+			}
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 
 			//check if there is a Error-Code
@@ -2885,6 +2911,13 @@ function getGeolocationId(self,myCallback) {
 		});
 		res.on("end", function () {
 			self.log.debug("Answer of getGeolocation Request: " + Buffer.concat(chunks).toString());
+			if (!isValidJSONString(Buffer.concat(chunks).toString())){
+				self.log.error("Delivered SRF-JSON is not valid: " + Buffer.concat(chunks).toString());
+				self.log.error("Possible cause is an incorrectly configured adapter. Please check configuration. If error persists, create an issue on https://github.com/baerengraben/ioBroker.swiss-weather-api.");
+				self.setState('info.connection', false, true);
+				return;
+			}
+
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 			self.log.debug("Body: " + JSON.stringify(body));
 
