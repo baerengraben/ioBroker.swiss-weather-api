@@ -162,6 +162,8 @@ function createJson(body) {
 		"12h",
 		"13h",
 		"14h",
+		"15h",
+		"16h",
 		"17h",
 		"18h",
 		"19h",
