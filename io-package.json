@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "0.9.7",
+		"version": "0.9.8",
 		"news": {
+			"0.9.8": {
+				"en": "Bugfix: JsonChart is missing 15h and 16h as x-labels"
+			},
 			"0.9.7": {
 				"en": "Bugfix and RC2 for stable release."
 			},
