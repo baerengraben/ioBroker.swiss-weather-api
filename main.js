@@ -56,13 +56,13 @@ function isValidJSONString(str) {
 /**
  * returns formattet Time
  * @param actualDate  Date Object
- * @returns {string}  hour + "." + min + "." + sec
+ * @returns {string}  hour + "-" + min + "-" + sec
  */
 function getTimeFormattet(actualDate) {
 	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
 	var sec = (actualDate.getSeconds()<10?'0':'') + actualDate.getSeconds();
-	return hour + "." + min + "." + sec;
+	return hour + "-" + min + "-" + sec;
 }
 
 /**
@@ -76,7 +76,7 @@ function getActualDateFormattet(actualDate) {
 	var day = (actualDate.getDate()<10?'0':'') + actualDate.getDate();
 	var hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var minutes = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
-	return hour + "." + minutes + " " + day + "." + month + "." + year;
+	return hour + "-" + minutes + " " + day + "." + month + "." + year;
 }
 
 /**
@@ -776,62 +776,62 @@ function setCurrentHour(self){
 	var local_type                  ;
 
 	// update current_hour objects
-	self.getState(path + '.00.00.00.DD_DEG', (err, state) => {
+	self.getState(path + '.00-00-00.DD_DEG', (err, state) => {
 		if (!state || state.val === null) {
 			self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.00.00.00.DD_DEG' + '. Try my luck on next hour...');
 		} else {
 			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
-			self.getState(path + '.' + hour +'.00.00.cur_color.background_color', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.cur_color.background_color', function(err, state) {
 				local_background_color = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.cur_color.temperature', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.cur_color.temperature', function(err, state) {
 				local_temperature = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.cur_color.text_color', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.cur_color.text_color', function(err, state) {
 				local_text_color = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.DD_DEG', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.DD_DEG', function(err, state) {
 				local_DD_DEG = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.FF_KMH', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.FF_KMH', function(err, state) {
 				local_FF_KMH = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.FX_KMH', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.FX_KMH', function(err, state) {
 				local_FX_KMH = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.ICON_URL_COLOR', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.ICON_URL_COLOR', function(err, state) {
 				local_ICON_URL_COLOR = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.ICON_URL_DARK', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.ICON_URL_DARK', function(err, state) {
 				local_ICON_URL_DARK = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.ICON_URL_LIGHT', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.ICON_URL_LIGHT', function(err, state) {
 				local_ICON_URL_LIGHT = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.PROBPCP_PERCENT', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.PROBPCP_PERCENT', function(err, state) {
 				local_PROBPCP_PERCENT = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.RRR_MM', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.RRR_MM', function(err, state) {
 				local_RRR_MM = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.SYMBOL_CODE', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.SYMBOL_CODE', function(err, state) {
 				local_SYMBOL_CODE = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.TTH_C', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.TTH_C', function(err, state) {
 				local_TTH_C = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.TTL_C', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.TTL_C', function(err, state) {
 				local_TTL_C = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.TTT_C', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.TTT_C', function(err, state) {
 				local_TTT_C = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.local_date_time', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.local_date_time', function(err, state) {
 				local_local_date_time = state.val;
 			});
-			self.getState(path + '.' + hour +'.00.00.type', function(err, state) {
+			self.getState(path + '.' + hour +'-00-00.type', function(err, state) {
 				local_type = state.val;
 			});
 
@@ -1553,7 +1553,7 @@ function getForecast(self){
 			self.setObjectNotExists("forecast." + "60minutes", {
 				type: "channel",
 				common: {
-					name: "Forecast data for time windows of 60 minutes (for 98 hours from today 0.00)",
+					name: "Forecast data for time windows of 60 minutes (for 98 hours from today 0-00)",
 					role: "info"
 				},
 				native: {},
@@ -1955,7 +1955,7 @@ function getForecast(self){
 			self.setObjectNotExists("forecast." + "day", {
 				type: "channel",
 				common: {
-					name: "Forecast data for a whole day (for 8 days from today 0.00 )",
+					name: "Forecast data for a whole day (for 8 days from today 0-00 )",
 					role: "info"
 				},
 				native: {},
@@ -2467,7 +2467,7 @@ function getForecast(self){
 			self.setObjectNotExists("forecast." + "hour", {
 				type: "channel",
 				common: {
-					name: "forecast data for a time window of 3 hours (for 8 days from today 2.00 )",
+					name: "forecast data for a time window of 3 hours (for 8 days from today 2-00 )",
 					role: "info"
 				},
 				native: {},
