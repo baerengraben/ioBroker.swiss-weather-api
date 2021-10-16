@@ -1,4 +1,5 @@
 "use strict";
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
 /*
  * Created with @iobroker/create-adapter v1.18.0
