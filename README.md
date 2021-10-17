@@ -64,7 +64,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 ## Changelog
 
 ### 0.9.9
-Workaround for SRG Certificate Problem: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/63 
+* (baerengraben) Workaround for SRG Certificate Problem: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/63  
 
 ### 0.9.8
 * (jobe451)  Bugfix: JsonChart is missing 15h and 16h as x-labels
