@@ -7,7 +7,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 const utils = require("@iobroker/adapter-core");
 var dns = require('dns');
 const cron = require('node-cron');
-const { http, https } = require('follow-redirects');
+const { https } = require('follow-redirects');
 const adapterName = "swiss-weather-api";
 const undf = "undefined"
 var defaultLanguage = "undefined";
@@ -758,23 +758,23 @@ function setCurrentHour(self){
 	//get systemtime hour
 	var date = new Date();
 	var hour = (date.getHours()<10?'0':'') + date.getHours();
-	var local_background_color      ;
-	var local_temperature           ;
-	var local_text_color            ;
-	var local_DD_DEG                ;
-	var local_FF_KMH                ;
-	var local_FX_KMH                ;
-	var local_ICON_URL_COLOR        ;
-	var local_ICON_URL_DARK         ;
-	var local_ICON_URL_LIGHT        ;
-	var local_PROBPCP_PERCENT       ;
-	var local_RRR_MM                ;
-	var local_SYMBOL_CODE           ;
-	var local_TTH_C                 ;
-	var local_TTL_C                 ;
-	var local_TTT_C                 ;
-	var local_local_date_time       ;
-	var local_type                  ;
+	var local_background_color = "dummy";
+	var local_temperature      = 0;
+	var local_text_color       = "dummy";
+	var local_DD_DEG           = 0;
+	var local_FF_KMH           = 0;
+	var local_FX_KMH           = 0;
+	var local_ICON_URL_COLOR   = "dummy";
+	var local_ICON_URL_DARK    = "dummy";
+	var local_ICON_URL_LIGHT   = "dummy";
+	var local_PROBPCP_PERCENT  = 0;
+	var local_RRR_MM           = 0;
+	var local_SYMBOL_CODE      = 0;
+	var local_TTH_C            = 0;
+	var local_TTL_C            = 0;
+	var local_TTT_C            = 0;
+	var local_local_date_time  = "1970-01-01T00:00:00+02:00";
+	var local_type             = "dummy";
 
 	// update current_hour objects
 	self.getState(path + '.00:00:00.DD_DEG', (err, state) => {
@@ -785,55 +785,123 @@ function setCurrentHour(self){
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
 			self.getState(path + '.' + hour +':00:00.cur_color.background_color', function(err, state) {
-				local_background_color = state.val;
+				if ((typeof state !== "undefined") && (state !== null)) {
+					local_background_color = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.cur_color.temperature', function(err, state) {
-				local_temperature = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_temperature = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.cur_color.text_color', function(err, state) {
-				local_text_color = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_text_color = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.DD_DEG', function(err, state) {
-				local_DD_DEG = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_DD_DEG = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.FF_KMH', function(err, state) {
-				local_FF_KMH = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_FF_KMH = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.FX_KMH', function(err, state) {
-				local_FX_KMH = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_FX_KMH = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_COLOR', function(err, state) {
-				local_ICON_URL_COLOR = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_ICON_URL_COLOR = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_DARK', function(err, state) {
-				local_ICON_URL_DARK = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_ICON_URL_DARK = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_LIGHT', function(err, state) {
-				local_ICON_URL_LIGHT = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_ICON_URL_LIGHT = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.PROBPCP_PERCENT', function(err, state) {
-				local_PROBPCP_PERCENT = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_PROBPCP_PERCENT = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.RRR_MM', function(err, state) {
-				local_RRR_MM = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_RRR_MM = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.SYMBOL_CODE', function(err, state) {
-				local_SYMBOL_CODE = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_SYMBOL_CODE = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTH_C', function(err, state) {
-				local_TTH_C = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_TTH_C = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTL_C', function(err, state) {
-				local_TTL_C = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_TTL_C = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTT_C', function(err, state) {
-				local_TTT_C = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_TTT_C = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.local_date_time', function(err, state) {
-				local_local_date_time = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_local_date_time = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 			self.getState(path + '.' + hour +':00:00.type', function(err, state) {
-				local_type = state.val;
+				if ((typeof state !== "undefined") && (state !== null)){
+					local_type = state.val;
+				} else {
+					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
 			});
 
 			//*** Create current_hour object  ***
