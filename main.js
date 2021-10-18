@@ -788,119 +788,119 @@ function setCurrentHour(self){
 				if ((typeof state !== "undefined") && (state !== null)) {
 					local_background_color = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.cur_color.background_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.cur_color.temperature', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_temperature = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.cur_color.temperature' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.cur_color.text_color', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_text_color = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.cur_color.text_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.DD_DEG', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_DD_DEG = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.DD_DEG' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.FF_KMH', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_FF_KMH = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.FF_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.FX_KMH', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_FX_KMH = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.FX_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_COLOR', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_ICON_URL_COLOR = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.ICON_URL_COLOR' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_DARK', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_ICON_URL_DARK = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.ICON_URL_DARK' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.ICON_URL_LIGHT', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_ICON_URL_LIGHT = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.ICON_URL_LIGHT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.PROBPCP_PERCENT', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_PROBPCP_PERCENT = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.PROBPCP_PERCENT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.RRR_MM', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_RRR_MM = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.RRR_MM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.SYMBOL_CODE', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_SYMBOL_CODE = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.SYMBOL_CODE' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTH_C', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_TTH_C = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.TTH_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTL_C', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_TTL_C = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.TTL_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.TTT_C', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_TTT_C = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.TTT_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.local_date_time', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_local_date_time = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.local_date_time' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 			self.getState(path + '.' + hour +':00:00.type', function(err, state) {
 				if ((typeof state !== "undefined") && (state !== null)){
 					local_type = state.val;
 				} else {
-					self.log.debug('This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.log.debug(path + '.' + hour +':00:00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
 
