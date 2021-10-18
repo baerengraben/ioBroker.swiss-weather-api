@@ -10,7 +10,7 @@ const cron = require('node-cron');
 const { https } = require('follow-redirects');
 const adapterName = "swiss-weather-api";
 const undf = "undefined"
-var defaultLanguage = "undefined";
+var defaultLanguage = "de";
 var timeout;
 var geolocationId;
 var access_token;
@@ -132,8 +132,8 @@ function getSystemData(self) {
 function getSystemLanguage(self) {
 	self.getForeignObject("system.config", (err, state) => {
 		if (err || state === undf || state === null) {
-			self.log.error("Default language not set in system-config. Setting default language as en-GB to use for weekday names.");
-			self.defaultLanguage = "en-GB";
+			self.log.error("Default language not set in system-config. Setting default language as 'de' to use for weekday names.");
+			self.defaultLanguage = "de";
 		} else {
 			self.defaultLanguage = state.common.language;
 			self.log.debug("use system  language for weekday names: " + self.defaultLanguage);
