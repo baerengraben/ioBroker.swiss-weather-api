@@ -63,7 +63,7 @@ function getTimeFormattet(actualDate) {
 	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
 	var sec = (actualDate.getSeconds()<10?'0':'') + actualDate.getSeconds();
-	return hour + min + sec;
+	return hour + min;
 }
 
 /**
@@ -777,9 +777,9 @@ function setCurrentHour(self){
 	var local_type             = "dummy";
 
 	// update current_hour objects
-	self.getState(path + '.000000.DD_DEG', (err, state) => {
+	self.getState(path + '.0000.DD_DEG', (err, state) => {
 		if (!state || state.val === null) {
-			self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.000000.DD_DEG' + '. Try my luck on next hour...');
+			self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
 		} else {
 			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
 				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
