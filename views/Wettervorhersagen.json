@@ -1,11 +1,13 @@
 {
   "settings": {
     "style": {
-      "background_class": ""
+      "background_class": "",
+      "font-family": "Arial, Helvetica, sans-serif;",
+      "font-style": ""
     },
     "theme": "vader",
-    "sizex": "800",
-    "sizey": "600",
+    "sizex": "995",
+    "sizey": "615",
     "gridSize": "",
     "snapType": null,
     "group": [
@@ -85,13 +87,13 @@
         "test_list": "1"
       },
       "style": {
-        "left": "555px",
+        "left": "727px",
         "top": "8px",
         "width": "235px",
         "height": "13px",
         "z-index": "2",
         "font-size": "small",
-        "font-family": "RobotoCondensed-Light",
+        "font-family": "",
         "text-align": "right"
       },
       "widgetSet": "basic"
@@ -160,12 +162,12 @@
       },
       "style": {
         "left": "21px",
-        "top": "7px",
+        "top": "4px",
         "width": "135px",
-        "height": "29px",
+        "height": "22px",
         "z-index": 5,
         "font-size": "large",
-        "font-family": "RobotoCondensed-Light",
+        "font-family": "",
         "color": "#d7cec1",
         "text-align": "left"
       },
@@ -174,7 +176,7 @@
     "e00003": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -247,7 +249,7 @@
     "e00004": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -397,7 +399,7 @@
     "e00006": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -606,7 +608,7 @@
       },
       "style": {
         "left": "25px",
-        "top": "30px",
+        "top": "29px",
         "width": "113px",
         "height": "18px",
         "color": "#ffffff",
@@ -618,7 +620,7 @@
     "e00009": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -766,7 +768,7 @@
     "e00011": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -914,7 +916,7 @@
     "e00013": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -1064,7 +1066,7 @@
     "e00015": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -1275,15 +1277,15 @@
         "class": ""
       },
       "style": {
-        "left": "290px",
+        "left": "361px",
         "top": "7px",
         "width": "245px",
         "height": "16px",
         "z-index": "20",
-        "font-size": "x-small",
-        "color": "#ffffff",
+        "font-size": "small",
+        "color": "#d7cec1",
         "text-align": "center",
-        "font-family": "RobotoCondensed-Light"
+        "font-family": ""
       },
       "widgetSet": "basic"
     },
@@ -1363,86 +1365,6 @@
       "widgetSet": "basic"
     },
     "e00019": {
-      "tpl": "tplFrame",
-      "data": {
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "title": "",
-        "title_color": "#d7cec1",
-        "title_top": "-30",
-        "title_left": "1",
-        "header_height": "0",
-        "header_color": "",
-        "gestures-offsetX": 0,
-        "gestures-offsetY": 0,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/icons-mfd-svg/control_ok.svg",
-        "signals-icon-size-0": "72",
-        "signals-blink-0": false,
-        "signals-horz-0": "90",
-        "signals-vert-0": "81",
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": "false",
-        "signals-icon-1": "/icons-mfd-svg/control_ok.svg",
-        "signals-icon-size-1": "72",
-        "signals-blink-1": false,
-        "signals-horz-1": "90",
-        "signals-vert-1": "81",
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/main/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "visibility-groups-action": "hide",
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "signals-oid-0": "",
-        "signals-oid-1": "",
-        "signals-icon-style-1": "",
-        "filterkey": "Border",
-        "name": "Border Ort"
-      },
-      "style": {
-        "left": "2px",
-        "top": "3px",
-        "width": "799px",
-        "height": "596px",
-        "font-family": "RobotoCondensed-Light",
-        "font-style": "normal",
-        "font-variant": "normal",
-        "font-weight": "",
-        "font-size": "large",
-        "z-index": "1",
-        "background": "",
-        "border-width": "0px",
-        "box-shadow": "2px 2px 3px rgba(20, 20, 20, 50)",
-        "background-color": "#474747"
-      },
-      "widgetSet": "basic"
-    },
-    "e00020": {
       "tpl": "tplHtml",
       "data": {
         "g_fixed": true,
@@ -1504,10 +1426,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "21px",
+        "left": "9px",
         "top": "49px",
-        "width": "170px",
-        "height": "255px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -1516,7 +1438,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00021": {
+    "e00020": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -1589,10 +1511,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00022": {
+    "e00021": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -1664,7 +1586,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00023": {
+    "e00022": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -1737,7 +1659,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00024": {
+    "e00023": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -1810,10 +1732,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00025": {
+    "e00024": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -1885,10 +1807,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00026": {
+    "e00025": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day0.00:00:00.SUNSET",
+        "oid": "swiss-weather-api.0.forecast.day.day0.0000.SUNSET",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -1960,10 +1882,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00027": {
+    "e00026": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -2024,8 +1946,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "251px",
-        "top": "94px",
+        "left": "312px",
+        "top": "93px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -2033,10 +1955,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00028": {
+    "e00027": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2097,8 +2019,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "325px",
-        "top": "74px",
+        "left": "396px",
+        "top": "73px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2109,7 +2031,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00029": {
+    "e00028": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -2173,8 +2095,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "74px",
+        "left": "282px",
+        "top": "73px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2183,10 +2105,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00030": {
+    "e00029": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2246,8 +2168,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "323px",
-        "top": "235px",
+        "left": "394px",
+        "top": "234px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2258,7 +2180,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00031": {
+    "e00030": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -2321,8 +2243,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "235px",
+        "left": "282px",
+        "top": "234px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -2331,10 +2253,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00032": {
+    "e00031": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2394,8 +2316,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "254px",
-        "top": "29px",
+        "left": "315px",
+        "top": "28px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -2404,10 +2326,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00033": {
+    "e00032": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2467,8 +2389,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "322px",
-        "top": "218px",
+        "left": "393px",
+        "top": "217px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2479,7 +2401,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00034": {
+    "e00033": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -2542,8 +2464,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "218px",
+        "left": "282px",
+        "top": "217px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -2552,10 +2474,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00035": {
+    "e00034": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2615,8 +2537,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "345px",
-        "top": "253px",
+        "left": "416px",
+        "top": "252px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -2627,7 +2549,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00036": {
+    "e00035": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -2690,8 +2612,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "252px",
+        "left": "282px",
+        "top": "251px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -2700,10 +2622,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00037": {
+    "e00036": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2764,8 +2686,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "325px",
-        "top": "56px",
+        "left": "396px",
+        "top": "55px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2776,7 +2698,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00038": {
+    "e00037": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -2840,8 +2762,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "56px",
+        "left": "282px",
+        "top": "55px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2850,10 +2772,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00039": {
+    "e00038": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -2913,8 +2835,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "322px",
-        "top": "186px",
+        "left": "393px",
+        "top": "185px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -2925,7 +2847,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00040": {
+    "e00039": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -2988,8 +2910,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "186px",
+        "left": "282px",
+        "top": "185px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -2998,7 +2920,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00041": {
+    "e00040": {
       "tpl": "tplHtml",
       "data": {
         "g_fixed": true,
@@ -3060,10 +2982,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "216px",
+        "left": "263px",
         "top": "49px",
-        "width": "170px",
-        "height": "255px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -3072,7 +2994,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00042": {
+    "e00041": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -3135,8 +3057,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "203px",
+        "left": "282px",
+        "top": "202px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -3145,10 +3067,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00043": {
+    "e00042": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -3208,8 +3130,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "322px",
-        "top": "203px",
+        "left": "393px",
+        "top": "202px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -3217,6 +3139,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00043": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Sonnenaufgang",
+        "name": "Schneefall Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "282px",
+        "top": "266px",
+        "width": "103px",
+        "height": "16px",
+        "z-index": 3,
+        "font-size": "small",
+        "color": "#8f8f8f"
       },
       "widgetSet": "basic"
     },
@@ -3278,15 +3273,15 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Sonnenaufgang",
+        "html_append": "Sonnenuntergang",
         "name": "Schneefall Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "221px",
-        "top": "267px",
-        "width": "103px",
-        "height": "16px",
+        "left": "282px",
+        "top": "284px",
+        "width": "115px",
+        "height": "15px",
         "z-index": 3,
         "font-size": "small",
         "color": "#8f8f8f"
@@ -3296,80 +3291,7 @@
     "e00045": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Sonnenuntergang",
-        "name": "Schneefall Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "221px",
-        "top": "285px",
-        "width": "115px",
-        "height": "15px",
-        "z-index": 3,
-        "font-size": "small",
-        "color": "#8f8f8f"
-      },
-      "widgetSet": "basic"
-    },
-    "e00046": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -3429,8 +3351,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "345px",
-        "top": "268px",
+        "left": "416px",
+        "top": "267px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00046": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "416px",
+        "top": "284px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -3442,84 +3439,9 @@
       "widgetSet": "basic"
     },
     "e00047": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "345px",
-        "top": "285px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00048": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day2.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day2.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -3580,8 +3502,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "448px",
-        "top": "95px",
+        "left": "564px",
+        "top": "96px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -3589,10 +3511,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00049": {
+    "e00048": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day2.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day2.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -3653,8 +3575,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "522px",
-        "top": "75px",
+        "left": "638px",
+        "top": "76px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -3665,7 +3587,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00050": {
+    "e00049": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -3729,8 +3651,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "419px",
-        "top": "75px",
+        "left": "535px",
+        "top": "76px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -3739,10 +3661,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00051": {
+    "e00050": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -3802,8 +3724,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "519px",
-        "top": "236px",
+        "left": "635px",
+        "top": "237px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -3814,7 +3736,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00052": {
+    "e00051": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -3877,8 +3799,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "421px",
-        "top": "236px",
+        "left": "537px",
+        "top": "237px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -3887,10 +3809,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00053": {
+    "e00052": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day2.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day2.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -3950,8 +3872,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "460px",
-        "top": "29px",
+        "left": "563px",
+        "top": "28px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -3960,10 +3882,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00054": {
+    "e00053": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4023,8 +3945,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "518px",
-        "top": "219px",
+        "left": "634px",
+        "top": "220px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -4035,7 +3957,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00055": {
+    "e00054": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -4098,8 +4020,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "421px",
-        "top": "219px",
+        "left": "537px",
+        "top": "220px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -4108,10 +4030,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00056": {
+    "e00055": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4171,8 +4093,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "540px",
-        "top": "254px",
+        "left": "656px",
+        "top": "255px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -4183,7 +4105,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00057": {
+    "e00056": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -4246,8 +4168,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "421px",
-        "top": "253px",
+        "left": "537px",
+        "top": "254px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -4256,10 +4178,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00058": {
+    "e00057": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day2.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day2.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4320,8 +4242,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "522px",
-        "top": "57px",
+        "left": "638px",
+        "top": "58px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -4332,7 +4254,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00059": {
+    "e00058": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -4396,8 +4318,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "419px",
-        "top": "57px",
+        "left": "535px",
+        "top": "58px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -4406,10 +4328,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00060": {
+    "e00059": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4469,8 +4391,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "519px",
-        "top": "187px",
+        "left": "635px",
+        "top": "188px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -4478,6 +4400,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00060": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "nothing_selected",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Wind",
+        "name": "Wind Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "537px",
+        "top": "187px",
+        "width": "95px",
+        "height": "15px",
+        "z-index": 3,
+        "color": "#8f8f8f",
+        "font-size": "small"
       },
       "widgetSet": "basic"
     },
@@ -4539,13 +4534,13 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Wind",
+        "html_append": "Wind Peak",
         "name": "Wind Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "421px",
-        "top": "186px",
+        "left": "537px",
+        "top": "205px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -4557,80 +4552,7 @@
     "e00062": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "nothing_selected",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Wind Peak",
-        "name": "Wind Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "421px",
-        "top": "204px",
-        "width": "95px",
-        "height": "15px",
-        "z-index": 3,
-        "color": "#8f8f8f",
-        "font-size": "small"
-      },
-      "widgetSet": "basic"
-    },
-    "e00063": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4690,8 +4612,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "518px",
-        "top": "204px",
+        "left": "634px",
+        "top": "205px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -4699,6 +4621,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00063": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Sonnenaufgang",
+        "name": "Schneefall Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "537px",
+        "top": "269px",
+        "width": "103px",
+        "height": "16px",
+        "z-index": 3,
+        "font-size": "small",
+        "color": "#8f8f8f"
       },
       "widgetSet": "basic"
     },
@@ -4760,15 +4755,15 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Sonnenaufgang",
+        "html_append": "Sonnenuntergang",
         "name": "Schneefall Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "421px",
-        "top": "268px",
-        "width": "103px",
-        "height": "16px",
+        "left": "537px",
+        "top": "286px",
+        "width": "115px",
+        "height": "15px",
         "z-index": 3,
         "font-size": "small",
         "color": "#8f8f8f"
@@ -4778,80 +4773,7 @@
     "e00065": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Sonnenuntergang",
-        "name": "Schneefall Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "421px",
-        "top": "285px",
-        "width": "115px",
-        "height": "15px",
-        "z-index": 3,
-        "font-size": "small",
-        "color": "#8f8f8f"
-      },
-      "widgetSet": "basic"
-    },
-    "e00066": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -4911,8 +4833,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "540px",
-        "top": "269px",
+        "left": "656px",
+        "top": "270px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00066": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day1.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "656px",
+        "top": "287px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -4924,84 +4921,9 @@
       "widgetSet": "basic"
     },
     "e00067": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day1.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "540px",
-        "top": "286px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00068": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -5062,8 +4984,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "644px",
-        "top": "97px",
+        "left": "812px",
+        "top": "99px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -5071,10 +4993,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00069": {
+    "e00068": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5135,8 +5057,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "719px",
-        "top": "77px",
+        "left": "887px",
+        "top": "79px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5147,7 +5069,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00070": {
+    "e00069": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -5211,8 +5133,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "77px",
+        "left": "784px",
+        "top": "79px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5221,10 +5143,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00071": {
+    "e00070": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5284,8 +5206,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "717px",
-        "top": "239px",
+        "left": "885px",
+        "top": "241px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5296,7 +5218,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00072": {
+    "e00071": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -5359,8 +5281,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "239px",
+        "left": "784px",
+        "top": "241px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -5369,10 +5291,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00073": {
+    "e00072": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5432,8 +5354,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "654px",
-        "top": "29px",
+        "left": "822px",
+        "top": "28px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -5442,10 +5364,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00074": {
+    "e00073": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5505,8 +5427,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "717px",
-        "top": "223px",
+        "left": "885px",
+        "top": "225px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5517,7 +5439,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00075": {
+    "e00074": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -5580,8 +5502,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "223px",
+        "left": "784px",
+        "top": "225px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -5590,10 +5512,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00076": {
+    "e00075": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5653,8 +5575,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "739px",
-        "top": "256px",
+        "left": "907px",
+        "top": "258px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -5665,7 +5587,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00077": {
+    "e00076": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -5728,8 +5650,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "255px",
+        "left": "784px",
+        "top": "257px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -5738,10 +5660,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00078": {
+    "e00077": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5802,8 +5724,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "719px",
-        "top": "59px",
+        "left": "887px",
+        "top": "61px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5814,7 +5736,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00079": {
+    "e00078": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -5878,8 +5800,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "59px",
+        "left": "784px",
+        "top": "61px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5888,10 +5810,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00080": {
+    "e00079": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -5951,8 +5873,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "717px",
-        "top": "189px",
+        "left": "885px",
+        "top": "191px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -5960,6 +5882,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00080": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "nothing_selected",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Wind",
+        "name": "Wind Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "784px",
+        "top": "192px",
+        "width": "95px",
+        "height": "15px",
+        "z-index": 3,
+        "color": "#8f8f8f",
+        "font-size": "small"
       },
       "widgetSet": "basic"
     },
@@ -6021,13 +6016,13 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Wind",
+        "html_append": "Wind Peak",
         "name": "Wind Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "190px",
+        "left": "784px",
+        "top": "208px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -6039,80 +6034,7 @@
     "e00082": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "nothing_selected",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Wind Peak",
-        "name": "Wind Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "616px",
-        "top": "206px",
-        "width": "95px",
-        "height": "15px",
-        "z-index": 3,
-        "color": "#8f8f8f",
-        "font-size": "small"
-      },
-      "widgetSet": "basic"
-    },
-    "e00083": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6172,8 +6094,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "717px",
-        "top": "206px",
+        "left": "885px",
+        "top": "208px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -6181,6 +6103,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00083": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Sonnenaufgang",
+        "name": "Schneefall Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "784px",
+        "top": "274px",
+        "width": "103px",
+        "height": "16px",
+        "z-index": 3,
+        "font-size": "small",
+        "color": "#8f8f8f"
       },
       "widgetSet": "basic"
     },
@@ -6242,15 +6237,15 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Sonnenaufgang",
+        "html_append": "Sonnenuntergang",
         "name": "Schneefall Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "616px",
-        "top": "272px",
-        "width": "103px",
-        "height": "16px",
+        "left": "784px",
+        "top": "290px",
+        "width": "115px",
+        "height": "15px",
         "z-index": 3,
         "font-size": "small",
         "color": "#8f8f8f"
@@ -6260,80 +6255,7 @@
     "e00085": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Sonnenuntergang",
-        "name": "Schneefall Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "616px",
-        "top": "288px",
-        "width": "115px",
-        "height": "15px",
-        "z-index": 3,
-        "font-size": "small",
-        "color": "#8f8f8f"
-      },
-      "widgetSet": "basic"
-    },
-    "e00086": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6393,8 +6315,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "739px",
-        "top": "273px",
+        "left": "907px",
+        "top": "275px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00086": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day3.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "907px",
+        "top": "291px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -6406,84 +6403,9 @@
       "widgetSet": "basic"
     },
     "e00087": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day3.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "739px",
-        "top": "289px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00088": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -6544,8 +6466,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "56px",
-        "top": "379px",
+        "left": "57px",
+        "top": "385px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -6553,10 +6475,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00089": {
+    "e00088": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6617,8 +6539,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "132px",
-        "top": "359px",
+        "left": "133px",
+        "top": "367px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -6629,7 +6551,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00090": {
+    "e00089": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -6693,8 +6615,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "359px",
+        "left": "30px",
+        "top": "367px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -6703,10 +6625,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00091": {
+    "e00090": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6766,8 +6688,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "129px",
-        "top": "521px",
+        "left": "130px",
+        "top": "527px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -6778,7 +6700,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00092": {
+    "e00091": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -6841,8 +6763,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "521px",
+        "left": "30px",
+        "top": "527px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -6851,10 +6773,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00093": {
+    "e00092": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6914,8 +6836,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "63px",
-        "top": "313px",
+        "left": "64px",
+        "top": "320px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -6924,10 +6846,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00094": {
+    "e00093": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -6987,8 +6909,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "128px",
-        "top": "504px",
+        "left": "129px",
+        "top": "510px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -6999,7 +6921,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00095": {
+    "e00094": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -7062,8 +6984,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "504px",
+        "left": "30px",
+        "top": "510px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -7072,10 +6994,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00096": {
+    "e00095": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -7135,8 +7057,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "150px",
-        "top": "538px",
+        "left": "151px",
+        "top": "544px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -7147,7 +7069,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00097": {
+    "e00096": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -7210,8 +7132,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "537px",
+        "left": "30px",
+        "top": "543px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -7220,10 +7142,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00098": {
+    "e00097": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -7284,8 +7206,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "132px",
-        "top": "341px",
+        "left": "133px",
+        "top": "349px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -7296,7 +7218,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00099": {
+    "e00098": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -7360,8 +7282,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "341px",
+        "left": "30px",
+        "top": "349px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -7370,10 +7292,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00100": {
+    "e00099": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -7433,8 +7355,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "128px",
-        "top": "471px",
+        "left": "129px",
+        "top": "477px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -7442,6 +7364,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00100": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "nothing_selected",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Wind",
+        "name": "Wind Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "30px",
+        "top": "477px",
+        "width": "95px",
+        "height": "15px",
+        "z-index": 3,
+        "color": "#8f8f8f",
+        "font-size": "small"
       },
       "widgetSet": "basic"
     },
@@ -7503,13 +7498,13 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Wind",
+        "html_append": "Wind Peak",
         "name": "Wind Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "471px",
+        "left": "30px",
+        "top": "495px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -7521,80 +7516,7 @@
     "e00102": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "nothing_selected",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Wind Peak",
-        "name": "Wind Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "29px",
-        "top": "489px",
-        "width": "95px",
-        "height": "15px",
-        "z-index": 3,
-        "color": "#8f8f8f",
-        "font-size": "small"
-      },
-      "widgetSet": "basic"
-    },
-    "e00103": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -7654,8 +7576,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "128px",
-        "top": "488px",
+        "left": "129px",
+        "top": "494px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -7663,6 +7585,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00103": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Sonnenaufgang",
+        "name": "Schneefall Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "30px",
+        "top": "559px",
+        "width": "103px",
+        "height": "16px",
+        "z-index": 3,
+        "font-size": "small",
+        "color": "#8f8f8f"
       },
       "widgetSet": "basic"
     },
@@ -7724,15 +7719,15 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Sonnenaufgang",
+        "html_append": "Sonnenuntergang",
         "name": "Schneefall Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "29px",
-        "top": "553px",
-        "width": "103px",
-        "height": "16px",
+        "left": "30px",
+        "top": "576px",
+        "width": "115px",
+        "height": "15px",
         "z-index": 3,
         "font-size": "small",
         "color": "#8f8f8f"
@@ -7742,80 +7737,7 @@
     "e00105": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Sonnenuntergang",
-        "name": "Schneefall Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "29px",
-        "top": "570px",
-        "width": "115px",
-        "height": "15px",
-        "z-index": 3,
-        "font-size": "small",
-        "color": "#8f8f8f"
-      },
-      "widgetSet": "basic"
-    },
-    "e00106": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -7875,8 +7797,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "150px",
-        "top": "554px",
+        "left": "151px",
+        "top": "560px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00106": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day4.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "151px",
+        "top": "577px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -7888,84 +7885,9 @@
       "widgetSet": "basic"
     },
     "e00107": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day4.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "150px",
-        "top": "571px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00108": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -8026,8 +7948,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "252px",
-        "top": "380px",
+        "left": "308px",
+        "top": "386px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -8035,10 +7957,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00109": {
+    "e00108": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8099,8 +8021,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "327px",
-        "top": "360px",
+        "left": "397px",
+        "top": "368px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8111,7 +8033,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00110": {
+    "e00109": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -8175,8 +8097,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "360px",
+        "left": "280px",
+        "top": "368px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8185,10 +8107,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00111": {
+    "e00110": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8248,8 +8170,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "326px",
-        "top": "523px",
+        "left": "396px",
+        "top": "528px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8260,7 +8182,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00112": {
+    "e00111": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -8323,8 +8245,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "522px",
+        "left": "280px",
+        "top": "527px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -8333,10 +8255,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00113": {
+    "e00112": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8396,8 +8318,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "254px",
-        "top": "313px",
+        "left": "312px",
+        "top": "320px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -8406,10 +8328,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00114": {
+    "e00113": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8469,8 +8391,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "324px",
-        "top": "505px",
+        "left": "394px",
+        "top": "510px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8481,7 +8403,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00115": {
+    "e00114": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -8544,8 +8466,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "505px",
+        "left": "280px",
+        "top": "510px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -8554,10 +8476,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00116": {
+    "e00115": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8617,8 +8539,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "346px",
-        "top": "539px",
+        "left": "416px",
+        "top": "544px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -8629,7 +8551,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00117": {
+    "e00116": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -8692,8 +8614,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "538px",
+        "left": "280px",
+        "top": "543px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -8702,10 +8624,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00118": {
+    "e00117": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8766,8 +8688,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "327px",
-        "top": "342px",
+        "left": "397px",
+        "top": "350px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8778,7 +8700,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00119": {
+    "e00118": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -8842,8 +8764,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "342px",
+        "left": "280px",
+        "top": "350px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8852,10 +8774,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00120": {
+    "e00119": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -8915,8 +8837,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "324px",
-        "top": "472px",
+        "left": "394px",
+        "top": "477px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -8924,6 +8846,79 @@
         "font-size": "small",
         "font-weight": "bold",
         "text-align": "right"
+      },
+      "widgetSet": "basic"
+    },
+    "e00120": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "nothing_selected",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "Wind",
+        "name": "Wind Tag 1 Text",
+        "filterkey": "Text"
+      },
+      "style": {
+        "left": "280px",
+        "top": "477px",
+        "width": "95px",
+        "height": "15px",
+        "z-index": 3,
+        "color": "#8f8f8f",
+        "font-size": "small"
       },
       "widgetSet": "basic"
     },
@@ -8985,13 +8980,13 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "Wind",
+        "html_append": "Wind Peak",
         "name": "Wind Tag 1 Text",
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "472px",
+        "left": "280px",
+        "top": "494px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -9003,80 +8998,7 @@
     "e00122": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "nothing_selected",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "Wind Peak",
-        "name": "Wind Tag 1 Text",
-        "filterkey": "Text"
-      },
-      "style": {
-        "left": "224px",
-        "top": "489px",
-        "width": "95px",
-        "height": "15px",
-        "z-index": 3,
-        "color": "#8f8f8f",
-        "font-size": "small"
-      },
-      "widgetSet": "basic"
-    },
-    "e00123": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9136,8 +9058,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "324px",
-        "top": "489px",
+        "left": "394px",
+        "top": "494px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -9148,7 +9070,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00124": {
+    "e00123": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -9211,8 +9133,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "554px",
+        "left": "280px",
+        "top": "559px",
         "width": "103px",
         "height": "16px",
         "z-index": 3,
@@ -9221,7 +9143,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00125": {
+    "e00124": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -9284,8 +9206,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "224px",
-        "top": "571px",
+        "left": "280px",
+        "top": "576px",
         "width": "115px",
         "height": "15px",
         "z-index": 3,
@@ -9294,10 +9216,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00126": {
+    "e00125": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9357,8 +9279,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "346px",
-        "top": "555px",
+        "left": "416px",
+        "top": "560px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00126": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day5.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "416px",
+        "top": "577px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -9370,84 +9367,9 @@
       "widgetSet": "basic"
     },
     "e00127": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day5.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "346px",
-        "top": "572px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00128": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -9508,8 +9430,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "447px",
-        "top": "378px",
+        "left": "567px",
+        "top": "385px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -9517,10 +9439,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00129": {
+    "e00128": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9581,8 +9503,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "523px",
-        "top": "358px",
+        "left": "643px",
+        "top": "365px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -9593,7 +9515,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00130": {
+    "e00129": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -9657,8 +9579,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "358px",
+        "left": "540px",
+        "top": "365px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -9667,10 +9589,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00131": {
+    "e00130": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9730,8 +9652,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "521px",
-        "top": "520px",
+        "left": "641px",
+        "top": "527px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -9742,7 +9664,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00132": {
+    "e00131": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -9805,8 +9727,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "520px",
+        "left": "540px",
+        "top": "527px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -9815,10 +9737,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00133": {
+    "e00132": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9878,8 +9800,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "460px",
-        "top": "313px",
+        "left": "566px",
+        "top": "320px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -9888,10 +9810,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00134": {
+    "e00133": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -9951,8 +9873,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "520px",
-        "top": "503px",
+        "left": "640px",
+        "top": "510px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -9963,7 +9885,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00135": {
+    "e00134": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -10026,8 +9948,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "503px",
+        "left": "540px",
+        "top": "510px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -10036,10 +9958,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00136": {
+    "e00135": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -10099,8 +10021,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "542px",
-        "top": "537px",
+        "left": "662px",
+        "top": "544px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -10111,7 +10033,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00137": {
+    "e00136": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -10174,8 +10096,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "536px",
+        "left": "540px",
+        "top": "543px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -10184,10 +10106,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00138": {
+    "e00137": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -10248,8 +10170,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "523px",
-        "top": "340px",
+        "left": "643px",
+        "top": "347px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -10260,7 +10182,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00139": {
+    "e00138": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -10324,8 +10246,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "340px",
+        "left": "540px",
+        "top": "347px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -10334,10 +10256,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00140": {
+    "e00139": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -10397,8 +10319,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "520px",
-        "top": "470px",
+        "left": "640px",
+        "top": "477px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -10409,7 +10331,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00141": {
+    "e00140": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -10472,8 +10394,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "471px",
+        "left": "540px",
+        "top": "478px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -10482,7 +10404,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00142": {
+    "e00141": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -10545,8 +10467,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "487px",
+        "left": "540px",
+        "top": "494px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -10555,10 +10477,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00143": {
+    "e00142": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -10618,8 +10540,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "520px",
-        "top": "487px",
+        "left": "640px",
+        "top": "494px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -10630,7 +10552,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00144": {
+    "e00143": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -10693,8 +10615,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "552px",
+        "left": "540px",
+        "top": "559px",
         "width": "103px",
         "height": "16px",
         "z-index": 3,
@@ -10703,7 +10625,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00145": {
+    "e00144": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -10766,8 +10688,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "420px",
-        "top": "569px",
+        "left": "540px",
+        "top": "576px",
         "width": "115px",
         "height": "15px",
         "z-index": 3,
@@ -10776,10 +10698,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00146": {
+    "e00145": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -10839,8 +10761,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "542px",
-        "top": "553px",
+        "left": "662px",
+        "top": "560px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00146": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day6.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "662px",
+        "top": "577px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -10852,24 +10849,24 @@
       "widgetSet": "basic"
     },
     "e00147": {
-      "tpl": "tplValueString",
+      "tpl": "tplHtml",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day6.00:00:00.SUNSET",
         "g_fixed": true,
         "g_visibility": false,
-        "g_css_font_text": true,
+        "g_css_font_text": false,
         "g_css_background": false,
         "g_css_shadow_padding": false,
-        "g_css_border": false,
+        "g_css_border": true,
         "g_gestures": false,
         "g_signals": false,
         "g_last_change": false,
         "visibility-cond": "==",
         "visibility-val": 1,
         "visibility-groups-action": "hide",
+        "refreshInterval": "0",
         "signals-cond-0": "==",
         "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-0": "/vis/signals/lowbattery.png",
         "signals-icon-size-0": 0,
         "signals-blink-0": false,
         "signals-horz-0": 0,
@@ -10877,7 +10874,7 @@
         "signals-hide-edit-0": false,
         "signals-cond-1": "==",
         "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-1": "/vis/signals/lowbattery.png",
         "signals-icon-size-1": 0,
         "signals-blink-1": false,
         "signals-horz-1": 0,
@@ -10885,7 +10882,7 @@
         "signals-hide-edit-1": false,
         "signals-cond-2": "==",
         "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-2": "/vis/signals/lowbattery.png",
         "signals-icon-size-2": 0,
         "signals-blink-2": false,
         "signals-horz-2": 0,
@@ -10909,20 +10906,19 @@
         "lc-border-color": "",
         "lc-border-radius": 10,
         "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
+        "name": "Border Tag 1",
+        "filterkey": "Border"
       },
       "style": {
-        "left": "542px",
-        "top": "570px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
+        "left": "518px",
+        "top": "49px",
+        "width": "200px",
+        "height": "260px",
+        "z-index": "3",
+        "border-width": "1px",
+        "border-style": "solid",
+        "border-radius": "5px",
+        "border-color": "#9e9e9e"
       },
       "widgetSet": "basic"
     },
@@ -10988,10 +10984,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "413px",
+        "left": "768px",
         "top": "49px",
-        "width": "170px",
-        "height": "255px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -11062,10 +11058,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "609px",
-        "top": "49px",
-        "width": "170px",
-        "height": "255px",
+        "left": "9px",
+        "top": "341px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -11136,10 +11132,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "21px",
-        "top": "332px",
-        "width": "170px",
-        "height": "255px",
+        "left": "263px",
+        "top": "341px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -11210,10 +11206,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "217px",
-        "top": "332px",
-        "width": "170px",
-        "height": "255px",
+        "left": "518px",
+        "top": "341px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -11223,83 +11219,9 @@
       "widgetSet": "basic"
     },
     "e00152": {
-      "tpl": "tplHtml",
-      "data": {
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": true,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "refreshInterval": "0",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "name": "Border Tag 1",
-        "filterkey": "Border"
-      },
-      "style": {
-        "left": "412px",
-        "top": "331px",
-        "width": "170px",
-        "height": "255px",
-        "z-index": "3",
-        "border-width": "1px",
-        "border-style": "solid",
-        "border-radius": "5px",
-        "border-color": "#9e9e9e"
-      },
-      "widgetSet": "basic"
-    },
-    "e00153": {
       "tpl": "tplValueStringImg",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.ICON_URL_COLOR",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.ICON_URL_COLOR",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": false,
@@ -11360,8 +11282,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "642px",
-        "top": "378px",
+        "left": "810px",
+        "top": "386px",
         "width": "100px",
         "height": "100px",
         "z-index": "7",
@@ -11369,10 +11291,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00154": {
+    "e00153": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.max_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.max_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -11433,8 +11355,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "718px",
-        "top": "358px",
+        "left": "886px",
+        "top": "366px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -11445,7 +11367,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00155": {
+    "e00154": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -11509,8 +11431,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "358px",
+        "left": "783px",
+        "top": "366px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -11519,10 +11441,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00156": {
+    "e00155": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.PROBPCP_PERCENT",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.PROBPCP_PERCENT",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -11582,8 +11504,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "716px",
-        "top": "520px",
+        "left": "884px",
+        "top": "528px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -11594,7 +11516,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00157": {
+    "e00156": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -11657,8 +11579,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "520px",
+        "left": "783px",
+        "top": "528px",
         "width": "93px",
         "height": "15px",
         "z-index": 3,
@@ -11667,10 +11589,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00158": {
+    "e00157": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.day_name",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.day_name",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -11730,8 +11652,8 @@
         "name": "Name Tag 1"
       },
       "style": {
-        "left": "654px",
-        "top": "313px",
+        "left": "823px",
+        "top": "320px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -11740,10 +11662,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00159": {
+    "e00158": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.RRR_MM",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.RRR_MM",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -11803,8 +11725,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "715px",
-        "top": "503px",
+        "left": "883px",
+        "top": "511px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -11815,7 +11737,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00160": {
+    "e00159": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -11878,8 +11800,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "503px",
+        "left": "783px",
+        "top": "511px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -11888,10 +11810,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00161": {
+    "e00160": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.SUN_H",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.SUN_H",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -11951,8 +11873,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "737px",
-        "top": "537px",
+        "left": "905px",
+        "top": "545px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -11963,7 +11885,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00162": {
+    "e00161": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -12026,8 +11948,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "536px",
+        "left": "783px",
+        "top": "544px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -12036,10 +11958,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00163": {
+    "e00162": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.min_color.temperature",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.min_color.temperature",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -12100,8 +12022,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "718px",
-        "top": "340px",
+        "left": "886px",
+        "top": "348px",
         "width": "55px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -12112,7 +12034,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00164": {
+    "e00163": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -12176,8 +12098,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "340px",
+        "left": "783px",
+        "top": "348px",
         "width": "71px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -12186,10 +12108,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00165": {
+    "e00164": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.FF_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.FF_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -12249,8 +12171,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "715px",
-        "top": "470px",
+        "left": "883px",
+        "top": "478px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -12261,7 +12183,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00166": {
+    "e00165": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -12324,8 +12246,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "471px",
+        "left": "783px",
+        "top": "479px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -12334,7 +12256,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00167": {
+    "e00166": {
       "tpl": "tplValueString",
       "data": {
         "oid": "nothing_selected",
@@ -12397,8 +12319,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "487px",
+        "left": "783px",
+        "top": "495px",
         "width": "95px",
         "height": "15px",
         "z-index": 3,
@@ -12407,10 +12329,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00168": {
+    "e00167": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.FX_KMH",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.FX_KMH",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -12470,8 +12392,8 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "715px",
-        "top": "487px",
+        "left": "883px",
+        "top": "495px",
         "width": "58px",
         "height": "15px",
         "color": "#8f8f8f",
@@ -12482,7 +12404,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00169": {
+    "e00168": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -12545,8 +12467,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "552px",
+        "left": "783px",
+        "top": "560px",
         "width": "103px",
         "height": "16px",
         "z-index": 3,
@@ -12555,7 +12477,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00170": {
+    "e00169": {
       "tpl": "tplValueString",
       "data": {
         "oid": "",
@@ -12618,8 +12540,8 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "615px",
-        "top": "569px",
+        "left": "783px",
+        "top": "577px",
         "width": "115px",
         "height": "15px",
         "z-index": 3,
@@ -12628,10 +12550,10 @@
       },
       "widgetSet": "basic"
     },
-    "e00171": {
+    "e00170": {
       "tpl": "tplValueString",
       "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.SUNRISE",
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.SUNRISE",
         "g_fixed": true,
         "g_visibility": false,
         "g_css_font_text": true,
@@ -12691,8 +12613,83 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "737px",
-        "top": "553px",
+        "left": "905px",
+        "top": "561px",
+        "width": "36px",
+        "height": "13px",
+        "color": "#8f8f8f",
+        "text-align": "right",
+        "font-weight": "bold",
+        "font-size": "small",
+        "z-index": "1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00171": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.forecast.day.day7.0000.SUNSET",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "name": "Schneefall Tag 1 String",
+        "filterkey": "Werte"
+      },
+      "style": {
+        "left": "905px",
+        "top": "578px",
         "width": "36px",
         "height": "13px",
         "color": "#8f8f8f",
@@ -12704,81 +12701,6 @@
       "widgetSet": "basic"
     },
     "e00172": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.forecast.day.day7.00:00:00.SUNSET",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "name": "Schneefall Tag 1 String",
-        "filterkey": "Werte"
-      },
-      "style": {
-        "left": "737px",
-        "top": "570px",
-        "width": "36px",
-        "height": "13px",
-        "color": "#8f8f8f",
-        "text-align": "right",
-        "font-weight": "bold",
-        "font-size": "small",
-        "z-index": "1"
-      },
-      "widgetSet": "basic"
-    },
-    "e00173": {
       "tpl": "tplHtml",
       "data": {
         "g_fixed": true,
@@ -12840,10 +12762,10 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "610px",
-        "top": "332px",
-        "width": "170px",
-        "height": "255px",
+        "left": "769px",
+        "top": "341px",
+        "width": "200px",
+        "height": "260px",
         "z-index": "3",
         "border-width": "1px",
         "border-style": "solid",
@@ -12852,412 +12774,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00174": {
-      "tpl": "tplContainerDialog",
-      "data": {
-        "g_fixed": false,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": true,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "contains_view": "Day1_Detailview",
-        "title": "Wetterdetails",
-        "noHeader": false,
-        "dialog_width": "505",
-        "dialog_height": "585",
-        "dialog_top": "",
-        "dialog_left": "",
-        "overflowX": "",
-        "overflowY": "",
-        "autoclose": "",
-        "modal": true,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide"
-      },
-      "style": {
-        "left": "209px",
-        "top": "31px",
-        "z-index": 8,
-        "opacity": "0",
-        "width": "188px",
-        "height": "279px",
-        "position": "",
-        "background-color": "#616161"
-      },
-      "widgetSet": "jqui"
-    },
-    "e00175": {
-      "tpl": "tplContainerDialog",
-      "data": {
-        "g_fixed": false,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": true,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "contains_view": "Day0_Detailview",
-        "title": "Wetterdetails",
-        "noHeader": false,
-        "dialog_width": "505",
-        "dialog_height": "585",
-        "dialog_top": "",
-        "dialog_left": "",
-        "overflowX": "",
-        "overflowY": "",
-        "autoclose": "",
-        "modal": true,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide"
-      },
-      "style": {
-        "left": "8px",
-        "top": "29px",
-        "z-index": 8,
-        "opacity": "0",
-        "width": "188px",
-        "height": "279px",
-        "position": "",
-        "background-color": "#616161"
-      },
-      "widgetSet": "jqui"
-    },
-    "e00176": {
-      "tpl": "tplContainerDialog",
-      "data": {
-        "g_fixed": false,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": true,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "contains_view": "Day2_Detailview",
-        "title": "Wetterdetails",
-        "noHeader": false,
-        "dialog_width": "505",
-        "dialog_height": "585",
-        "dialog_top": "",
-        "dialog_left": "",
-        "overflowX": "",
-        "overflowY": "",
-        "autoclose": "",
-        "modal": true,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide"
-      },
-      "style": {
-        "left": "405px",
-        "top": "27px",
-        "z-index": 8,
-        "opacity": "0",
-        "width": "188px",
-        "height": "279px",
-        "position": "",
-        "background-color": "#616161"
-      },
-      "widgetSet": "jqui"
-    },
-    "e00177": {
-      "tpl": "tplContainerDialog",
-      "data": {
-        "g_fixed": false,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": true,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "contains_view": "Day3_Detailview",
-        "title": "Wetterdetails",
-        "noHeader": false,
-        "dialog_width": "505",
-        "dialog_height": "585",
-        "dialog_top": "",
-        "dialog_left": "",
-        "overflowX": "",
-        "overflowY": "",
-        "autoclose": "",
-        "modal": true,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide"
-      },
-      "style": {
-        "left": "601px",
-        "top": "31px",
-        "z-index": 8,
-        "opacity": "0",
-        "width": "188px",
-        "height": "279px",
-        "position": "",
-        "background-color": "#616161"
-      },
-      "widgetSet": "jqui"
-    },
-    "e00178": {
-      "tpl": "tplContainerDialog",
-      "data": {
-        "g_fixed": false,
-        "g_visibility": false,
-        "g_css_font_text": false,
-        "g_css_background": true,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis/signals/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis/signals/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis/signals/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "contains_view": "Day4_Detailview",
-        "title": "Wetterdetails",
-        "noHeader": false,
-        "dialog_width": "505",
-        "dialog_height": "585",
-        "dialog_top": "",
-        "dialog_left": "",
-        "overflowX": "",
-        "overflowY": "",
-        "autoclose": "",
-        "modal": true,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide"
-      },
-      "style": {
-        "left": "15px",
-        "top": "312px",
-        "z-index": 8,
-        "opacity": "0",
-        "width": "188px",
-        "height": "279px",
-        "position": "",
-        "background-color": "#616161"
-      },
-      "widgetSet": "jqui"
-    },
-    "e00179": {
+    "e00173": {
       "tpl": "tplImage",
       "data": {
         "g_fixed": true,
@@ -13328,7 +12845,7 @@
       },
       "widgetSet": "basic"
     },
-    "e00180": {
+    "e00174": {
       "tpl": "tplImage",
       "data": {
         "g_fixed": true,
@@ -13391,15 +12908,15 @@
         "filterkey": ""
       },
       "style": {
-        "left": "360px",
-        "top": "93px",
+        "left": "431px",
+        "top": "92px",
         "width": "21px",
         "height": "26px",
         "z-index": "100"
       },
       "widgetSet": "basic"
     },
-    "e00181": {
+    "e00175": {
       "tpl": "tplImage",
       "data": {
         "g_fixed": true,
@@ -13462,15 +12979,15 @@
         "filterkey": ""
       },
       "style": {
-        "left": "556px",
-        "top": "93px",
+        "left": "672px",
+        "top": "94px",
         "width": "21px",
         "height": "26px",
         "z-index": "100"
       },
       "widgetSet": "basic"
     },
-    "e00182": {
+    "e00176": {
       "tpl": "tplImage",
       "data": {
         "g_fixed": true,
@@ -13533,15 +13050,15 @@
         "filterkey": ""
       },
       "style": {
-        "left": "753px",
-        "top": "93px",
+        "left": "921px",
+        "top": "95px",
         "width": "21px",
         "height": "26px",
         "z-index": "100"
       },
       "widgetSet": "basic"
     },
-    "e00183": {
+    "e00177": {
       "tpl": "tplImage",
       "data": {
         "g_fixed": true,
@@ -13604,8 +13121,8 @@
         "filterkey": ""
       },
       "style": {
-        "left": "164px",
-        "top": "376px",
+        "left": "165px",
+        "top": "384px",
         "width": "21px",
         "height": "26px",
         "z-index": "100"
