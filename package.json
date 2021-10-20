@@ -1,6 +1,6 @@
 {
   "name": "iobroker.swiss-weather-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
   "author": {
     "name": "baerengraben",
