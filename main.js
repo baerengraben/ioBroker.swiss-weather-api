@@ -780,6 +780,7 @@ function setCurrentHour(self){
 	// update current_hour objects
 	function updateVariables() {
 		return new Promise((resolve, reject) => {
+			self.log.debug('Updating local current_hour variables...');
 			self.getState(path + '.0000.DD_DEG', (err, state) => {
 				if (!state || state.val === null) {
 					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
@@ -914,6 +915,7 @@ function setCurrentHour(self){
 	async function addCurrentHourObjects() {
 		//first do updateVariables() and wait until its finished
 		const result= await updateVariables()
+		self.log.debug('...and now add current_hour objects.');
 
 		//*** Create current_hour object  ***
 		self.setObjectNotExists(updatePath, {
