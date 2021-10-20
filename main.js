@@ -909,12 +909,13 @@ function setCurrentHour(self){
 					});
 				}
 			})
+			resolve('resolved');
 		})
 	}
 
 	async function addCurrentHourObjects() {
 		//first do updateVariables() and wait until its finished
-		const result= await updateVariables()
+		const result= await updateVariables();
 		self.log.debug('...and now add current_hour objects.');
 
 		//*** Create current_hour object  ***
