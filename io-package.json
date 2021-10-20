@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "1.0.0",
+		"version": "1.0.1",
 		"news": {
+			"1.0.1": {
+				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nThis change makes it necessary to regenerate IDs. So, to install version 1.0.1, the currently running adapter instance must be completely removed and replaced with a new instance."
+			},
 			"1.0.0": {
 				"en": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64"
 			},
