@@ -62,7 +62,7 @@ function isValidJSONString(str) {
 function getTimeFormattet(actualDate) {
 	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
-	var sec = (actualDate.getSeconds()<10?'0':'') + actualDate.getSeconds();
+//	var sec = (actualDate.getSeconds()<10?'0':'') + actualDate.getSeconds(); // removed due to https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57
 	return hour + min;
 }
 
