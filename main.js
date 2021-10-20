@@ -776,407 +776,419 @@ function setCurrentHour(self){
 	var local_local_date_time  = "1970-01-01T00:00:00+02:00";
 	var local_type             = "dummy";
 
+
 	// update current_hour objects
-	self.getState(path + '.0000.DD_DEG', (err, state) => {
-		if (!state || state.val === null) {
-			self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
-		} else {
-			self.log.debug('forecast data is available. State.val is: ' + state.val +': So updating current_hour...read correspondenting hour forecast from ' +
-				'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
+	function updateVariables() {
+		return new Promise((resolve, reject) => {
+			self.getState(path + '.0000.DD_DEG', (err, state) => {
+				if (!state || state.val === null) {
+					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
+				} else {
+					self.log.debug('forecast data is available. State.val is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
+						'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
-			self.getState(path + '.' + hour +'00.cur_color.background_color', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)) {
-					local_background_color = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.cur_color.background_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+					self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_background_color = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.cur_color.background_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.cur_color.temperature', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_temperature = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.cur_color.temperature' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.cur_color.text_color', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_text_color = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.cur_color.text_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.DD_DEG', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_DD_DEG = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.DD_DEG' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.FF_KMH', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_FF_KMH = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.FF_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.FX_KMH', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_FX_KMH = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.FX_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.ICON_URL_COLOR', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_ICON_URL_COLOR = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.ICON_URL_COLOR' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.ICON_URL_DARK', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_ICON_URL_DARK = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.ICON_URL_DARK' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.ICON_URL_LIGHT', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_ICON_URL_LIGHT = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.ICON_URL_LIGHT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.PROBPCP_PERCENT', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_PROBPCP_PERCENT = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.PROBPCP_PERCENT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.RRR_MM', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_RRR_MM = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.RRR_MM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.SYMBOL_CODE', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_SYMBOL_CODE = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.SYMBOL_CODE' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.TTH_C', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_TTH_C = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.TTH_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.TTL_C', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_TTL_C = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.TTL_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.TTT_C', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_TTT_C = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.TTT_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.local_date_time', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_local_date_time = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.local_date_time' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
+					self.getState(path + '.' + hour + '00.type', function (err, state) {
+						if ((typeof state !== "undefined") && (state !== null)) {
+							local_type = state.val;
+						} else {
+							self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+						}
+					});
 				}
-			});
-			self.getState(path + '.' + hour +'00.cur_color.temperature', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_temperature = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.cur_color.temperature' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.cur_color.text_color', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_text_color = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.cur_color.text_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.DD_DEG', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_DD_DEG = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.DD_DEG' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.FF_KMH', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_FF_KMH = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.FF_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.FX_KMH', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_FX_KMH = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.FX_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.ICON_URL_COLOR', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_ICON_URL_COLOR = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.ICON_URL_COLOR' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.ICON_URL_DARK', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_ICON_URL_DARK = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.ICON_URL_DARK' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.ICON_URL_LIGHT', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_ICON_URL_LIGHT = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.ICON_URL_LIGHT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.PROBPCP_PERCENT', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_PROBPCP_PERCENT = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.PROBPCP_PERCENT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.RRR_MM', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_RRR_MM = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.RRR_MM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.SYMBOL_CODE', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_SYMBOL_CODE = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.SYMBOL_CODE' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.TTH_C', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_TTH_C = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.TTH_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.TTL_C', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_TTL_C = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.TTL_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.TTT_C', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_TTT_C = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.TTT_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.local_date_time', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_local_date_time = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.local_date_time' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
-			self.getState(path + '.' + hour +'00.type', function(err, state) {
-				if ((typeof state !== "undefined") && (state !== null)){
-					local_type = state.val;
-				} else {
-					self.log.info(path + '.' + hour +'00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
-				}
-			});
+			})
+		})
+	}
 
-			//*** Create current_hour object  ***
-			self.setObjectNotExists(updatePath, {
-				type: "channel",
-				common: {
-					name: "Holds the current hour data. This is updated on every full hour by coping the data from forecast.60minutes.day0 - actual hour",
-					role: "info"
-				},
-				native: {},
-			});
+	async function addCurrentHourObjects() {
+		//first do updateVariables() and wait until its finished
+		const result= await updateVariables()
 
-			self.setObjectNotExists(updatePath + "." + "local_date_time", {
-				type: "state",
-				common: {
-					name: "Date for validity of record",
-					type: "string",
-					role: "text",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "local_date_time", {
-					val: local_local_date_time,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "TTT_C", {
-				type: "state",
-				common: {
-					name: "Current temperature in °C",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "TTT_C", {
-					val: local_TTT_C,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "TTL_C", {
-				type: "state",
-				common: {
-					name: "Error range lower limit",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "TTL_C", {
-					val: local_TTL_C,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "TTH_C", {
-				type: "state",
-				common: {
-					name: "Error range upper limit",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "TTH_C", {
-					val: local_TTH_C,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "PROBPCP_PERCENT", {
-				type: "state",
-				common: {
-					name: "Probability of precipitation in %",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "PROBPCP_PERCENT", {
-					val: local_PROBPCP_PERCENT,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "RRR_MM", {
-				type: "state",
-				common: {
-					name: "Precipitation total",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "RRR_MM", {
-					val: local_RRR_MM,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "FF_KMH", {
-				type: "state",
-				common: {
-					name: "Wind speed in km/h",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "FF_KMH", {
-					val: local_FF_KMH,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "FX_KMH", {
-				type: "state",
-				common: {
-					name: "Peak wind speed in km/h",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "FX_KMH", {
-					val: local_FX_KMH,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "DD_DEG", {
-				type: "state",
-				common: {
-					name: "Wind direction in angular degrees: 0 = North wind",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "DD_DEG", {
-					val: local_DD_DEG,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "SYMBOL_CODE", {
-				type: "state",
-				common: {
-					name: "Mapping to weather icon",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "SYMBOL_CODE", {
-					val: local_SYMBOL_CODE,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "ICON_URL_COLOR", {
-				type: "state",
-				common: {
-					name: "URL to color Icon",
-					type: "string",
-					role: "weather.icon"
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "ICON_URL_COLOR", {
-					val: local_ICON_URL_COLOR,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "ICON_URL_DARK", {
-				type: "state",
-				common: {
-					name: "URL to dark Icon",
-					type: "string",
-					role: "weather.icon"
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "ICON_URL_DARK", {
-					val: local_ICON_URL_DARK,
-					ack: true
-				});
-			});
-			self.setObjectNotExists(updatePath + "." + "ICON_URL_LIGHT", {
-				type: "state",
-				common: {
-					name: "URL to light Icon",
-					type: "string",
-					role: "weather.icon"
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "ICON_URL_LIGHT", {
-					val: local_ICON_URL_LIGHT,
-					ack: true
-				});
-			});
+		//*** Create current_hour object  ***
+		self.setObjectNotExists(updatePath, {
+			type: "channel",
+			common: {
+				name: "Holds the current hour data. This is updated on every full hour by coping the data from forecast.60minutes.day0 - actual hour",
+				role: "info"
+			},
+			native: {},
+		});
 
-			self.setObjectNotExists(updatePath + "." + "type", {
-				type: "state",
-				common: {
-					name: "result set; possible values: 60minutes, hour, day",
-					type: "string",
-					role: "text",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "type", {
-					val: local_type,
-					ack: true
-				});
+		self.setObjectNotExists(updatePath + "." + "local_date_time", {
+			type: "state",
+			common: {
+				name: "Date for validity of record",
+				type: "string",
+				role: "text",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "local_date_time", {
+				val: local_local_date_time,
+				ack: true
 			});
-			self.setObjectNotExists(updatePath + "." + "cur_color", {
-				type: "channel",
-				common: {
-					name: "Mapping temperature / color value",
-					role: "info"
-				},
-				native: {},
+		});
+		self.setObjectNotExists(updatePath + "." + "TTT_C", {
+			type: "state",
+			common: {
+				name: "Current temperature in °C",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "TTT_C", {
+				val: local_TTT_C,
+				ack: true
 			});
-			self.setObjectNotExists(updatePath + "." + "cur_color." + "temperature", {
-				type: "state",
-				common: {
-					name: "Temperature value",
-					type: "number",
-					role: "value",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "cur_color." + "temperature", {
-					val: local_temperature,
-					ack: true
-				});
+		});
+		self.setObjectNotExists(updatePath + "." + "TTL_C", {
+			type: "state",
+			common: {
+				name: "Error range lower limit",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "TTL_C", {
+				val: local_TTL_C,
+				ack: true
 			});
-			self.setObjectNotExists(updatePath + "." + "cur_color." + "background_color", {
-				type: "state",
-				common: {
-					name: "background hex color value",
-					type: "string",
-					role: "text",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "cur_color." + "background_color", {
-					val: local_background_color,
-					ack: true
-				});
+		});
+		self.setObjectNotExists(updatePath + "." + "TTH_C", {
+			type: "state",
+			common: {
+				name: "Error range upper limit",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "TTH_C", {
+				val: local_TTH_C,
+				ack: true
 			});
-			self.setObjectNotExists(updatePath + "." + "cur_color." + "text_color", {
-				type: "state",
-				common: {
-					name: "text hex color value",
-					type: "string",
-					role: "text",
-					write: false
-				},
-				native: {},
-			}, function () {
-				self.setState(updatePath + "." + "cur_color." + "text_color", {
-					val: local_text_color,
-					ack: true
-				});
+		});
+		self.setObjectNotExists(updatePath + "." + "PROBPCP_PERCENT", {
+			type: "state",
+			common: {
+				name: "Probability of precipitation in %",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "PROBPCP_PERCENT", {
+				val: local_PROBPCP_PERCENT,
+				ack: true
 			});
-		}
-	});
+		});
+		self.setObjectNotExists(updatePath + "." + "RRR_MM", {
+			type: "state",
+			common: {
+				name: "Precipitation total",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "RRR_MM", {
+				val: local_RRR_MM,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "FF_KMH", {
+			type: "state",
+			common: {
+				name: "Wind speed in km/h",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "FF_KMH", {
+				val: local_FF_KMH,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "FX_KMH", {
+			type: "state",
+			common: {
+				name: "Peak wind speed in km/h",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "FX_KMH", {
+				val: local_FX_KMH,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "DD_DEG", {
+			type: "state",
+			common: {
+				name: "Wind direction in angular degrees: 0 = North wind",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "DD_DEG", {
+				val: local_DD_DEG,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "SYMBOL_CODE", {
+			type: "state",
+			common: {
+				name: "Mapping to weather icon",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "SYMBOL_CODE", {
+				val: local_SYMBOL_CODE,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "ICON_URL_COLOR", {
+			type: "state",
+			common: {
+				name: "URL to color Icon",
+				type: "string",
+				role: "weather.icon"
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "ICON_URL_COLOR", {
+				val: local_ICON_URL_COLOR,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "ICON_URL_DARK", {
+			type: "state",
+			common: {
+				name: "URL to dark Icon",
+				type: "string",
+				role: "weather.icon"
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "ICON_URL_DARK", {
+				val: local_ICON_URL_DARK,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "ICON_URL_LIGHT", {
+			type: "state",
+			common: {
+				name: "URL to light Icon",
+				type: "string",
+				role: "weather.icon"
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "ICON_URL_LIGHT", {
+				val: local_ICON_URL_LIGHT,
+				ack: true
+			});
+		});
+
+		self.setObjectNotExists(updatePath + "." + "type", {
+			type: "state",
+			common: {
+				name: "result set; possible values: 60minutes, hour, day",
+				type: "string",
+				role: "text",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "type", {
+				val: local_type,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "cur_color", {
+			type: "channel",
+			common: {
+				name: "Mapping temperature / color value",
+				role: "info"
+			},
+			native: {},
+		});
+		self.setObjectNotExists(updatePath + "." + "cur_color." + "temperature", {
+			type: "state",
+			common: {
+				name: "Temperature value",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "cur_color." + "temperature", {
+				val: local_temperature,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "cur_color." + "background_color", {
+			type: "state",
+			common: {
+				name: "background hex color value",
+				type: "string",
+				role: "text",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "cur_color." + "background_color", {
+				val: local_background_color,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "cur_color." + "text_color", {
+			type: "state",
+			common: {
+				name: "text hex color value",
+				type: "string",
+				role: "text",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "cur_color." + "text_color", {
+				val: local_text_color,
+				ack: true
+			});
+		});
+	}
+
+	addCurrentHourObjects();
 }
 
 /**
