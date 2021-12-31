@@ -752,34 +752,36 @@ function getToken(self,myCallback){
  * @param self Adapter
  */
 function setCurrentHour(self){
-	let path = self.namespace + ".forecast.60minutes.day0"
-	let updatePath = "forecast.current_hour";
 	self.log.info('update current hour...');
-	//get systemtime hour
-	var date = new Date();
-	var hour = (date.getHours()<10?'0':'') + date.getHours();
-	var local_background_color = "dummy";
-	var local_temperature      = 0;
-	var local_text_color       = "dummy";
-	var local_DD_DEG           = 0;
-	var local_FF_KMH           = 0;
-	var local_FX_KMH           = 0;
-	var local_ICON_URL_COLOR   = "dummy";
-	var local_ICON_URL_DARK    = "dummy";
-	var local_ICON_URL_LIGHT   = "dummy";
-	var local_PROBPCP_PERCENT  = 0;
-	var local_RRR_MM           = 0;
-	var local_SYMBOL_CODE      = 0;
-	var local_TTH_C            = 0;
-	var local_TTL_C            = 0;
-	var local_TTT_C            = 0;
-	var local_local_date_time  = "1970-01-01T00:00:00+02:00";
-	var local_type             = "dummy";
-
 
 	// update current_hour objects
 	function updateVariables() {
-		return new Promise((resolve, reject) => {
+		var promise = new Promise((resolve, reject) => {
+			self.log.debug('Defining local current_hour variables...');
+			let path = self.namespace + ".forecast.60minutes.day0"
+
+			//get systemtime hour
+			var date = new Date();
+			var hour = (date.getHours()<10?'0':'') + date.getHours();
+			let currentHourVariables = {};
+			Object.assign(currentHourVariables, {local_background_color: "dummy"});
+			Object.assign(currentHourVariables, {local_temperature     : 0});
+			Object.assign(currentHourVariables, {local_text_color      : "dummy"});
+			Object.assign(currentHourVariables, {local_DD_DEG          : 0});
+			Object.assign(currentHourVariables, {local_FF_KMH          : 0});
+			Object.assign(currentHourVariables, {local_FX_KMH          : 0});
+			Object.assign(currentHourVariables, {local_ICON_URL_COLOR  : "dummy"});
+			Object.assign(currentHourVariables, {local_ICON_URL_DARK   : "dummy"});
+			Object.assign(currentHourVariables, {local_ICON_URL_LIGHT  : "dummy"});
+			Object.assign(currentHourVariables, {local_PROBPCP_PERCENT : 0});
+			Object.assign(currentHourVariables, {local_RRR_MM          : 0});
+			Object.assign(currentHourVariables, {local_SYMBOL_CODE     : 0});
+			Object.assign(currentHourVariables, {local_TTH_C           : 0});
+			Object.assign(currentHourVariables, {local_TTL_C           : 0});
+			Object.assign(currentHourVariables, {local_TTT_C           : 0});
+			Object.assign(currentHourVariables, {local_local_date_time : "1970-01-01T00:00:00+02:00"});
+			Object.assign(currentHourVariables, {local_type            : "dummy"});
+
 			self.log.debug('Updating local current_hour variables...');
 			self.getState(path + '.0000.DD_DEG', (err, state) => {
 				if (!state || state.val === null) {
@@ -791,136 +793,139 @@ function setCurrentHour(self){
 
 						self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_background_color = state.val;
+								currentHourVariables.local_background_color = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.cur_color.background_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.cur_color.temperature', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_temperature = state.val;
+								currentHourVariables.local_temperature = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.cur_color.temperature' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.cur_color.text_color', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_text_color = state.val;
+								currentHourVariables.local_text_color = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.cur_color.text_color' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.DD_DEG', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_DD_DEG = state.val;
+								currentHourVariables.local_DD_DEG = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.DD_DEG' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.FF_KMH', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_FF_KMH = state.val;
+								currentHourVariables.local_FF_KMH = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.FF_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.FX_KMH', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_FX_KMH = state.val;
+								currentHourVariables.local_FX_KMH = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.FX_KMH' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_COLOR', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_ICON_URL_COLOR = state.val;
+								currentHourVariables.local_ICON_URL_COLOR = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.ICON_URL_COLOR' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_DARK', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_ICON_URL_DARK = state.val;
+								currentHourVariables.local_ICON_URL_DARK = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.ICON_URL_DARK' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_LIGHT', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_ICON_URL_LIGHT = state.val;
+								currentHourVariables.local_ICON_URL_LIGHT = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.ICON_URL_LIGHT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.PROBPCP_PERCENT', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_PROBPCP_PERCENT = state.val;
+								currentHourVariables.local_PROBPCP_PERCENT = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.PROBPCP_PERCENT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.RRR_MM', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_RRR_MM = state.val;
+								currentHourVariables.local_RRR_MM = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.RRR_MM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.SYMBOL_CODE', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_SYMBOL_CODE = state.val;
+								currentHourVariables.local_SYMBOL_CODE = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.SYMBOL_CODE' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTH_C', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_TTH_C = state.val;
+								currentHourVariables.local_TTH_C = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.TTH_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTL_C', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_TTL_C = state.val;
+								currentHourVariables.local_TTL_C = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.TTL_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTT_C', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_TTT_C = state.val;
+								currentHourVariables.local_TTT_C = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.TTT_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.local_date_time', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_local_date_time = state.val;
+								currentHourVariables.local_local_date_time = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.local_date_time' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						self.getState(path + '.' + hour + '00.type', function (err, state) {
 							if ((typeof state !== "undefined") && (state !== null)) {
-								local_type = state.val;
+								currentHourVariables.local_type = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
 						next()
 					}(function() {
-						resolve('resolved');
+						resolve(currentHourVariables);
 					}))
 				}
 			})
 		})
+		return promise;
 	}
 
 	async function addCurrentHourObjects() {
 		//first do updateVariables() and wait until its finished
 		const result= await updateVariables();
+		let updatePath = "forecast.current_hour";
 		self.log.debug('...and now add current_hour objects.');
+
 
 		//*** Create current_hour object  ***
 		self.setObjectNotExists(updatePath, {
@@ -943,7 +948,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "local_date_time", {
-				val: local_local_date_time,
+				val: result.local_local_date_time,
 				ack: true
 			});
 		});
@@ -958,7 +963,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTT_C", {
-				val: local_TTT_C,
+				val: result.local_TTT_C,
 				ack: true
 			});
 		});
@@ -973,7 +978,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTL_C", {
-				val: local_TTL_C,
+				val: result.local_TTL_C,
 				ack: true
 			});
 		});
@@ -988,7 +993,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "TTH_C", {
-				val: local_TTH_C,
+				val: result.local_TTH_C,
 				ack: true
 			});
 		});
@@ -1003,7 +1008,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "PROBPCP_PERCENT", {
-				val: local_PROBPCP_PERCENT,
+				val: result.local_PROBPCP_PERCENT,
 				ack: true
 			});
 		});
@@ -1018,7 +1023,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "RRR_MM", {
-				val: local_RRR_MM,
+				val: result.local_RRR_MM,
 				ack: true
 			});
 		});
@@ -1033,7 +1038,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "FF_KMH", {
-				val: local_FF_KMH,
+				val: result.local_FF_KMH,
 				ack: true
 			});
 		});
@@ -1048,7 +1053,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "FX_KMH", {
-				val: local_FX_KMH,
+				val: result.local_FX_KMH,
 				ack: true
 			});
 		});
@@ -1063,7 +1068,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "DD_DEG", {
-				val: local_DD_DEG,
+				val: result.local_DD_DEG,
 				ack: true
 			});
 		});
@@ -1078,7 +1083,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "SYMBOL_CODE", {
-				val: local_SYMBOL_CODE,
+				val: result.local_SYMBOL_CODE,
 				ack: true
 			});
 		});
@@ -1092,7 +1097,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_COLOR", {
-				val: local_ICON_URL_COLOR,
+				val: result.local_ICON_URL_COLOR,
 				ack: true
 			});
 		});
@@ -1106,7 +1111,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_DARK", {
-				val: local_ICON_URL_DARK,
+				val: result.local_ICON_URL_DARK,
 				ack: true
 			});
 		});
@@ -1120,7 +1125,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "ICON_URL_LIGHT", {
-				val: local_ICON_URL_LIGHT,
+				val: result.local_ICON_URL_LIGHT,
 				ack: true
 			});
 		});
@@ -1136,7 +1141,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "type", {
-				val: local_type,
+				val: result.local_type,
 				ack: true
 			});
 		});
@@ -1159,7 +1164,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "temperature", {
-				val: local_temperature,
+				val: result.local_temperature,
 				ack: true
 			});
 		});
@@ -1174,7 +1179,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "background_color", {
-				val: local_background_color,
+				val: result.local_background_color,
 				ack: true
 			});
 		});
@@ -1189,7 +1194,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "text_color", {
-				val: local_text_color,
+				val: result.local_text_color,
 				ack: true
 			});
 		});
