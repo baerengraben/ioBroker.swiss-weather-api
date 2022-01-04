@@ -758,11 +758,32 @@ function setCurrentHour(self){
 	function updateVariables() {
 		var promise = new Promise((resolve, reject) => {
 			self.log.debug('Defining local current_hour variables...');
-			let path = self.namespace + ".forecast.60minutes.day0"
 
 			//get systemtime hour
 			var date = new Date();
 			var hour = (date.getHours()<10?'0':'') + date.getHours();
+
+			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52
+ 			var path = self.namespace + ".forecast.60minutes.day0";
+		 	var forecastDate = new Date();
+			if (date.getHours()===0){
+				//check if forecast values already has nextday values in day0/0000
+				self.getState(self.namespace + ".forecast.60minutes.day0.0000.local_date_time", function (err, state) {
+					if ((typeof state !== "undefined") && (state !== null)) {
+						forecastDate = new Date(state.val);
+					} else {
+						self.log.error("Cannot read local_date_time" + ':' + 'This should not happen. Please go to github and create an issue.');
+					}
+				});
+
+				if (date.getDay() === forecastDate.getDay()){
+					self.log.log("forecast is containing aktual values vor 00:00. So using day0 values");
+				} else {
+					self.log.log("forecast is containing yesterdays values vor 00:00. So using day1 values.");
+					path = self.namespace + ".forecast.60minutes.day1"
+				}
+			}
+
 			let currentHourVariables = {};
 			Object.assign(currentHourVariables, {local_background_color: "dummycolor"});
 			Object.assign(currentHourVariables, {local_temperature     : 0});
