@@ -73,7 +73,7 @@ function getTimeFormattet(actualDate) {
  */
 function getActualDateFormattet(actualDate) {
 	var	year = (actualDate.getFullYear());
-	var month = (actualDate.getMonth()<10?'0':'') + actualDate.getMonth();
+	var month = ((actualDate.getMonth()+1)<10?'0':'') + actualDate.getMonth()+1;
 	var day = (actualDate.getDate()<10?'0':'') + actualDate.getDate();
 	var hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
 	var minutes = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
