@@ -764,15 +764,15 @@ function setCurrentHour(self){
 			var date = new Date();
 			var hour = (date.getHours()<10?'0':'') + date.getHours();
 			let currentHourVariables = {};
-			Object.assign(currentHourVariables, {local_background_color: "dummy"});
+			Object.assign(currentHourVariables, {local_background_color: "dummycolor"});
 			Object.assign(currentHourVariables, {local_temperature     : 0});
-			Object.assign(currentHourVariables, {local_text_color      : "dummy"});
+			Object.assign(currentHourVariables, {local_text_color      : "dummycolor"});
 			Object.assign(currentHourVariables, {local_DD_DEG          : 0});
 			Object.assign(currentHourVariables, {local_FF_KMH          : 0});
 			Object.assign(currentHourVariables, {local_FX_KMH          : 0});
-			Object.assign(currentHourVariables, {local_ICON_URL_COLOR  : "dummy"});
-			Object.assign(currentHourVariables, {local_ICON_URL_DARK   : "dummy"});
-			Object.assign(currentHourVariables, {local_ICON_URL_LIGHT  : "dummy"});
+			Object.assign(currentHourVariables, {local_ICON_URL_COLOR  : "dummyicon"});
+			Object.assign(currentHourVariables, {local_ICON_URL_DARK   : "dummyicon"});
+			Object.assign(currentHourVariables, {local_ICON_URL_LIGHT  : "dummyicon"});
 			Object.assign(currentHourVariables, {local_PROBPCP_PERCENT : 0});
 			Object.assign(currentHourVariables, {local_RRR_MM          : 0});
 			Object.assign(currentHourVariables, {local_SYMBOL_CODE     : 0});
@@ -780,7 +780,7 @@ function setCurrentHour(self){
 			Object.assign(currentHourVariables, {local_TTL_C           : 0});
 			Object.assign(currentHourVariables, {local_TTT_C           : 0});
 			Object.assign(currentHourVariables, {local_local_date_time : "1970-01-01T00:00:00+02:00"});
-			Object.assign(currentHourVariables, {local_type            : "dummy"});
+			Object.assign(currentHourVariables, {local_type            : "dummytype"});
 
 			self.log.debug('Updating local current_hour variables...');
 			self.getState(path + '.0000.DD_DEG', (err, state) => {
