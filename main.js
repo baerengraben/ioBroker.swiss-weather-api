@@ -770,9 +770,9 @@ function setCurrentHour(self){
 				self.getState(self.namespace + ".forecast.60minutes.day0.0000.local_date_time", function (err, state) {
 					if ((typeof state !== "undefined") && (state !== null)) {
 						if (date.getDay() === new Date(state.val).getDay()){
-							self.log.log("forecast is containing aktual values vor 00:00. So using day0 values");
+							self.log.info("forecast is containing aktual values vor 00:00. So using day0 values");
 						} else {
-							self.log.log("forecast is containing yesterdays values vor 00:00. So using day1 values.");
+							self.log.info("forecast is containing yesterdays values vor 00:00. So using day1 values.");
 							path = self.namespace + ".forecast.60minutes.day1"
 						}
 					} else {
