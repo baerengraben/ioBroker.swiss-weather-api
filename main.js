@@ -806,7 +806,7 @@ function setCurrentHour(self){
 					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
 				} else {
 					(function(next) {
-						self.log.debug('forecast data is available. State.val is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
+						self.log.debug('forecast data is available. ' + path + '.0000.DD_DEG is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
 							'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
 						self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
@@ -845,6 +845,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.FX_KMH', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.FX_KMH' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_FX_KMH = state.val;
 							} else {
@@ -852,6 +855,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_COLOR', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.ICON_URL_COLOR' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_ICON_URL_COLOR = state.val;
 							} else {
@@ -859,6 +865,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_DARK', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.ICON_URL_DARK' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_ICON_URL_DARK = state.val;
 							} else {
@@ -866,6 +875,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.ICON_URL_LIGHT', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.ICON_URL_LIGHT' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_ICON_URL_LIGHT = state.val;
 							} else {
@@ -942,7 +954,7 @@ function setCurrentHour(self){
 		//first do updateVariables() and wait until its finished
 		const result= await updateVariables();
 		let updatePath = "forecast.current_hour";
-		self.log.debug('...and now add current_hour objects.');
+		self.log.debug('...and now add updated variables to current_hour objects.');
 
 
 		//*** Create current_hour object  ***
