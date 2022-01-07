@@ -813,6 +813,9 @@ function setCurrentHour(self){
 							'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 
 						self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.cur_color.background_color' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_background_color = state.val;
 							} else {
@@ -820,6 +823,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.cur_color.temperature', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.cur_color.temperature' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_temperature = state.val;
 							} else {
@@ -827,6 +833,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.cur_color.text_color', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.cur_color.text_color' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_text_color = state.val;
 							} else {
@@ -834,6 +843,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.DD_DEG', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.DD_DEG' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_DD_DEG = state.val;
 							} else {
@@ -841,6 +853,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.FF_KMH', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.FF_KMH' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_FF_KMH = state.val;
 							} else {
@@ -888,6 +903,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.PROBPCP_PERCENT', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.PROBPCP_PERCENT' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_PROBPCP_PERCENT = state.val;
 							} else {
@@ -895,6 +913,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.RRR_MM', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.RRR_MM' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_RRR_MM = state.val;
 							} else {
@@ -902,6 +923,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.SYMBOL_CODE', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.SYMBOL_CODE' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_SYMBOL_CODE = state.val;
 							} else {
@@ -909,6 +933,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTH_C', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.TTH_C' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_TTH_C = state.val;
 							} else {
@@ -916,6 +943,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTL_C', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.TTL_C' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_TTL_C = state.val;
 							} else {
@@ -923,6 +953,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.TTT_C', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.TTT_C' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_TTT_C = state.val;
 							} else {
@@ -930,6 +963,9 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.local_date_time', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.local_date_time' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_local_date_time = state.val;
 							} else {
@@ -937,13 +973,16 @@ function setCurrentHour(self){
 							}
 						});
 						self.getState(path + '.' + hour + '00.type', function (err, state) {
+							if (err){
+								self.log.error(path + '.' + hour + '00.type' + ':' + 'This should not happen. Error is ' + err.message);
+							}
 							if ((typeof state !== "undefined") && (state !== null)) {
 								currentHourVariables.local_type = state.val;
 							} else {
 								self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
-						next()
+						next();
 					}(function() {
 						resolve(currentHourVariables);
 					}))
