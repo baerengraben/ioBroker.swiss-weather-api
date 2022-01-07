@@ -177,7 +177,7 @@ This change makes it necessary to regenerate IDs. So, to install version 1.0.1, 
 ## License
 MIT License
 
-Copyright (c) 2021 baerengraben <baerengraben@intelli.ch>
+Copyright (c) 2022 baerengraben <baerengraben@intelli.ch>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
