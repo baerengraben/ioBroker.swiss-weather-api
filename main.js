@@ -802,6 +802,9 @@ function setCurrentHour(self){
 
 			self.log.debug('Updating local current_hour variables...');
 			self.getState(path + '.0000.DD_DEG', (err, state) => {
+				if (err){
+					self.log.error(path + '.0000.DD_DEG' + ':' + 'Error. This should not happen. Error is ' + err.message);
+				}
 				if (!state || state.val === null) {
 					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
 				} else {
