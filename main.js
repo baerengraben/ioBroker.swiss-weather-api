@@ -808,10 +808,10 @@ function setCurrentHour(self){
 				if (!state || state.val === null) {
 					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
 				} else {
-					(function(next) {
+					// (function(next) {
+					(function() {
 						self.log.debug('forecast data is available. ' + path + '.0000.DD_DEG is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
 							'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
-
 						self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
 							if (err){
 								self.log.error(path + '.' + hour + '00.cur_color.background_color' + ':' + 'This should not happen. Error is ' + err.message);
@@ -982,10 +982,13 @@ function setCurrentHour(self){
 								self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 							}
 						});
-						next();
-					}(function() {
+						// next();
 						resolve(currentHourVariables);
-					}))
+						}
+						// (function() {
+						// 	resolve(currentHourVariables);
+						// })
+					)
 				}
 			})
 		})
