@@ -1283,7 +1283,6 @@ function setCurrentHour(self){
 			addCurrentHourObjects(result);
 		},
 		(error) => {
-			// As the URL is a valid one, this will not be called.
 			self.log.error(error.message); // Log an error
 		});
 
