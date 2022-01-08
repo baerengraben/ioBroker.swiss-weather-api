@@ -996,9 +996,10 @@ function setCurrentHour(self){
 		return promise;
 	}
 
-	async function addCurrentHourObjects() {
+	function addCurrentHourObjects(result) {
 		//first do updateVariables() and wait until its finished
-		const result= await updateVariables();
+		// const result =  updateVariables();
+
 		let updatePath = "forecast.current_hour";
 		self.log.debug('...and now add updated variables to current_hour objects.');
 
@@ -1276,7 +1277,17 @@ function setCurrentHour(self){
 		});
 	}
 
-	addCurrentHourObjects();
+	let promise = updateVariables();
+	promise.then(
+		(result) => {
+			addCurrentHourObjects(result);
+		},
+		(error) => {
+			// As the URL is a valid one, this will not be called.
+			self.log.error(error.message); // Log an error
+		});
+
+	// addCurrentHourObjects();
 }
 
 /**
