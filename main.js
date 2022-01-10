@@ -801,19 +801,17 @@ function setCurrentHour(self){
 			Object.assign(currentHourVariables, {local_type            : "dummytype"});
 
 			self.log.debug('Updating local current_hour variables...');
-			self.getState(path + '.0000.DD_DEG', (err, state) => {
-				if (err) {
-					self.log.error(path + '.0000.DD_DEG' + ':' + 'Error. This should not happen. Error is ' + err.message);
-					reject("no forecast data is available");
-				}
-				if (!state || state.val === null) {
-					self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
-					reject("no forecast data is available");
-				} else {
-					// (function(next) {
-					// (function() {
-					self.log.debug('forecast data is available. ' + path + '.0000.DD_DEG is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
-						'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
+			// self.getState(path + '.0000.DD_DEG', (err, state) => {
+			// 	if (err) {
+			// 		self.log.error(path + '.0000.DD_DEG' + ':' + 'Error. This should not happen. Error is ' + err.message);
+			// 		reject("no forecast data is available");
+			// 	}
+			// 	if (!state || state.val === null) {
+			// 		self.log.debug('tried to update current_hour, but no forecast data is available for ' + path + '.0000.DD_DEG' + '. Try my luck on next hour...');
+			// 		reject("no forecast data is available");
+			// 	} else {
+			// 		self.log.debug('forecast data is available. ' + path + '.0000.DD_DEG is: ' + state.val + ': So updating current_hour...read correspondenting hour forecast from ' +
+			// 			'swiss-weather-api.0.forecast.60minutes.day0.actual_hour and write it to swiss-weather-api.0.forecast.current_hour');
 					self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
 						if (err) {
 							self.log.error(path + '.' + hour + '00.cur_color.background_color' + ':' + 'This should not happen. Error is ' + err.message);
@@ -984,14 +982,9 @@ function setCurrentHour(self){
 							self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 						}
 					});
-					// next();
 					resolve(currentHourVariables);
-				}
-				// (function() {
-				// 	resolve(currentHourVariables);
-				// })
-				// )
-			})
+				// }
+			// })
 		})
 		return promise;
 	}
@@ -1285,8 +1278,6 @@ function setCurrentHour(self){
 		(error) => {
 			self.log.error(error.message); // Log an error
 		});
-
-	// addCurrentHourObjects();
 }
 
 /**
