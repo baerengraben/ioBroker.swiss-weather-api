@@ -1,8 +1,11 @@
 {
 	"common": {
 		"name": "swiss-weather-api",
-		"version": "1.0.2",
+		"version": "1.0.3",
 		"news": {
+			"1.0.3": {
+				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52"
+			},
 			"1.0.2": {
 				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53"
 			},
@@ -41,9 +44,6 @@
 			},
 			"0.9.0": {
 				"en": "Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API will be decommissioned on Sept. 2021)"
-			},
-			"0.3.2": {
-				"en": "Fix for https://github.com/baerengraben/iobroker.swiss-weather-api/issues/13"
 			}
 		},
 		"title": "Swiss Weather API (SRF Weather)",
