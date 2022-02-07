@@ -971,8 +971,8 @@ function setCurrentHour(self){
 					self.log.info(path + '.' + hour + '00.type' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
-			// Test für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66
-			// Abwarten, bis alle getStates erledigt sind. 5s sollte reichen...
+			// Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66
+			// Wait 5s to ensure, that all "getStates" are done
 			setTimeout(function() { resolve(currentHourVariables); }, 5000)
 		})
 		return promise;
