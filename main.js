@@ -1293,6 +1293,8 @@ function getForecast(self){
 	today6 = new Date().addDays(6);
 	// @ts-ignore
 	today7 = new Date().addDays(7);
+	// @ts-ignore
+	today8 = new Date().addDays(8);
 	lastSuccessfulRun = getActualDateFormattet(today);
 
 	//Get forecast
