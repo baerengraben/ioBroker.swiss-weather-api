@@ -31,6 +31,8 @@ var today6;
 // @ts-ignore
 var today7;
 // @ts-ignore
+var today8;
+// @ts-ignore
 var lastSuccessfulRun;
 
 // @ts-ignore
@@ -1789,12 +1791,8 @@ function getForecast(self){
 						myPath = "day2";
 					} else if (index > 71 && index < 96) {
 						myPath = "day3";
-					} else if (index > 95) {
+					} else if (index > 95 && index < 120) {
 						myPath = "day4";
-					} else {
-						self.setState('info.connection', false, true);
-						self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
-						return;
 					}
 
 					if (typeof obj.local_date_time !== undf || obj.local_date_time != null) {
@@ -2217,10 +2215,9 @@ function getForecast(self){
 					} else if (index === 7) {
 						myPath = "day7";
 						day_name = getDayName(today7, self.defaultLanguage);
-					} else {
-						self.setState('info.connection', false, true);
-						self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
-						return;
+					} else if (index === 8) {
+						myPath = "day8";
+						day_name = getDayName(today8, self.defaultLanguage);
 					}
 					self.setObjectNotExists("forecast." + "day." + myPath + "." + myTime + "." + "day_name", {
 						type: "state",
@@ -2719,12 +2716,9 @@ function getForecast(self){
 						myPath = "day6";
 					} else if (index > 55 && index < 64) {
 						myPath = "day7";
-					} else {
-						self.setState('info.connection', false, true);
-						self.log.error("This should never happen. Please rerun adapter with debug-level and report it on https://github.com/baerengraben/ioBroker.swiss-weather-api/issues");
-						return;
+					} else if (index > 63 && index < 72) {
+						myPath = "day8";
 					}
-
 					if (typeof obj.local_date_time !== undf || obj.local_date_time != null) {
 						self.setObjectNotExists("forecast." + "hour." + myPath + "." + myTime + "." + "local_date_time", {
 							type: "state",
