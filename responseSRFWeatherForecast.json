@@ -1,6 +1,3 @@
-// Forecast by geolocationid
-// Example Response of the new SRF Weather API - 10.05.2021
-// https://api.srgssr.ch/srf-meteo/forecast/47.0401,7.3749
 {
   "geolocation": {
     "id": "47.0401,7.3749",

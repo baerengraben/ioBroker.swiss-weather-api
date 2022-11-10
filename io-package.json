@@ -105,7 +105,7 @@
 		"ConsumerSecret": "",
 		"Latitude": "",
 		"Longitude": "",
-		"PollInterval": "30"
+		"PollInterval": "60"
 	},
 	"objects": [],
 	"instanceObjects": [
