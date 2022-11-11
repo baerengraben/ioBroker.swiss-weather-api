@@ -33,6 +33,8 @@ var today7;
 // @ts-ignore
 var today8;
 // @ts-ignore
+var today9;
+// @ts-ignore
 var lastSuccessfulRun;
 
 // @ts-ignore
@@ -1295,6 +1297,8 @@ function getForecast(self){
 	today7 = new Date().addDays(7);
 	// @ts-ignore
 	today8 = new Date().addDays(8);
+	// @ts-ignore
+	today9 = new Date().addDays(9);
 	lastSuccessfulRun = getActualDateFormattet(today);
 
 	//Get forecast
@@ -2183,6 +2187,14 @@ function getForecast(self){
 				},
 				native: {},
 			});
+			self.setObjectNotExists("forecast." + "day.day8", {
+				type: "channel",
+				common: {
+					name: "Forecast data for today + 8 days",
+					role: "info"
+				},
+				native: {},
+			});
 
 			// iterate over all day objects
 			if (typeof body.forecast["day"] !== undf || body.forecast["day"] != null) {
@@ -2694,6 +2706,22 @@ function getForecast(self){
 				},
 				native: {},
 			});
+			self.setObjectNotExists("forecast." + "hour.day8", {
+				type: "channel",
+				common: {
+					name: "Forecast data for today + 8 days",
+					role: "info"
+				},
+				native: {},
+			});
+			self.setObjectNotExists("forecast." + "hour.day9", {
+				type: "channel",
+				common: {
+					name: "Forecast data for today + 9 days",
+					role: "info"
+				},
+				native: {},
+			});
 			if (typeof body.forecast["hour"] !== undf || body.forecast["hour"] != null) {
 				//iterate over all hour objects
 				body.forecast["hour"].forEach(function (obj, index) {
@@ -2720,6 +2748,8 @@ function getForecast(self){
 						myPath = "day7";
 					} else if (index > 63 && index < 72) {
 						myPath = "day8";
+					} else if (index > 71 && index < 80) {
+						myPath = "day9";
 					}
 					if (typeof obj.local_date_time !== undf || obj.local_date_time != null) {
 						self.setObjectNotExists("forecast." + "hour." + myPath + "." + myTime + "." + "local_date_time", {
