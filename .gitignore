@@ -14,3 +14,7 @@ admin/i18n/flat.txt
 admin/i18n/*/flat.txt
 /node_modules/
 /.idea/
+
+
+# ioBroker dev-server
+.dev-server/
