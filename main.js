@@ -151,6 +151,115 @@ function getSystemLanguage(self) {
  * @returns {*[]} containing Json for usage with Material Design JSON Chart
  */
 function createJson(body) {
+
+	let maxTempDay0;
+	let maxTempDay1;
+	let maxTempDay2;
+	let maxTempDay3;
+	let maxTempDay4;
+	let minTempDay0;
+	let minTempDay1;
+	let minTempDay2;
+	let minTempDay3;
+	let minTempDay4;
+	let calculatedMinTempDay0;
+	let calculatedMinTempDay1;
+	let calculatedMinTempDay2;
+	let calculatedMinTempDay3;
+	let calculatedMinTempDay4;
+	let calculatedMaxTempDay0;
+	let calculatedMaxTempDay1;
+	let calculatedMaxTempDay2;
+	let calculatedMaxTempDay3;
+	let calculatedMaxTempDay4;
+	let deltaTemp = 5; // this value is added or subtracted to calculate the minimum and maximum temperature values on the y-axis.
+
+	// calculate avgTemp for each day
+	body.forecast["day"].forEach(function (obj, index) {
+		if (index == 0) {
+			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
+				maxTempDay0 = obj.TX_C;
+				minTempDay0 = obj.TN_C;
+			}
+		} else if (index == 1) {
+			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
+				maxTempDay1 = obj.TX_C;
+				minTempDay1 = obj.TN_C;
+			}
+
+		} else if (index == 2) {
+			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
+				maxTempDay2 = obj.TX_C;
+				minTempDay2 = obj.TN_C;
+			}
+			
+		} else if (index == 3) {
+			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
+				maxTempDay3 = obj.TX_C;
+				minTempDay3 = obj.TN_C;
+			}
+			
+		} else if (index == 4) {
+			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
+				maxTempDay4 = obj.TX_C;
+				minTempDay4 = obj.TN_C;
+			}
+		}
+
+		// When min/max could not be calculated, set default value 15
+		if (typeof maxTempDay0 === undf || maxTempDay0 == null){
+			maxTempDay0 = 30;
+		}
+		if (typeof maxTempDay1 === undf || maxTempDay1 == null){
+			maxTempDay1 = 30;
+		}
+		if (typeof maxTempDay2 === undf || maxTempDay2 == null){
+			maxTempDay2 = 30;
+		}
+		if (typeof maxTempDay3 === undf || maxTempDay3 == null){
+			maxTempDay3 = 30;
+		}
+		if (typeof maxTempDay4 === undf || maxTempDay4 == null){
+			maxTempDay4 = 30;
+		}
+		if (typeof minTempDay0 === undf || minTempDay0 == null){
+			minTempDay0 = 0;
+		}
+		if (typeof minTempDay1 === undf || minTempDay1 == null){
+			minTempDay1 = 0;
+		}
+		if (typeof minTempDay2 === undf || minTempDay2 == null){
+			minTempDay2 = 0;
+		}
+		if (typeof minTempDay3 === undf || minTempDay3 == null){
+			maxTempDay3 = 0;
+		}
+		if (typeof minTempDay4 === undf || minTempDay4 == null){
+			minTempDay4 = 0;
+		}
+	})
+
+	// @ts-ignore
+	calculatedMinTempDay0 = minTempDay0 - deltaTemp;
+	// @ts-ignore
+	calculatedMinTempDay1 = minTempDay1 - deltaTemp;
+	// @ts-ignore
+	calculatedMinTempDay2 = minTempDay2 - deltaTemp;
+	// @ts-ignore
+	calculatedMinTempDay3 = minTempDay3 - deltaTemp;
+	// @ts-ignore
+	calculatedMinTempDay4 = minTempDay4 - deltaTemp;
+	// @ts-ignore
+	calculatedMaxTempDay0 = maxTempDay0 + deltaTemp;
+	// @ts-ignore
+	calculatedMaxTempDay1 = maxTempDay1 + deltaTemp;
+	// @ts-ignore
+	calculatedMaxTempDay2 = maxTempDay2 + deltaTemp;
+	// @ts-ignore
+	calculatedMaxTempDay3 = maxTempDay3 + deltaTemp;
+	// @ts-ignore
+	calculatedMaxTempDay4 = maxTempDay4 + deltaTemp;
+
 	//Templates
 	let myHoursFull = [
 		"1h",
@@ -517,6 +626,8 @@ function createJson(body) {
 	chartJsonDay0[axisLabelsDay0] = []; // empty Array, push axisLabels attributes in here
 	chartJsonDay0[graphsDay0] = []; // empty Array, push graphs attributes in here
 	let myGraphsTemperaturDay0 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	myGraphsTemperaturDay0.yAxis_min = calculatedMinTempDay0; //setting y-axis min value
+	myGraphsTemperaturDay0.yAxis_max = calculatedMaxTempDay0; //setting y-axis max value
 	let myGraphsTemperaturDataDay0 = [];
 	let myGraphsNiederschlagDay0 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
 	let myGraphsNiederschlagDataDay0 = [];
@@ -530,6 +641,8 @@ function createJson(body) {
 	chartJsonDay1[axisLabelsDay1] = []; // empty Array, push axisLabels attributes in here
 	chartJsonDay1[graphsDay1] = []; // empty Array, push graphs attributes in here
 	let myGraphsTemperaturDay1 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	myGraphsTemperaturDay1.yAxis_min = calculatedMinTempDay1; //setting y-axis min value
+	myGraphsTemperaturDay1.yAxis_max = calculatedMaxTempDay1; //setting y-axis max value
 	let myGraphsTemperaturDataDay1 = [];
 	let myGraphsNiederschlagDay1 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
 	let myGraphsNiederschlagDataDay1 = [];
@@ -543,6 +656,8 @@ function createJson(body) {
 	chartJsonDay2[axisLabelsDay2] = []; // empty Array, push axisLabels attributes in here
 	chartJsonDay2[graphsDay2] = []; // empty Array, push graphs attributes in here
 	let myGraphsTemperaturDay2 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	myGraphsTemperaturDay2.yAxis_min = calculatedMinTempDay2; //setting y-axis min value
+	myGraphsTemperaturDay2.yAxis_max = calculatedMaxTempDay2; //setting y-axis max value
 	let myGraphsTemperaturDataDay2 = [];
 	let myGraphsNiederschlagDay2 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
 	let myGraphsNiederschlagDataDay2 = [];
@@ -556,6 +671,8 @@ function createJson(body) {
 	chartJsonDay3[axisLabelsDay3] = []; // empty Array, push axisLabels attributes in here
 	chartJsonDay3[graphsDay3] = []; // empty Array, push graphs attributes in here
 	let myGraphsTemperaturDay3 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	myGraphsTemperaturDay3.yAxis_min = calculatedMinTempDay3; //setting y-axis min value
+	myGraphsTemperaturDay3.yAxis_max = calculatedMaxTempDay3; //setting y-axis max value
 	let myGraphsTemperaturDataDay3 = [];
 	let myGraphsNiederschlagDay3 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
 	let myGraphsNiederschlagDataDay3 = [];
@@ -569,6 +686,8 @@ function createJson(body) {
 	chartJsonDay4[axisLabelsDay4] = []; // empty Array, push axisLabels attributes in here
 	chartJsonDay4[graphsDay4] = []; // empty Array, push graphs attributes in here
 	let myGraphsTemperaturDay4 = JSON.parse(JSON.stringify(myGraphsTemplateTemperatur));
+	myGraphsTemperaturDay4.yAxis_min = calculatedMinTempDay4; //setting y-axis min value
+	myGraphsTemperaturDay4.yAxis_max = calculatedMaxTempDay4; //setting y-axis max value
 	let myGraphsTemperaturDataDay4 = [];
 	let myGraphsNiederschlagDay4 = JSON.parse(JSON.stringify(myGraphsTemplateNiederschlag));
 	let myGraphsNiederschlagDataDay4 = [];
