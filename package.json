@@ -1,6 +1,6 @@
 {
   "name": "iobroker.swiss-weather-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
   "author": {
     "name": "baerengraben",
@@ -28,7 +28,7 @@
     "node-cron": "^3.0.0"
   },
   "devDependencies": {
-    "@iobroker/testing": "^2.4.4",
+    "@iobroker/testing": "^2.4. 4",
     "@types/chai": "^4.2.18",
     "@types/chai-as-promised": "^7.1.4",
     "@types/gulp": "^4.0.8",

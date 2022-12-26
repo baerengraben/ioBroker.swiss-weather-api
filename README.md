@@ -57,8 +57,10 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 
 ## Changelog
 
-### **WORK IN PROGRESS**
-* (baerengraben)
+### 1.0.5
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75
 
 ### 1.0.4
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85
