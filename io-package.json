@@ -90,7 +90,7 @@
 				"type": "boolean",
 				"role": "indicator.connected",
 				"read": true,
-				"write": false,
+				"write": true,
 				"def": false,
 				"desc": "Is SRF Weather connected?"
 			},
