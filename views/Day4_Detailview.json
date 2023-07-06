@@ -5,9 +5,10 @@
     },
     "theme": "vader",
     "sizex": "500",
-    "sizey": "750",
+    "sizey": "700",
     "gridSize": "10",
-    "snapType": 2
+    "snapType": 2,
+    "useBackground": false
   },
   "widgets": {
     "e00001": {
@@ -564,10 +565,10 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "180px",
-        "top": "50px",
-        "width": "100px",
-        "height": "100px",
+        "left": "173px",
+        "top": "47px",
+        "width": "150px",
+        "height": "150px",
         "z-index": "7",
         "position": ""
       },
@@ -637,13 +638,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "174px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "156px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "font-variant": "",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 3,
         "text-align": "right"
       },
@@ -713,12 +714,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "174px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "156px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -787,7 +788,7 @@
         "html_prepend": ""
       },
       "style": {
-        "left": "200px",
+        "left": "219px",
         "top": "40px",
         "width": "123px",
         "height": "19px",
@@ -860,14 +861,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "283px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "265px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -935,12 +936,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "283px",
-        "width": "130px",
-        "height": "24px",
+        "left": "68px",
+        "top": "265px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1009,13 +1010,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "147px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "129px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "font-variant": "",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 3,
         "text-align": "right"
       },
@@ -1085,12 +1086,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "147px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "129px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -1158,13 +1159,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "201px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "183px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
@@ -1233,13 +1234,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "201px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "183px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -1306,13 +1307,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "228px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "210px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -1379,13 +1380,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "228px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "210px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
@@ -1454,12 +1455,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "308px",
-        "width": "144px",
-        "height": "24px",
+        "left": "68px",
+        "top": "290px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1527,12 +1528,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "333px",
-        "width": "145px",
-        "height": "24px",
+        "left": "68px",
+        "top": "315px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1600,14 +1601,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "308px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "290px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": "1"
       },
       "widgetSet": "basic"
@@ -1675,14 +1676,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "333px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "315px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": "1"
       },
       "widgetSet": "basic"
@@ -1749,8 +1750,8 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "0px",
-        "top": "14px",
+        "left": "8px",
+        "top": "11px",
         "width": "483px",
         "height": "676px",
         "z-index": "3",
@@ -1879,10 +1880,10 @@
         "name": ""
       },
       "style": {
-        "left": "0px",
-        "top": "430px",
+        "left": "7px",
+        "top": "395px",
         "width": "485px",
-        "height": "260px"
+        "height": "280px"
       },
       "widgetSet": "materialdesign"
     },
@@ -1951,7 +1952,7 @@
       },
       "style": {
         "left": "68px",
-        "top": "400px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2024,7 +2025,7 @@
       },
       "style": {
         "left": "220px",
-        "top": "400px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2097,7 +2098,7 @@
       },
       "style": {
         "left": "380px",
-        "top": "400px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2168,13 +2169,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "255px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "237px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -2241,13 +2242,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "255px",
-        "width": "95px",
-        "height": "24px",
+        "left": "260px",
+        "top": "237px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
@@ -2319,9 +2320,9 @@
         "class": ""
       },
       "style": {
-        "left": "10px",
-        "top": "22px",
-        "width": "172px",
+        "left": "17px",
+        "top": "19px",
+        "width": "244px",
         "height": "17px",
         "z-index": "20",
         "text-align": "left",
@@ -2400,7 +2401,7 @@
       },
       "style": {
         "left": "316px",
-        "top": "22px",
+        "top": "19px",
         "width": "159px",
         "height": "13px",
         "z-index": "2",

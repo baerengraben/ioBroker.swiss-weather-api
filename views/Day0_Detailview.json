@@ -1,11 +1,12 @@
 {
   "settings": {
     "style": {
-      "background_class": ""
+      "background_class": "",
+      "font-size": ""
     },
     "theme": "vader",
     "sizex": "500",
-    "sizey": "750",
+    "sizey": "700",
     "gridSize": "10",
     "snapType": 2,
     "useBackground": false
@@ -565,10 +566,10 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "180px",
-        "top": "50px",
-        "width": "100px",
-        "height": "100px",
+        "left": "173px",
+        "top": "47px",
+        "width": "150px",
+        "height": "150px",
         "z-index": "7",
         "position": ""
       },
@@ -638,13 +639,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "174px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "156px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "font-variant": "",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 3,
         "text-align": "right"
       },
@@ -714,12 +715,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "174px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "156px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -788,8 +789,8 @@
         "html_prepend": "Heute"
       },
       "style": {
-        "left": "200px",
-        "top": "41px",
+        "left": "230px",
+        "top": "38px",
         "width": "123px",
         "height": "19px",
         "color": "#ffffff",
@@ -861,14 +862,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "283px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "265px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -936,12 +937,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "283px",
-        "width": "130px",
-        "height": "24px",
+        "left": "68px",
+        "top": "265px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1010,13 +1011,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "147px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "129px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "font-variant": "",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 3,
         "text-align": "right"
       },
@@ -1086,12 +1087,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "147px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "129px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": 2
       },
       "widgetSet": "basic"
@@ -1159,13 +1160,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "201px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "183px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
@@ -1234,13 +1235,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "201px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "183px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -1307,13 +1308,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "228px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "210px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -1380,13 +1381,13 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "228px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "210px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
@@ -1455,12 +1456,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "308px",
-        "width": "144px",
-        "height": "24px",
+        "left": "68px",
+        "top": "290px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1528,12 +1529,12 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "333px",
-        "width": "145px",
-        "height": "24px",
+        "left": "68px",
+        "top": "315px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "color": "#8f8f8f"
       },
       "widgetSet": "basic"
@@ -1601,14 +1602,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "308px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "290px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": "1"
       },
       "widgetSet": "basic"
@@ -1676,14 +1677,14 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "333px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "315px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "text-align": "right",
         "font-weight": "normal",
-        "font-size": "medium",
+        "font-size": "larger",
         "z-index": "1"
       },
       "widgetSet": "basic"
@@ -1750,8 +1751,8 @@
         "filterkey": "Border"
       },
       "style": {
-        "left": "0px",
-        "top": "14px",
+        "left": "8px",
+        "top": "11px",
         "width": "483px",
         "height": "676px",
         "z-index": "3",
@@ -1802,7 +1803,7 @@
         "tooltipTitleFontSize": "#mdwTheme:vis-materialdesign.0.fontSizes.charts.tooltip_title",
         "tooltipBodyFontColor": "#mdwTheme:vis-materialdesign.0.colors.charts.tooltip_text",
         "tooltipBodyFontFamily": "#mdwTheme:vis-materialdesign.0.fonts.charts.tooltip_text",
-        "tooltipBodyFontSize": "#mdwTheme:vis-materialdesign.0.fontSizes.charts.tooltip_text",
+        "tooltipBodyFontSize": "-1",
         "tooltipBodyAlignment": "left",
         "xAxisPosition": "bottom",
         "xAxisTicksSource": "auto",
@@ -1877,13 +1878,15 @@
         "legendBoxWidth": "",
         "legendDistanceToChart": "-1",
         "legendPadding": "13",
-        "name": ""
+        "name": "",
+        "barWidth": "",
+        "tooltipTitleMarginBottom": "-1"
       },
       "style": {
-        "left": "0px",
-        "top": "430px",
+        "left": "7px",
+        "top": "395px",
         "width": "485px",
-        "height": "260px"
+        "height": "280px"
       },
       "widgetSet": "materialdesign"
     },
@@ -1951,8 +1954,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "50px",
-        "top": "400px",
+        "left": "57px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2024,8 +2027,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "107px",
-        "top": "400px",
+        "left": "121px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2097,8 +2100,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "163px",
-        "top": "400px",
+        "left": "177px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2170,8 +2173,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "220px",
-        "top": "400px",
+        "left": "234px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2243,8 +2246,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "277px",
-        "top": "400px",
+        "left": "291px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2316,8 +2319,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "333px",
-        "top": "400px",
+        "left": "347px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2389,8 +2392,8 @@
         "comment": "DasWetter"
       },
       "style": {
-        "left": "390px",
-        "top": "400px",
+        "left": "404px",
+        "top": "364px",
         "width": "45px",
         "height": "47px",
         "z-index": "7",
@@ -2461,13 +2464,13 @@
         "filterkey": "Text"
       },
       "style": {
-        "left": "69px",
-        "top": "255px",
-        "width": "95px",
-        "height": "24px",
+        "left": "68px",
+        "top": "237px",
+        "width": "160px",
+        "height": "25px",
         "z-index": 3,
         "color": "#8f8f8f",
-        "font-size": "medium"
+        "font-size": "larger"
       },
       "widgetSet": "basic"
     },
@@ -2534,19 +2537,96 @@
         "filterkey": "Werte"
       },
       "style": {
-        "left": "300px",
-        "top": "255px",
-        "width": "95px",
-        "height": "24px",
+        "left": "265px",
+        "top": "237px",
+        "width": "160px",
+        "height": "25px",
         "color": "#8f8f8f",
         "z-index": 3,
-        "font-size": "medium",
+        "font-size": "larger",
         "font-weight": "normal",
         "text-align": "right"
       },
       "widgetSet": "basic"
     },
     "e00034": {
+      "tpl": "tplValueString",
+      "data": {
+        "oid": "swiss-weather-api.0.info.lastrun",
+        "g_fixed": true,
+        "g_visibility": false,
+        "g_css_font_text": true,
+        "g_css_background": false,
+        "g_css_shadow_padding": false,
+        "g_css_border": false,
+        "g_gestures": false,
+        "g_signals": false,
+        "g_last_change": false,
+        "visibility-cond": "==",
+        "visibility-val": 1,
+        "visibility-groups-action": "hide",
+        "signals-cond-0": "==",
+        "signals-val-0": true,
+        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-0": 0,
+        "signals-blink-0": false,
+        "signals-horz-0": 0,
+        "signals-vert-0": 0,
+        "signals-hide-edit-0": false,
+        "signals-cond-1": "==",
+        "signals-val-1": true,
+        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-1": 0,
+        "signals-blink-1": false,
+        "signals-horz-1": 0,
+        "signals-vert-1": 0,
+        "signals-hide-edit-1": false,
+        "signals-cond-2": "==",
+        "signals-val-2": true,
+        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
+        "signals-icon-size-2": 0,
+        "signals-blink-2": false,
+        "signals-horz-2": 0,
+        "signals-vert-2": 0,
+        "signals-hide-edit-2": false,
+        "lc-type": "last-change",
+        "lc-is-interval": true,
+        "lc-is-moment": false,
+        "lc-format": "",
+        "lc-position-vert": "top",
+        "lc-position-horz": "right",
+        "lc-offset-vert": 0,
+        "lc-offset-horz": 0,
+        "lc-font-size": "12px",
+        "lc-font-family": "",
+        "lc-font-style": "",
+        "lc-bkg-color": "",
+        "lc-color": "",
+        "lc-border-width": "0",
+        "lc-border-style": "",
+        "lc-border-color": "",
+        "lc-border-radius": 10,
+        "lc-zindex": 0,
+        "html_append": "",
+        "html_prepend": "Letzte Aktualisierung: ",
+        "name": "Zeitstempel",
+        "filterkey": "Text",
+        "comment": "swiss-weather-api",
+        "class": ""
+      },
+      "style": {
+        "left": "17px",
+        "top": "19px",
+        "width": "289px",
+        "height": "17px",
+        "z-index": "20",
+        "text-align": "left",
+        "font-size": "small",
+        "color": "#d7cec1"
+      },
+      "widgetSet": "basic"
+    },
+    "e00035": {
       "tpl": "tplValueListHtml8",
       "data": {
         "oid": "swiss-weather-api.0.info.connection",
@@ -2616,90 +2696,13 @@
       },
       "style": {
         "left": "316px",
-        "top": "22px",
+        "top": "19px",
         "width": "159px",
         "height": "13px",
         "z-index": "2",
         "font-size": "small",
         "font-family": "",
         "text-align": "right"
-      },
-      "widgetSet": "basic"
-    },
-    "e00035": {
-      "tpl": "tplValueString",
-      "data": {
-        "oid": "swiss-weather-api.0.info.lastrun",
-        "g_fixed": true,
-        "g_visibility": false,
-        "g_css_font_text": true,
-        "g_css_background": false,
-        "g_css_shadow_padding": false,
-        "g_css_border": false,
-        "g_gestures": false,
-        "g_signals": false,
-        "g_last_change": false,
-        "visibility-cond": "==",
-        "visibility-val": 1,
-        "visibility-groups-action": "hide",
-        "signals-cond-0": "==",
-        "signals-val-0": true,
-        "signals-icon-0": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-0": 0,
-        "signals-blink-0": false,
-        "signals-horz-0": 0,
-        "signals-vert-0": 0,
-        "signals-hide-edit-0": false,
-        "signals-cond-1": "==",
-        "signals-val-1": true,
-        "signals-icon-1": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-1": 0,
-        "signals-blink-1": false,
-        "signals-horz-1": 0,
-        "signals-vert-1": 0,
-        "signals-hide-edit-1": false,
-        "signals-cond-2": "==",
-        "signals-val-2": true,
-        "signals-icon-2": "/vis.0/Wetter_Sigi/lowbattery.png",
-        "signals-icon-size-2": 0,
-        "signals-blink-2": false,
-        "signals-horz-2": 0,
-        "signals-vert-2": 0,
-        "signals-hide-edit-2": false,
-        "lc-type": "last-change",
-        "lc-is-interval": true,
-        "lc-is-moment": false,
-        "lc-format": "",
-        "lc-position-vert": "top",
-        "lc-position-horz": "right",
-        "lc-offset-vert": 0,
-        "lc-offset-horz": 0,
-        "lc-font-size": "12px",
-        "lc-font-family": "",
-        "lc-font-style": "",
-        "lc-bkg-color": "",
-        "lc-color": "",
-        "lc-border-width": "0",
-        "lc-border-style": "",
-        "lc-border-color": "",
-        "lc-border-radius": 10,
-        "lc-zindex": 0,
-        "html_append": "",
-        "html_prepend": "Letzte Aktualisierung: ",
-        "name": "Zeitstempel",
-        "filterkey": "Text",
-        "comment": "swiss-weather-api",
-        "class": ""
-      },
-      "style": {
-        "left": "10px",
-        "top": "22px",
-        "width": "172px",
-        "height": "17px",
-        "z-index": "20",
-        "text-align": "left",
-        "font-size": "small",
-        "color": "#d7cec1"
       },
       "widgetSet": "basic"
     }
