@@ -1,107 +1,177 @@
 {
-	"common": {
-		"name": "swiss-weather-api",
-		"version": "1.0.6",
-		"news": {
-			"1.0.6": {
-				"en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97"
-			},
-			"1.0.5": {
-				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75"
-			},
-			"1.0.4": {
-				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85"
-			},
-			"1.0.3": {
-				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52"
-			},
-			"1.0.2": {
-				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53"
-			},
-			"1.0.1": {
-				"en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nThis change makes it necessary to regenerate IDs. So, to install version 1.0.1, the currently running adapter instance must be completely removed and replaced with a new instance."
-			},
-			"1.0.0": {
-				"en": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64"
-			}
-		},
-		"title": "Swiss Weather API (SRF Weather)",
-		"titleLang": {
-			"en": "Swiss Weather API (SRF Weather)",
-			"de": "Schweizer Wetter API (SRF Weather)",
-			"ru": "Swiss Weather API (SRF Weather)",
-			"pt": "API do clima suíço (SRF Weather)",
-			"nl": "Swiss Weather API (SRF Weather)",
-			"fr": "API Météo Suisse (SRF Weather)",
-			"it": "API meteorologica svizzera (SRF Weather)",
-			"es": "API meteorológica suiza (SRF Weather)",
-			"pl": "Szwajcarski interfejs API pogody (SRF Weather)",
-			"zh-cn": "瑞士天气API（SRF Weather）"
-		},
-		"desc": {
-			"en": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
-			"de": "Stellt eine Verbindung zur SRF-Wetter-API her (https://developer.srgssr.ch/apis/srf-weather)",
-			"ru": "Подключается к SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
-			"pt": "Conecta-se à SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
-			"nl": "Maakt verbinding met SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
-			"fr": "Se connecte à l'API Météo SRF (https://developer.srgssr.ch/apis/srf-weather)",
-			"it": "Si collega all'API Weather SRF (https://developer.srgssr.ch/apis/srf-weather)",
-			"es": "Se conecta a la API meteorológica de SRF (https://developer.srgssr.ch/apis/srf-weather)",
-			"pl": "Łączy się z SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
-			"zh-cn": "连接到SRF Weather API（https://developer.srgssr.ch/apis/srf-weather）"
-		},
-		"authors": [
-			"baerengraben <baerengraben@intelli.ch>"
-		],
-		"keywords": [
-			"SRG-SSR",
-			"Weather API",
-			"SRF Weather"
-		],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"icon": "swiss-weather-api.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/admin/swiss-weather-api.png",
-		"readme": "https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "weather",
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"compact": true,
-		"materializeTab": true,
-		"materialize": true,
-		"dependencies": [
-			{
-				"js-controller": ">=3.0.0"
-			}
-		]
-	},
-	"native": {
-		"App_Name": "",
-		"ConsumerKey": "",
-		"ConsumerSecret": "",
-		"Latitude": "",
-		"Longitude": "",
-		"PollInterval": "60"
-	},
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"name": "SRF Weather connected",
-				"type": "boolean",
-				"role": "indicator.connected",
-				"read": true,
-				"write": true,
-				"def": false,
-				"desc": "Is SRF Weather connected?"
-			},
-			"native": {
-			}
-		}
-	]
+    "common": {
+        "name": "swiss-weather-api",
+        "version": "1.0.6",
+        "news": {
+            "1.0.6": {
+                "en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "de": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 und https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "ru": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 и https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "pt": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 e https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "nl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 en https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "fr": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 et ​​https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "it": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 e https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "es": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 y https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 i https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 і https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
+                "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93。 com/baerengraben/ioBroker.swiss-weather-api/issues/97"
+            },
+            "1.0.5": {
+                "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 und https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 и https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 en https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 et https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 y https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 i https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 і https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
+                "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 和 https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75"
+            },
+            "1.0.4": {
+                "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 und https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 и https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 en https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 et https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 y https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 i https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 і https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
+                "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85"
+            },
+            "1.0.3": {
+                "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 und https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 и https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 en https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 et https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 y https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 i https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 і https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
+                "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 和 https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52"
+            },
+            "1.0.2": {
+                "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 und https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 и https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 en https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 et https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 y https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 i https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 і https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
+                "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53"
+            },
+            "1.0.1": {
+                "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nThis change makes it necessary to regenerate IDs. So, to install version 1.0.1, the currently running adapter instance must be completely removed and replaced with a new instance.",
+                "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nDiese Änderung macht eine Neugenerierung der IDs erforderlich. Um Version 1.0.1 zu installieren, muss die aktuell ausgeführte Adapterinstanz vollständig entfernt und durch eine neue Instanz ersetzt werden.",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nЭто изменение делает необходимым повторное создание идентификаторов. Таким образом, для установки версии 1.0.1 текущий запущенный экземпляр адаптера должен быть полностью удален и заменен новым экземпляром.",
+                "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nEssa alteração torna necessário regenerar IDs. Portanto, para instalar a versão 1.0.1, a instância do adaptador atualmente em execução deve ser completamente removida e substituída por uma nova instância.",
+                "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nDeze wijziging maakt het noodzakelijk om ID's opnieuw te genereren. Dus om versie 1.0.1 te installeren, moet de momenteel actieve adapterinstantie volledig worden verwijderd en vervangen door een nieuwe instantie.",
+                "fr": "Correction https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nCette modification rend nécessaire la régénération des identifiants. Ainsi, pour installer la version 1.0.1, l'instance d'adaptateur en cours d'exécution doit être complètement supprimée et remplacée par une nouvelle instance.",
+                "it": "Correzione https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nQuesta modifica rende necessario rigenerare gli ID. Pertanto, per installare la versione 1.0.1, l'istanza dell'adattatore attualmente in esecuzione deve essere completamente rimossa e sostituita con una nuova istanza.",
+                "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nEste cambio hace que sea necesario volver a generar ID. Por lo tanto, para instalar la versión 1.0.1, la instancia del adaptador que se está ejecutando actualmente debe eliminarse por completo y reemplazarse con una nueva instancia.",
+                "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nTa zmiana powoduje konieczność ponownego generowania identyfikatorów. Tak więc, aby zainstalować wersję 1.0.1, aktualnie działająca instancja adaptera musi zostać całkowicie usunięta i zastąpiona nową instancją.",
+                "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\nЦя зміна вимагає повторного створення ідентифікаторів. Отже, щоб інсталювати версію 1.0.1, поточний запущений екземпляр адаптера потрібно повністю видалити та замінити новим екземпляром.",
+                "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57\n此更改使得有必要重新生成 ID。因此，要安装版本 1.0.1，必须完全删除当前运行的适配器实例并替换为新实例。"
+            },
+            "1.0.0": {
+                "en": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "de": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "pt": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "nl": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "fr": "Correction de bug https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "it": "Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "es": "Corrección de errores https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "pl": "Poprawka błędu https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "uk": "Виправлення помилки https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64",
+                "zh-cn": "错误修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64"
+            }
+        },
+        "titleLang": {
+            "en": "Swiss Weather API (SRF Weather)",
+            "de": "Schweizer Wetter API (SRF Weather)",
+            "ru": "Swiss Weather API (SRF Weather)",
+            "pt": "API do clima suíço (SRF Weather)",
+            "nl": "Swiss Weather API (SRF Weather)",
+            "fr": "API Météo Suisse (SRF Weather)",
+            "it": "API meteorologica svizzera (SRF Weather)",
+            "es": "API meteorológica suiza (SRF Weather)",
+            "pl": "Szwajcarski interfejs API pogody (SRF Weather)",
+            "zh-cn": "瑞士天气API（SRF Weather）",
+            "uk": "Swiss Weather API (SRF Weather)"
+        },
+        "desc": {
+            "en": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+            "de": "Stellt eine Verbindung zur SRF-Wetter-API her (https://developer.srgssr.ch/apis/srf-weather)",
+            "ru": "Подключается к SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+            "pt": "Conecta-se à SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+            "nl": "Maakt verbinding met SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+            "fr": "Se connecte à l'API Météo SRF (https://developer.srgssr.ch/apis/srf-weather)",
+            "it": "Si collega all'API Weather SRF (https://developer.srgssr.ch/apis/srf-weather)",
+            "es": "Se conecta a la API meteorológica de SRF (https://developer.srgssr.ch/apis/srf-weather)",
+            "pl": "Łączy się z SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
+            "zh-cn": "连接到SRF Weather API（https://developer.srgssr.ch/apis/srf-weather）",
+            "uk": "Підключається до SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)"
+        },
+        "authors": [
+            "baerengraben <baerengraben@intelli.ch>"
+        ],
+        "keywords": [
+            "SRG-SSR",
+            "Weather API",
+            "SRF Weather"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "icon": "swiss-weather-api.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/admin/swiss-weather-api.png",
+        "readme": "https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "weather",
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "compact": true,
+        "materializeTab": true,
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=3.0.0"
+            }
+        ]
+    },
+    "native": {
+        "App_Name": "",
+        "ConsumerKey": "",
+        "ConsumerSecret": "",
+        "Latitude": "",
+        "Longitude": "",
+        "PollInterval": "60"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "name": "SRF Weather connected",
+                "type": "boolean",
+                "role": "indicator.connected",
+                "read": true,
+                "write": true,
+                "def": false,
+                "desc": "Is SRF Weather connected?"
+            },
+            "native": {}
+        }
+    ]
 }

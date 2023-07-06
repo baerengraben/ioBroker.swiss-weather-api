@@ -28,6 +28,7 @@
     "node-cron": "^3.0.0"
   },
   "devDependencies": {
+    "@iobroker/adapter-dev": "^1.2.0",
     "@iobroker/testing": "^2.4. 4",
     "@types/chai": "^4.2.18",
     "@types/chai-as-promised": "^7.1.4",
@@ -49,7 +50,8 @@
   },
   "main": "main.js",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha --exit"
+    "test": "node node_modules/mocha/bin/mocha --exit",
+    "translate": "translate-adapter"
   },
   "bugs": {
     "url": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues"
