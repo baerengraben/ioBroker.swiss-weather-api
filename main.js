@@ -45,6 +45,43 @@ Date.prototype.addDays = function(days) {
 }
 
 /**
+ * Checks if there was a Timechange for Summer-/Wintertime
+ * If we have a Timechange return true when it is after 4 o'clock
+ * See https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+ * @returns {boolean} true == the Object-Tree has to be deleted; false == the Object-Tree has not to be deleted
+ */
+function isTimechange(self) {
+	var timeChange = false;
+	var todayDate = new Date();
+	var year = todayDate.getFullYear();
+	var dst_start =
+		new Date(year, 2, (14 - new Date(year, 2, 1).getDay() + 7) % 7 + 1, 2);
+	var dst_end =
+		new Date(year, 10, (7 - new Date(year, 10, 1).getDay() + 7) % 7 + 1, 3);
+
+	var timeDiff = Math.abs(todayDate.getTime() - dst_start.getTime());
+	var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+	if (diffDays === 0) {
+		self.log.debug('Heute beginnt die Sommerzeit.');
+		timeChange = true;
+	}
+	timeDiff = Math.abs(todayDate.getTime() - dst_end.getTime());
+	diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+	if (diffDays === 0) {
+		self.log.debug('Heute endet die Sommerzeit.');
+		timeChange = true;
+	}
+
+	if (timeChange){
+		if (todayDate.getHours() > 4){
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/**
  * Checks if JSON is valid
  * @param str JSON String
  * @returns {boolean} true == valid; false == invalid
@@ -192,13 +229,13 @@ function createJson(body) {
 				maxTempDay2 = obj.TX_C;
 				minTempDay2 = obj.TN_C;
 			}
-			
+
 		} else if (index == 3) {
 			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
 				maxTempDay3 = obj.TX_C;
 				minTempDay3 = obj.TN_C;
 			}
-			
+
 		} else if (index == 4) {
 			if (typeof obj.TX_C !== undf || obj.TX_C != null || typeof obj.TN_C !== undf || obj.TN_C != null) {
 				maxTempDay4 = obj.TX_C;
@@ -3300,6 +3337,13 @@ function doIt(self) {
 		} else {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			self.setState('info.connection', true, true);
+
+			//Delete Object-Tree if there was a Timechange
+			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+			if (isTimechange(self)){
+				self.log.debug('Today is a timechange (winter-/summertime). Deleting the forecast.hour objects');
+				self.deleteState('forecast.hour');
+			}
 
 			// Check if there is already a geolocationId, if not => Get one
 			if (geolocationId) {
