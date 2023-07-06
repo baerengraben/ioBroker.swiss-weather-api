@@ -12,7 +12,7 @@
 **Tests:**: [![Travis-CI](http://img.shields.io/travis/baerengraben/ioBroker.swiss-weather-api/master.svg)](https://travis-ci.org/baerengraben/ioBroker.swiss-weather-api)
 
 **Update procedure Version 1.0.1 to 1.0.x**
-- Just update in ioBroker. No special additional steps necessary 
+- Just update in ioBroker. No special additional steps necessary
 
 **Update procedure Version 1.0.0 to 1.0.1**
 - With Version 1.0.1 I'm fixing Issue https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/57
@@ -22,16 +22,18 @@ This change makes it necessary to regenerate IDs. So, to install version 1.0.1, 
 
 ## swiss-weather-api adapter for ioBroker
 
-Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).  
-The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day. 
+Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).
+The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
 
 ##**Icons**
 Since Version 0.1.8 SRG-SSR provides their own icons. So each Datapoint provides an URL to the correspondig weather-situation (Color, Dark, and Light Icons).
 
 ##**Please Be aware that this adapter only supports locations within Switzerland.**
 
+##**Please Be aware that this adapter only supports RF Weather REST API Version 1 - Version 2 is comming soon!**
+
 ### Getting started
-1. Get a free accout on https://developer.srgssr.ch/ 
+1. Get a free accout on https://developer.srgssr.ch/
 1. Go to "My Apps" and create a new App. Here you can choose a Product. "Freemium" is their free product. If you only want a forecast for one location and get only 50 request per day (every 30min) or/and don't want to pay for more request per day, "Freemium" is what you want to choose. Now, this will create a specific ConsumerKey and ConsumerSecret
 1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed. This information is optional if you have set your location in the ioBroker settings (main settings) (via the map). In this case you could leave the latitude and longitude fields empty. The adapter then takes over the settings of the ioBroker. Latitude and longitude entered in the adapter configuration override the ioBroker settings.
 1. Install this Adapter on ioBroker => This can take several minutes (~7min on a Raspberry Pi 3)
@@ -43,7 +45,7 @@ Since Version 0.1.8 SRG-SSR provides their own icons. So each Datapoint provides
    1. Poll Interval in Minutes (By default 30 minutes - 50 Request/Day)
 
 The first query is made 10s after the adapter was started. After the first start, the query will be executed regularly according to the conifugation parameter (Poll Interval in Minutes).
-The Objects in forecast.current_hour will be createt 30s after frist startup and updated every hour by copying the corresponding values from forecast.60minutes. 
+The Objects in forecast.current_hour will be createt 30s after frist startup and updated every hour by copying the corresponding values from forecast.60minutes.
 
 ### Visualisation Example
 
@@ -57,9 +59,14 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 
 ## Changelog
 
+### 1.0.6
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97
+
 ### 1.0.5
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75
 
 ### 1.0.4
@@ -80,10 +87,10 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 This change makes it necessary to regenerate IDs. So, to install version 1.0.1, the currently running adapter instance must be completely removed and replaced with a new instance.
 
 ### 1.0.0
-* (baerengraben) Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64  
+* (baerengraben) Bugfix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/64
 
 ### 0.9.9
-* (baerengraben) Workaround for SRG Certificate Problem: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/63  
+* (baerengraben) Workaround for SRG Certificate Problem: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/63
 
 ### 0.9.8
 * (jobe451)  Bugfix: JsonChart is missing 15h and 16h as x-labels
@@ -98,13 +105,13 @@ This change makes it necessary to regenerate IDs. So, to install version 1.0.1, 
 * (baerengraben)  Some small improvements
 
 ### 0.9.4
-* (baerengraben)  Bugfix: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/47 
+* (baerengraben)  Bugfix: https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/47
 
 ### 0.9.3
-* (baerengraben)  Function Update: Added day_name to identify weekday from "forecast.day.day0.day_name" to "forecast.day.day7.day_name". 
+* (baerengraben)  Function Update: Added day_name to identify weekday from "forecast.day.day0.day_name" to "forecast.day.day7.day_name".
 * (baerengraben)  Added last_run as Object on swiss-weather-api.0.info.lastrun.
 * (baerengraben)  Added JsonChart Object on swiss-weather-api.0.forecast.60minutes.day(0-4).JsonChart.
-* (baerengraben)  Added some Examples how to do visualisation (folder views) based on https://forum.iobroker.net/topic/32232/material-design-widgets-wetter-view 
+* (baerengraben)  Added some Examples how to do visualisation (folder views) based on https://forum.iobroker.net/topic/32232/material-design-widgets-wetter-view
 
 ### 0.9.2
 * (baerengraben)  Function Update: The current weather information is provided as a forecast.current_hour object. Every hour this information is updated. This is done every hour by copying the corresponding values from forecast.60minutes.day0.<current_time>. So no new http request will be executed. The values are only copied from the forecast objects. This makes it easier to display the current weather in the visualization.
@@ -116,7 +123,7 @@ This change makes it necessary to regenerate IDs. So, to install version 1.0.1, 
 
 
 ### 0.9.0
-* (baerengraben)  Removed NodeJs 10 support and added NodeJs 16 support 
+* (baerengraben)  Removed NodeJs 10 support and added NodeJs 16 support
 * (baerengraben)  Update to new SRF Weater API (https://developer.srgssr.ch/apis/srf-weather). Attention: Old Weather-API (Adapter Version 0.3.2 and earlier) will be decommissioned on Sept. 2021)
 * (baerengraben)  Removed Icon-Support from https://erikflowers.github.io/weather-icons/ since SRF is providing their own icons.
 
@@ -147,8 +154,8 @@ This change makes it necessary to regenerate IDs. So, to install version 1.0.1, 
 * (baerengraben) Added new Object icon-url-srgssr => Contains the url-link to the srgssr Icon
 
 ### 0.1.7
-**Attention**: If you have already installed a previous Version of swiss-weather-api (<= 0.1.6) please remove the adapter and install it completely new. This makes shure you get the new Unit-Names for "fff" and "ffx3" which where corrected by SRG. 
-* (baerengraben) Added Icon-Codes -17 to -30 => These are not yet confirmed by srf - but I beleave these are correct.  
+**Attention**: If you have already installed a previous Version of swiss-weather-api (<= 0.1.6) please remove the adapter and install it completely new. This makes shure you get the new Unit-Names for "fff" and "ffx3" which where corrected by SRG.
+* (baerengraben) Added Icon-Codes -17 to -30 => These are not yet confirmed by srf - but I beleave these are correct.
 * (baerengraben) SRG is now providing the correct unit-names for "fff" and "ffx3". Adaptet this in the swiss-weather-adapter. **Attention**: You have to reinstall the swiss-weather-api (remove and install new Version) to make shure the Object-Name gets this Update.
 
 ### 0.1.6
