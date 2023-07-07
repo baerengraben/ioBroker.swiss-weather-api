@@ -148,21 +148,21 @@ function getDayName(date,defaultLanguage){
  * @param self Adapter
  */
 function getSystemData(self) {
-	if (typeof self.config.Longitude === undf || self.config.Longitude == null || self.config.Longitude.length === 0 || isNaN(self.config.Longitude)
-		|| typeof self.config.Latitude === undf || self.config.Latitude == null || self.config.Latitude.length === 0 || isNaN(self.config.Latitude)) {
+	if (typeof self.config.longitude === undf || self.config.longitude == null || self.config.longitude.length === 0 || isNaN(self.config.longitude)
+		|| typeof self.config.latitude === undf || self.config.latitude == null || self.config.latitude.length === 0 || isNaN(self.config.latitude)) {
 		self.log.info("longitude/longitude not set, get data from system ");
 		self.getForeignObject("system.config", (err, state) => {
 			if (err || state === undf || state === null) {
 				self.log.error("longitude/latitude not set in adapter-config and reading in system-config failed");
 				self.setState('info.connection', false, true);
 			} else {
-				self.config.Longitude = state.common.longitude;
-				self.config.Latitude = state.common.latitude;
-				self.log.info("system  longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
+				self.config.longitude = state.common.longitude;
+				self.config.latitude = state.common.latitude;
+				self.log.info("system  longitude: " + self.config.longitude + " latitude: " + self.config.latitude);
 			}
 		});
 	} else {
-		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.Longitude + " latitude: " + self.config.Latitude);
+		self.log.info("longitude/longitude will be set by self-Config - longitude: " + self.config.longitude + " latitude: " + self.config.latitude);
 	}
 }
 
@@ -843,14 +843,14 @@ function createJson(body) {
 
 /**
  * Get Token by REST-Calling SRF Weather API
- * @param self this adapter
+ * @param self this adapterinfo.connection
  * @param myCallback Callback
  */
 function getToken(self,myCallback){
 	self.log.debug('getting Token...');
 
-	//Convert ConsumerKey and ConsumerSecret to base64
-	let data = self.config.ConsumerKey + ":" + self.config.ConsumerSecret;
+	//Convert consumerKey and consumerSecret to base64
+	let data = self.config.consumerKey + ":" + self.config.consumerSecret;
 	let buff = Buffer.from(data);
 	let base64data = buff.toString('base64');
 	self.log.debug('"' + data + '" converted to Base64 is "' + base64data + '"');
@@ -887,7 +887,7 @@ function getToken(self,myCallback){
 			}
 			var body = JSON.parse(Buffer.concat(chunks).toString());
 			if (typeof body.access_token === undf || body.access_token == null) {
-				self.log.warn("Got no Token - Is Adapter correctly configured (ConsumerKey/ConsumerSecret)? It may also be that the maximum number of queries for today is exhausted");
+				self.log.warn("Got no Token - Is Adapter correctly configured (consumerKey/consumerSecret)? It may also be that the maximum number of queries for today is exhausted");
 				self.setState('info.connection', false, true);
 				return;
 			} else if (body.access_token === ""){
@@ -3242,7 +3242,7 @@ function getGeolocationId(self,myCallback) {
 		"method": "GET",
 		"hostname": "api.srgssr.ch",
 		"port": null,
-		"path": "/srf-meteo/geolocations?latitude=" + self.config.Latitude + "&longitude=" + self.config.Longitude,
+		"path": "/srf-meteo/geolocations?latitude=" + self.config.latitude + "&longitude=" + self.config.longitude,
 		"headers": {
 			"authorization": "Bearer " + access_token
 		}
@@ -3325,7 +3325,7 @@ function getGeolocationId(self,myCallback) {
  */
 function doIt(self) {
 	self.setState('info.connection', true, true);
-	var pollInterval = self.config.PollInterval * 60000; //Convert minute to miliseconds
+	var pollinterval = self.config.pollinterval * 60000; //Convert minute to miliseconds
 	//First of all check if there is a working DNS-Resolver
 	//Resolves https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/32
 	dns.resolve4('api.srgssr.ch', function (err, addresses) {
@@ -3353,7 +3353,7 @@ function doIt(self) {
 				self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
 				getToken(self,getGeolocationId);
 			}
-			setTimeout(doIt, pollInterval, self);
+			setTimeout(doIt, pollinterval, self);
 		}
 	});
 }
@@ -3382,7 +3382,7 @@ class SwissWeatherApi extends utils.Adapter {
 		cronJob = cron.schedule('0 * * * *', async() => {
 			setCurrentHour(this);
 		});
-		// read system Longitude, Latitude and language
+		// read system longitude, latitude and language
 		getSystemData(this);
 		getSystemLanguage(this);
 		//to and get some forecast
