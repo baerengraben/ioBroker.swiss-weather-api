@@ -1,0 +1,16 @@
+{
+    "App_Name": "SRF Meteo 应用程序名称",
+    "App_Name_Help": "从 SRF Meteo 门户获取 SRF Meteo 应用程序名称",
+    "ConsumerKey": "App的ConsumerKey",
+    "ConsumerKey_Help": "从 SRF Meteo 门户获取 ConsumerKey",
+    "ConsumerSecret": "应用程序的消费者秘密",
+    "ConsumerSecret_Help": "从 SRF Meteo 门户获取 ConsumerSecret",
+    "LocationLatitude": "纬度",
+    "LocationLatitude_Help": "留空以使用系统配置纬度",
+    "LocationLongitude": "经度",
+    "LocationLongitude_Help": "留空以使用系统配置经度",
+    "Options": "配置",
+    "PollInterval": "轮询间隔",
+    "PollInterval_Help": "轮询间隔（分钟）",
+    "swiss-weather-api adapter settings": "swiss-weather-api 的适配器设置"
+}

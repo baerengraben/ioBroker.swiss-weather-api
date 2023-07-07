@@ -1,0 +1,63 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "tab1": {
+      "type": "panel",
+      "label": "Options",
+      "items": {
+        "app_name": {
+          "type": "text",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "App_Name",
+          "help": "App_Name_Help",
+          "newLine": true
+        },
+        "consumerKey": {
+          "type": "text",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "ConsumerKey",
+          "help": "ConsumerKey_Help"
+        },
+        "consumerSecret": {
+          "type": "text",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "ConsumerSecret",
+          "help": "ConsumerSecret_Help",
+          "newLine": true
+        },
+        "latitude": {
+          "type": "text",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "LocationLatitude",
+          "help": "LocationLatitude_Help"
+        },
+        "longitude": {
+          "type": "text",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "LocationLongitude",
+          "help": "LocationLongitude_Help",
+          "newLine": true
+        },
+        "pollinterval": {
+          "type": "number",
+          "sm": 12,
+          "md":  6,
+          "lg": 6,
+          "label": "PollInterval",
+          "help": "PollInterval_Help"
+        }
+      }
+    }
+  }
+}

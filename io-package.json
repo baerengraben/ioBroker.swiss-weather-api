@@ -141,21 +141,27 @@
         "connectionType": "cloud",
         "dataSource": "poll",
         "compact": true,
-        "materializeTab": true,
-        "materialize": true,
+        "adminUI": {
+            "config": "json"
+        },
         "dependencies": [
             {
-                "js-controller": ">=3.0.0"
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
             }
         ]
     },
     "native": {
-        "App_Name": "",
-        "ConsumerKey": "",
-        "ConsumerSecret": "",
-        "Latitude": "",
-        "Longitude": "",
-        "PollInterval": "60"
+        "app_name": "",
+        "consumerKey": "",
+        "consumerSecret": "",
+        "latitude": "",
+        "longitude": "",
+        "pollinterval": 60
     },
     "objects": [],
     "instanceObjects": [

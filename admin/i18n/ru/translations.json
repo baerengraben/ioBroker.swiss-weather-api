@@ -1,0 +1,16 @@
+{
+    "App_Name": "Имя приложения SRF Meteo",
+    "App_Name_Help": "Получите имя приложения SRF Meteo с портала SRF Meteo.",
+    "ConsumerKey": "ConsumerKey приложения",
+    "ConsumerKey_Help": "Получите ConsumerKey с портала SRF Meteo.",
+    "ConsumerSecret": "ConsumerSecret приложения",
+    "ConsumerSecret_Help": "Получите ConsumerSecret с портала SRF Meteo.",
+    "LocationLatitude": "Широта",
+    "LocationLatitude_Help": "Оставьте пустым, чтобы использовать широту конфигурации системы.",
+    "LocationLongitude": "Долгота",
+    "LocationLongitude_Help": "Оставьте пустым, чтобы использовать долготу системной конфигурации",
+    "Options": "Конфигурация",
+    "PollInterval": "Интервал опроса",
+    "PollInterval_Help": "Интервал опроса в минутах",
+    "swiss-weather-api adapter settings": "Настройки адаптера для swiss-weather-api"
+}
