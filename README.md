@@ -15,8 +15,9 @@
 Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).
 The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
 
-##**Please Be aware that this adapter only supports locations within Switzerland.**
-##**Please Be aware that this adapter only supports RF Weather REST API Version 1 - Version 2 is comming soon!**
+##**Please Be aware:
+1. that this adapter only supports locations within Switzerland. And
+1. that this adapter only supports RF Weather REST API Version 1 - Version 2 is comming soon
 
 **Update procedure Version 1.0.1 to 1.0.x**
 - Just update in ioBroker. No special additional steps necessary
