@@ -1,0 +1,23 @@
+-- Call um die korrekte geolocation id herauzufinden
+-- Dies muss immer gemacht werden, da nicht für jede Koordinate auch eine vorhersage besteht
+-- Deswegen muss zuerst die nächste Geolocationid mit vorhandener Vorhersage ermittelt werden.
+
+Request URL: https://api.srgssr.ch/srf-meteo/v2/geolocations?latitude=47.0461&longitude=7.3756
+
+curl -X 'GET' \
+  'https://api.srgssr.ch/srf-meteo/v2/geolocations?latitude=47.0461&longitude=7.3756' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer azr8BxAD2pPdnpvOMRCo7VKqehGW'
+
+-- Anschliessend kann mit der ermittelten GeolocationId die Vorhersagen abgefragt werden:
+-- gibt die Forhersagen zurück
+
+Request URL: https://api.srgssr.ch/srf-meteo/v2/forecastpoint/47.0454%2C7.3723 
+
+curl -X 'GET' \
+  'https://api.srgssr.ch/srf-meteo/v2/forecastpoint/47.0454%2C7.3723' \
+  -H 'accept: application/json' \
+  -H 'authorization: Bearer azr8BxAD2pPdnpvOMRCo7VKqehGW'
+
+Antwort
+  
