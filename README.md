@@ -10,18 +10,18 @@
 [![NPM](https://nodei.co/npm/iobroker.swiss-weather-api.png?downloads=true)](https://nodei.co/npm/iobroker.swiss-weather-api/)
 
 
-## swiss-weather-api adapter for ioBroker
+# swiss-weather-api adapter for ioBroker
 Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).
 The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
 
-##**Please Be aware:
+## **Please Be aware:**
 1. that this adapter only supports locations within Switzerland. And
 1. that this adapter only supports RF Weather REST API Version 1 - Version 2 is comming soon
 
-**Update procedure Version 1.0.1 to 1.0.x**
+## **Update procedure Version 1.0.1 to 1.0.x**
 - Just update in ioBroker. No special additional steps necessary
 
-### Getting started
+## Getting started
 1. Get a free accout on https://developer.srgssr.ch/
 1. Go to "My Apps" and create a new App. Here you can choose a Product. "Freemium" is their free product. If you only want a forecast for one location and get only 50 request per day (every 30min) or/and don't want to pay for more request per day, "Freemium" is what you want to choose. Now, this will create a specific ConsumerKey and ConsumerSecret
 1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed. This information is optional if you have set your location in the ioBroker settings (main settings) (via the map). In this case you could leave the latitude and longitude fields empty. The adapter then takes over the settings of the ioBroker. Latitude and longitude entered in the adapter configuration override the ioBroker settings.
