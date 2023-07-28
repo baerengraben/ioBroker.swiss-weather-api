@@ -184,7 +184,7 @@ function getSystemLanguage(self) {
 
 /**
  * Creates a json Object for usage with Material Design JSON Chart
- * @param body srf api response containing 60minutes json object
+ * @param body srf api response containing hours json object
  * @returns {*[]} containing Json for usage with Material Design JSON Chart
  */
 function createJson(body) {
@@ -731,7 +731,7 @@ function createJson(body) {
 	let myGraphsRegenwahrscheinlichkeitDay4 = JSON.parse(JSON.stringify(myGraphsTemplateRegenwahrscheinlichkeit));
 	let myGraphsRegenwahrscheinlichkeitDataDay4 = [];
 
-	body.forecast["60minutes"].forEach(function(obj,index) {
+	body.forecast["hours"].forEach(function(obj,index) {
 		if (index < 24) {
 			if (typeof obj.TTT_C !== undf || obj.TTT_C != null) {
 				myGraphsTemperaturDataDay0.push(obj.TTT_C);
@@ -908,7 +908,7 @@ function getToken(self,myCallback){
 }
 
 /**
- * Sets the current hour objects with the corresponding values of forecast.60minutes.day0
+ * Sets the current hour objects with the corresponding values of forecast.hours.day0
  * @param self Adapter
  */
 function setCurrentHour(self){
@@ -924,16 +924,16 @@ function setCurrentHour(self){
 			var hour = (date.getHours()<10?'0':'') + date.getHours();
 
 			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52
- 			var path = self.namespace + ".forecast.60minutes.day0";
+ 			var path = self.namespace + ".forecast.hours.day0";
 			if (date.getHours()===0){
 				//check if forecast values already has nextday values in day0/0000
-				self.getState(self.namespace + ".forecast.60minutes.day0.0000.local_date_time", function (err, state) {
+				self.getState(self.namespace + ".forecast.hours.day0.0000.local_date_time", function (err, state) {
 					if ((typeof state !== "undefined") && (state !== null)) {
 						if (date.getDay() === new Date(state.val).getDay()){
 							self.log.info("forecast is containing aktual values vor 00:00. So using day0 values");
 						} else {
 							self.log.info("forecast is containing yesterdays values vor 00:00. So using day1 values.");
-							path = self.namespace + ".forecast.60minutes.day1"
+							path = self.namespace + ".forecast.hours.day1"
 						}
 					} else {
 						self.log.error("Cannot read local_date_time" + ':' + 'This should not happen. Please go to github and create an issue.');
@@ -1150,7 +1150,7 @@ function setCurrentHour(self){
 		self.setObjectNotExists(updatePath, {
 			type: "channel",
 			common: {
-				name: "Holds the current hour data. This is updated on every full hour by coping the data from forecast.60minutes.day0 - actual hour",
+				name: "Holds the current hour data. This is updated on every full hour by coping the data from forecast.hours.day0 - actual hour",
 				role: "info"
 			},
 			native: {},
@@ -1352,7 +1352,7 @@ function setCurrentHour(self){
 		self.setObjectNotExists(updatePath + "." + "type", {
 			type: "state",
 			common: {
-				name: "result set; possible values: 60minutes, hour, day",
+				name: "result set; possible values: hours, hour, day",
 				type: "string",
 				role: "text",
 				write: false
@@ -1524,7 +1524,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "id", {
 					type: "state",
 					common: {
-						name: "id",
+						name: "Readable identifier: Composed of <lat>,<lon> rounded to 4 digits",
 						type: "string",
 						role: "text"
 					},
@@ -1574,7 +1574,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "station_id", {
 					type: "state",
 					common: {
-						name: "station id",
+						name: "Internal use",
 						type: "string",
 						role: "text",
 						write: false
@@ -1591,7 +1591,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "timezone", {
 					type: "state",
 					common: {
-						name: "timezone",
+						name: "Internal use",
 						type: "string",
 						role: "text",
 						write: false
@@ -1608,7 +1608,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "default_name", {
 					type: "state",
 					common: {
-						name: "default name",
+						name: "One of the names of the point",
 						type: "string",
 						role: "text",
 						write: false
@@ -1644,7 +1644,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "description_short", {
 					type: "state",
 					common: {
-						name: "description_short",
+						name: "description short",
 						type: "string",
 						role: "location"
 					},
@@ -1660,7 +1660,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "description_long", {
 					type: "state",
 					common: {
-						name: "description_long",
+						name: "description long",
 						type: "string",
 						role: "location"
 					},
@@ -1692,7 +1692,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "id", {
 					type: "state",
 					common: {
-						name: "id",
+						name: "Hash value for internal use",
 						type: "string",
 						role: "text"
 					},
@@ -1708,7 +1708,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "location_id", {
 					type: "state",
 					common: {
-						name: "location_id",
+						name: "Internal field; the API should always be addressed with the geolocation identifier <lat>.<long>.",
 						type: "string",
 						role: "text"
 					},
@@ -1740,7 +1740,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "id", {
 					type: "state",
 					common: {
-						name: "POI Type",
+						name: "POI Type id - no description found in SRF Doku",
 						type: "number",
 						role: "value"
 					},
@@ -1756,7 +1756,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "name", {
 					type: "state",
 					common: {
-						name: "name",
+						name: "name - no description found in SRF Doku",
 						type: "string",
 						role: "text"
 					},
@@ -1772,7 +1772,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "language", {
 					type: "state",
 					common: {
-						name: "language",
+						name: "language - no description found in SRF Doku",
 						type: "number",
 						role: "value"
 					},
@@ -1788,7 +1788,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "translation_type", {
 					type: "state",
 					common: {
-						name: "translation type",
+						name: "translation type - no description found in SRF Doku",
 						type: "string",
 						role: "text"
 					},
@@ -1852,7 +1852,7 @@ function getForecast(self){
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "ch", {
 					type: "state",
 					common: {
-						name: "ch",
+						name: "ch - no description found in SRF Doku",
 						type: "number",
 						role: "value"
 					},
@@ -1865,17 +1865,17 @@ function getForecast(self){
 				});
 			}
 
-			//*** Create 60minutes forecast ***
-			self.setObjectNotExists("forecast." + "60minutes", {
+			//*** Create hours forecast */
+			self.setObjectNotExists("forecast." + "hours", {
 				type: "channel",
 				common: {
-					name: "Forecast data for time windows of 60 minutes (for 98 hours from today 0:00)",
+					name: "Forecast data for time windows of 60 minutes (for 99 hours from today 0:00)",
 					role: "info"
 				},
 				native: {},
 			});
 			// Day 0
-			self.setObjectNotExists("forecast." + "60minutes.day0", {
+			self.setObjectNotExists("forecast." + "hours.day0", {
 				type: "channel",
 				common: {
 					name: "Forecast data for today",
@@ -1884,7 +1884,7 @@ function getForecast(self){
 				native: {},
 			});
 			// Day 1
-			self.setObjectNotExists("forecast." + "60minutes.day1", {
+			self.setObjectNotExists("forecast." + "hours.day1", {
 				type: "channel",
 				common: {
 					name: "Forecast data for tomorrow",
@@ -1893,7 +1893,7 @@ function getForecast(self){
 				native: {},
 			});
 			// Day 2
-			self.setObjectNotExists("forecast." + "60minutes.day2", {
+			self.setObjectNotExists("forecast." + "hours.day2", {
 				type: "channel",
 				common: {
 					name: "Forecast data for today + 2 days",
@@ -1902,7 +1902,7 @@ function getForecast(self){
 				native: {},
 			});
 			// Day 3
-			self.setObjectNotExists("forecast." + "60minutes.day3", {
+			self.setObjectNotExists("forecast." + "hours.day3", {
 				type: "channel",
 				common: {
 					name: "Forecast data for today + 3 days",
@@ -1911,7 +1911,7 @@ function getForecast(self){
 				native: {},
 			});
 			// Day 4
-			self.setObjectNotExists("forecast." + "60minutes.day4", {
+			self.setObjectNotExists("forecast." + "hours.day4", {
 				type: "channel",
 				common: {
 					name: "Forecast data for today + 4 days",
@@ -1920,21 +1920,20 @@ function getForecast(self){
 				native: {},
 			});
 
-
-			if (typeof body.forecast["60minutes"] !== undf || body.forecast["60minutes"] != null) {
-				//iterate over all 60minutes objects
-				body.forecast["60minutes"].forEach(function (obj, index) {
+			if (typeof body.forecast["hours"] !== undf || body.forecast["hours"] != null) {
+				//iterate over all hours objects
+				body.forecast["hours"].forEach(function (obj, index) {
 					var startTimeISOString;
 					var objDate;
 					var myPath;
 					var myTime;
 
-					if (typeof obj.local_date_time !== undf || obj.local_date_time != null) {
-						startTimeISOString = obj.local_date_time;
+					if (typeof obj.date_time !== undf || obj.date_time != null) {
+						startTimeISOString = obj.date_time;
 						objDate = new Date(startTimeISOString);
 						myTime = getTimeFormattet(objDate);
 					} else {
-						self.log.error("No local_date_time found in JSON, delivered by SRF. Please try again later.");
+						self.log.error("No date_time found in JSON, delivered by SRF. Please try again later.");
 						return;
 					}
 
@@ -1950,25 +1949,25 @@ function getForecast(self){
 						myPath = "day4";
 					}
 
-					if (typeof obj.local_date_time !== undf || obj.local_date_time != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "local_date_time", {
+					if (typeof obj.date_time !== undf || obj.date_time != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "date_time", {
 							type: "state",
 							common: {
-								name: "Date for validity of record",
+								name: "Date for validity of record, end of interval for forecast of type 'three_hours' or 'hours'",
 								type: "string",
 								role: "text",
 								write: false
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "local_date_time", {
-								val: obj.local_date_time,
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "date_time", {
+								val: obj.date_time,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.TTT_C !== undf || obj.TTT_C != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTT_C", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "TTT_C", {
 							type: "state",
 							common: {
 								name: "Current temperature in °C",
@@ -1978,14 +1977,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTT_C", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "TTT_C", {
 								val: obj.TTT_C,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.TTL_C !== undf || obj.TTL_C != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTL_C", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "TTL_C", {
 							type: "state",
 							common: {
 								name: "Error range lower limit",
@@ -1995,14 +1994,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTL_C", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "TTL_C", {
 								val: obj.TTL_C,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.TTH_C !== undf || obj.TTH_C != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTH_C", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "TTH_C", {
 							type: "state",
 							common: {
 								name: "Error range upper limit",
@@ -2012,14 +2011,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "TTH_C", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "TTH_C", {
 								val: obj.TTH_C,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.PROBPCP_PERCENT !== undf || obj.PROBPCP_PERCENT != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "PROBPCP_PERCENT", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "PROBPCP_PERCENT", {
 							type: "state",
 							common: {
 								name: "Probability of precipitation in %",
@@ -2029,14 +2028,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "PROBPCP_PERCENT", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "PROBPCP_PERCENT", {
 								val: obj.PROBPCP_PERCENT,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.RRR_MM !== undf || obj.RRR_MM != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "RRR_MM", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "RRR_MM", {
 							type: "state",
 							common: {
 								name: "Precipitation total",
@@ -2046,14 +2045,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "RRR_MM", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "RRR_MM", {
 								val: obj.RRR_MM,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.FF_KMH !== undf || obj.FF_KMH != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "FF_KMH", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "FF_KMH", {
 							type: "state",
 							common: {
 								name: "Wind speed in km/h",
@@ -2063,14 +2062,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "FF_KMH", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "FF_KMH", {
 								val: obj.FF_KMH,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.FX_KMH !== undf || obj.FX_KMH != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "FX_KMH", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "FX_KMH", {
 							type: "state",
 							common: {
 								name: "Peak wind speed in km/h",
@@ -2080,14 +2079,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "FX_KMH", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "FX_KMH", {
 								val: obj.FX_KMH,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.DD_DEG !== undf || obj.DD_DEG != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "DD_DEG", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "DD_DEG", {
 							type: "state",
 							common: {
 								name: "Wind direction in angular degrees: 0 = North wind",
@@ -2097,14 +2096,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "DD_DEG", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "DD_DEG", {
 								val: obj.DD_DEG,
 								ack: true
 							});
 						});
 					}
-					if (typeof obj.SYMBOL_CODE !== undf || obj.SYMBOL_CODE != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "SYMBOL_CODE", {
+					if (typeof obj.symbol_code !== undf || obj.symbol_code != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "symbol_code", {
 							type: "state",
 							common: {
 								name: "Mapping to weather icon",
@@ -2114,12 +2113,12 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "SYMBOL_CODE", {
-								val: obj.SYMBOL_CODE,
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "symbol_code", {
+								val: obj.symbol_code,
 								ack: true
 							});
 						});
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_COLOR", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_COLOR", {
 							type: "state",
 							common: {
 								name: "URL to color Icon",
@@ -2128,12 +2127,12 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_COLOR", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_COLOR", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Color/" + obj.SYMBOL_CODE + ".png",
 								ack: true
 							});
 						});
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_DARK", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_DARK", {
 							type: "state",
 							common: {
 								name: "URL to dark Icon",
@@ -2142,12 +2141,12 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_DARK", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_DARK", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Dark/" + obj.SYMBOL_CODE + ".png",
 								ack: true
 							});
 						});
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_LIGHT", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_LIGHT", {
 							type: "state",
 							common: {
 								name: "URL to light Icon",
@@ -2156,30 +2155,30 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "ICON_URL_LIGHT", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "ICON_URL_LIGHT", {
 								val: "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/img/Meteo_API_Icons/Light/" + obj.SYMBOL_CODE + ".png",
 								ack: true
 							});
 						});
 					}
-					if (typeof obj.type !== undf || obj.type != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "type", {
+					if (typeof obj.symbol24_code !== undf || obj.symbol24_code != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "symbol24_code", {
 							type: "state",
 							common: {
-								name: "result set; possible values: 60minutes, hour, day",
-								type: "string",
-								role: "text",
+								name: "Mapping to weather icon set 24 - No further description in SRF Doku. Maybe there will be a new icon set?",
+								type: "number",
+								role: "value",
 								write: false
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "type", {
-								val: obj.type,
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "symbol24_code", {
+								val: obj.symbol24_code,
 								ack: true
 							});
 						});
 					}
-					self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color", {
+					self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color", {
 						type: "channel",
 						common: {
 							name: "Mapping temperature / color value",
@@ -2188,7 +2187,7 @@ function getForecast(self){
 						native: {},
 					});
 					if (typeof obj.cur_color.temperature !== undf || obj.cur_color.temperature != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "temperature", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "temperature", {
 							type: "state",
 							common: {
 								name: "Temperature value",
@@ -2198,14 +2197,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "temperature", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "temperature", {
 								val: obj.cur_color.temperature,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.cur_color.background_color !== undf || obj.cur_color.background_color != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "background_color", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "background_color", {
 							type: "state",
 							common: {
 								name: "background hex color value",
@@ -2215,14 +2214,14 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "background_color", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "background_color", {
 								val: obj.cur_color.background_color,
 								ack: true
 							});
 						});
 					}
 					if (typeof obj.cur_color.text_color !== undf || obj.cur_color.text_color != null) {
-						self.setObjectNotExists("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "text_color", {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "text_color", {
 							type: "state",
 							common: {
 								name: "text hex color value",
@@ -2232,8 +2231,127 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes." + myPath + "." + myTime + "." + "cur_color." + "text_color", {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "cur_color." + "text_color", {
 								val: obj.cur_color.text_color,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.DEWPOINT_C !== undf || obj.DEWPOINT_C != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "DEWPOINT_C", {
+							type: "state",
+							common: {
+								name: "Dewpoint in °C",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "DEWPOINT_C", {
+								val: obj.DEWPOINT_C,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.RELHUM_PERCENT !== undf || obj.RELHUM_PERCENT != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "RELHUM_PERCENT", {
+							type: "state",
+							common: {
+								name: "Relative air humidity in %",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "RELHUM_PERCENT", {
+								val: obj.RELHUM_PERCENT,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.FRESHSNOW_CM !== undf || obj.FRESHSNOW_CM != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "FRESHSNOW_CM", {
+							type: "state",
+							common: {
+								name: "Fresh snow in cm",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "FRESHSNOW_CM", {
+								val: obj.FRESHSNOW_CM,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.PRESSURE_HPA !== undf || obj.PRESSURE_HPA != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "PRESSURE_HPA", {
+							type: "state",
+							common: {
+								name: "Barometric pressure in HPA",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "PRESSURE_HPA", {
+								val: obj.PRESSURE_HPA,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.SUN_MIN !== undf || obj.SUN_MIN != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "SUN_MIN", {
+							type: "state",
+							common: {
+								name: "Sun minutes",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "SUN_MIN", {
+								val: obj.SUN_MIN,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.IRRADIANCE_WM2 !== undf || obj.IRRADIANCE_WM2 != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "IRRADIANCE_WM2", {
+							type: "state",
+							common: {
+								name: "Global irradiance in W/m2",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "IRRADIANCE_WM2", {
+								val: obj.IRRADIANCE_WM2,
+								ack: true
+							});
+						});
+					}
+					if (typeof obj.TTTFEEL_C !== undf || obj.TTTFEEL_C != null) {
+						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "TTTFEEL_C", {
+							type: "state",
+							common: {
+								name: "Perceived temperature in °C",
+								type: "number",
+								role: "value",
+								write: false
+							},
+							native: {},
+						}, function () {
+							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "TTTFEEL_C", {
+								val: obj.TTTFEEL_C,
 								ack: true
 							});
 						});
@@ -2241,17 +2359,17 @@ function getForecast(self){
 
 					var jsonCharts = (createJson(body));
 					jsonCharts.forEach(function (obj, index) {
-						self.setObjectNotExists("forecast." + "60minutes.day" + index + "." + "JsonChart", {
+						self.setObjectNotExists("forecast." + "hours.day" + index + "." + "JsonChart", {
 							type: "state",
 							common: {
-								name: "JSON containing the weather-values of this 60min forecast - Use this with Material Design JSON Chart",
+								name: "JSON containing the weather-values of this hour forecast - Use this with Material Design JSON Chart",
 								type: "string",
 								role: "text",
 								write: false
 							},
 							native: {},
 						}, function () {
-							self.setState("forecast." + "60minutes.day" + index + "." + "JsonChart", {
+							self.setState("forecast." + "hours.day" + index + "." + "JsonChart", {
 								val: JSON.stringify(obj),
 								ack: true
 							});
@@ -2259,7 +2377,7 @@ function getForecast(self){
 					});
 				});
 			} else {
-				self.log.error("No 60minutes Forecast-Data found in JSON delivered by SRF. Please try again later.");
+				self.log.error("No hours Forecast-Data found in JSON delivered by SRF. Please try again later.");
 			}
 
 
@@ -2646,7 +2764,7 @@ function getForecast(self){
 						self.setObjectNotExists("forecast." + "day." + myPath + "." + myTime + "." + "type", {
 							type: "state",
 							common: {
-								name: "result set; possible values: 60minutes, hour, day",
+								name: "result set; possible values: hours, hour, day",
 								type: "string",
 								role: "text",
 								write: false
@@ -3116,7 +3234,7 @@ function getForecast(self){
 						self.setObjectNotExists("forecast." + "hour." + myPath + "." + myTime + "." + "type", {
 							type: "state",
 							common: {
-								name: "result set; possible values: 60minutes, hour, day",
+								name: "result set; possible values: hours, hour, day",
 								type: "string",
 								role: "text",
 								write: false
