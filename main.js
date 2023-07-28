@@ -1463,7 +1463,7 @@ function getForecast(self){
 		"method": "GET",
 		"hostname": "api.srgssr.ch",
 		"port": null,
-		"path": "/srf-meteo/forecast/"+geolocationId,
+		"path": "/srf-meteo/v2/forecastpoint/"+geolocationId,
 		"headers": {
 			"authorization": "Bearer " + access_token
 		}
@@ -1491,11 +1491,7 @@ function getForecast(self){
 			//check if there is a Error-Code
 			if (body.hasOwnProperty("code")) {
 				self.log.debug("Return Code: " + body.code.toString());
-				if (body.code.toString().startsWith("404")) {
-					self.setState('info.connection', false, true);
-					self.log.error("Forecast - Resource not found");
-					return;
-				} else if (body.code.toString().startsWith("400")) {
+				if (body.code.toString().startsWith("400")) {
 					self.setState('info.connection', false, true);
 					self.log.error("Forecast -  Invalid request");
 					self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
@@ -1505,10 +1501,9 @@ function getForecast(self){
 					self.log.error("Forecast -  Invalid or expired access token ");
 					self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
 					return;
-				} else if (body.code.toString().startsWith("429")) {
+				} else if (body.code.toString().startsWith("404")) {
 					self.setState('info.connection', false, true);
-					self.log.error("Forecast -  Invalid or expired access token ");
-					self.log.error("Forecast  - An error has occured. " + JSON.stringify(body));
+					self.log.error("Forecast - Resource not found");
 					return;
 				} else {
 					self.setState('info.connection', false, true);
@@ -1626,41 +1621,7 @@ function getForecast(self){
 					});
 				});
 			}
-			if (typeof body.geolocation.alarm_region_id !== undf || body.geolocation.alarm_region_id != null) {
-				self.setObjectNotExists("geolocation." + "alarm_region_id", {
-					type: "state",
-					common: {
-						name: "alarm region id",
-						type: "string",
-						role: "text",
-						write: false
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "alarm_region_id", {
-						val: body.geolocation.alarm_region_id,
-						ack: true
-					});
-				});
-			}
-			if (typeof body.geolocation.alarm_region_name !== undf || body.geolocation.alarm_region_name != null) {
-				self.setObjectNotExists("geolocation." + "alarm_region_name", {
-					type: "state",
-					common: {
-						name: "alarm region name",
-						type: "string",
-						role: "text",
-						write: false
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "alarm_region_name", {
-						val: body.geolocation.alarm_region_name,
-						ack: true
-					});
-				});
-			}
-			if (typeof body.geolocation.district !== undf || body.geolocation.district != null) {
+ 			if (typeof body.geolocation.district !== undf || body.geolocation.district != null) {
 				self.setObjectNotExists("geolocation." + "district", {
 					type: "state",
 					common: {
@@ -1679,6 +1640,38 @@ function getForecast(self){
 			}
 
 			//Geolocation_Names
+			if (typeof body.geolocation.geolocation_names[0].description_short !== undf || body.geolocation.geolocation_names[0].description_short != null) {
+				self.setObjectNotExists("geolocation." + "geolocation_names." + "description_short", {
+					type: "state",
+					common: {
+						name: "description_short",
+						type: "string",
+						role: "location"
+					},
+					native: {},
+				}, function () {
+					self.setState("geolocation." + "geolocation_names." + "description_short", {
+						val: body.geolocation.geolocation_names[0].description_short,
+						ack: true
+					});
+				});
+			}
+			if (typeof body.geolocation.geolocation_names[0].description_long !== undf || body.geolocation.geolocation_names[0].description_long != null) {
+				self.setObjectNotExists("geolocation." + "geolocation_names." + "description_long", {
+					type: "state",
+					common: {
+						name: "description_long",
+						type: "string",
+						role: "location"
+					},
+					native: {},
+				}, function () {
+					self.setState("geolocation." + "geolocation_names." + "description_long", {
+						val: body.geolocation.geolocation_names[0].description_long,
+						ack: true
+					});
+				});
+			}
 			if (typeof body.geolocation.geolocation_names[0].district !== undf || body.geolocation.geolocation_names[0].district != null) {
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "district", {
 					type: "state",
@@ -1711,6 +1704,22 @@ function getForecast(self){
 					});
 				});
 			}
+			if (typeof body.geolocation.geolocation_names[0].location_id !== undf || body.geolocation.geolocation_names[0].location_id != null) {
+				self.setObjectNotExists("geolocation." + "geolocation_names." + "location_id", {
+					type: "state",
+					common: {
+						name: "location_id",
+						type: "string",
+						role: "text"
+					},
+					native: {},
+				}, function () {
+					self.setState("geolocation." + "geolocation_names." + "location_id", {
+						val: body.geolocation.geolocation_names[0].location_id,
+						ack: true
+					});
+				});
+			}
 			if (typeof body.geolocation.geolocation_names[0].type !== undf || body.geolocation.geolocation_names[0].type != null) {
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "type", {
 					type: "state",
@@ -1723,6 +1732,38 @@ function getForecast(self){
 				}, function () {
 					self.setState("geolocation." + "geolocation_names." + "type", {
 						val: body.geolocation.geolocation_names[0].type,
+						ack: true
+					});
+				});
+			}
+			if (typeof body.geolocation.geolocation_names[0].poi_type.id !== undf || body.geolocation.geolocation_names[0].poi_type.id != null) {
+				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "id", {
+					type: "state",
+					common: {
+						name: "POI Type",
+						type: "number",
+						role: "value"
+					},
+					native: {},
+				}, function () {
+					self.setState("geolocation." + "geolocation_names." + "poi_type." + "id", {
+						val: body.geolocation.geolocation_names[0].poi_type.id,
+						ack: true
+					});
+				});
+			}
+			if (typeof body.geolocation.geolocation_names[0].poi_type.name !== undf || body.geolocation.geolocation_names[0].poi_type.name != null) {
+				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "name", {
+					type: "state",
+					common: {
+						name: "name",
+						type: "string",
+						role: "text"
+					},
+					native: {},
+				}, function () {
+					self.setState("geolocation." + "geolocation_names." + "poi_type." + "name", {
+						val: body.geolocation.geolocation_names[0].poi_type.name,
 						ack: true
 					});
 				});
@@ -1791,38 +1832,6 @@ function getForecast(self){
 					});
 				});
 			}
-			if (typeof body.geolocation.geolocation_names[0].province !== undf || body.geolocation.geolocation_names[0].province != null) {
-				self.setObjectNotExists("geolocation." + "geolocation_names." + "province", {
-					type: "state",
-					common: {
-						name: "province",
-						type: "string",
-						role: "text"
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "geolocation_names." + "province", {
-						val: body.geolocation.geolocation_names[0].province,
-						ack: true
-					});
-				});
-			}
-			if (typeof body.geolocation.geolocation_names[0].inhabitants !== undf || body.geolocation.geolocation_names[0].inhabitants != null) {
-				self.setObjectNotExists("geolocation." + "geolocation_names." + "inhabitants", {
-					type: "state",
-					common: {
-						name: "inhabitants",
-						type: "number",
-						role: "value"
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "geolocation_names." + "inhabitants", {
-						val: body.geolocation.geolocation_names[0].inhabitants,
-						ack: true
-					});
-				});
-			}
 			if (typeof body.geolocation.geolocation_names[0].height !== undf || body.geolocation.geolocation_names[0].height != null) {
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "height", {
 					type: "state",
@@ -1835,22 +1844,6 @@ function getForecast(self){
 				}, function () {
 					self.setState("geolocation." + "geolocation_names." + "height", {
 						val: body.geolocation.geolocation_names[0].height,
-						ack: true
-					});
-				});
-			}
-			if (typeof body.geolocation.geolocation_names[0].plz !== undf || body.geolocation.geolocation_names[0].plz != null) {
-				self.setObjectNotExists("geolocation." + "geolocation_names." + "plz", {
-					type: "state",
-					common: {
-						name: "plz",
-						type: "number",
-						role: "value"
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "geolocation_names." + "plz", {
-						val: body.geolocation.geolocation_names[0].plz,
 						ack: true
 					});
 				});
