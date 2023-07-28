@@ -1,5 +1,5 @@
 "use strict";
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+//process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'; Wieder entfernen - Hoffe sie haben jetzt das Zertifikatsmanagement im Griff...
 
 /*
  * Created with @iobroker/create-adapter v1.18.0
@@ -3242,7 +3242,7 @@ function getGeolocationId(self,myCallback) {
 		"method": "GET",
 		"hostname": "api.srgssr.ch",
 		"port": null,
-		"path": "/srf-meteo/geolocations?latitude=" + self.config.latitude + "&longitude=" + self.config.longitude,
+		"path": "/srf-meteo/v2/geolocations?latitude=" + self.config.latitude + "&longitude=" + self.config.longitude,
 		"headers": {
 			"authorization": "Bearer " + access_token
 		}
@@ -3271,11 +3271,7 @@ function getGeolocationId(self,myCallback) {
 			//check if there is a Error-Code
 			if (body.hasOwnProperty("code")) {
 				self.log.debug("Return Code: " + body.code.toString());
-				if (body.code.toString().startsWith("404")) {
-					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id - Resource not found");
-					return;
-				} else if (body.code.toString().startsWith("400")) {
+				if (body.code.toString().startsWith("400")) {
 					self.setState('info.connection', false, true);
 					self.log.error("Get Gelocation id -  Invalid request");
 					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
@@ -3285,12 +3281,11 @@ function getGeolocationId(self,myCallback) {
 					self.log.error("Get Gelocation id -  Invalid or expired access token ");
 					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
 					return;
-				} else if (body.code.toString().startsWith("429")) {
+				} else if (body.code.toString().startsWith("404")) {
 					self.setState('info.connection', false, true);
-					self.log.error("Get Gelocation id -  Invalid or expired access token ");
-					self.log.error("Get Gelocation id  - An error has occured. " + JSON.stringify(body));
+					self.log.error("Get Gelocation id - Resource not found");
 					return;
-				} else {
+				}   else {
 					self.setState('info.connection', false, true);
 					self.log.error("Get Gelocation id - An error has occured. " + JSON.stringify(body));
 					return;
