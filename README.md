@@ -9,7 +9,6 @@
 
 [![NPM](https://nodei.co/npm/iobroker.swiss-weather-api.png?downloads=true)](https://nodei.co/npm/iobroker.swiss-weather-api/)
 
-**Tests:** ![Test and Release](https://github.com/baerengraben/ioBroker.swiss-weather-api/workflows/Test%20and%20Release/badge.svg)
 
 ## swiss-weather-api adapter for ioBroker
 Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).
