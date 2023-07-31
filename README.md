@@ -21,7 +21,7 @@ The SRF Weather REST API allows you to get weather forecasts and reports from mo
 ## **Update procedure Version 1.0.x to 1.1.x**
 - Remove the adapter (delete all Adapter-Objects in ioBroker!)
 - Install Adapter completly new => New Objects will be generated
-- Since SRF has changed the Path-Names, you have to update your Visu. The object-Names have not changed, only the Path-Names have some marginal changes.
+- Since SRF has changed the Path-Names, you have to update your Visu. Just [reimport the views](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views).  
 
 ## Getting started
 1. Get a free accout on https://developer.srgssr.ch/
