@@ -57,8 +57,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.0.1 (2023-07-31)
 * (baerengraben) Just a release-script test
 
 ### 2.0.0 (2023-07-31) - Release for SRF Weather API Version 2!
@@ -77,11 +76,6 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 ### 1.0.4
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82
-
-### 1.0.3
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/52
 
 ## License
 MIT License
