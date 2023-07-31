@@ -55,9 +55,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   ### **WORK IN PROGRESS**
 -->
 
-### **WORK IN PROGRESS**
-
-### 1.1.0
+### **WORK IN PROGRESS** - Release for SRF Weather API Version 2!
 * (baerengraben) Update SRF API version 1 to version 2 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94. With this Update new attributes are available: symbol24_code, DEWPOINT_C, RELHUM_PERCENT, FRESHSNOW_CM, PRESSURE_HPA, SUN_MIN, IRRADIANCE_WM2 and TTTFEEL_C
 
 ### 1.0.6
