@@ -1,8 +1,21 @@
 {
     "common": {
         "name": "swiss-weather-api",
-        "version": "1.0.6",
+        "version": "1.1.0",
         "news": {
+            "1.1.0": {
+                "en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "de": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "ru": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "pt": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "nl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "fr": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "it": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "es": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+                "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94"
+            },
             "1.0.6": {
                 "en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97",
                 "de": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 und https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
