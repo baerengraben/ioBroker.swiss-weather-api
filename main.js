@@ -96,9 +96,20 @@ function isValidJSONString(str) {
 }
 
 /**
- * returns formattet Time
+ * returns formattet Time as hh:mm
  * @param actualDate  Date Object
- * @returns {string}  hour + min + sec
+ * @returns {string}  hour:min
+ */
+function getTimeFormattetAsHH_MM(actualDate) {
+	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
+	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
+	return hour + ":" + min;
+}
+
+/**
+ * returns formattet Time as hhmm
+ * @param actualDate  Date Object
+ * @returns {string}  hour + min
  */
 function getTimeFormattet(actualDate) {
 	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
@@ -2845,8 +2856,11 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
+							var sunsetDateISOString = obj.SUNSET;
+							var sunsetDate = new Date(sunsetDateISOString);
+							var sunsetTime = getTimeFormattetAsHH_MM(sunsetDate);
 							self.setState("forecast." + "days." + myPath + "." + myTime + "." + "SUNSET", {
-								val: obj.SUNSET,
+								val: sunsetTime,
 								ack: true
 							});
 						});
@@ -2862,8 +2876,11 @@ function getForecast(self){
 							},
 							native: {},
 						}, function () {
+							var sunriseDateISOString = obj.SUNRISE;
+							var sunriseDate = new Date(sunriseDateISOString);
+							var sunriseTime = getTimeFormattetAsHH_MM(sunriseDate);
 							self.setState("forecast." + "days." + myPath + "." + myTime + "." + "SUNRISE", {
-								val: obj.SUNRISE,
+								val: sunriseTime,
 								ack: true
 							});
 						});
