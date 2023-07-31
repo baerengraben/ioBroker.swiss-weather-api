@@ -57,6 +57,10 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+* (baerengraben) Just another freaking release-script test
+
 ### 2.0.1 (2023-07-31)
 * (baerengraben) Just a release-script test
 
