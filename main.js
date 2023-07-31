@@ -953,12 +953,20 @@ function setCurrentHour(self){
 			Object.assign(currentHourVariables, {local_ICON_URL_LIGHT  : "dummyicon"});
 			Object.assign(currentHourVariables, {local_PROBPCP_PERCENT : 0});
 			Object.assign(currentHourVariables, {local_RRR_MM          : 0});
-			Object.assign(currentHourVariables, {local_SYMBOL_CODE     : 0});
+			Object.assign(currentHourVariables, {local_symbol_code     : 0});
 			Object.assign(currentHourVariables, {local_TTH_C           : 0});
 			Object.assign(currentHourVariables, {local_TTL_C           : 0});
 			Object.assign(currentHourVariables, {local_TTT_C           : 0});
 			Object.assign(currentHourVariables, {date_time : "1970-01-01T00:00:00+02:00"});
-			Object.assign(currentHourVariables, {local_type            : "dummytype"});
+			Object.assign(currentHourVariables, {local_symbol24_code   : 0});
+			Object.assign(currentHourVariables, {local_DEWPOINT_C      : 0});
+			Object.assign(currentHourVariables, {local_RELHUM_PERCENT  : 0});
+			Object.assign(currentHourVariables, {local_DEWPOINT_C      : 0});
+			Object.assign(currentHourVariables, {local_FRESHSNOW_CM    : 0});
+			Object.assign(currentHourVariables, {local_PRESSURE_HPA    : 0});
+			Object.assign(currentHourVariables, {local_SUN_MIN         : 0});
+			Object.assign(currentHourVariables, {local_IRRADIANCE_WM2  : 0});
+			Object.assign(currentHourVariables, {local_TTTFEEL_C       : 0});
 
 			self.log.debug('Updating local current_hour variables...');
 			self.getState(path + '.' + hour + '00.cur_color.background_color', function (err, state) {
@@ -1076,7 +1084,7 @@ function setCurrentHour(self){
 					self.log.error(path + '.' + hour + '00.symbol_code' + ':' + 'This should not happen. Error is ' + err.message);
 				}
 				if ((typeof state !== "undefined") && (state !== null)) {
-					currentHourVariables.local_SYMBOL_CODE = state.val;
+					currentHourVariables.local_symbol_code = state.val;
 				} else {
 					self.log.info(path + '.' + hour + '00.symbol_code' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
@@ -1121,6 +1129,87 @@ function setCurrentHour(self){
 					self.log.info(path + '.' + hour + '00.date_time' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
 			});
+			self.getState(path + '.' + hour + '00.symbol24_code', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.symbol24_code' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_symbol24_code = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.symbol24_code' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.DEWPOINT_C', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.DEWPOINT_C' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_DEWPOINT_C = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.DEWPOINT_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.RELHUM_PERCENT', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.RELHUM_PERCENT' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_RELHUM_PERCENT = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.RELHUM_PERCENT' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.FRESHSNOW_CM', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.FRESHSNOW_CM' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_FRESHSNOW_CM = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.FRESHSNOW_CM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.PRESSURE_HPA', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.PRESSURE_HPA' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_PRESSURE_HPA = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.PRESSURE_HPA' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.SUN_MIN', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.SUN_MIN' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_SUN_MIN = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.SUN_MIN' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.IRRADIANCE_WM2', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.IRRADIANCE_WM2' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_IRRADIANCE_WM2 = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.IRRADIANCE_WM2' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+			self.getState(path + '.' + hour + '00.TTTFEEL_C', function (err, state) {
+				if (err) {
+					self.log.error(path + '.' + hour + '00.TTTFEEL_C' + ':' + 'This should not happen. Error is ' + err.message);
+				}
+				if ((typeof state !== "undefined") && (state !== null)) {
+					currentHourVariables.local_TTTFEEL_C = state.val;
+				} else {
+					self.log.info(path + '.' + hour + '00.TTTFEEL_C' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
+				}
+			});
+
 			// Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66
 			// Wait 5s to ensure, that all "getStates" are done
 			setTimeout(function() { resolve(currentHourVariables); }, 5000)
@@ -1292,7 +1381,7 @@ function setCurrentHour(self){
 			native: {},
 		}, function () {
 			self.setState(updatePath + "." + "symbol_code", {
-				val: result.local_SYMBOL_CODE,
+				val: result.local_symbol_code,
 				ack: true
 			});
 		});
@@ -1389,6 +1478,126 @@ function setCurrentHour(self){
 		}, function () {
 			self.setState(updatePath + "." + "cur_color." + "text_color", {
 				val: result.local_text_color,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "symbol24_code", {
+			type: "state",
+			common: {
+				name: "Mapping to weather icon set 24 - No further description in SRF Doku. Maybe there will be a new icon set?",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "symbol24_code", {
+				val: result.local_symbol24_code,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "DEWPOINT_C", {
+			type: "state",
+			common: {
+				name: "Dewpoint in °C",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "DEWPOINT_C", {
+				val: result.local_DEWPOINT_C,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "RELHUM_PERCENT", {
+			type: "state",
+			common: {
+				name: "Relative air humidity in %",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "RELHUM_PERCENT", {
+				val: result.local_RELHUM_PERCENT,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "FRESHSNOW_CM", {
+			type: "state",
+			common: {
+				name: "Fresh snow in cm",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "FRESHSNOW_CM", {
+				val: result.local_FRESHSNOW_CM,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "PRESSURE_HPA", {
+			type: "state",
+			common: {
+				name: "Barometric pressure in HPA",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "PRESSURE_HPA", {
+				val: result.local_PRESSURE_HPA,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "SUN_MIN", {
+			type: "state",
+			common: {
+				name: "Sun minutes",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "SUN_MIN", {
+				val: result.local_SUN_MIN,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "IRRADIANCE_WM2", {
+			type: "state",
+			common: {
+				name: "Global irradiance in W/m2",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "IRRADIANCE_WM2", {
+				val: result.local_IRRADIANCE_WM2,
+				ack: true
+			});
+		});
+		self.setObjectNotExists(updatePath + "." + "TTTFEEL_C", {
+			type: "state",
+			common: {
+				name: "Perceived temperature in °C",
+				type: "number",
+				role: "value",
+				write: false
+			},
+			native: {},
+		}, function () {
+			self.setState(updatePath + "." + "TTTFEEL_C", {
+				val: result.local_TTTFEEL_C,
 				ack: true
 			});
 		});
@@ -2630,8 +2839,8 @@ function getForecast(self){
 							type: "state",
 							common: {
 								name: "Time sunset",
-								type: "number",
-								role: "value",
+								type: "string",
+								role: "text",
 								write: false
 							},
 							native: {},
@@ -2647,8 +2856,8 @@ function getForecast(self){
 							type: "state",
 							common: {
 								name: "Time sunrise",
-								type: "number",
-								role: "value",
+								type: "string",
+								role: "text",
 								write: false
 							},
 							native: {},

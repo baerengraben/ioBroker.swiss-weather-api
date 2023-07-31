@@ -11,15 +11,16 @@
 
 
 # swiss-weather-api adapter for ioBroker
-Connects to the great SRF weather API (https://developer.srgssr.ch/apis/srf-weather).
+Connects to the great SRF weather API - Version 2 (https://developer.srgssr.ch/apis/srf-weather).
 The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
 
 ## **Please Be aware:**
-1. that this adapter only supports locations within Switzerland. And
-1. that this adapter only supports RF Weather REST API Version 1 - Version 2 is comming soon
+1. that this adapter only supports locations within Switzerland.
 
-## **Update procedure Version 1.0.1 to 1.0.x**
-- Just update in ioBroker. No special additional steps necessary
+## **Update procedure Version 1.0.x to 1.1.x**
+- Remove the adapter (delete all Objects)
+- Install Adapter completly new => New Objects will be generated
+- Update Visu
 
 ## Getting started
 1. Get a free accout on https://developer.srgssr.ch/
@@ -52,6 +53,9 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### 1.1.0
+* (baerengraben) update SRF API version 1 to version 2 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94. With this Update new attributes are available: symbol24_code, DEWPOINT_C, RELHUM_PERCENT, FRESHSNOW_CM, PRESSURE_HPA, SUN_MIN, IRRADIANCE_WM2, TTTFEEL_C
 
 ### 1.0.6
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
