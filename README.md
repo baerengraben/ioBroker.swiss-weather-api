@@ -21,7 +21,7 @@ The SRF Weather REST API allows you to get weather forecasts and reports from mo
 1. This adapter only supports locations within Switzerland.
 1. SRF Weather API V1 is supported until Adapter-Version 1.0.6. SRF Weather API V2 is supported from Version 1.1.0
 
-## **Update procedure Version 1.0.x to 1.1.x**
+## **Update procedure Version 1.x.x to 2.0.x**
 - Remove the adapter (delete all Adapter-Objects in ioBroker!)
 - Install Adapter completly new => New Objects will be generated
 - Since SRF has changed the Path-Names, you have to update your Visu. Just [reimport the views](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views).  
