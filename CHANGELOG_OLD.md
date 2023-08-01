@@ -1,4 +1,9 @@
 # Older changes
+## 1.0.5
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75
+
 ## 1.0.4
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82

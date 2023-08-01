@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "news": {
+      "2.0.3": {
+        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "de": "Festlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "ru": "Фиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "pt": "Fixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "nl": "Quality over Quantity (QoQ) Releases Vertaling:",
+        "fr": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "it": "Fissare https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "es": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
+        "pl": "Fixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/94",
+        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/94",
+        "zh-cn": "Fixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/949494"
+      },
       "2.0.2": {
         "en": "Just another freaking release-script test",
         "de": "Nur noch ein verrückter Release-script-Test",
@@ -80,19 +93,6 @@
         "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 i https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
         "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 і https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52",
         "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/67、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/66 和 https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/52"
-      },
-      "1.0.2": {
-        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 und https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 и https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 en https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 et https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 y https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 i https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 і https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53",
-        "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/51 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/53"
       }
     },
     "titleLang": {
