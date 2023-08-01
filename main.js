@@ -1929,40 +1929,54 @@ function getForecast(self){
 						val: body.geolocation.geolocation_names[0].type,
 						ack: true
 					});
+
+					if (body.geolocation.geolocation_names[0].type == "city") {
+						self.log.debug("geolocation_names.type is a city. Creating the special Attributes for City.");
+
+
+
+
+					} else if (body.geolocation.geolocation_names[0].type == "poi") {
+						self.log.debug("geolocation_names.type is a poi. Creating the special Attributes for POI.");
+						if (typeof body.geolocation.geolocation_names[0].poi_type.id !== undf || body.geolocation.geolocation_names[0].poi_type.id != null) {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "id", {
+								type: "state",
+								common: {
+									name: "POI Type id - no description found in SRF Doku",
+									type: "number",
+									role: "value"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "poi_type." + "id", {
+									val: body.geolocation.geolocation_names[0].poi_type.id,
+									ack: true
+								});
+							});
+						}
+						if (typeof body.geolocation.geolocation_names[0].poi_type.name !== undf || body.geolocation.geolocation_names[0].poi_type.name != null) {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "name", {
+								type: "state",
+								common: {
+									name: "name - no description found in SRF Doku",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "poi_type." + "name", {
+									val: body.geolocation.geolocation_names[0].poi_type.name,
+									ack: true
+								});
+							});
+						}
+					} else {
+						self.log.error("geolocation_names.type is not a city or a poi" + ':' + 'This should not happen. Please go to github and create an issue.');
+					}
 				});
 			}
-			if (typeof body.geolocation.geolocation_names[0].poi_type.id !== undf || body.geolocation.geolocation_names[0].poi_type.id != null) {
-				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "id", {
-					type: "state",
-					common: {
-						name: "POI Type id - no description found in SRF Doku",
-						type: "number",
-						role: "value"
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "geolocation_names." + "poi_type." + "id", {
-						val: body.geolocation.geolocation_names[0].poi_type.id,
-						ack: true
-					});
-				});
-			}
-			if (typeof body.geolocation.geolocation_names[0].poi_type.name !== undf || body.geolocation.geolocation_names[0].poi_type.name != null) {
-				self.setObjectNotExists("geolocation." + "geolocation_names." + "poi_type." + "name", {
-					type: "state",
-					common: {
-						name: "name - no description found in SRF Doku",
-						type: "string",
-						role: "text"
-					},
-					native: {},
-				}, function () {
-					self.setState("geolocation." + "geolocation_names." + "poi_type." + "name", {
-						val: body.geolocation.geolocation_names[0].poi_type.name,
-						ack: true
-					});
-				});
-			}
+
+
 			if (typeof body.geolocation.geolocation_names[0].language !== undf || body.geolocation.geolocation_names[0].language != null) {
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "language", {
 					type: "state",

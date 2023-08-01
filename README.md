@@ -15,11 +15,11 @@
 
 # swiss-weather-api adapter for ioBroker
 Connects to the great SRF weather API - Version 2 (https://developer.srgssr.ch/apis/srf-weather).
-The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
+The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 25 Request/day.
 
 ## **Please Be aware:**
 1. This adapter only supports locations within Switzerland.
-1. SRF Weather API V1 is supported until Adapter-Version 1.0.6. SRF Weather API V2 is supported from Version 1.1.0
+1. SRF Weather API V1 is supported until Adapter-Version 1.0.6. SRF Weather API V2 is supported from Version 2.0.0
 
 ## **Update procedure Version 1.x.x to 2.0.x**
 - Remove the adapter (delete all Adapter-Objects in ioBroker!)
@@ -57,6 +57,9 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
+
 ### 2.0.2 (2023-07-31)
 * (baerengraben) Just another freaking release-script test
 
