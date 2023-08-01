@@ -19,3 +19,7 @@ admin/i18n/*/flat.txt
 # ioBroker dev-server
 .dev-server/
 test.json
+SRF_Meteo_Log
+.gitignore
+SRF_Meteo_Notworking.json
+SRF_Meteo_log_Working
