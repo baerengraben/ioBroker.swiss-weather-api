@@ -1929,13 +1929,40 @@ function getForecast(self){
 						val: body.geolocation.geolocation_names[0].type,
 						ack: true
 					});
-
 					if (body.geolocation.geolocation_names[0].type == "city") {
 						self.log.debug("geolocation_names.type is a city. Creating the special Attributes for City.");
-
-
-
-
+						if (typeof body.geolocation.geolocation_names[0].province !== undf || body.geolocation.geolocation_names[0].province != null) {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "province", {
+								type: "state",
+								common: {
+									name: "Province - no description found in SRF Doku",
+									type: "string",
+									role: "text"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "province", {
+									val: body.geolocation.geolocation_names[0].province,
+									ack: true
+								});
+							});
+						}
+						if (typeof body.geolocation.geolocation_names[0].inhabitants !== undf || body.geolocation.geolocation_names[0].inhabitants != null) {
+							self.setObjectNotExists("geolocation." + "geolocation_names." + "inhabitants", {
+								type: "state",
+								common: {
+									name: "Inhabitants - no description found in SRF Doku",
+									type: "number",
+									role: "value"
+								},
+								native: {},
+							}, function () {
+								self.setState("geolocation." + "geolocation_names." + "inhabitants", {
+									val: body.geolocation.geolocation_names[0].inhabitants,
+									ack: true
+								});
+							});
+						}
 					} else if (body.geolocation.geolocation_names[0].type == "poi") {
 						self.log.debug("geolocation_names.type is a poi. Creating the special Attributes for POI.");
 						if (typeof body.geolocation.geolocation_names[0].poi_type.id !== undf || body.geolocation.geolocation_names[0].poi_type.id != null) {
@@ -1975,8 +2002,6 @@ function getForecast(self){
 					}
 				});
 			}
-
-
 			if (typeof body.geolocation.geolocation_names[0].language !== undf || body.geolocation.geolocation_names[0].language != null) {
 				self.setObjectNotExists("geolocation." + "geolocation_names." + "language", {
 					type: "state",
