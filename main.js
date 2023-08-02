@@ -310,6 +310,7 @@ function createJson(body) {
 
 	//Templates
 	let myHoursFull = [
+		"0h",
 		"1h",
 		"2h",
 		"3h",
@@ -332,13 +333,12 @@ function createJson(body) {
 		"20h",
 		"21h",
 		"22h",
-		"23h",
-		"24h"
+		"23h"
 	];
 	let myHoursReduced = [
+		"0h",
 		"1h",
-		"2h",
-		"3h"
+		"2h"
 	];
 	let myGraphsTemplateTemperatur = {
 		"data": [
