@@ -57,8 +57,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.0.4-alpha.0 (2023-08-03)
 * (baerengraben) Adding four new hour-based Views 
 * (baerengraben) JSON-Chart is now starting with 00:00 instead of 01:00 
 * (baerengraben) SRF sometimes delivers more and sometimes less daily data. This can lead to old data in certain objects. To prevent this, I delete the entire object tree with each new call to rebuild it.
@@ -74,11 +73,6 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 
 ### 2.0.0 (2023-07-31) - Release for SRF Weather API Version 2!
 * (baerengraben) Update SRF API version 1 to version 2 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94. With this Update new attributes are available: symbol24_code, DEWPOINT_C, RELHUM_PERCENT, FRESHSNOW_CM, PRESSURE_HPA, SUN_MIN, IRRADIANCE_WM2 and TTTFEEL_C
-
-### 1.0.6
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97
 
 ## License
 MIT License
