@@ -853,24 +853,14 @@ function createJson(body) {
 }
 
 /**
- * Delets all Objects
+ * Deletes all Objects of Adapter
  * @param self this Adapter
- * @param myCallback Callback
  */
-function deleteAllObjects(self){
-	return new Promise((resolve, reject) => {
-		if (typeof self.getState('forecast') !== undf || self.getState('forecast') != null) {
-			self.log.debug('Deleting all forecast objects');
-			self.delObject('forecast', {recursive: true});
-		}
-		if (typeof self.getState('geolocation') !== undf || self.getState('geolocation') != null) {
-			self.log.debug('Deleting all geolocation objects');
-			self.delObject('geolocation', {recursive: true});
-		}
-		// resolve after 60s
-		self.log.debug('Resolve after deleting all forecast objects');
-		setTimeout(() => {resolve(true)}, 60000)
-	})
+async function deleteAllAdapterObjects(self){
+	self.log.debug('Deleting all geolocation objects');
+	let resp1 = await self.delObjectAsync('geolocation', {recursive: true});
+	self.log.debug('Deleting all forecast objects');
+	let resp2 = await self.delObjectAsync('forecast', {recursive: true});
 }
 
 /**
@@ -3843,12 +3833,15 @@ function doIt(self) {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			self.setState('info.connection', true, true);
 
-			//Delete Object-Tree if there was a Timechange
+			// Delete Object-Tree
+			// This is nessesary because SRF-Meteo sometimes do not send all the data
+			// So this leads into Objects with old data in it. 
+			// To prevent this, all Objects are deletet before created.
+
 			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
 			// if (isTimechange(self)){
 				self.log.debug('Today is a timechange (winter-/summertime). Deleting all objects');
-
-				var promise = deleteAllObjects(self);
+				var promise = deleteAllAdapterObjects(self);
 			    promise.then(function(result) {
 					// Check if there is already a geolocationId, if not => Get one
 					if (geolocationId) {
@@ -3859,6 +3852,18 @@ function doIt(self) {
 						getToken(self,getGeolocationId);
 					}
     			});
+				
+				// var promise = deleteGeolocationObjects(self);
+			    // promise.then(function(result) {
+				// 	// Check if there is already a geolocationId, if not => Get one
+				// 	if (geolocationId) {
+				// 		self.log.debug("geolocationId is available, move forwared to get forcasts...");
+				// 		getToken(self,getForecast);
+				// 	} else {
+				// 		self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
+				// 		getToken(self,getGeolocationId);
+				// 	}
+    			// });
 
 
 			// }
