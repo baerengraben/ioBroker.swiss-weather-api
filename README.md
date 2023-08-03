@@ -14,7 +14,7 @@
 
 
 # swiss-weather-api adapter for ioBroker
-Connects to the great SRF weather API - Version 2 (https://developer.srgssr.ch/apis/srf-weather).
+Connects to the great SRF weather API - Version 2 (https://developer.srgssr.ch/api-catalog/srf-weather/srf-weather-description).
 The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 25 Request/day.
 
 ## **Please Be aware:**
@@ -39,7 +39,7 @@ The SRF Weather REST API allows you to get weather forecasts and reports from mo
    1. Poll Interval in Minutes (By default 60 minutes - 25 Request/Day)
 
 The first query is made 10s after the adapter was started. After the first start, the query will be executed regularly according to the conifugation parameter (Poll Interval in Minutes).
-The Objects in forecast.current_hour will be createt 30s after frist startup and updated every hour by copying the corresponding values from forecast.60minutes.
+The Objects in forecast.current_hour will be createt 30s after frist startup and updated every hour by copying the corresponding values from forecast.hours.
 
 ### Visualisation Example
 
