@@ -61,6 +61,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 ### **WORK IN PROGRESS**
 * (baerengraben) Adding four new hour-based Views 
 * (baerengraben) JSON-Chart is now starting with 00:00 instead of 01:00 
+* (baerengraben) SRF sometimes delivers more and sometimes less daily data. This can lead to old data in certain objects. To prevent this, I delete the entire object tree with each new call to rebuild it.
 
 ### 2.0.3 (2023-08-01)
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
