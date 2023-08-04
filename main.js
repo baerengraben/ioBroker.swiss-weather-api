@@ -1639,7 +1639,7 @@ function setCurrentHour(self){
  * Get Forecast by Rest-Calling SRF Weather API
  * @param self Adapter
  */
-function getForecast(self){
+async function getForecast(self){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
@@ -1678,8 +1678,8 @@ function getForecast(self){
 	self.log.debug("Options to get forecast: " + JSON.stringify(options_forecast));
 	self.log.info("Getting forecast for GeolocationId: " + geolocationId);
 
-	//set request
-	var req = https.request(options_forecast, function (res) {
+	//set request - wait (await) until complete request has finished
+	var req = await https.request(options_forecast, function (res) {
 		var chunks = [];
 		res.on("data", function (chunk) {
 			chunks.push(chunk);
