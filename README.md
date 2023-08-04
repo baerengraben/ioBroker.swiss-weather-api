@@ -49,7 +49,11 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 * [Import Views to Vis](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views)
 
 ###### Example
+Simple Example:
 ![Tablet](doc/Wettervorhersage_visu_anim.gif)
+
+Extended Example:
+![Tablet](doc/Wettervorhersage_visu_anim2.gif)
 
 ## Changelog
 
