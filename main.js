@@ -2206,7 +2206,7 @@ async function getForecast(self){
 							native: {},
 						}, function () {
 							self.setState("forecast." + "hours." + myPath + "." + myTime + "." + "date_time", {
-								val: obj.date_time,
+								val: self.formatDate(obj.date_time, "TT.MM.JJJJ SS:mm:ss"),
 								ack: true
 							});
 						});
@@ -2771,7 +2771,7 @@ async function getForecast(self){
 							native: {},
 						}, function () {
 							self.setState("forecast." + "days." + myPath + "." + myTime + "." + "date_time", {
-								val: obj.date_time,
+								val: self.formatDate(obj.date_time, "TT.MM.JJJJ SS:mm:ss"),
 								ack: true
 							});
 						});
@@ -3299,7 +3299,7 @@ async function getForecast(self){
 							native: {},
 						}, function () {
 							self.setState("forecast." + "three_hours." + myPath + "." + myTime + "." + "date_time", {
-								val: obj.date_time,
+								val: self.formatDate(obj.date_time, "TT.MM.JJJJ SS:mm:ss"),
 								ack: true
 							});
 						});
@@ -3882,6 +3882,7 @@ class SwissWeatherApi extends utils.Adapter {
 		super({
 			...options,
 			name: adapterName,
+			useFormatDate: true,
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("unload", this.onUnload.bind(this));

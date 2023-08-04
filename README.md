@@ -57,6 +57,11 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102
+* (baerengraben) Using ioBroker "formatDate" to format date_time attribut to "TT.MM.JJJJ SS:mm:ss"
+
 ### 2.0.4-alpha.0 (2023-08-03)
 * (baerengraben) Adding four new hour-based Views 
 * (baerengraben) JSON-Chart is now starting with 00:00 instead of 01:00 
