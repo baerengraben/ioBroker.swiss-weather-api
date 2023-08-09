@@ -2177,6 +2177,7 @@ async function getForecast(self){
 						startTimeISOString = obj.date_time;
 						objDate = new Date(startTimeISOString);
 						myTime = getTimeFormattet(objDate);
+						//myTime = self.formatDate(startTimeISOString, "SS:mm");
 					} else {
 						self.log.error("No date_time found in JSON, delivered by SRF. Please try again later.");
 						return;
@@ -2715,6 +2716,7 @@ async function getForecast(self){
 					var objDate = new Date(startTimeISOString);
 					var myPath;
 					var myTime = getTimeFormattet(objDate);
+					//var myTime = self.formatDate(startTimeISOString, "SS:mm");
 					var day_name = "";
 
 					if (index === 0) {
@@ -2906,9 +2908,7 @@ async function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							var sunsetDateISOString = obj.SUNSET;
-							var sunsetDate = new Date(sunsetDateISOString);
-							var sunsetTime = getTimeFormattetAsHH_MM(sunsetDate);
+							var sunsetTime = self.formatDate(obj.SUNSET, "SS:mm");
 							self.setState("forecast." + "days." + myPath + "." + myTime + "." + "SUNSET", {
 								val: sunsetTime,
 								ack: true
@@ -2926,9 +2926,7 @@ async function getForecast(self){
 							},
 							native: {},
 						}, function () {
-							var sunriseDateISOString = obj.SUNRISE;
-							var sunriseDate = new Date(sunriseDateISOString);
-							var sunriseTime = getTimeFormattetAsHH_MM(sunriseDate);
+							var sunriseTime = self.formatDate(obj.SUNRISE, "SS:mm");
 							self.setState("forecast." + "days." + myPath + "." + myTime + "." + "SUNRISE", {
 								val: sunriseTime,
 								ack: true
@@ -3265,6 +3263,7 @@ async function getForecast(self){
 					var objDate = new Date(startTimeISOString);
 					var myPath;
 					var myTime = getTimeFormattet(objDate);
+					// var myTime = self.formatDate(startTimeISOString, "SS:mm");
 
 					if (index < 8) {
 						myPath = "day0";
