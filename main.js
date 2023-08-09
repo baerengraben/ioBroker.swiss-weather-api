@@ -3833,39 +3833,29 @@ function doIt(self) {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			self.setState('info.connection', true, true);
 
-			// Delete Object-Tree
-			// This is nessesary because SRF-Meteo sometimes do not send all the data
-			// So this leads into Objects with old data in it. 
-			// To prevent this, all Objects are deletet before created.
-
 			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
-			// if (isTimechange(self)){
-				self.log.debug('Today is a timechange (winter-/summertime). Deleting all objects');
-				var promise = deleteAllAdapterObjects(self);
-			    promise.then(function(result) {
-					// Check if there is already a geolocationId, if not => Get one
-					if (geolocationId) {
-						self.log.debug("geolocationId is available, move forwared to get forcasts...");
-						getToken(self,getForecast);
-					} else {
-						self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
-						getToken(self,getGeolocationId);
-					}
-    			});
-				
-				// var promise = deleteGeolocationObjects(self);
-			    // promise.then(function(result) {
-				// 	// Check if there is already a geolocationId, if not => Get one
-				// 	if (geolocationId) {
-				// 		self.log.debug("geolocationId is available, move forwared to get forcasts...");
-				// 		getToken(self,getForecast);
-				// 	} else {
-				// 		self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
-				// 		getToken(self,getGeolocationId);
-				// 	}
-    			// });
-
-
+			//  if (isTimechange(self)){
+			// 	self.log.debug('Today is a timechange (winter-/summertime). Deleting all objects');
+			// 	var promise = deleteAllAdapterObjects(self);
+			//     promise.then(function(result) {
+			// 		// Check if there is already a geolocationId, if not => Get one
+			// 		if (geolocationId) {
+			// 			self.log.debug("geolocationId is available, move forwared to get forcasts...");
+			// 			getToken(self,getForecast);
+			// 		} else {
+			// 			self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
+			// 			getToken(self,getGeolocationId);
+			// 		}
+    		// 	});
+			// } else {
+				// Check if there is already a geolocationId, if not => Get one
+				if (geolocationId) {
+					self.log.debug("geolocationId is available, move forwared to get forcasts...");
+					getToken(self,getForecast);
+				} else {
+					self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
+					getToken(self,getGeolocationId);
+				}
 			// }
 
 			setTimeout(doIt, pollinterval, self);
