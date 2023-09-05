@@ -108,20 +108,6 @@ function getTimeFormattet(actualDate) {
 }
 
 /**
- * returns formattet Date
- * @param actualDate Date Object
- * @returns {string} hour + ":" + minutes + " " + day + "." + month + "." + year
- */
-function getActualDateFormattet(actualDate) {
-	var	year = (actualDate.getFullYear());
-	var month = ((actualDate.getMonth()+1)<10?'0':'') + (actualDate.getMonth()+1);
-	var day = (actualDate.getDate()<10?'0':'') + actualDate.getDate();
-	var hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
-	var minutes = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
-	return hour + ":" + minutes + " " + day + "." + month + "." + year;
-}
-
-/**
  * Get name of day
  * @param date Date Object
  * @param defaultLanguage language code
@@ -1650,7 +1636,7 @@ async function getForecast(self){
 	today8 = new Date().addDays(8);
 	// @ts-ignore
 	today9 = new Date().addDays(9);
-	lastSuccessfulRun = getActualDateFormattet(today);
+	lastSuccessfulRun = self.formatDate(today, "hh:mm TT.MM.JJJJ");
 
 	//Get forecast
 	//Options for getting forecast
@@ -2166,7 +2152,6 @@ async function getForecast(self){
 						startTimeISOString = obj.date_time;
 						objDate = new Date(startTimeISOString);
 						myTime = getTimeFormattet(objDate);
-						//myTime = self.formatDate(startTimeISOString, "SS:mm");
 					} else {
 						self.log.error("No date_time found in JSON, delivered by SRF. Please try again later.");
 						return;
@@ -2705,7 +2690,6 @@ async function getForecast(self){
 					var objDate = new Date(startTimeISOString);
 					var myPath;
 					var myTime = getTimeFormattet(objDate);
-					//var myTime = self.formatDate(startTimeISOString, "SS:mm");
 					var day_name = "";
 
 					if (index === 0) {
@@ -3252,7 +3236,6 @@ async function getForecast(self){
 					var objDate = new Date(startTimeISOString);
 					var myPath;
 					var myTime = getTimeFormattet(objDate);
-					// var myTime = self.formatDate(startTimeISOString, "SS:mm");
 
 					if (index < 8) {
 						myPath = "day0";
