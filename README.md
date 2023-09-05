@@ -65,6 +65,9 @@ Extended Example:
 ### **WORK IN PROGRESS**
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102
 * (baerengraben) Using ioBroker "formatDate" to format date_time attribut to "TT.MM.JJJJ SS:mm:ss"
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104 
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103
 
 ### 2.0.4-alpha.0 (2023-08-03)
 * (baerengraben) Adding four new hour-based Views 
