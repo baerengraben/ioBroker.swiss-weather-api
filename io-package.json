@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.0.4-alpha.0",
+    "version": "2.0.4-alpha.1",
     "news": {
+      "2.0.4-alpha.1": {
+        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUsing ioBroker \"formatDate\" to format date_time attribut to \"TT.MM.JJJJ SS:mm:ss\"\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104 \nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "de": "Festlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nVerwendung von ioBroker-Format Datum zum Format date_time zu \"TT.MM.JJJ SS:mm:ss\"\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "ru": "Фиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nИспользование ioBroker формата Дата для формата date_time атрибут \"TT.MM.JJJJ SS:mm:ss\"\nФиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nФиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nФиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "pt": "Fixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUsando o formato ioBroker Data de formatação date_time atribui a \"TT.MM.JJJJJ SS:mm:ss\"\nFixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "nl": "Quality over Quantity (QoQ) Releases Vertaling:\nGebruikt ioBroker format Datum om te formeren datum bijdragen aan \"T.M.M.J.J. SS:\nQuality over Quantity (QoQ) Releases Vertaling:\nQuality over Quantity (QoQ) Releases Vertaling:\nQuality over Quantity (QoQ) Releases Vertaling:",
+        "fr": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUtiliser le format ioBroker Date to format date_time attribut to \"TT.MM.JJJJ SS:mm:s\"\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "it": "Fissaggio https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUtilizzo del formato ioBroker Data al formato data_time attributo a \"TT.MM.JJJJJ SS:mm:ss\"\nFissaggio https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFissaggio https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFissaggio https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "es": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUsando el formato ioBroker Fecha a formato date_time atributo a \"TT.MM.JJJJ SS:mm:ss\"\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
+        "pl": "Fixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/102 (ang.)\nUżywanie ioBrokera Do formatu_time attribut to „TTMM.JJJJJJ SS:mm:s”\nFixing https:/github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/104\nFixing https:/github.com/baerengraben/ioBroker.swiss-weather-api/issues/10333",
+        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/102\nВикористання формату ioBroker Дата форматування дата_час прибуття в \"TT.MM.JJJJJJ SS:mm:ss\"\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/105\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/103",
+        "zh-cn": "Fixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nA. 使用ioBroker格式 形式日期:时间为“TT.MM.JJJJJJ SS:mm:s”\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103103"
+      },
       "2.0.4-alpha.0": {
         "en": "Adding four new hour-based Views \nJSON-Chart is now starting with 00:00 instead of 01:00 \nSRF sometimes delivers more and sometimes less daily data. This can lead to old data in certain objects. To prevent this, I delete the entire object tree with each new call to rebuild it.",
         "de": "Vier neue Stundenbasis hinzufügen Ansichten\nJSON-Chart beginnt jetzt mit 00:00 statt 01:00\nSRF liefert manchmal mehr und manchmal weniger tägliche Daten. Dies kann zu alten Daten in bestimmten Objekten führen. Um dies zu verhindern, lösche ich den gesamten Objektbaum mit jedem neuen Aufruf, um ihn wieder aufzubauen.",
@@ -80,19 +93,6 @@
         "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 i https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
         "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 і https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
         "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 和 https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75"
-      },
-      "1.0.4": {
-        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 und https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 и https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 en https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 et https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 e https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 y https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 i https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 і https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85",
-        "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/82 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/85"
       }
     },
     "titleLang": {
