@@ -96,17 +96,6 @@ function isValidJSONString(str) {
 }
 
 /**
- * returns formattet Time as hh:mm
- * @param actualDate  Date Object
- * @returns {string}  hour:min
- */
-function getTimeFormattetAsHH_MM(actualDate) {
-	var	hour = (actualDate.getHours()<10?'0':'') + actualDate.getHours();
-	var min = (actualDate.getMinutes()<10?'0':'') + actualDate.getMinutes();
-	return hour + ":" + min;
-}
-
-/**
  * returns formattet Time as hhmm
  * @param actualDate  Date Object
  * @returns {string}  hour + min
