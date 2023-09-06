@@ -61,8 +61,7 @@ Extended Example:
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 2.0.4-alpha.2 (2023-09-06)
 * (baerengraben) Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)
 
 ### 2.0.4-alpha.1 (2023-09-05)
@@ -82,9 +81,6 @@ Extended Example:
 
 ### 2.0.2 (2023-07-31)
 * (baerengraben) Just another freaking release-script test
-
-### 2.0.1 (2023-07-31)
-* (baerengraben) Just a release-script test
 
 ## License
 MIT License

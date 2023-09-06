@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.0.4-alpha.1",
+    "version": "2.0.4-alpha.2",
     "news": {
+      "2.0.4-alpha.2": {
+        "en": "Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)",
+        "de": "Dummy-Deploy - weil npm nicht 2.0.4-alpha.1 (2. Versuch)",
+        "ru": "Dummy-Deploy - потому что npm не получил 2.0.4-alpha.1 (2nd try)",
+        "pt": "Dummy-Deploy - porque npm não obteve 2.0.4-alpha.1 (2a tentativa)",
+        "nl": "Dummy-Deploy, want NPM heeft geen 2.0.4-alfa.1 (2nd geprobeerd",
+        "fr": "Dummy-Deploy - parce que npm n'a pas obtenu 2.0.4-alpha.1 (2ème essai)",
+        "it": "Dummy-Deploy - perché npm non ha ottenuto 2.0.4-alpha.1 (2a prova)",
+        "es": "Dummy-Deploy - porque las npm no obtuvieron 2.0.4-alpha.1 (2a prueba)",
+        "pl": "Dummy-Deploy – ponieważ nie uzyskał 2.0.4-alfa.1 (2. próba)",
+        "uk": "Dummy-Deploy - тому що npm не було 2.0.4-alpha.1 (2-й спроба)",
+        "zh-cn": "Dummy-Deploy——由于 npm没有达到0.4-alpha.1(2次尝试)。"
+      },
       "2.0.4-alpha.1": {
         "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nUsing ioBroker \"formatDate\" to format date_time attribut to \"TT.MM.JJJJ SS:mm:ss\"\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104 \nFixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
         "de": "Festlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nVerwendung von ioBroker-Format Datum zum Format date_time zu \"TT.MM.JJJ SS:mm:ss\"\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFestlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103",
@@ -80,19 +93,6 @@
         "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 i https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
         "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 і https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
         "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93。 com/baerengraben/ioBroker.swiss-weather-api/issues/97"
-      },
-      "1.0.5": {
-        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "de": "Behebung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 und https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "ru": "Исправление https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 и https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "pt": "Correção https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "nl": "Reparatie van https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 en https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "fr": "Correction de https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 et https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "it": "Correzione di https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 e https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "es": "Arreglando https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 y https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "pl": "Naprawianie https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 i https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 і https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75",
-        "zh-cn": "修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76 和 https://github .com/baerengraben/ioBroker.swiss-weather-api/issues/75"
       }
     },
     "titleLang": {
