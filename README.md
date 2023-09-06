@@ -61,6 +61,10 @@ Extended Example:
   Placeholder for the next version (at the beginning of the line):
   ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+* (baerengraben) Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)
+
 ### 2.0.4-alpha.1 (2023-09-05)
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102
 * (baerengraben) Using ioBroker "formatDate" to format date_time attribut to "TT.MM.JJJJ SS:mm:ss"
