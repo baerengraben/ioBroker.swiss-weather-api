@@ -168,13 +168,77 @@ function getSystemLanguage(self) {
 	});
 }
 
+
 /**
- * Creates a json Object for usage with Material Design JSON Chart
+ * Creates a json Object for usage with Material Design JSON Chart used for Widgets
+ * @param body srf api response containing days json object 
+ * @returns {*{}} containing Json for usage with Material Design JSON Chart
+ */
+function createJsonForWidgets(body) {
+    let sun = [];
+    let rain = [];
+	let wind = []; 
+
+	body["days"].forEach(function (obj, index) {
+		if (typeof obj.SUN_H !== undf || obj.SUN_H != null || typeof obj.RRR_MM !== undf || obj.RRR_MM != null || typeof obj.FF_KMH !== undf || obj.FF_KMH != null) {
+			sun.push(obj.SUN_H); 
+			rain.push(obj.RRR_MM);
+			wind.push(obj.FF_KMH);
+		}
+	})
+
+	//Template
+	let axisLabelsTempl = ["","","","","","","",""];
+	let rainTempl = {
+		"type": "line",
+		"data": rain,
+		"yAxis_id": 0,
+		"barIsStacked": false,
+		"datalabel_show": false,
+		"line_UseFillColor": true,
+		"yAxis_show": false,
+		"color": "blue"
+	};
+	let sunTempl = {
+		"type": "line",
+		"data": sun,
+		"yAxis_id": 1,
+		"barIsStacked": true,
+		"datalabel_show": false,
+		"line_UseFillColor": true,
+		"yAxis_show": false,
+		"color": "yellow"
+	};
+	let windTempl = {
+		"type": "line",
+		"data": wind,
+		"yAxis_id": 2,
+		"barIsStacked": true,
+		"datalabel_show": false,
+		"line_UseFillColor": false,
+		"yAxis_show": false,
+		"color": "aqua"
+	};
+    
+	//Create JSON
+	var chartJsonWeek = {}; // empty Object
+	var axisLabelsWeek = 'axisLabels';
+	var graphsWeek = 'graphs';
+	chartJsonWeek[axisLabelsWeek] = JSON.parse(JSON.stringify(axisLabelsTempl)); 
+	chartJsonWeek[graphsWeek] = []; // empty Array, push graphs attributes in here
+	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(rainTempl)));
+	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(sunTempl)));
+	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(windTempl)));
+	return chartJsonWeek;
+}
+
+
+/**
+ * Creates a json Object for usage with Material Design JSON Chart used for Views
  * @param body srf api response containing hours json object
  * @returns {*[]} containing Json for usage with Material Design JSON Chart
  */
-function createJson(body) {
-
+function createJsonForViews(body) {
 	let maxTempDay0;
 	let maxTempDay1;
 	let maxTempDay2;
@@ -2577,7 +2641,7 @@ async function getForecast(self){
 						});
 					}
 
-					var jsonCharts = (createJson(body));
+					var jsonCharts = (createJsonForViews(body));
 					jsonCharts.forEach(function (obj, index) {
 						self.setObjectNotExists("forecast." + "hours.day" + index + "." + "JsonChart", {
 							type: "state",
@@ -3135,6 +3199,23 @@ async function getForecast(self){
 						});
 					}
 
+					//Create JsonChart for Widget 
+					var jsonChart = (createJsonForWidgets(body));
+					self.setObjectNotExists("forecast.days.JsonChart", {
+						type: "state",
+						common: {
+							name: "JSON containing the weather-values of this day forecast - Use this with Material Design JSON Chart (Widget)",
+							type: "string",
+							role: "text",
+							write: false
+						},
+						native: {},
+					}, function () {
+						self.setState("forecast.days.JsonChart", {
+							val: JSON.stringify(jsonChart),
+							ack: true
+						});
+					});
 				});
 			} else {
 				self.log.error("No day Forecast-Data found in JSON delivered by SRF. Please try again later.");

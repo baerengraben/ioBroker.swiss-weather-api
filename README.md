@@ -47,6 +47,7 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 * Adapter [Material Design Widgets](https://github.com/Scrounger/ioBroker.vis-materialdesign) >= 0.5.7
 * Adapter [Vis](https://github.com/iobroker/iobroker.vis/blob/master/README.md)
 * [Import Views to Vis](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views)
+* [Import Widget to Vis](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/widgets)
 
 ###### Example
 Simple Example:
@@ -55,12 +56,15 @@ Simple Example:
 Extended Example:
 ![Tablet](doc/Wettervorhersage_visu_anim2.gif)
 
+Week-Widget Example:
+![Tablet](doc/Wochensicht_reduziert.png)
+
+
 ## Changelog
 
-<!--
-  Placeholder for the next version (at the beginning of the line):
-  ### **WORK IN PROGRESS**
--->
+### **WORK IN PROGRESS**
+* (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
+
 ### 2.0.4-alpha.2 (2023-09-06)
 * (baerengraben) Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)
 

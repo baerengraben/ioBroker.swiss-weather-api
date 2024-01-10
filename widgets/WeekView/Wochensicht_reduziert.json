@@ -2760,7 +2760,7 @@
     {
         "tpl": "tplVis-materialdesign-Chart-JSON",
         "data": {
-            "oid": "0_userdata.0.chart",
+            "oid": "swiss-weather-api.0.forecast.days.JsonChart",
             "g_fixed": false,
             "g_visibility": false,
             "g_css_font_text": false,
