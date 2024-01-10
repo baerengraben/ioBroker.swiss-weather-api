@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.0.4-alpha.2",
+    "version": "2.1.0",
     "news": {
+      "2.1.0": {
+        "en": "Added additional Week-View. Credits goes to https://github.com/pingus01",
+        "de": "Zusätzlicher Week-View. Credits geht an https://github.com/pingus01",
+        "ru": "Добавлен дополнительный Week-View. Кредиты идут на https://github.com/pingus01",
+        "pt": "Adicionado adicional Week-View. Créditos vão para https://github.com/pingus01",
+        "nl": "Toegevoegd extra week-zicht. Dit krediet gaat naar https://github.com/pingus01",
+        "fr": "Ajout de Week-View supplémentaire. Les crédits vont à https://github.com/pingus01",
+        "it": "Aggiunto supplementare Week-View. I crediti vanno a https://github.com/pingus01",
+        "es": "Añadido más Vista semanal. Credits goes to https://github.com/pingus01",
+        "pl": "Dodano dodatkowy weekend - Widok. Kredyty trafiają do https: / / github.com / pingus01",
+        "uk": "Додано додатковий тижневий перегляд. Кредитування йде на https://github.com/pingus01",
+        "zh-cn": "增加了\"周视\". 感谢https://github.com/pingus01"
+      },
       "2.0.4-alpha.2": {
         "en": "Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)",
         "de": "Dummy-Deploy - weil npm nicht 2.0.4-alpha.1 (2. Versuch)",
@@ -80,19 +93,6 @@
         "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
         "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
         "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94"
-      },
-      "1.0.6": {
-        "en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 and https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "de": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 und https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "ru": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 и https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "pt": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 e https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "nl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 en https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "fr": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 et ​​https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "it": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 e https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "es": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 y https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 i https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78, https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 і https://github. com/baerengraben/ioBroker.swiss-weather-api/issues/97",
-        "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78、https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93 和 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93。 com/baerengraben/ioBroker.swiss-weather-api/issues/97"
       }
     },
     "titleLang": {

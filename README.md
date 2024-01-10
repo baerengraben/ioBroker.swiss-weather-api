@@ -61,8 +61,7 @@ Week-Widget Example:
 
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 2.1.0 (2024-01-10)
 * (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
 
 ### 2.0.4-alpha.2 (2023-09-06)
@@ -82,9 +81,6 @@ Week-Widget Example:
 
 ### 2.0.3 (2023-08-01)
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
-
-### 2.0.2 (2023-07-31)
-* (baerengraben) Just another freaking release-script test
 
 ## License
 MIT License
