@@ -59,28 +59,12 @@ Extended Example:
 Week-Widget Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
-
 ## Changelog
+### 2.1.1 (2024-01-10)
+* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
+
 ### 2.1.0 (2024-01-10)
 * (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
-
-### 2.0.4-alpha.2 (2023-09-06)
-* (baerengraben) Dummy-Deploy - because npm did not get 2.0.4-alpha.1 (2nd try...)
-
-### 2.0.4-alpha.1 (2023-09-05)
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102
-* (baerengraben) Using ioBroker "formatDate" to format date_time attribut to "TT.MM.JJJJ SS:mm:ss"
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104 
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103
-
-### 2.0.4-alpha.0 (2023-08-03)
-* (baerengraben) Adding four new hour-based Views 
-* (baerengraben) JSON-Chart is now starting with 00:00 instead of 01:00 
-* (baerengraben) SRF sometimes delivers more and sometimes less daily data. This can lead to old data in certain objects. To prevent this, I delete the entire object tree with each new call to rebuild it.
-
-### 2.0.3 (2023-08-01)
-* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
 
 ## License
 MIT License

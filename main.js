@@ -16,28 +16,17 @@ var geolocationId;
 var access_token;
 let cronJob;
 var today;
-// @ts-ignore
 var today1;
-// @ts-ignore
 var today2;
-// @ts-ignore
 var today3;
-// @ts-ignore
 var today4;
-// @ts-ignore
 var today5;
-// @ts-ignore
 var today6;
-// @ts-ignore
 var today7;
-// @ts-ignore
 var today8;
-// @ts-ignore
 var today9;
-// @ts-ignore
 var lastSuccessfulRun;
 
-// @ts-ignore
 Date.prototype.addDays = function(days) {
 	var date = new Date(this.valueOf());
 	date.setDate(date.getDate() + days);
@@ -326,25 +315,15 @@ function createJsonForViews(body) {
 		}
 	})
 
-	// @ts-ignore
 	calculatedMinTempDay0 = minTempDay0 - deltaTemp;
-	// @ts-ignore
 	calculatedMinTempDay1 = minTempDay1 - deltaTemp;
-	// @ts-ignore
 	calculatedMinTempDay2 = minTempDay2 - deltaTemp;
-	// @ts-ignore
 	calculatedMinTempDay3 = minTempDay3 - deltaTemp;
-	// @ts-ignore
 	calculatedMinTempDay4 = minTempDay4 - deltaTemp;
-	// @ts-ignore
 	calculatedMaxTempDay0 = maxTempDay0 + deltaTemp;
-	// @ts-ignore
 	calculatedMaxTempDay1 = maxTempDay1 + deltaTemp;
-	// @ts-ignore
 	calculatedMaxTempDay2 = maxTempDay2 + deltaTemp;
-	// @ts-ignore
 	calculatedMaxTempDay3 = maxTempDay3 + deltaTemp;
-	// @ts-ignore
 	calculatedMaxTempDay4 = maxTempDay4 + deltaTemp;
 
 	//Templates
@@ -1682,23 +1661,14 @@ async function getForecast(self){
 	self.log.debug("Getting Forecast for geolocation id: " + geolocationId);
 
 	today = new Date();
-	// @ts-ignore
 	today1 = new Date().addDays(1);
-	// @ts-ignore
 	today2 = new Date().addDays(2);
-	// @ts-ignore
 	today3 = new Date().addDays(3);
-	// @ts-ignore
 	today4 = new Date().addDays(4);
-	// @ts-ignore
 	today5 = new Date().addDays(5);
-	// @ts-ignore
 	today6 = new Date().addDays(6);
-	// @ts-ignore
 	today7 = new Date().addDays(7);
-	// @ts-ignore
 	today8 = new Date().addDays(8);
-	// @ts-ignore
 	today9 = new Date().addDays(9);
 	lastSuccessfulRun = self.formatDate(today, "hh:mm TT.MM.JJJJ");
 
@@ -3920,7 +3890,6 @@ class SwissWeatherApi extends utils.Adapter {
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
 	constructor(options) {
-		// @ts-ignore
 		super({
 			...options,
 			name: adapterName,
