@@ -61,6 +61,9 @@ Week-Widget Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+
 ### 2.1.1 (2024-01-10)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
 
