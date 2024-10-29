@@ -1,6 +1,9 @@
 {
   "name": "iobroker.swiss-weather-api",
   "version": "2.1.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "description": "Connects to SRF Weather API (https://developer.srgssr.ch/apis/srf-weather)",
   "author": {
     "name": "baerengraben",
@@ -14,9 +17,11 @@
   "homepage": "https://github.com/baerengraben/ioBroker.swiss-weather-api",
   "license": "MIT",
   "keywords": [
+    "ioBroker",
     "SRG-SSR",
     "Weather API",
-    "SRF Weather"
+    "SRF Weather",
+    "Switzerland"
   ],
   "repository": {
     "type": "git",

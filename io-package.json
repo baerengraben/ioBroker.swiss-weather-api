@@ -129,13 +129,17 @@
       "Weather API",
       "SRF Weather"
     ],
-    "license": "MIT",
+    "licenseInformation": {
+      "type": "free",
+      "license": "MIT"
+    },
     "platform": "Javascript/Node.js",
     "icon": "swiss-weather-api.png",
     "enabled": true,
     "extIcon": "https://raw.githubusercontent.com/baerengraben/ioBroker.swiss-weather-api/master/admin/swiss-weather-api.png",
     "readme": "https://github.com/baerengraben/ioBroker.swiss-weather-api/blob/master/README.md",
     "loglevel": "info",
+    "tier": 3,
     "mode": "daemon",
     "type": "weather",
     "connectionType": "cloud",
