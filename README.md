@@ -63,6 +63,10 @@ Week-Widget Example:
 ## Changelog
 
 ### **WORK IN PROGRESS**
+* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
+* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123
+* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122
+* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121
 
 ### 2.1.1 (2024-01-10)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
