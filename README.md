@@ -15,21 +15,22 @@
 
 # swiss-weather-api adapter for ioBroker
 Connects to the great SRF weather API - Version 2 (https://developer.srgssr.ch/api-catalog/srf-weather/srf-weather-description).
-The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 25 Request/day.
+The SRF Weather REST API allows you to get weather forecasts and reports from more than 25.000 locations across Switzerland. A "Freemium" subscription allows you to get 50 Request/day.
 
 ## **Please Be aware:**
 1. This adapter only supports locations within Switzerland.
-1. SRF Weather API V1 is supported until Adapter-Version 1.0.6. SRF Weather API V2 is supported from Version 2.0.0
+1. This adapter supports SRF Weather API V2.
 
 ## **Update procedure Version 1.x.x to 2.0.x**
 - Remove the adapter (delete all Adapter-Objects in ioBroker!)
 - Install Adapter completly new => New Objects will be generated
-- Since SRF has changed the Path-Names, you have to update your Visu. Just [reimport the views](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views).  
+- Since SRF has changed the Path-Names, update your Visu: Just [reimport the views](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views).  
 
 ## Getting started
 1. Get a free accout on https://developer.srgssr.ch/
-1. Go to "Apps" and add new App. Here you can choose a API-Product. "SRF-MeteoProductFreemium" is their free product. If you only want a forecast for one location and get only 25 request per day (every 60min) or/and don't want to pay for more request per day, "SRF-MeteoProductFreemium" is what you want to choose. Now, this will create a specific ConsumerKey and ConsumerSecret
+1. Go to "Apps" and add new App. Here you can choose a API-Product. "SRF-MeteoProductFreemium" is their free product. If you only want a forecast for one location and get only 50 request per day (every 30min) or/and don't want to pay for more request per day, "SRF-MeteoProductFreemium" is what you want to choose. Now, this will create a specific ConsumerKey and ConsumerSecret
 1. Find out Longitude / Latitude (decimal degrees) of the chosen location for which forecast is needed. This information is optional if you have set your location in the ioBroker settings (main settings) (via the map). In this case you could leave the latitude and longitude fields empty. The adapter then ueses the settings of the ioBroker. Latitude and longitude entered in the adapter configuration override the ioBroker settings.
+1. Freemium-Users: Please note that the SRG API remembers the location used. From the first request on and for a certain period of time, the subscription used can only deliver requests for this one location.
 1. Install this Adapter on ioBroker => This can take several minutes (~7min on a Raspberry Pi 3)
 1. On Adapter Configuration fill in
    1. Name of App
