@@ -27,7 +27,10 @@ export default [...compat.extends("plugin:react/recommended"), {
         sourceType: "module",
     },
 
-    rules: {},
+    rules: {
+        indent: ["error", 2],
+        "no-unused-vars": "warn"
+    },
 }, {
     files: ["**/.eslintrc.{js,cjs}"],
 
