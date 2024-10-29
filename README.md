@@ -68,9 +68,6 @@ Week-Widget Example:
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121
 
-### 2.1.1 (2024-01-10)
-* (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
-
 ### 2.1.0 (2024-01-10)
 * (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
 
