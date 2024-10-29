@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "news": {
+      "2.1.1": {
+        "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "ru": "Fix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "pt": "Fix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "nl": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "fr": "Correction pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nCorrection pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nCorrection pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nCorrection pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "it": "Fissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "es": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
+        "pl": "Fix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 124\nFix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 123\nFix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 122\nFix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 121",
+        "uk": "Виправлення для https://github.com/baerengraben/ioBroker.swiss-weather-api/products/124\nПосилання на https://github.com/baerengraben/ioBroker.swiss-weather-api/products/123\nВиправлення для https://github.com/baerengraben/ioBroker.swiss-weather-api/products/122\nВиправлення для https://github.com/baerengraben/ioBroker.swiss-weather-api/products/121",
+        "zh-cn": "Https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124 互联网档案馆的存檔,存档日期2013-09-02\nHttps://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123 互联网档案馆的存檔,存档日期2013-03-02\nHttps://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122的固定地址\nHttps://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121的修复方法 互联网档案馆的存檔,存档日期2013-12-21"
+      },
       "2.1.0": {
         "en": "Added additional Week-View. Credits goes to https://github.com/pingus01",
         "de": "Zusätzlicher Week-View. Credits geht an https://github.com/pingus01",
@@ -80,19 +93,6 @@
         "pl": "Tylko inna dziwna wersja testowa",
         "uk": "Просто інший freaking-script test",
         "zh-cn": "只是另一种缺陷的释放试验"
-      },
-      "2.0.1": {
-        "en": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "de": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "ru": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "pt": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "nl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "fr": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "it": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "es": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "pl": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "uk": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "zh-cn": "https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94"
       }
     },
     "titleLang": {
