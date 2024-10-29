@@ -1,6 +1,9 @@
 {
   "i18n": true,
   "type": "tabs",
+  "tabsStyle": {
+    width: "calc(100% - 100px)"
+  },
   "items": {
     "tab1": {
       "type": "panel",
@@ -8,52 +11,64 @@
       "items": {
         "app_name": {
           "type": "text",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "App_Name",
           "help": "App_Name_Help",
           "newLine": true
         },
         "consumerKey": {
           "type": "text",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "ConsumerKey",
           "help": "ConsumerKey_Help"
         },
         "consumerSecret": {
           "type": "text",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "ConsumerSecret",
           "help": "ConsumerSecret_Help",
           "newLine": true
         },
         "latitude": {
           "type": "text",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "LocationLatitude",
           "help": "LocationLatitude_Help"
         },
         "longitude": {
           "type": "text",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "LocationLongitude",
           "help": "LocationLongitude_Help",
           "newLine": true
         },
         "pollinterval": {
           "type": "number",
+          "xs": 12,
           "sm": 12,
           "md":  6,
-          "lg": 6,
+          "lg": 4,
+          "xl": 4,
           "label": "PollInterval",
           "help": "PollInterval_Help"
         }
