@@ -48,7 +48,6 @@ The Objects in forecast.current_hour will be createt 30s after frist startup and
 * Adapter [Material Design Widgets](https://github.com/Scrounger/ioBroker.vis-materialdesign) >= 0.5.7
 * Adapter [Vis](https://github.com/iobroker/iobroker.vis/blob/master/README.md)
 * [Import Views to Vis](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/views)
-* [Import Widget to Vis](https://github.com/baerengraben/ioBroker.swiss-weather-api/tree/master/widgets)
 
 ###### Example
 Simple Example:
