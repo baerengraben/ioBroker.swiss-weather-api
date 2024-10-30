@@ -167,6 +167,12 @@ function createJsonForWidgets(body) {
     let sun = [];
     let rain = [];
 	let wind = []; 
+	let calculatedMinSunHour;
+	let calculatedMaxSunHour;
+	let calculatedMinPrecipitation;
+	let calculatedMaxprecipitation;
+	let calculatedMinWind;
+	let calculatedMaxWind;
 
 	body["days"].forEach(function (obj, index) {
 		if (typeof obj.SUN_H !== undf || obj.SUN_H != null || typeof obj.RRR_MM !== undf || obj.RRR_MM != null || typeof obj.FF_KMH !== undf || obj.FF_KMH != null) {
@@ -177,36 +183,85 @@ function createJsonForWidgets(body) {
 	})
 
 	//Template
-	let axisLabelsTempl = ["","","","","","","",""];
+	let axisLabelsTempl = ["","","","","","","","",""];
 	let rainTempl = {
-		"type": "line",
+		"type": "bar",
 		"data": rain,
 		"yAxis_id": 0,
 		"barIsStacked": false,
-		"datalabel_show": false,
+		"datalabel_show": true,
 		"line_UseFillColor": true,
 		"yAxis_show": false,
-		"color": "blue"
+		"color": "blue",
+		"legendText": "Total Niederschlag",
+		"yAxis_min": Math.min(...rain) - 5,
+		"yAxis_max": Math.max(...rain) + 5,
+		"yAxis_maxSteps": 1,
+		"yAxis_position": "left",
+		"yAxis_gridLines_show": true,
+		"yAxis_appendix": " mm",
+		"yAxis_gridLines_border_show": false,
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"displayOrder": 1,
+		"tooltip_AppendText": " mm",
+		"datalabel_append": " mm",
+		"datalabel_align": "bottom",
+		"datalabel_color": "rgb(27, 17, 28)",
+		"datalabel_backgroundColor": "blue",
+		"datalabel_borderRadius": 5
 	};
 	let sunTempl = {
 		"type": "line",
 		"data": sun,
 		"yAxis_id": 1,
-		"barIsStacked": true,
-		"datalabel_show": false,
-		"line_UseFillColor": true,
+		"datalabel_show": true,
+		"line_UseFillColor": false,
 		"yAxis_show": false,
-		"color": "yellow"
+		"color": "yellow",
+		"legendText": "Sonnenstunden",
+		"yAxis_min": Math.min(...sun) - 3,
+		"yAxis_max": Math.max(...sun) + 3,
+		"yAxis_maxSteps": 3,
+		"yAxis_position": "right",
+		"yAxis_gridLines_show": false,
+		"yAxis_appendix": " h",
+		"yAxis_gridLines_border_show": false,
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"displayOrder": 1,
+		"tooltip_AppendText": " h",
+		"datalabel_append": " h",
+		"datalabel_align": "left",
+		"datalabel_color": "rgb(27, 17, 28)",
+		"datalabel_backgroundColor": "yellow",
+		"datalabel_borderRadius": 5
 	};
 	let windTempl = {
 		"type": "line",
 		"data": wind,
 		"yAxis_id": 2,
-		"barIsStacked": true,
-		"datalabel_show": false,
+		"datalabel_show": true,
 		"line_UseFillColor": false,
 		"yAxis_show": false,
-		"color": "aqua"
+		"color": "aqua",
+		"legendText": "Wind Geschwindigkeit in km/h",
+		"yAxis_min": Math.min(...wind) - 10,
+		"yAxis_max": Math.max(...wind) + 10,
+		"yAxis_maxSteps": 10,
+		"yAxis_position": "right",
+		"yAxis_gridLines_show": false,
+		"yAxis_appendix": " mm",
+		"yAxis_gridLines_border_show": false,
+		"yAxis_zeroLineWidth": 0.1,
+		"yAxis_zeroLineColor": "black",
+		"displayOrder": 1,
+		"tooltip_AppendText": " km/h",
+		"datalabel_append": " km/h",
+		"datalabel_align": "right",
+		"datalabel_color": "rgb(27, 17, 28)",
+		"datalabel_backgroundColor": "aqua",
+		"datalabel_borderRadius": 5
 	};
     
 	//Create JSON
@@ -215,7 +270,10 @@ function createJsonForWidgets(body) {
 	var graphsWeek = 'graphs';
 	chartJsonWeek[axisLabelsWeek] = JSON.parse(JSON.stringify(axisLabelsTempl)); 
 	chartJsonWeek[graphsWeek] = []; // empty Array, push graphs attributes in here
-	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(rainTempl)));
+	let myRainData = JSON.parse(JSON.stringify(rainTempl));
+	myRainData.yAxis_min = 
+	chartJsonWeek[graphsWeek].push(myRainData);
+
 	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(sunTempl)));
 	chartJsonWeek[graphsWeek].push(JSON.parse(JSON.stringify(windTempl)));
 	return chartJsonWeek;
@@ -3174,7 +3232,7 @@ async function getForecast(self){
 					self.setObjectNotExists("forecast.days.JsonChart", {
 						type: "state",
 						common: {
-							name: "JSON containing the weather-values of this day forecast - Use this with Material Design JSON Chart (Widget)",
+							name: "JSON containing the weather-values of week forecast - Use this with Material Design JSON Chart (Widget)",
 							type: "string",
 							role: "text",
 							write: false
