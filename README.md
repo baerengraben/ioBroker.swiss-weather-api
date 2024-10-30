@@ -60,7 +60,7 @@ Week-View Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
-### new Release
+### **WORK IN PROGRESS**
 * (baerengraben) [Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)
 
 
