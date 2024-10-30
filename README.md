@@ -57,10 +57,14 @@ Simple Example:
 Extended Example:
 ![Tablet](doc/Wettervorhersage_visu_anim2.gif)
 
-Week-Widget Example:
+Week-View Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
+### new Release
+* (baerengraben) [Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)
+
+
 ### 2.1.1 (2024-10-29)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123
