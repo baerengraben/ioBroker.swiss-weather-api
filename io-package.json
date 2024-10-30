@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "news": {
+      "2.2.0": {
+        "en": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "de": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "ru": "[Wochensicht_reduziert neu als View und mit Legende] (https://github.com/baerengraben/ioBroker.swis-weather-api/issues/112)",
+        "pt": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "nl": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "fr": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "it": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "es": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "pl": "[Wochensicht _ reduziert neu als View und mit Legende] (https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 112)",
+        "uk": "[Wochensicht_reduziert neu als Переглянути und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
+        "zh-cn": "(https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112) 互联网档案馆的存檔,存档日期2011-09-02"
+      },
       "2.1.1": {
         "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
         "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/124\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/123\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/122\nFix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/121",
@@ -80,19 +93,6 @@
         "pl": "Fixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/94",
         "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/94",
         "zh-cn": "Fixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/949494"
-      },
-      "2.0.2": {
-        "en": "Just another freaking release-script test",
-        "de": "Nur noch ein verrückter Release-script-Test",
-        "ru": "Просто еще один захватывающий тест-скрипт",
-        "pt": "Apenas mais um teste de lançamento-escrito",
-        "nl": "Gewoon weer een verdomde vrijlatingstest",
-        "fr": "Juste un autre test de script de sortie flippant",
-        "it": "Solo un'altra strana prova di rilascio-script",
-        "es": "Sólo otra prueba de comandos de liberación",
-        "pl": "Tylko inna dziwna wersja testowa",
-        "uk": "Просто інший freaking-script test",
-        "zh-cn": "只是另一种缺陷的释放试验"
       }
     },
     "titleLang": {

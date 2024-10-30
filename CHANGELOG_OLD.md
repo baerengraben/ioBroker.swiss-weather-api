@@ -16,6 +16,11 @@
 
 ### 2.0.3 (2023-08-01)
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
+## 1.0.6
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/93
+* (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/97
+
 ## 1.0.5
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/81
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/76
