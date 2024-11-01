@@ -16,6 +16,9 @@
 
 ### 2.0.3 (2023-08-01)
 * (baerengraben) Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94
+## 2.0.2 (2023-07-31)
+* (baerengraben) Just another freaking release-script test
+
 ## 2.0.0 (2023-07-31) - Release for SRF Weather API Version 2!
 * (baerengraben) Update SRF API version 1 to version 2 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94. With this Update new attributes are available: symbol24_code, DEWPOINT_C, RELHUM_PERCENT, FRESHSNOW_CM, PRESSURE_HPA, SUN_MIN, IRRADIANCE_WM2 and TTTFEEL_C
 

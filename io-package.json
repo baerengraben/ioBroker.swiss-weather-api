@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "news": {
+      "2.2.2": {
+        "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "ru": "Fix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "pt": "Fix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "nl": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "fr": "Correction pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "it": "Fissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "es": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
+        "pl": "Fix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 125",
+        "uk": "Посилання на https://github.com/baerengraben/ioBroker.swiss-weather-api/products/125",
+        "zh-cn": "Https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125 互联网档案馆的存檔,存档日期2013-12-22"
+      },
       "2.2.1": {
         "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
         "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
@@ -80,19 +93,6 @@
         "pl": "Fixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/102 (ang.)\nUżywanie ioBrokera Do formatu_time attribut to „TTMM.JJJJJJ SS:mm:s”\nFixing https:/github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/104\nFixing https:/github.com/baerengraben/ioBroker.swiss-weather-api/issues/10333",
         "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/102\nВикористання формату ioBroker Дата форматування дата_час прибуття в \"TT.MM.JJJJJJ SS:mm:ss\"\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/105\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nВиправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/103",
         "zh-cn": "Fixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/102\nA. 使用ioBroker格式 形式日期:时间为“TT.MM.JJJJJJ SS:mm:s”\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/105\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/104\nFixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/103103"
-      },
-      "2.0.4-alpha.0": {
-        "en": "Adding four new hour-based Views \nJSON-Chart is now starting with 00:00 instead of 01:00 \nSRF sometimes delivers more and sometimes less daily data. This can lead to old data in certain objects. To prevent this, I delete the entire object tree with each new call to rebuild it.",
-        "de": "Vier neue Stundenbasis hinzufügen Ansichten\nJSON-Chart beginnt jetzt mit 00:00 statt 01:00\nSRF liefert manchmal mehr und manchmal weniger tägliche Daten. Dies kann zu alten Daten in bestimmten Objekten führen. Um dies zu verhindern, lösche ich den gesamten Objektbaum mit jedem neuen Aufruf, um ihn wieder aufzubauen.",
-        "ru": "Добавление четырех новых часов Просмотров\nJSON-Chart теперь начинается с 00:00 вместо 01:00\nSRF иногда доставляет больше и иногда меньше ежедневных данных. Это может привести к старым данным в определенных объектах. Чтобы предотвратить это, я удаляю все дерево объектов с каждым новым вызовом, чтобы восстановить его.",
-        "pt": "Adicionando quatro novas baseadas em horas Vistas\nJSON-Chart está agora começando com 00:00 em vez de 01:00\nO SRF às vezes fornece dados cada vez menos diários. Isso pode levar a dados antigos em certos objetos. Para evitar isso, eu excluo toda a árvore de objetos com cada nova chamada para reconstruí-la.",
-        "nl": "Voeg vier nieuwe uur gebaseerd Views\nJSON-Chart begint nu met 00:00 in plaats van 01:00\nSRF levert soms meer en soms minder dagelijkse gegevens. Dit kan leiden tot oude gegevens in bepaalde objecten. Om dit te voorkomen, verwijder ik de hele objectenboom met elke nieuwe oproep om het te herbouwen.",
-        "fr": "Ajout de quatre nouvelles heures Vues\nJSON-Chart commence maintenant avec 00:00 au lieu de 01:00\nSRF fournit parfois plus et parfois moins de données quotidiennes. Cela peut conduire à des données anciennes dans certains objets. Pour éviter cela, je supprime tout l'arbre de l'objet avec chaque nouvel appel pour le reconstruire.",
-        "it": "Aggiunta di quattro nuove ore Visite\nJSON-Chart inizia con le 00:00 invece delle 01:00\nSRF a volte fornisce dati più e a volte meno quotidiani. Questo può portare a vecchi dati in alcuni oggetti. Per evitare questo, elimino l'intero albero oggetto con ogni nuova chiamata per ricostruirlo.",
-        "es": "Añadiendo cuatro nuevas horas Vistas\nJSON-Chart comienza ahora con las 00:00 en lugar de las 01:00\nEl SRF a veces proporciona datos cada vez menos diarios. Esto puede llevar a datos antiguos en ciertos objetos. Para evitar esto, borro todo el árbol de objetos con cada nueva llamada para reconstruirlo.",
-        "pl": "Dostarczanie czterech nowych godzin. widok\nJSON-Chart rozpoczyna się od 00:00 zamiast 01:00\nSRF czasami dostarcza coraz mniej danych codziennych. Może to prowadzić do starych danych w niektórych obiektach. Aby temu zapobiec usunąć cały drzewo z każdym nowym wezwaniem, aby go odbudować.",
-        "uk": "Додавання чотирьох нових годин Погляд\nJSON-Chart тепер починається з 00:00 замість 01:00\nSRF іноді доставляє більше і не менше щоденних даних. Це може призвести до старих даних в певних об'єктах. Щоб запобігти цьому, я вилучаю весь дерево об'єкта з кожним новим викликом, щоб відновити його.",
-        "zh-cn": "增加四小时的新时间 评 注\n联合联会-Chart现在开始为00:00而不是01:00\n区域协调机制有时提供更多的甚至较少的日常数据。 这可能导致某些物体的旧数据。 为了防止这种情况,我删除了整个目标树,呼吁重建。."
       }
     },
     "titleLang": {

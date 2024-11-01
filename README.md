@@ -60,9 +60,8 @@ Week-View Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.2.2 (2024-11-01)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125
-
 
 ### 2.2.1 (2024-11-01)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
@@ -78,9 +77,6 @@ Week-View Example:
 
 ### 2.1.0 (2024-01-10)
 * (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
-
-### 2.0.2 (2023-07-31)
-* (baerengraben) Just another freaking release-script test
 
 ## License
 MIT License
