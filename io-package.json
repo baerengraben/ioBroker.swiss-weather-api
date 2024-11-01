@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.2.0",
+    "version": "2.2.1",
     "news": {
+      "2.2.1": {
+        "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "ru": "Fix для https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "pt": "Fix para https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "nl": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "fr": "Correction pour https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "it": "Fissare per https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "es": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78",
+        "pl": "Fix for https: / / github.com / baerengraben / ioBroker.swiss- weather- api / issues / 78",
+        "uk": "Посилання на https://github.com/baerengraben/ioBroker.swiss-weather-api/products/78",
+        "zh-cn": "Https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78. 互联网档案馆的存檔,存档日期2013-09-02"
+      },
       "2.2.0": {
         "en": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
         "de": "[Wochensicht_reduziert neu als View und mit Legende](https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/112)",
@@ -80,19 +93,6 @@
         "pl": "Dostarczanie czterech nowych godzin. widok\nJSON-Chart rozpoczyna się od 00:00 zamiast 01:00\nSRF czasami dostarcza coraz mniej danych codziennych. Może to prowadzić do starych danych w niektórych obiektach. Aby temu zapobiec usunąć cały drzewo z każdym nowym wezwaniem, aby go odbudować.",
         "uk": "Додавання чотирьох нових годин Погляд\nJSON-Chart тепер починається з 00:00 замість 01:00\nSRF іноді доставляє більше і не менше щоденних даних. Це може призвести до старих даних в певних об'єктах. Щоб запобігти цьому, я вилучаю весь дерево об'єкта з кожним новим викликом, щоб відновити його.",
         "zh-cn": "增加四小时的新时间 评 注\n联合联会-Chart现在开始为00:00而不是01:00\n区域协调机制有时提供更多的甚至较少的日常数据。 这可能导致某些物体的旧数据。 为了防止这种情况,我删除了整个目标树,呼吁重建。."
-      },
-      "2.0.3": {
-        "en": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "de": "Festlegung von https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "ru": "Фиксация https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "pt": "Fixação https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "nl": "Quality over Quantity (QoQ) Releases Vertaling:",
-        "fr": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "it": "Fissare https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "es": "Fixing https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94",
-        "pl": "Fixing https:/github.com/baerengraben/ioBroker.swis-weather-api/issues/94",
-        "uk": "Виправлення https://github.com/baerengraben/ioBroker.swiss-weather-api/products/94",
-        "zh-cn": "Fixing http://github.com/baerengraben/ioBroker.swiss-weather-api/issues/949494"
       }
     },
     "titleLang": {

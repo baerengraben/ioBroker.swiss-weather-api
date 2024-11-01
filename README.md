@@ -60,7 +60,7 @@ Week-View Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 2.2.1 (2024-11-01)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
 
 ### 2.2.0 (2024-10-30)
@@ -77,9 +77,6 @@ Week-View Example:
 
 ### 2.0.2 (2023-07-31)
 * (baerengraben) Just another freaking release-script test
-
-### 2.0.0 (2023-07-31) - Release for SRF Weather API Version 2!
-* (baerengraben) Update SRF API version 1 to version 2 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/94. With this Update new attributes are available: symbol24_code, DEWPOINT_C, RELHUM_PERCENT, FRESHSNOW_CM, PRESSURE_HPA, SUN_MIN, IRRADIANCE_WM2 and TTTFEEL_C
 
 ## License
 MIT License
