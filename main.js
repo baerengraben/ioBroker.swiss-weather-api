@@ -34,40 +34,35 @@ Date.prototype.addDays = function(days) {
 }
 
 /**
- * Checks if there was a Timechange for Summer-/Wintertime
- * If we have a Timechange return true when it is after 4 o'clock
- * See https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
- * @returns {boolean} true == the Object-Tree has to be deleted; false == the Object-Tree has not to be deleted
+ * HACK!!!
+ * Helper function for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+ * For Details see
+ * @param {Date} date obj.date_time
+ * @returns {String} String inluding a number for cleaning up the timestamp problem.  
  */
-function isTimechange(self) {
-	var timeChange = false;
-	var todayDate = new Date();
-	var year = todayDate.getFullYear();
-	var dst_start =
-		new Date(year, 2, (14 - new Date(year, 2, 1).getDay() + 7) % 7 + 1, 2);
-	var dst_end =
-		new Date(year, 10, (7 - new Date(year, 10, 1).getDay() + 7) % 7 + 1, 3);
+function cleanUpTimestampProblem(date){
+	var myHours = date.getHours();
 
-	var timeDiff = Math.abs(todayDate.getTime() - dst_start.getTime());
-	var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-	if (diffDays === 0) {
-		self.log.debug('Heute beginnt die Sommerzeit.');
-		timeChange = true;
-	}
-	timeDiff = Math.abs(todayDate.getTime() - dst_end.getTime());
-	diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-	if (diffDays === 0) {
-		self.log.debug('Heute endet die Sommerzeit.');
-		timeChange = true;
-	}
-
-	if (timeChange){
-		if (todayDate.getHours() > 4){
-			return true;
-		}
-	}
-
-	return false;
+	if (myHours > 0 &&  myHours < 3) {
+		return "1"
+	} else if (myHours > 3 &&  myHours < 6) {
+		return "2"
+	} else if (myHours > 6 &&  myHours < 9) {
+		return "3";
+	} else if (myHours > 9 &&  myHours < 12) {
+		return "4";
+	} else if (myHours > 12 &&  myHours < 15) {
+		return "5";
+	} else if (myHours > 15 &&  myHours < 18) { 
+		return "6";
+	} else if (myHours > 18 &&  myHours < 21) {
+		return "7";
+	} else if (myHours > 21 &&  myHours < 24) {
+		return "8";
+	} else {
+		self.log.error("Error in cleanUpTimestampProblem(). This should not happend. If error persists, create an issue on https://github.com/baerengraben/ioBroker.swiss-weather-api.");
+		return "0";
+	};
 }
 
 /**
@@ -3342,12 +3337,13 @@ async function getForecast(self){
 				//iterate over all three_hours objects
 				body["three_hours"].forEach(function (obj, index) {
 					var startTimeISOString = obj.date_time;
-					var objDate = new Date(startTimeISOString);
+					var objDate = new Date(startTimeISOString); 
+					//Start Fix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
+					var myTime = cleanUpTimestampProblem(objDate);
+					//End Fix https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
 					var myPath;
-					var myTime = getTimeFormattet(objDate);
-
 					if (index < 8) {
-						myPath = "day0";
+						myPath = "day0";						
 					} else if (index > 7 && index < 16) {
 						myPath = "day1";
 					} else if (index > 15 && index < 24) {
@@ -3913,30 +3909,14 @@ function doIt(self) {
 			self.log.debug('Successfull DNS resolve for api.srgssr.ch: ' + JSON.stringify(addresses));
 			self.setState('info.connection', true, true);
 
-			//Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/78
-			//  if (isTimechange(self)){
-			// 	self.log.debug('Today is a timechange (winter-/summertime). Deleting all objects');
-			// 	var promise = deleteAllAdapterObjects(self);
-			//     promise.then(function(result) {
-			// 		// Check if there is already a geolocationId, if not => Get one
-			// 		if (geolocationId) {
-			// 			self.log.debug("geolocationId is available, move forwared to get forcasts...");
-			// 			getToken(self,getForecast);
-			// 		} else {
-			// 			self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
-			// 			getToken(self,getGeolocationId);
-			// 		}
-    		// 	});
-			// } else {
-				// Check if there is already a geolocationId, if not => Get one
-				if (geolocationId) {
-					self.log.debug("geolocationId is available, move forwared to get forcasts...");
-					getToken(self,getForecast);
-				} else {
-					self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
-					getToken(self,getGeolocationId);
-				}
-			// }
+			// Check if there is already a geolocationId, if not => Get one
+			if (geolocationId) {
+				self.log.debug("geolocationId is available, move forwared to get forcasts...");
+				getToken(self,getForecast);
+			} else {
+				self.log.debug("There is no geolocationId, so getting one before calling forecasts...");
+				getToken(self,getGeolocationId);
+			}
 
 			setTimeout(doIt, pollinterval, self);
 		}
