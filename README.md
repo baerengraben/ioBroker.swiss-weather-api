@@ -78,6 +78,8 @@ Week-View Example:
 ### 2.1.0 (2024-01-10)
 * (baerengraben) Added additional Week-View. Credits goes to https://github.com/pingus01
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 MIT License
 
