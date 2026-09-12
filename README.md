@@ -60,6 +60,9 @@ Week-View Example:
 ![Tablet](doc/Wochensicht_reduziert.png)
 
 ## Changelog
+
+### **WORK IN PROGRESS**
+- (iobroker-bot) Adapter requires node.js >= 22 now.
 ### 2.2.2 (2024-11-01)
 * (baerengraben) Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125
 
