@@ -1055,7 +1055,7 @@ function setCurrentHour(self){
 			Object.assign(currentHourVariables, {local_DEWPOINT_C      : 0});
 			Object.assign(currentHourVariables, {local_RELHUM_PERCENT  : 0});
 			Object.assign(currentHourVariables, {local_DEWPOINT_C      : 0});
-			Object.assign(currentHourVariables, {local_FRESHSNOW_CM    : 0});
+			Object.assign(currentHourVariables, {local_FRESHSNOW_MM   : 0});
 			Object.assign(currentHourVariables, {local_PRESSURE_HPA    : 0});
 			Object.assign(currentHourVariables, {local_SUN_MIN         : 0});
 			Object.assign(currentHourVariables, {local_IRRADIANCE_WM2  : 0});
@@ -1257,7 +1257,7 @@ function setCurrentHour(self){
 					self.log.error(path + '.' + hour + '00.FRESHSNOW_CM' + ':' + 'This should not happen. Error is ' + err.message);
 				}
 				if ((typeof state !== "undefined") && (state !== null)) {
-					currentHourVariables.local_FRESHSNOW_CM = state.val;
+					currentHourVariables.local_FRESHSNOW_MM= state.val;
 				} else {
 					self.log.info(path + '.' + hour + '00.FRESHSNOW_CM' + ':' + 'This should not happen. State is undefined or null. So in this run no data is copied for this value');
 				}
@@ -2578,7 +2578,7 @@ async function getForecast(self){
 							});
 						});
 					}
-					if (typeof obj.FRESHSNOW_CM !== undf || obj.FRESHSNOW_CM != null) {
+					if (typeof obj.FRESHSNOW_MM!== undf || obj.FRESHSNOW_MM!= null) {
 						self.setObjectNotExists("forecast." + "hours." + myPath + "." + myTime + "." + "FRESHSNOW_CM", {
 							type: "state",
 							common: {
@@ -3685,7 +3685,7 @@ async function getForecast(self){
 							});
 						});
 					}
-					if (typeof obj.FRESHSNOW_CM !== undf || obj.FRESHSNOW_CM != null) {
+					if (typeof obj.FRESHSNOW_MM!== undf || obj.FRESHSNOW_MM!= null) {
 						self.setObjectNotExists("forecast." + "three_hours." + myPath + "." + myTime + "." + "FRESHSNOW_CM", {
 							type: "state",
 							common: {
