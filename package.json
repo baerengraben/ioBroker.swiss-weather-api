@@ -39,6 +39,7 @@
     "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
     "@iobroker/adapter-dev": "^1.0.1",
     "@iobroker/testing": "^5.0.0",
+    "@tsconfig/node20": "^20.1.9",
     "chai": "^4.5.0",
     "chai-as-promised": "^7.1.2",
     "globals": "^15.11.0",
