@@ -5,7 +5,7 @@
  * Created with @iobroker/create-adapter v1.18.0
  */
 const utils = require("@iobroker/adapter-core");
-var dns = require('dns');
+var dns = require('node:dns');
 const cron = require('node-cron');
 const { https } = require('follow-redirects');
 const adapterName = "swiss-weather-api";
