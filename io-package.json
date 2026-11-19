@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "swiss-weather-api",
-    "version": "2.2.2",
+    "version": "2.3.0",
     "news": {
+      "2.3.0": {
+        "en": "Renamed FRESHSNOW_CM to FRESHSNOW_MM because SRF renamed the attribute in their Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139\nNOTE: The old FRESHSNOW_CM states will remain as orphans. Please delete the adapter objects once after updating. Widgets using FRESHSNOW_CM must be adapted to FRESHSNOW_MM.",
+        "de": "FRESHSNOW_CM wurde in FRESHSNOW_MM umbenannt, da SRF das Attribut in der Meteo API v2 umbenannt hat. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139\nHINWEIS: Die alten FRESHSNOW_CM-States bleiben als Leichen bestehen. Bitte nach dem Update die Adapter-Objekte einmal löschen. Widgets, die FRESHSNOW_CM verwenden, müssen auf FRESHSNOW_MM angepasst werden.",
+        "ru": "Переименование FRESHSNOW_CM в FRESHSNOW_MM, так как SRF переименовал атрибут в Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "pt": "Renomeado FRESHSNOW_CM para FRESHSNOW_MM porque a SRF renomeou o atributo na sua Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "nl": "FRESHSNOW_CM hernoemd naar FRESHSNOW_MM omdat SRF het attribuut in hun Meteo API v2 hernoemde. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "fr": "Renommage de FRESHSNOW_CM en FRESHSNOW_MM car SRF a renommé l'attribut dans son API Méteo v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "it": "Rinominato FRESHSNOW_CM in FRESHSNOW_MM perché SRF ha rinominato l'attributo nella sua Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "es": "Se renombró FRESHSNOW_CM a FRESHSNOW_MM porque SRF renombró el atributo en su Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "pl": "Zmieniono nazwę FRESHSNOW_CM na FRESHSNOW_MM, ponieważ SRF zmieniło nazwę atrybutu w swoim Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "uk": "Перейменовано FRESHSNOW_CM на FRESHSNOW_MM, оскільки SRF перейменував атрибут у своїй Meteo API v2. Fixes https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139",
+        "zh-cn": "FRESHSNOW_CM已重命名为FRESHSNOW_MM，因为SRF在其Meteo API v2中重命名了该属性。修复 https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/139"
+      },
       "2.2.2": {
         "en": "Fix for https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
         "de": "Fix für https://github.com/baerengraben/ioBroker.swiss-weather-api/issues/125",
@@ -64,7 +77,7 @@
         "fr": "Ajout de Week-View supplémentaire. Les crédits vont à https://github.com/pingus01",
         "it": "Aggiunto supplementare Week-View. I crediti vanno a https://github.com/pingus01",
         "es": "Añadido más Vista semanal. Credits goes to https://github.com/pingus01",
-        "pl": "Dodano dodatkowy weekend - Widok. Kredyty trafiają do https: / / github.com / pingus01",
+        "pl": "Dodano dodatkowy weekend - Widok. Kredyty trafiają na https: / / github.com / pingus01",
         "uk": "Додано додатковий тижневий перегляд. Кредитування йде на https://github.com/pingus01",
         "zh-cn": "增加了\"周视\". 感谢https://github.com/pingus01"
       },
